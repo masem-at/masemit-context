@@ -14,6 +14,7 @@ ChainSights is a governance analytics service processing personal data from EU c
 
 **Risk Level:** Medium-High (operating without full compliance exposes regulatory and reputational risk)
 
+
 ---
 
 ## Compliance Scorecard
