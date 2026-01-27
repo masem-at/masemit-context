@@ -1,0 +1,7 @@
+{
+  "source_repo": "masem-at/chainsights",
+  "source_folders": "docs",
+  "synced_at": "2026-01-27T20:29:38Z",
+  "commit_sha": "a195a30dd5baa124a66a7ac418f70202085d0807",
+  "commit_message": "chore: update sync-context workflow and add build-cycle docs\n"
+}
