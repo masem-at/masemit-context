@@ -38,6 +38,7 @@
 
 **Note:** Deletion requests are flagged immediately (data logically marked for deletion). Physical cleanup runs weekly. GDPR requires response within 30 days - we exceed this requirement.
 
+
 **Endpoints:**
 - `POST /api/gdpr/delete` - Marks records for deletion
 - `POST /api/gdpr/export` - Returns user data in JSON
