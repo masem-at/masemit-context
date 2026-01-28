@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-01-28 10:20:17 UTC
+> Last updated: 2026-01-28 11:58:31 UTC
 
 ## Quick Access
 
@@ -61,7 +61,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-01-28T10:20:17Z
+> Source: `masem-at/chainsights` | Last sync: 2026-01-28T11:58:31Z
 
 
 **docs/**
@@ -90,6 +90,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`chainsights-event-tracking-implementation.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/chainsights-event-tracking-implementation.md)
 - [`chainsights-monetization-expansion.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/chainsights-monetization-expansion.md)
 - [`gvs-requirement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/gvs-requirement.md)
+- [`handoff-stripe-webhook-analytics.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/handoff-stripe-webhook-analytics.md)
 - [`issue-metric-naming-consistency.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/issue-metric-naming-consistency.md)
 - [`leaderboard-model-clarification.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/leaderboard-model-clarification.md)
 - [`snapshot-api-docu.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/snapshot-api-docu.md)

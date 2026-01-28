@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-01-28T10:20:17Z",
-  "commit_sha": "484212a65069dccd5b0e3f0816d674ab9d5ea666",
-  "commit_message": "fix: Quick Check API to use snapshotSpace instead of slug\n"
+  "synced_at": "2026-01-28T11:58:31Z",
+  "commit_sha": "df174097d9669aa4854c8f63128c5ad5082287c6",
+  "commit_message": "feat: send checkout_complete events to analytics\n"
 }
