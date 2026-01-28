@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-01-28T05:01:12Z",
-  "commit_sha": "458ad88639cb1cf101e41c5e7a50ad7525a3fe6f",
-  "commit_message": "fix: use Next.js Script component for tracker.js\n"
+  "synced_at": "2026-01-28T09:05:18Z",
+  "commit_sha": "b9f3ba38e0c0e556f84fca4ff1131d5460ef8ba2",
+  "commit_message": "fix: comprehensive naming, pricing, and feature flag updates\n"
 }

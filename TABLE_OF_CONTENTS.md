@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-01-28 05:01:12 UTC
+> Last updated: 2026-01-28 09:05:18 UTC
 
 ## Quick Access
 
@@ -61,7 +61,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-01-28T05:01:12Z
+> Source: `masem-at/chainsights` | Last sync: 2026-01-28T09:05:18Z
 
 
 **docs/**
@@ -81,6 +81,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`ChainSights_blue_hat_and_more.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/ChainSights_blue_hat_and_more.md)
 - [`Web3_DAO_Analytics_Einfuehrung_DE.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/Web3_DAO_Analytics_Einfuehrung_DE.md)
 - [`austria-stripe-invoicing-2025.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/austria-stripe-invoicing-2025.md)
+- [`bmad-naming-response.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/bmad-naming-response.md)
 - [`bmad-team-response.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/bmad-team-response.md)
 - [`bmad-v6-custom-agents-README.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/bmad-v6-custom-agents-README.md)
 - [`build-cycle.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/build-cycle.md)

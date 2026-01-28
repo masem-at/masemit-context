@@ -1,16 +1,131 @@
 ---
 project_name: 'chainsights'
 user_name: 'Mario'
-date: '2025-12-21'
-sections_completed: ['technology_stack', 'language_rules', 'framework_rules', 'testing_rules', 'code_quality', 'workflow_rules', 'critical_rules']
+date: '2026-01-28'
+sections_completed: ['technology_stack', 'language_rules', 'framework_rules', 'testing_rules', 'code_quality', 'workflow_rules', 'critical_rules', 'pricing', 'naming', 'feature_flags', 'seo_aeo_llmo']
 status: 'complete'
-rule_count: 85
+rule_count: 120
 optimized_for_llm: true
 ---
 
 # Project Context for AI Agents
 
 _This file contains critical rules and patterns that AI agents must follow when implementing code in this project. Focus on unobvious details that agents might otherwise miss._
+
+> **CRITICAL:** This document is the single source of truth. Load this file at the start of every session before making any changes.
+
+---
+
+## Official Pricing (READ FIRST)
+
+| Tier | Internal ID | User-Facing Name | Price | Stripe Price ID Env |
+|------|-------------|------------------|-------|---------------------|
+| Free | `quick_check` | **Free Check** | €0 (email required) | N/A |
+| Mid | `deep_dive` | **Deep Dive** | **€49** | `STRIPE_PRICE_DEEP_DIVE` |
+| Premium | `governance_audit` | **Governance Audit** | **€149** | `STRIPE_PRICE_GOVERNANCE_AUDIT` |
+| Legacy | `standard` | (deprecated) | €99 | `STRIPE_PRICE_STANDARD` |
+
+### Pricing Rules
+- ❌ **NEVER** show €99 or €199 to users (legacy/deprecated)
+- ✅ Starting price displayed: "from €49"
+- ✅ Deep Dive badge: "Most Popular"
+- ✅ Governance Audit badge: "Complete Analysis"
+
+---
+
+## Official Naming (READ FIRST)
+
+| Internal Code | User-Facing Name | CTA Text |
+|---------------|------------------|----------|
+| `quick_check` | **Free Check** | "Get Free Check" |
+| `deep_dive` | **Deep Dive** | "Get Deep Dive – €49" |
+| `governance_audit` | **Governance Audit** | "Get Governance Audit – €149" |
+
+### Naming Rules
+- ✅ Internal code (e.g., `quick_check`) stays in code/APIs
+- ✅ User-facing text MUST use the official names above
+- ❌ **NEVER** use: "Quick Check" (user-facing), "Order a report", "Get your report", "Standard Report"
+- ✅ CTAs should include price (except Free Check)
+
+---
+
+## Feature Flags
+
+| Feature | Status | Notes |
+|---------|--------|-------|
+| Free Check | **ENABLED** | Live, working |
+| Deep Dive (€49) | **ENABLED** | Live, working |
+| Governance Audit (€149) | **ENABLED** | Live, working |
+| Share & Save (€20 cashback) | **DISABLED** | Hide everywhere, do not delete code |
+| DAO Matrix | **NOT BUILT** | Phase 2, deferred |
+| API Access | **NOT BUILT** | Future |
+
+### Share & Save Hiding Checklist
+When `SHARE_REWARDS_ENABLED = false`, hide in:
+- `src/app/success/page.tsx`
+- `src/lib/email/index.ts` (report delivery + share reminder emails)
+- `src/lib/pdf/report-template.tsx` (PDF page 4)
+- `src/app/api/jobs/share-reminder/route.ts` (skip sending)
+- `src/app/share/page.tsx` (redirect or hide)
+- `src/app/layout.tsx` (FAQ text)
+- `src/app/llms.txt/route.ts`
+
+---
+
+## SEO / AEO / LLMO Content
+
+These files contain machine-readable content that MUST stay in sync with pricing and naming:
+
+| File | Purpose | Content to Sync |
+|------|---------|-----------------|
+| `src/app/layout.tsx` | Schema.org structured data (SEO/AEO) | Product offers, prices, FAQ answers |
+| `src/app/llms.txt/route.ts` | LLM-readable summary (LLMO) | Pricing, features, Share & Save |
+
+### Schema.org Offers (layout.tsx)
+Must reflect current tiers:
+```json
+{ "@type": "Offer", "name": "Deep Dive", "price": "49", "priceCurrency": "EUR" },
+{ "@type": "Offer", "name": "Governance Audit", "price": "149", "priceCurrency": "EUR" }
+```
+
+### FAQ Schema & llms.txt Rules
+- ✅ Use "Free Check" (not "Quick Check")
+- ✅ Use "€49 Deep Dive" (not €99)
+- ✅ Use "€149 Governance Audit" (not €199)
+- ❌ NO mention of Share & Save cashback (while disabled)
+
+---
+
+## Known Bugs & Issues (2026-01-28)
+
+| Bug | Status | Root Cause | Fix |
+|-----|--------|------------|-----|
+| Donations not recording | **OPEN** | `payment_intent.succeeded` webhook may not be enabled in Stripe | Enable event in Stripe Dashboard |
+| Quick Checks not recording | **NEEDS INVESTIGATION** | Code looks correct | Debug `/api/quick-check` |
+
+### Content Inconsistencies to Fix
+
+| Location | Issue | Correct Value |
+|----------|-------|---------------|
+| `src/app/layout.tsx:212` | "EUR 99 Standard, EUR 199 Deep Dive" | "€49 Deep Dive, €149 Governance Audit" |
+| `src/app/llms.txt/route.ts:19` | "EUR 99 Standard, EUR 199 Deep Dive" | "€49 Deep Dive, €149 Governance Audit" |
+| `src/app/api/intake/route.ts:78` | Comment says `// €99` | Change to `// €49` |
+| `src/lib/quiz/data.ts` | CTAs link to `/#order` | Link to modal or `/rankings` |
+| `src/components/pricing-tier-card.tsx:112,121` | "Quick Check", "Get Quick Check" | "Free Check", "Get Free Check" |
+| `src/app/guide/page.tsx:620` | "Order a Report" | Tier-specific CTA |
+| `src/components/pricing.tsx` | Hardcoded €99, €199 | DELETE FILE (unused) |
+
+---
+
+## Decision Log
+
+| Date | Decision | Rationale |
+|------|----------|-----------|
+| 2026-01-28 | €99 → €49 for Deep Dive | Lower friction, impulse buy territory |
+| 2026-01-28 | "Quick Check" → "Free Check" (user-facing) | Clearer value proposition |
+| 2026-01-28 | Hide Share & Save temporarily | Validate purchases first, reactivate later |
+| 2026-01-28 | Quiz CTA → Report Modal | Don't send engaged users back to landing page |
+| 2026-01-28 | Matrix deferred to Phase 2 | Validate report demand first |
 
 ---
 
