@@ -55,10 +55,26 @@ _This file contains critical rules and patterns that AI agents must follow when 
 |---------|--------|-------|
 | Free Check | **ENABLED** | Live, working |
 | Deep Dive (€49) | **ENABLED** | Live, working |
-| Governance Audit (€149) | **ENABLED** | Live, working |
+| Governance Audit (€149) | **IN PROGRESS** | Phase 2 - needs historical trends, peer comparison, enhanced PDF |
 | Share & Save (€20 cashback) | **DISABLED** | Hide everywhere, do not delete code |
-| DAO Matrix | **NOT BUILT** | Phase 2, deferred |
-| API Access | **NOT BUILT** | Future |
+| DAO Matrix | **NOT BUILT** | Phase 2 - after Governance Audit |
+| API Access | **NOT BUILT** | Phase 3 - future |
+
+---
+
+## Phase 2 Planning (READ BEFORE IMPLEMENTING)
+
+**Design Doc:** `docs/phase-2-design.md` ← **MANDATORY READING**
+
+**Source Requirements:**
+- `docs/_masemIT/chainsights-monetization-expansion.md` - Full PRD
+- `docs/_masemIT/bmad-team-response.md` - Mario's decisions on open questions
+
+**Implementation Order:**
+1. Governance Audit (€149) - Historical trends, peer comparison, enhanced PDF
+2. DAO Matrix (€19/mo) - Interactive table with subscription paywall
+
+**DO NOT** ask Mario about Phase 2 requirements. Everything is documented.
 
 ### Share & Save Hiding Checklist
 When `SHARE_REWARDS_ENABLED = false`, hide in:

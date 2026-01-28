@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-01-28T13:22:14Z",
-  "commit_sha": "d11e52a4b11470d6896dd53f6500f1e7b9973efa",
-  "commit_message": "docs: update project_context.md with today's fixes\n"
+  "synced_at": "2026-01-28T13:41:34Z",
+  "commit_sha": "0e050181ffcc0c1718364523626c5526e3fa43ae",
+  "commit_message": "docs: add Phase 2 design doc and link in project_context\n"
 }
