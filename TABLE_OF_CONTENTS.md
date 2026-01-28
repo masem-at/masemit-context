@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-01-27 22:03:07 UTC
+> Last updated: 2026-01-28 05:01:12 UTC
 
 ## Quick Access
 
@@ -61,7 +61,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-01-27T22:03:07Z
+> Source: `masem-at/chainsights` | Last sync: 2026-01-28T05:01:12Z
 
 
 **docs/**
@@ -81,10 +81,13 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`ChainSights_blue_hat_and_more.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/ChainSights_blue_hat_and_more.md)
 - [`Web3_DAO_Analytics_Einfuehrung_DE.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/Web3_DAO_Analytics_Einfuehrung_DE.md)
 - [`austria-stripe-invoicing-2025.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/austria-stripe-invoicing-2025.md)
+- [`bmad-team-response.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/bmad-team-response.md)
 - [`bmad-v6-custom-agents-README.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/bmad-v6-custom-agents-README.md)
 - [`build-cycle.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/build-cycle.md)
 - [`cdp_api_key.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/cdp_api_key.json)
 - [`chainsights-data-arbitrum.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/chainsights-data-arbitrum.json)
+- [`chainsights-event-tracking-implementation.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/chainsights-event-tracking-implementation.md)
+- [`chainsights-monetization-expansion.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/chainsights-monetization-expansion.md)
 - [`gvs-requirement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/gvs-requirement.md)
 - [`leaderboard-model-clarification.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/leaderboard-model-clarification.md)
 - [`snapshot-api-docu.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/snapshot-api-docu.md)
