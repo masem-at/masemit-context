@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-01-28T09:05:18Z",
-  "commit_sha": "b9f3ba38e0c0e556f84fca4ff1131d5460ef8ba2",
-  "commit_message": "fix: comprehensive naming, pricing, and feature flag updates\n"
+  "synced_at": "2026-01-28T10:20:17Z",
+  "commit_sha": "484212a65069dccd5b0e3f0816d674ab9d5ea666",
+  "commit_message": "fix: Quick Check API to use snapshotSpace instead of slug\n"
 }
