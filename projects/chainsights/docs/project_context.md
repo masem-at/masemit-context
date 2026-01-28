@@ -57,7 +57,7 @@ _This file contains critical rules and patterns that AI agents must follow when 
 | Deep Dive (€49) | **ENABLED** | Live, working |
 | Governance Audit (€149) | **IMPLEMENTED** | Phase 2 - historical trends, peer comparison, enhanced PDF all implemented |
 | Share & Save (€20 cashback) | **DISABLED** | Hide everywhere, do not delete code |
-| DAO Matrix | **NOT BUILT** | Phase 2 - after Governance Audit |
+| DAO Matrix (€19/mo) | **IMPLEMENTED** | Phase 2 - interactive table with subscription paywall |
 | API Access | **NOT BUILT** | Phase 3 - future |
 
 ---
@@ -139,6 +139,7 @@ Must reflect current tiers:
 | 2026-01-28 | Fix metric naming | DEI=Decentralization Index, PDI=Proposal Deliberation Index, GPI=Governance Process Index |
 | 2026-01-28 | Mandatory project_context.md | All 13 agents now load this file as Step 3 before any work |
 | 2026-01-28 | Governance Audit implementation | Historical trends, peer comparison, tier-aware AI prompts, enhanced PDF with executive summary |
+| 2026-01-28 | DAO Matrix implementation | Subscriptions table, Stripe subscription webhooks, /matrix page with paywall, CSV/JSON export |
 
 ---
 
