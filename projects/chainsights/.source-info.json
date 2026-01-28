@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-01-28T11:58:31Z",
-  "commit_sha": "df174097d9669aa4854c8f63128c5ad5082287c6",
-  "commit_message": "feat: send checkout_complete events to analytics\n"
+  "synced_at": "2026-01-28T13:22:14Z",
+  "commit_sha": "d11e52a4b11470d6896dd53f6500f1e7b9973efa",
+  "commit_message": "docs: update project_context.md with today's fixes\n"
 }

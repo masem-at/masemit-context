@@ -100,20 +100,12 @@ Must reflect current tiers:
 
 | Bug | Status | Root Cause | Fix |
 |-----|--------|------------|-----|
-| Donations not recording | **OPEN** | `payment_intent.succeeded` webhook may not be enabled in Stripe | Enable event in Stripe Dashboard |
-| Quick Checks not recording | **NEEDS INVESTIGATION** | Code looks correct | Debug `/api/quick-check` |
+| Donations not recording | **FIXED** | `payment_intent.succeeded` webhook was not enabled | Enabled in Stripe Dashboard |
+| Quick Checks not recording | **FIXED** | Was recording correctly, just in `quick_checks` table | Verified working |
 
-### Content Inconsistencies to Fix
+### Content Inconsistencies
 
-| Location | Issue | Correct Value |
-|----------|-------|---------------|
-| `src/app/layout.tsx:212` | "EUR 99 Standard, EUR 199 Deep Dive" | "€49 Deep Dive, €149 Governance Audit" |
-| `src/app/llms.txt/route.ts:19` | "EUR 99 Standard, EUR 199 Deep Dive" | "€49 Deep Dive, €149 Governance Audit" |
-| `src/app/api/intake/route.ts:78` | Comment says `// €99` | Change to `// €49` |
-| `src/lib/quiz/data.ts` | CTAs link to `/#order` | Link to modal or `/rankings` |
-| `src/components/pricing-tier-card.tsx:112,121` | "Quick Check", "Get Quick Check" | "Free Check", "Get Free Check" |
-| `src/app/guide/page.tsx:620` | "Order a Report" | Tier-specific CTA |
-| `src/components/pricing.tsx` | Hardcoded €99, €199 | DELETE FILE (unused) |
+✅ **All fixed as of 2026-01-28** - pricing, naming, and CTAs are now consistent across all files.
 
 ---
 
@@ -126,6 +118,10 @@ Must reflect current tiers:
 | 2026-01-28 | Hide Share & Save temporarily | Validate purchases first, reactivate later |
 | 2026-01-28 | Quiz CTA → Report Modal | Don't send engaged users back to landing page |
 | 2026-01-28 | Matrix deferred to Phase 2 | Validate report demand first |
+| 2026-01-28 | Unify DAO data architecture | Paid reports auto-populate rankings + gvsSnapshots for Quick Check consistency |
+| 2026-01-28 | Stripe → Analytics integration | Send `checkout_complete` events to analytics.masem.at for conversion funnel |
+| 2026-01-28 | Fix metric naming | DEI=Decentralization Index, PDI=Proposal Deliberation Index, GPI=Governance Process Index |
+| 2026-01-28 | Mandatory project_context.md | All 13 agents now load this file as Step 3 before any work |
 
 ---
 
@@ -433,7 +429,7 @@ npm run test:e2e          # E2E tests
 
 **Maintenance:**
 
-- Last Updated: 2025-12-21
+- Last Updated: 2026-01-28
 - Review frequency: Quarterly or after major tech stack changes
 - Target: <500 lines, focused on non-obvious critical rules
 
