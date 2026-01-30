@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-01-28 18:05:21 UTC
+> Last updated: 2026-01-30 19:59:03 UTC
 
 ## Quick Access
 
@@ -341,6 +341,43 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 **context/projects/hoki-help/**
 - [`readme.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/hoki-help/readme.md)
+
+### masem-analytics
+
+> Source: `masem-at/masemit-analytics` | Last sync: 2026-01-30T19:59:03Z
+
+
+**_bmad-output/implementation-artifacts/epics/**
+- [`epic-001-self-hosted-tracking.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/_bmad-output/implementation-artifacts/epics/epic-001-self-hosted-tracking.md)
+- [`epic-002-global-social-management.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/_bmad-output/implementation-artifacts/epics/epic-002-global-social-management.md)
+
+**_bmad-output/implementation-artifacts/stories/**
+- [`story-1.1-events-api-endpoint.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/_bmad-output/implementation-artifacts/stories/story-1.1-events-api-endpoint.md)
+- [`story-1.2-tracker-library.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/_bmad-output/implementation-artifacts/stories/story-1.2-tracker-library.md)
+- [`story-1.4-dashboard-custom-events.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/_bmad-output/implementation-artifacts/stories/story-1.4-dashboard-custom-events.md)
+- [`story-1.5-chainsights-integration.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/_bmad-output/implementation-artifacts/stories/story-1.5-chainsights-integration.md)
+
+**_bmad-output/planning-artifacts/**
+- [`epics-social-phase2-2026-01-29.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/_bmad-output/planning-artifacts/epics-social-phase2-2026-01-29.md)
+
+**docs/_masemit/**
+- [`all-projects-event-tracking.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/_masemit/all-projects-event-tracking.md)
+- [`analytics-conversion-features-requirement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/_masemit/analytics-conversion-features-requirement.md)
+- [`build-cycle.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/_masemit/build-cycle.md)
+- [`event-tracking-requirement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/_masemit/event-tracking-requirement.md)
+- [`handoff-stripe-webhook-analytics.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/_masemit/handoff-stripe-webhook-analytics.md)
+- [`tech-spec-conversion-features-phase1.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/_masemit/tech-spec-conversion-features-phase1.md)
+
+**docs/**
+- [`api-contracts.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/api-contracts.md)
+- [`architecture.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/architecture.md)
+- [`data-models.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/data-models.md)
+- [`development-guide.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/development-guide.md)
+- [`index.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/index.md)
+- [`project-context.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/project-context.md)
+- [`project-overview.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/project-overview.md)
+- [`project-scan-report.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/project-scan-report.json)
+- [`source-tree-analysis.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/source-tree-analysis.md)
 
 ### tellingcube
 

@@ -1,0 +1,122 @@
+{
+  "workflow_version": "1.2.0",
+  "timestamps": {
+    "started": "2026-01-28T13:00:00Z",
+    "last_updated": "2026-01-28T14:30:00Z",
+    "completed": "2026-01-28T14:30:00Z"
+  },
+  "mode": "full_rescan",
+  "scan_level": "exhaustive",
+  "project_root": "C:\\Users\\mario\\Sources\\dev\\masemit-analytics",
+  "output_folder": "C:\\Users\\mario\\Sources\\dev\\masemit-analytics\\docs",
+  "company_context": "C:\\Users\\mario\\Sources\\dev\\masemit-common\\company-info.md",
+  "completed_steps": [
+    {
+      "step": "step_1-4",
+      "status": "completed",
+      "timestamp": "2026-01-28T13:30:00Z",
+      "summary": "Exhaustive scan of all source files"
+    },
+    {
+      "step": "step_5",
+      "status": "completed",
+      "timestamp": "2026-01-28T14:00:00Z",
+      "summary": "Source tree analysis updated with new components and API endpoints"
+    },
+    {
+      "step": "step_6",
+      "status": "completed",
+      "timestamp": "2026-01-28T14:10:00Z",
+      "summary": "Development guide updated with tracker.js integration"
+    },
+    {
+      "step": "step_8",
+      "status": "completed",
+      "timestamp": "2026-01-28T14:15:00Z",
+      "summary": "Architecture documentation updated to v0.2.0"
+    },
+    {
+      "step": "step_9",
+      "status": "completed",
+      "timestamp": "2026-01-28T14:20:00Z",
+      "summary": "API contracts, data models, project context updated"
+    },
+    {
+      "step": "step_11",
+      "status": "completed",
+      "timestamp": "2026-01-28T14:30:00Z",
+      "summary": "Validation complete, all documentation updated"
+    }
+  ],
+  "current_step": "completed",
+  "findings": {
+    "project_classification": "Monolith, 1 part, Next.js/TypeScript web app",
+    "existing_docs_count": 8,
+    "existing_docs": [
+      "index.md",
+      "project-context.md",
+      "architecture.md",
+      "api-contracts.md",
+      "data-models.md",
+      "source-tree-analysis.md",
+      "development-guide.md"
+    ],
+    "technology_stack": "Next.js 16.1.4 on TypeScript, NeonDB, Tailwind CSS",
+    "api_endpoints": 5,
+    "data_tables": 3,
+    "data_views": 1,
+    "components": 5
+  },
+  "project_types": [
+    {
+      "part_id": "main",
+      "project_type_id": "web",
+      "display_name": "Web Application"
+    }
+  ],
+  "project_structure": {
+    "repository_type": "monolith",
+    "name": "masemit-analytics",
+    "purpose": "Unified analytics dashboard for masemIT projects",
+    "primary_language": "TypeScript",
+    "framework": "Next.js 16.1.4",
+    "database": "NeonDB (PostgreSQL)",
+    "styling": "Tailwind CSS",
+    "hosting": "Vercel"
+  },
+  "changes_since_last_scan": [
+    "tracker.js self-hosted analytics tracker implemented (public/tracker.js)",
+    "/api/events endpoint for tracker.js (primary data source)",
+    "/api/projects/[id] endpoint for project management",
+    "Components folder: FilterBar, WorldMap, ProjectSettingsForm, RefreshButton",
+    "Settings page at /dashboard/settings",
+    "World map visualization with react-simple-maps + d3-scale",
+    "Vienna timezone for dashboard date filtering",
+    "Vercel Drains marked as legacy"
+  ],
+  "user_context": {
+    "current_status": "tracker.js migration complete, all 4 projects integrated",
+    "completed_features": [
+      "Self-hosted tracker.js",
+      "Country map visualization",
+      "Custom date range filtering",
+      "Project settings page"
+    ],
+    "planned_features": [
+      "Phase out Vercel Drains",
+      "Add dashboard authentication",
+      "Export data to CSV"
+    ]
+  },
+  "outputs_generated": [
+    "index.md",
+    "project-context.md",
+    "architecture.md",
+    "source-tree-analysis.md",
+    "development-guide.md",
+    "api-contracts.md",
+    "data-models.md",
+    "project-scan-report.json"
+  ],
+  "resume_instructions": "Workflow complete - exhaustive rescan finished"
+}
