@@ -1,0 +1,249 @@
+# Reusable workflow: Syncs specified folders from a source repo to masemit-context
+# Usage in source repos:
+#
+# name: Sync to Context
+# on:
+#   push:
+#     branches: [master, main]
+#     paths:
+#       - 'docs/**'
+#       - 'context/**'
+#
+# jobs:
+#   sync:
+#     uses: masem-at/masem-github-workflows/.github/workflows/sync-to-context.yml@main
+#     with:
+#       target_folder: projects/tellingcube
+#       source_folders: docs,context
+#     secrets:
+#       PAT: ${{ secrets.CONTEXT_REPO_PAT }}
+
+name: Sync to Context Repo
+
+on:
+  workflow_call:
+    inputs:
+      target_folder:
+        description: 'Target folder in masemit-context repo (e.g., projects/tellingcube)'
+        required: true
+        type: string
+      source_folders:
+        description: 'Comma-separated list of folders to sync (e.g., docs,context,specs)'
+        required: true
+        type: string
+      context_repo:
+        description: 'Context repository (default: masem-at/masemit-context)'
+        required: false
+        type: string
+        default: 'masem-at/masemit-context'
+      context_branch:
+        description: 'Branch in context repo (default: master)'
+        required: false
+        type: string
+        default: 'master'
+      file_patterns:
+        description: 'File patterns to include (default: *.md,*.txt,*.json,*.yaml,*.yml)'
+        required: false
+        type: string
+        default: '*.md,*.txt,*.json,*.yaml,*.yml'
+    secrets:
+      PAT:
+        description: 'Personal Access Token with repo access to context repo'
+        required: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v4
+        with:
+          path: source
+
+      - name: Checkout context repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ inputs.context_repo }}
+          token: ${{ secrets.PAT }}
+          path: context
+          ref: ${{ inputs.context_branch }}
+
+      - name: Sync files to context repo
+        run: |
+          set -e
+          
+          SOURCE_REPO="${{ github.repository }}"
+          TARGET_FOLDER="${{ inputs.target_folder }}"
+          SOURCE_FOLDERS="${{ inputs.source_folders }}"
+          FILE_PATTERNS="${{ inputs.file_patterns }}"
+          CONTEXT_BRANCH="${{ inputs.context_branch }}"
+          
+          echo "📦 Syncing from: $SOURCE_REPO"
+          echo "📁 Target folder: $TARGET_FOLDER"
+          echo "📂 Source folders: $SOURCE_FOLDERS"
+          echo "📄 File patterns: $FILE_PATTERNS"
+          
+          # Create target directory
+          mkdir -p "context/$TARGET_FOLDER"
+          
+          # Clear existing content in target folder (to handle deletions)
+          rm -rf "context/$TARGET_FOLDER"/*
+          
+          # Build find pattern for file types
+          FIND_PATTERN=""
+          IFS=',' read -ra PATTERNS <<< "$FILE_PATTERNS"
+          for i in "${!PATTERNS[@]}"; do
+            if [ $i -gt 0 ]; then
+              FIND_PATTERN="$FIND_PATTERN -o"
+            fi
+            FIND_PATTERN="$FIND_PATTERN -name \"${PATTERNS[$i]}\""
+          done
+          
+          # Process each source folder
+          IFS=',' read -ra FOLDERS <<< "$SOURCE_FOLDERS"
+          SYNCED_FILES=()
+          
+          for folder in "${FOLDERS[@]}"; do
+            folder=$(echo "$folder" | xargs)  # trim whitespace
+            
+            if [ -d "source/$folder" ]; then
+              echo "📂 Processing folder: $folder"
+              
+              # Find and copy matching files
+              while IFS= read -r -d '' file; do
+                # Get relative path from source folder
+                rel_path="${file#source/$folder/}"
+                target_path="context/$TARGET_FOLDER/$folder/$rel_path"
+                
+                # Create target directory and copy file
+                mkdir -p "$(dirname "$target_path")"
+                cp "$file" "$target_path"
+                
+                # Store for TOC
+                SYNCED_FILES+=("$TARGET_FOLDER/$folder/$rel_path")
+                echo "  ✓ $rel_path"
+              done < <(eval "find \"source/$folder\" -type f \( $FIND_PATTERN \) -print0" 2>/dev/null || true)
+            else
+              echo "⚠️  Folder not found: $folder (skipping)"
+            fi
+          done
+          
+          # Create/update source info file
+          cat > "context/$TARGET_FOLDER/.source-info.json" << EOF
+          {
+            "source_repo": "$SOURCE_REPO",
+            "source_folders": "$SOURCE_FOLDERS",
+            "synced_at": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+            "commit_sha": "${{ github.sha }}",
+            "commit_message": $(echo "${{ github.event.head_commit.message }}" | head -1 | jq -Rs .)
+          }
+          EOF
+          
+          echo ""
+          echo "✅ Synced ${#SYNCED_FILES[@]} files"
+
+      - name: Update Table of Contents
+        run: |
+          set -e
+          
+          CONTEXT_REPO="${{ inputs.context_repo }}"
+          CONTEXT_BRANCH="${{ inputs.context_branch }}"
+          TOC_FILE="context/TABLE_OF_CONTENTS.md"
+          
+          echo "📋 Generating Table of Contents..."
+          
+          # Start TOC file
+          cat > "$TOC_FILE" << 'EOF'
+          # masemit-context - Table of Contents
+
+          > Auto-generated index of all context files with raw URLs for AI agents.
+          > Last updated: TIMESTAMP
+
+          ## Quick Access
+
+          Use these raw URLs to fetch context directly:
+
+          ```
+          https://raw.githubusercontent.com/REPO/refs/heads/BRANCH/<path>
+          ```
+
+          ---
+
+          EOF
+          
+          # Replace placeholders
+          sed -i "s|TIMESTAMP|$(date -u +"%Y-%m-%d %H:%M:%S UTC")|g" "$TOC_FILE"
+          sed -i "s|REPO|$CONTEXT_REPO|g" "$TOC_FILE"
+          sed -i "s|BRANCH|$CONTEXT_BRANCH|g" "$TOC_FILE"
+          
+          BASE_URL="https://raw.githubusercontent.com/$CONTEXT_REPO/refs/heads/$CONTEXT_BRANCH"
+          
+          # Find all content directories (excluding hidden files and .git)
+          for dir in context/*/; do
+            [ -d "$dir" ] || continue
+            dir_name=$(basename "$dir")
+            [[ "$dir_name" == .* ]] && continue
+            
+            echo "## $dir_name" >> "$TOC_FILE"
+            echo "" >> "$TOC_FILE"
+            
+            # Check for source info
+            if [ -f "$dir/.source-info.json" ]; then
+              source_repo=$(jq -r '.source_repo' "$dir/.source-info.json")
+              synced_at=$(jq -r '.synced_at' "$dir/.source-info.json")
+              echo "> Source: \`$source_repo\` | Last sync: $synced_at" >> "$TOC_FILE"
+              echo "" >> "$TOC_FILE"
+            fi
+            
+            # List all files recursively
+            find "$dir" -type f \( -name "*.md" -o -name "*.txt" -o -name "*.json" -o -name "*.yaml" -o -name "*.yml" \) ! -name ".source-info.json" | sort | while read -r file; do
+              rel_path="${file#context/}"
+              filename=$(basename "$file")
+              indent_level=$(echo "$rel_path" | tr -cd '/' | wc -c)
+              indent=$(printf '  %.0s' $(seq 1 $indent_level))
+              
+              echo "${indent}- [\`$filename\`]($BASE_URL/$rel_path)" >> "$TOC_FILE"
+            done
+            
+            echo "" >> "$TOC_FILE"
+          done
+          
+          # Add footer
+          cat >> "$TOC_FILE" << 'EOF'
+          ---
+
+          ## Usage with Claude
+
+          Copy any raw URL above and paste it in your conversation. Claude can fetch the content directly.
+
+          Example:
+          ```
+          Hey Claude, please read this context: <paste-raw-url-here>
+          ```
+          EOF
+          
+          echo "✅ Table of Contents updated"
+
+      - name: Commit and push changes
+        run: |
+          cd context
+          
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add -A
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "ℹ️  No changes to commit"
+          else
+            git commit -m "🔄 Sync from ${{ github.repository }}
+
+          Source commit: ${{ github.sha }}
+          Trigger: ${{ github.event_name }}
+          
+          Files synced to: ${{ inputs.target_folder }}"
+            
+            git push
+            echo "✅ Changes pushed to context repo"
+          fi
