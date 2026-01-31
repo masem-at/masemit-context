@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-01-31 22:46:02 UTC
+> Last updated: 2026-01-31 23:24:46 UTC
 
 ## Quick Access
 
@@ -61,7 +61,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-01-31T22:46:02Z
+> Source: `masem-at/chainsights` | Last sync: 2026-01-31T23:24:46Z
 
 
 **docs/**
@@ -111,6 +111,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`product-brief-admin-dashboard-2026-01-22.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/analysis/product-brief-admin-dashboard-2026-01-22.md)
 - [`product-brief-chainsights-2025-12-15.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/analysis/product-brief-chainsights-2025-12-15.md)
 - [`product-brief-crypto-payments-donations-2026-01-19.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/analysis/product-brief-crypto-payments-donations-2026-01-19.md)
+- [`product-brief-magic-link-auth.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/analysis/product-brief-magic-link-auth.md)
 - [`product-brief-matrix-details-page.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/analysis/product-brief-matrix-details-page.md)
 
 **docs/analysis/research/**
@@ -128,6 +129,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`weekly-review-template.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/analytics/weekly-review-template.md)
 
 **docs/**
+- [`architecture-magic-link-auth.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/architecture-magic-link-auth.md)
 - [`architecture-matrix-details.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/architecture-matrix-details.md)
 - [`architecture-rankings.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/architecture-rankings.md)
 - [`architecture.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/architecture.md)
@@ -327,6 +329,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 **docs/stories/**
 - [`epic-hero-ab-test.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-hero-ab-test.md)
+- [`epic-magic-link-auth.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-magic-link-auth.md)
 - [`epic-matrix-details.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-matrix-details.md)
 - [`epic-matrix-server-auth.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-matrix-server-auth.md)
 - [`sprint-2026-01-30.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/sprint-2026-01-30.md)

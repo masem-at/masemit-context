@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-01-31T22:46:02Z",
-  "commit_sha": "f86a4aff24e9b52a4a2adb6279769dca0169f6f7",
-  "commit_message": "fix: hide GovernanceIndex + randomize Matrix for anon/free users\n"
+  "synced_at": "2026-01-31T23:24:46Z",
+  "commit_sha": "e5f4385fb93826bcf25362940ef1a87bfe2e39b1",
+  "commit_message": "docs: Magic Link Auth epic — 9 stories with detailed ACs\n"
 }
