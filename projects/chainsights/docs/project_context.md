@@ -58,8 +58,8 @@ _This file contains critical rules and patterns that AI agents must follow when 
 | Governance Audit (€149) | **IMPLEMENTED** | Phase 2 - historical trends, peer comparison, enhanced PDF all implemented |
 | Share & Save (€20 cashback) | **DISABLED** | Hide everywhere, do not delete code |
 | DAO Matrix (€19/mo) | **IMPLEMENTED** | Phase 2 - interactive table with subscription paywall, CTAs in header/hero/rankings |
-| Pricing Page | **NOT BUILT** | Static page with tier overview + checkout CTAs, no auth needed |
-| Stripe Customer Portal | **NOT BUILT** | Phase 1 auth: portal link in emails + `/account` fallback, no custom auth |
+| Pricing Page | **IMPLEMENTED** | `/pricing` with 3 tiers, analytics tracking, nav link in header |
+| Stripe Customer Portal | **IMPLEMENTED** | `/api/billing-portal` + portal link in delivery/recovery emails + `/account` fallback page |
 | Customer Account (Magic Link) | **NOT BUILT** | Phase 2 auth: email-based login, report history, dashboard |
 | API Access | **NOT BUILT** | Phase 3 - future |
 

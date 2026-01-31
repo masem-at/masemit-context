@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-01-31T03:59:30Z",
-  "commit_sha": "14c37bc0d4c11d164acf6c3d32a1f112b324ce91",
-  "commit_message": "project context\n"
+  "synced_at": "2026-01-31T06:12:33Z",
+  "commit_sha": "73ba2c3e61f8d40c2ae6de330f0425b52d606b75",
+  "commit_message": "docs: update feature flags for Pricing Page and Stripe Portal\n"
 }
