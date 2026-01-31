@@ -57,7 +57,10 @@ _This file contains critical rules and patterns that AI agents must follow when 
 | Deep Dive (€49) | **ENABLED** | Live, working |
 | Governance Audit (€149) | **IMPLEMENTED** | Phase 2 - historical trends, peer comparison, enhanced PDF all implemented |
 | Share & Save (€20 cashback) | **DISABLED** | Hide everywhere, do not delete code |
-| DAO Matrix (€19/mo) | **IMPLEMENTED** | Phase 2 - interactive table with subscription paywall |
+| DAO Matrix (€19/mo) | **IMPLEMENTED** | Phase 2 - interactive table with subscription paywall, CTAs in header/hero/rankings |
+| Pricing Page | **NOT BUILT** | Static page with tier overview + checkout CTAs, no auth needed |
+| Stripe Customer Portal | **NOT BUILT** | Phase 1 auth: portal link in emails + `/account` fallback, no custom auth |
+| Customer Account (Magic Link) | **NOT BUILT** | Phase 2 auth: email-based login, report history, dashboard |
 | API Access | **NOT BUILT** | Phase 3 - future |
 
 ---
@@ -140,6 +143,17 @@ Must reflect current tiers:
 | 2026-01-28 | Mandatory project_context.md | All 13 agents now load this file as Step 3 before any work |
 | 2026-01-28 | Governance Audit implementation | Historical trends, peer comparison, tier-aware AI prompts, enhanced PDF with executive summary |
 | 2026-01-28 | DAO Matrix implementation | Subscriptions table, Stripe subscription webhooks, /matrix page with paywall, CSV/JSON export |
+| 2026-01-29 | Mobile hamburger menu | Was completely missing — added Sheet slide-in with nav links + Free Check CTA |
+| 2026-01-29 | DAO Matrix CTAs across site | Header nav link with auto-expiring NEW badge (14 days), hero subtle link, rankings link between CTA and share buttons |
+| 2026-01-29 | Fix active nav link bug | Rankings was always highlighted — now uses `usePathname()` for correct active state |
+| 2026-01-29 | Matrix default sort GVS DESC | 3-state sort cycling (ASC → DESC → reset to GVS DESC), metric tooltips with (i) icons on column headers |
+| 2026-01-29 | Analytics CTAClickEventProps extended | `dao`/`score` now optional, added `button_name` field and `rankings` location |
+| 2026-01-29 | Hero CTA copy change | "Check Your DAO — Free" → "See Your DAO's Score — Free" for better conversion |
+| 2026-01-30 | Rankings daily update | GVS Snapshots already run daily; rankings should match. Consistent "daily" messaging across Matrix + Rankings |
+| 2026-01-30 | Auth Phase 1: Stripe Customer Portal via email | Minimal effort, no custom auth system. Portal link in confirmation email covers 90% of cases |
+| 2026-01-30 | Auth Phase 2: Magic Link + optional Wallet-Connect | Planned for account area with report history, dashboard. Wallet-Connect as additional login, not sole method |
+| 2026-01-30 | Pricing Page as static page | Independent of auth, can be built immediately. Static Server Component with tier CTAs |
+| 2026-01-30 | Portal link in confirmation emails | Stripe `billingPortal.sessions.create()` URL in report delivery email. `/account` page only as fallback |
 
 ---
 
@@ -447,7 +461,7 @@ npm run test:e2e          # E2E tests
 
 **Maintenance:**
 
-- Last Updated: 2026-01-28
+- Last Updated: 2026-01-30
 - Review frequency: Quarterly or after major tech stack changes
 - Target: <500 lines, focused on non-obvious critical rules
 

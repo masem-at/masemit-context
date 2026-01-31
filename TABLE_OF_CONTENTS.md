@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-01-30 19:59:03 UTC
+> Last updated: 2026-01-31 03:59:30 UTC
 
 ## Quick Access
 
@@ -61,13 +61,14 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-01-28T18:05:21Z
+> Source: `masem-at/chainsights` | Last sync: 2026-01-31T03:59:30Z
 
 
 **docs/**
 - [`DEPLOYMENT.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/DEPLOYMENT.md)
 
 **docs/_masemIT/**
+- [`02-chainsights-launch-posts-v2.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/02-chainsights-launch-posts-v2.md)
 - [`ChainSights_Branding_EN.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/ChainSights_Branding_EN.md)
 - [`ChainSights_Email_Templates.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/ChainSights_Email_Templates.md)
 - [`ChainSights_Governance_Report_Guide_EN.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/ChainSights_Governance_Report_Guide_EN.md)
@@ -315,6 +316,9 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/sprint-artifacts/sprint-status.yaml)
 - [`tech-spec-landing-page.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/sprint-artifacts/tech-spec-landing-page.md)
 - [`tech-spec-pipeline.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/sprint-artifacts/tech-spec-pipeline.md)
+
+**docs/stories/**
+- [`sprint-2026-01-30.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/sprint-2026-01-30.md)
 
 **docs/strategy/**
 - [`launch-plan.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/strategy/launch-plan.md)
