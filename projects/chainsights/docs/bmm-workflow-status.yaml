@@ -161,8 +161,39 @@ workflow_status:
         name: "Matrix Details Page (Implementation)"
         agent: "dev"
         command: "/bmad:bmm:agents:quick-flow-solo-dev"
+        status: "docs/stories/epic-matrix-details.md"
+        note: "8 stories (A-H) implemented. 12 files, 994 lines. Server-side chart gating, Recharts, ISR. COMPLETED 2026-01-31"
+
+      # Party Mode: Auth & DAO Matrix — 2026-01-31
+      - id: "bug-3-governance-index-hidden"
+        name: "BUG-3: Hide GovernanceIndex (unvalidated benchmarks)"
+        agent: "dev"
+        command: "/bmad:bmm:agents:quick-flow-solo-dev"
+        status: "docs/_masemIT/party-mode-auth-dao-matrix-2026-01-31.md"
+        note: "GovernanceIndex removed from detail pages. Stays hidden until DAO S&P Benchmark methodology defined. COMPLETED 2026-01-31"
+
+      - id: "matrix-random-sort"
+        name: "Matrix Random Sort (anon/free)"
+        agent: "dev"
+        command: "/bmad:bmm:agents:quick-flow-solo-dev"
+        status: "docs/_masemIT/party-mode-auth-dao-matrix-2026-01-31.md"
+        note: "Seeded shuffle for anon/free users (daily seed). Paid/admin see ranked order. COMPLETED 2026-01-31"
+
+      # Magic Link Auth — NEXT EPIC
+      - id: "magic-link-auth-brief"
+        name: "Magic Link Auth (Product Brief)"
+        agent: "pm"
+        command: "/bmad:bmm:workflows:create-product-brief"
         status: "required"
-        note: "Implement stories from epics."
+        note: "Requirements in docs/_masemIT/requirements/chainsights-bugs-auth-backlog.md Part 2. Resolves BUG-1 + BUG-2. 8 stories planned."
+
+      # DAO S&P Benchmark — BACKLOG
+      - id: "dao-sp-benchmark"
+        name: "DAO S&P Governance Benchmark"
+        agent: "analyst"
+        command: "/bmad:bmm:workflows:create-product-brief"
+        status: "required"
+        note: "BACKLOG. Blocked by benchmark methodology definition (Mario + Claude). See chainsights-bugs-auth-backlog.md Part 3."
 
 # Reference documentation
 reference_docs:

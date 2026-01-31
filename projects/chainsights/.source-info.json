@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-01-31T22:11:15Z",
-  "commit_sha": "97a57e19f3a5faffd97cd88c9f08ccd894d47195",
-  "commit_message": "feat: implement Matrix Details Page with tiered chart access\n"
+  "synced_at": "2026-01-31T22:46:02Z",
+  "commit_sha": "f86a4aff24e9b52a4a2adb6279769dca0169f6f7",
+  "commit_message": "fix: hide GovernanceIndex + randomize Matrix for anon/free users\n"
 }

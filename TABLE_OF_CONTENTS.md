@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-01-31 22:11:15 UTC
+> Last updated: 2026-01-31 22:46:02 UTC
 
 ## Quick Access
 
@@ -61,7 +61,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-01-31T22:11:15Z
+> Source: `masem-at/chainsights` | Last sync: 2026-01-31T22:46:02Z
 
 
 **docs/**
@@ -94,6 +94,12 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`handoff-stripe-webhook-analytics.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/handoff-stripe-webhook-analytics.md)
 - [`issue-metric-naming-consistency.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/issue-metric-naming-consistency.md)
 - [`leaderboard-model-clarification.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/leaderboard-model-clarification.md)
+- [`party-mode-auth-dao-matrix-2026-01-31.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/party-mode-auth-dao-matrix-2026-01-31.md)
+
+**docs/_masemIT/requirements/**
+- [`chainsights-bugs-auth-backlog.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/requirements/chainsights-bugs-auth-backlog.md)
+
+**docs/_masemIT/**
 - [`snapshot-api-docu.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/snapshot-api-docu.md)
 - [`weekly-job-result.txt`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/weekly-job-result.txt)
 
