@@ -133,7 +133,7 @@ workflow_status:
         agent: "dev"
         command: "/bmad:bmm:agents:quick-flow-solo-dev"
         status: "docs/stories/epic-hero-ab-test.md"
-        note: "4 stories (A-D). Cookie-based 50/50 split, Variant A (control) vs Variant B (exploration-first). PRD: docs/_masemIT/chainsights-hero-ab-test.md. READY 2026-01-31"
+        note: "4 stories (A-D). Cookie-based 50/50 split, Variant A (control) vs Variant B (exploration-first). PRD: docs/_masemIT/chainsights-hero-ab-test.md. COMPLETED 2026-01-31"
 
       # Matrix Details Page
       - id: "matrix-details-product-brief"
