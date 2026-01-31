@@ -114,6 +114,56 @@ workflow_status:
         status: "skipped"
         note: "Fast-tracked: Sprints managed via docs/stories/sprint-*.md files. All 15 epics implemented 2025-12 to 2026-01."
 
+  # Phase 4: Post-Launch Features (2026-01+)
+  - phase: 4
+    name: "Post-Launch Features"
+    workflows:
+      # Matrix Server-Side Auth — COMPLETED 2026-01-31
+      - id: "matrix-server-auth-epic"
+        name: "Matrix Server-Side Auth (Epic)"
+        agent: "dev"
+        command: "/bmad:bmm:agents:quick-flow-solo-dev"
+        status: "docs/stories/epic-matrix-server-auth.md"
+        note: "6 stories (A-F) implemented. Server-side row limiting, admin whitelist, export protection, donation tracking. COMPLETED 2026-01-31"
+
+      # Matrix Details Page — NEXT
+      # Hero A/B Test — READY FOR IMPLEMENTATION
+      - id: "hero-ab-test-epic"
+        name: "Hero A/B Test (Epic)"
+        agent: "dev"
+        command: "/bmad:bmm:agents:quick-flow-solo-dev"
+        status: "docs/stories/epic-hero-ab-test.md"
+        note: "4 stories (A-D). Cookie-based 50/50 split, Variant A (control) vs Variant B (exploration-first). PRD: docs/_masemIT/chainsights-hero-ab-test.md. READY 2026-01-31"
+
+      # Matrix Details Page
+      - id: "matrix-details-product-brief"
+        name: "Matrix Details Page (Product Brief)"
+        agent: "pm"
+        command: "/bmad:bmm:workflows:create-product-brief"
+        status: "docs/analysis/product-brief-matrix-details-page.md"
+        note: "5 charts per DAO, tiered access (anon=1, email=2, paid=5), DAO Governance Index benchmark, lead-gen funnel. COMPLETED 2026-01-31"
+
+      - id: "matrix-details-architecture"
+        name: "Matrix Details Page (Architecture)"
+        agent: "architect"
+        command: "/bmad:bmm:workflows:create-architecture"
+        status: "required"
+        note: "Reuses getMatrixAccess() from server-side auth. Needs chart architecture, data model, routing decisions."
+
+      - id: "matrix-details-epics"
+        name: "Matrix Details Page (Epics & Stories)"
+        agent: "pm"
+        command: "/bmad:bmm:workflows:create-epics-stories"
+        status: "required"
+        note: "Break down into implementable stories after architecture is defined."
+
+      - id: "matrix-details-implementation"
+        name: "Matrix Details Page (Implementation)"
+        agent: "dev"
+        command: "/bmad:bmm:agents:quick-flow-solo-dev"
+        status: "required"
+        note: "Implement stories from epics."
+
 # Reference documentation
 reference_docs:
   - path: "docs/_masemIT/ChainSights_Platform_EN.md"

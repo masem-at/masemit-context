@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-01-31 17:54:56 UTC
+> Last updated: 2026-01-31 21:33:46 UTC
 
 ## Quick Access
 
@@ -61,7 +61,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-01-31T17:54:56Z
+> Source: `masem-at/chainsights` | Last sync: 2026-01-31T21:33:46Z
 
 
 **docs/**
@@ -319,6 +319,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`tech-spec-pipeline.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/sprint-artifacts/tech-spec-pipeline.md)
 
 **docs/stories/**
+- [`epic-hero-ab-test.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-hero-ab-test.md)
 - [`epic-matrix-server-auth.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-matrix-server-auth.md)
 - [`sprint-2026-01-30.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/sprint-2026-01-30.md)
 
