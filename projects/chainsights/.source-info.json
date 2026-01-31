@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-01-31T06:12:33Z",
-  "commit_sha": "73ba2c3e61f8d40c2ae6de330f0425b52d606b75",
-  "commit_message": "docs: update feature flags for Pricing Page and Stripe Portal\n"
+  "synced_at": "2026-01-31T15:17:33Z",
+  "commit_sha": "8302bf2dfdb4a9c55419b92efc4a5666737a40ed",
+  "commit_message": "chore: mark skipped workflows in BMM status tracking\n"
 }

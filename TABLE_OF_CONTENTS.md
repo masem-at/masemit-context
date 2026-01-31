@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-01-31 06:12:33 UTC
+> Last updated: 2026-01-31 15:17:33 UTC
 
 ## Quick Access
 
@@ -61,7 +61,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-01-31T06:12:33Z
+> Source: `masem-at/chainsights` | Last sync: 2026-01-31T15:17:33Z
 
 
 **docs/**
@@ -105,6 +105,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`product-brief-admin-dashboard-2026-01-22.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/analysis/product-brief-admin-dashboard-2026-01-22.md)
 - [`product-brief-chainsights-2025-12-15.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/analysis/product-brief-chainsights-2025-12-15.md)
 - [`product-brief-crypto-payments-donations-2026-01-19.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/analysis/product-brief-crypto-payments-donations-2026-01-19.md)
+- [`product-brief-matrix-details-page.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/analysis/product-brief-matrix-details-page.md)
 
 **docs/analysis/research/**
 - [`market-web3-analytics-europe-research-2025-12-15.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/analysis/research/market-web3-analytics-europe-research-2025-12-15.md)
