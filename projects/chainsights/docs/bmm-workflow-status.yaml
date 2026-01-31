@@ -205,8 +205,8 @@ workflow_status:
         name: "Magic Link Auth (Implementation)"
         agent: "dev"
         command: "/bmad:bmm:agents:quick-flow-solo-dev"
-        status: "required"
-        note: "After Epics. Resolves BUG-1 (admin access) + BUG-2 (session persistence)."
+        status: "docs/stories/epic-magic-link-auth.md"
+        note: "9 stories (A-I) implemented. jose JWT, cs_session cookie, middleware session resolution, SignInModal, UserMenu, header integration. Resolves BUG-1 + BUG-2. COMPLETED 2026-02-01"
 
       # DAO S&P Benchmark — BACKLOG
       - id: "dao-sp-benchmark"
