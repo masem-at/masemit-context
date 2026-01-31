@@ -60,6 +60,7 @@ _This file contains critical rules and patterns that AI agents must follow when 
 | DAO Matrix (€19/mo) | **IMPLEMENTED** | Phase 2 - interactive table with subscription paywall, CTAs in header/hero/rankings |
 | Pricing Page | **IMPLEMENTED** | `/pricing` with 3 tiers, analytics tracking, nav link in header |
 | Stripe Customer Portal | **IMPLEMENTED** | `/api/billing-portal` + portal link in delivery/recovery emails + `/account` fallback page |
+| Matrix Server-Side Auth | **IMPLEMENTED** | Server-side row limiting, admin whitelist via `MATRIX_ADMIN_EMAILS` env |
 | Customer Account (Magic Link) | **NOT BUILT** | Phase 2 auth: email-based login, report history, dashboard |
 | API Access | **NOT BUILT** | Phase 3 - future |
 
@@ -154,6 +155,7 @@ Must reflect current tiers:
 | 2026-01-30 | Auth Phase 2: Magic Link + optional Wallet-Connect | Planned for account area with report history, dashboard. Wallet-Connect as additional login, not sole method |
 | 2026-01-30 | Pricing Page as static page | Independent of auth, can be built immediately. Static Server Component with tier CTAs |
 | 2026-01-30 | Portal link in confirmation emails | Stripe `billingPortal.sessions.create()` URL in report delivery email. `/account` page only as fallback |
+| 2026-01-31 | Matrix server-side auth | Server-side row limiting replaces client-side `?subscribed=true` bypass. Admin whitelist via `MATRIX_ADMIN_EMAILS` env. Access: anonymous=5, free=10, subscriber/admin=all |
 
 ---
 
