@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-01-31T21:47:48Z",
-  "commit_sha": "d5691a12eacdb57a5f12593539021e54af83d553",
-  "commit_message": "docs: mark Hero A/B Test epic as completed\n"
+  "synced_at": "2026-01-31T22:11:15Z",
+  "commit_sha": "97a57e19f3a5faffd97cd88c9f08ccd894d47195",
+  "commit_message": "feat: implement Matrix Details Page with tiered chart access\n"
 }
