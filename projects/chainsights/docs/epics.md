@@ -1588,8 +1588,8 @@ So that I'm not confused when I reach the checkout page.
 
 **Implementation Notes:**
 - Addresses UX-P0-2 (Critical pricing fix)
-- Decision needed from Mario on actual pricing structure
-- Default to €99 single tier if not specified
+- Pricing decision finalized: €49 Deep Dive, €149 Governance Audit (see project_context.md)
+- €99 legacy tier deprecated — NEVER display to users
 - Component: Update `src/components/ExpandableDAORow.tsx` CTA section
 
 ---

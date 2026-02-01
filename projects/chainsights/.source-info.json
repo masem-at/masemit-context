@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-01T18:26:31Z",
-  "commit_sha": "7a4f22243df8b7716de330a3d33108a89cdf8271",
-  "commit_message": "Merge branch 'develop' - Open-Universe Free Check\n"
+  "synced_at": "2026-02-01T18:50:25Z",
+  "commit_sha": "887fcbff6b3aa914a7bb7a73d6ac3201bae18a11",
+  "commit_message": "fix: update deprecated €99 reference in epics.md\n"
 }
