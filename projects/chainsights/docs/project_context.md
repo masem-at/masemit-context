@@ -64,6 +64,7 @@ _This file contains critical rules and patterns that AI agents must follow when 
 | Magic Link Authentication | **IMPLEMENTED** | Passwordless auth via `cs_session` JWT cookie (30 days). jose Edge-compatible. SignInModal, UserMenu in header. Resolves admin access + session persistence. |
 | DAO Prefill + Recovery Email | **IMPLEMENTED** | Checkout passes DAO data through Stripe metadata → success page prefill. Hourly cron sends recovery email for orphan orders (paid, no intake form, 30min–24h). |
 | /check Flow Page | **IMPLEMENTED** | Replaces modal chain with single-page progressive disclosure flow at `/check`. All CTAs redirect here. Modals deleted. |
+| Open-Universe Free Check | **IMPLEMENTED** | Free Check works with any valid Snapshot space (13,000+), not just tracked DAOs. Three-path lookup: daos table (instant) → reportedDaos cache 24h (instant) → on-the-fly GVS via ReadableStream/SSE. Confidence badges (low < 20 proposals, high >= 20). Rate limiting: 5/email/day for on-the-fly. Analytics events for all paths. |
 | API Access | **NOT BUILT** | Phase 3 - future |
 
 ---
@@ -165,6 +166,8 @@ Must reflect current tiers:
 | 2026-01-31 | Matrix random sort for anon/free | Seeded daily shuffle prevents lowest-scoring DAOs always appearing first |
 | 2026-02-01 | Magic Link Authentication | Passwordless auth: jose JWT, cs_session cookie (30d), middleware session resolution, SignInModal + UserMenu. Resolves BUG-1 (admin access) + BUG-2 (session persistence) |
 | 2026-02-01 | /check Flow Page Refactor | Replaced 4-5 chained modals with single `/check` page using progressive disclosure. All CTAs site-wide redirect to `/check`. Deleted report-selection-modal, QuickCheckEmailModal, QuickCheckResultsModal. Stripe Hosted Checkout kept for paid tiers (inline Payment Element deferred to backlog). |
+| 2026-02-01 | Open-Universe Free Check | Free Check works with any Snapshot space (13,000+). Three-path lookup in `/api/quick-check`: L3 daos table → L2 reportedDaos 24h cache → on-the-fly ReadableStream/SSE. Confidence: low (5-19 proposals), high (>=20), reject (<5). Rate limit: 5 on-the-fly/email/day. V2 async deferred (triggers: >100/wk, first timeout, p95 >25s). |
+| 2026-02-01 | Unified Admin Auth | Removed password-based admin auth (ADMIN_PASSWORD, chainsights_admin_session, Bearer token, sessionStorage). Single gate: cs_session JWT with role=admin. Middleware guard on /admin routes. Deleted /admin/login page + /api/admin/auth route. |
 
 ---
 

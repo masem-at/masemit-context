@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-01T20:21:27Z",
-  "commit_sha": "9f7a62a9e33a45c6d443595c68c0999f43b68fc5",
-  "commit_message": "feat: replace modal chain with /check flow page (progressive disclosure)\n"
+  "synced_at": "2026-02-01T22:24:21Z",
+  "commit_sha": "2edf3043af808021c9bae42aac9e1e56c87e163b",
+  "commit_message": "feat: add bulk DAO import script + DGI-50 CSV + update project context\n"
 }
