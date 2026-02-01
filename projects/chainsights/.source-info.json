@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-01T08:50:58Z",
-  "commit_sha": "dd2d1481f9ad302a43eff5d90326c83b89df9dc6",
-  "commit_message": "docs: update project_context + workflow status\n"
+  "synced_at": "2026-02-01T16:20:15Z",
+  "commit_sha": "27dd1b5eff27cf416234da406ecf6c54c3dc1c9b",
+  "commit_message": "feat: implement DAO Governance Index (DGI) — Epics 1-4\n"
 }
