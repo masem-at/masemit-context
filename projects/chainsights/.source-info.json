@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-01-31T23:41:25Z",
-  "commit_sha": "69098ca2342939adaaa9aab9159f069b137326d5",
-  "commit_message": "feat: implement Magic Link Authentication (Stories A-I)\n"
+  "synced_at": "2026-02-01T08:35:52Z",
+  "commit_sha": "8f4d53b722ca2fbf62c43afcf9f4eda33f63ff3a",
+  "commit_message": "docs: mark Magic Link Auth epic as COMPLETED\n"
 }
