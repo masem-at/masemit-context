@@ -63,7 +63,7 @@ Mario commits 3% of all revenue to [hoki.help](https://hoki.help) — a children
 - **Trade-off:** Two payment systems instead of one (accepted complexity)
 
 ### 2. Donation Tracking (3% to hoki.help)
-- **Amount:** 3% of revenue (not profit) — ~€3 per €99 report
+- **Amount:** 3% of revenue (not profit) — ~€1.47 per €49 report
 - **Tracking Method:**
   - Stripe: metadata (`donation_amount`, `project`)
   - Coinbase: webhook or dashboard export

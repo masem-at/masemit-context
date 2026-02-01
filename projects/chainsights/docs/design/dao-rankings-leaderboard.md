@@ -283,7 +283,7 @@ every quarter based on community feedback.
 ```
 You're probably right! Every DAO is unique, and quantitative
 metrics can miss important context. That's exactly why we
-offer detailed reports (€99) - they include qualitative
+offer detailed reports (€49) - they include qualitative
 analysis and nuance. The public ranking is a high-level
 snapshot. Want to do a deep-dive report? We'll tell your
 full story, not just a number.

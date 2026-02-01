@@ -72,7 +72,7 @@ This document provides the complete epic and story breakdown for the DAO Ranking
 **FR37-FR49: Customer Journey Management**
 - FR37: Users can view "Get Report" CTA in expanded DAO rows
 - FR38: Users can click CTA to navigate to report ordering flow
-- FR39: Users can see pricing information on CTA button (€99-199 range)
+- FR39: Users can see pricing information on CTA button (€49-149 range)
 - FR40: Users can distinguish between Featured Analysis (ChainSights-commissioned) and Customer Report badges
 - FR41: DAOs with Customer Reports can see "Customer Report" badge on leaderboard
 - FR42: DAOs can opt-in to public listing after purchasing report
@@ -326,11 +326,11 @@ This document provides the complete epic and story breakdown for the DAO Ranking
 **UX-P0-2: CTA Price Ambiguity**
 - Severity: Critical
 - Affected: FR71-FR73 (CTA & Conversion)
-- Problem: Expanded row shows "Get Full Report — €49" but PRD specifies €99-199 pricing
+- Problem: Expanded row shows "Get Full Report — €49" but PRD specifies €49-149 pricing
 - Fix Options:
-  - Option A: Single tier → "Get Full Report — €99 →"
-  - Option B: Tiered pricing → "See Report Options → from €99"
-  - Option C: Promotional → "Get Report — €49 Launch Special (reg. €99) →"
+  - Option A: Single tier → "Get Full Report — €49 →"
+  - Option B: Tiered pricing → "See Report Options → from €49"
+  - Option C: Promotional → "Get Report — €49 Launch Special (reg. €49) →"
 - Decision Needed: Mario to confirm actual pricing structure
 - Acceptance Criteria:
   - CTA price matches checkout page price
@@ -476,7 +476,7 @@ This document provides the complete epic and story breakdown for the DAO Ranking
 - FR25: Navigate using keyboard
 - FR26: Screen reader accessibility
 - UX-P0-1: Color-blind accessibility (texture patterns on score bars)
-- UX-P0-2: CTA price clarity (€99 vs €49 resolution)
+- UX-P0-2: CTA price clarity (€49 confirmed)
 
 **Epic 3: Methodology Transparency & Legal Foundation**
 - FR27: View methodology page explaining GVS calculation
@@ -511,7 +511,7 @@ This document provides the complete epic and story breakdown for the DAO Ranking
 **Epic 5: Report Ordering & Conversion Funnel**
 - FR37: View "Get Report" CTA in expanded rows
 - FR38: Click CTA to navigate to ordering flow
-- FR39: See pricing information on CTA (€99-199)
+- FR39: See pricing information on CTA (€49-149)
 - FR40: Distinguish Featured Analysis vs Customer Report badges
 - FR41: Customer Reports show badge on leaderboard
 - FR42: DAOs can opt-in to public listing after purchase
@@ -632,7 +632,7 @@ Implement the core GVS calculation engine with all 4 components: Human Participa
 **FRs Covered:** FR13-FR26, UX-P0-1, UX-P0-2 (16 requirements)
 
 **Epic Description:**
-Build the main leaderboard page at /rankings displaying ranked table with rank, DAO name, GVS score, score label (Vital/Stable/Concerning/Critical), category, and badge type. Implement color-coded score bars with texture patterns for color-blind accessibility (WCAG 2.1 Level AA). Add week-over-week change indicators with directional arrows (+/- deltas). Build filter by category (All/DeFi/Infrastructure/Public Goods) and sort by columns. Enable row expansion to show component breakdown (HPR, DEI, PDI, GPI). Display "last updated" timestamp. Ensure full keyboard navigation (tab through rows, enter to expand) and screen reader support (semantic HTML, ARIA labels). Implement responsive design for mobile (vertical scrolling) and desktop (full-width table). Fix CTA pricing ambiguity (confirm €99 vs €49). This is the MVP centerpiece - the primary user interface.
+Build the main leaderboard page at /rankings displaying ranked table with rank, DAO name, GVS score, score label (Vital/Stable/Concerning/Critical), category, and badge type. Implement color-coded score bars with texture patterns for color-blind accessibility (WCAG 2.1 Level AA). Add week-over-week change indicators with directional arrows (+/- deltas). Build filter by category (All/DeFi/Infrastructure/Public Goods) and sort by columns. Enable row expansion to show component breakdown (HPR, DEI, PDI, GPI). Display "last updated" timestamp. Ensure full keyboard navigation (tab through rows, enter to expand) and screen reader support (semantic HTML, ARIA labels). Implement responsive design for mobile (vertical scrolling) and desktop (full-width table). Fix CTA pricing ambiguity (confirm €49 pricing). This is the MVP centerpiece - the primary user interface.
 
 **Dependencies:** Epic 0 (Project Foundation), Epic 1 (GVS Engine - provides data)
 
@@ -683,7 +683,7 @@ Build opt-out form at /rankings/opt-out with fields for DAO name, contact email,
 **FRs Covered:** FR37-FR42, FR67-FR74 (16 requirements)
 
 **Epic Description:**
-Add "Get Report" CTA in expanded DAO rows with clear pricing (€99-199 confirmed). Implement CTA navigation to report ordering flow (manual fulfillment OK for MVP). Display badge system distinguishing Featured Analysis (ChainSights-commissioned) vs Customer Report (DAO-purchased with opt-in). Build social share buttons for Twitter/X and LinkedIn with pre-filled text. Generate Open Graph tags and Twitter Card tags for rich social media previews. Implement tracking for CTA click-through rates and social share button clicks. This epic creates the conversion funnel and viral loop that drives revenue and growth.
+Add "Get Report" CTA in expanded DAO rows with clear pricing (€49-149 confirmed). Implement CTA navigation to report ordering flow (manual fulfillment OK for MVP). Display badge system distinguishing Featured Analysis (ChainSights-commissioned) vs Customer Report (DAO-purchased with opt-in). Build social share buttons for Twitter/X and LinkedIn with pre-filled text. Generate Open Graph tags and Twitter Card tags for rich social media previews. Implement tracking for CTA click-through rates and social share button clicks. This epic creates the conversion funnel and viral loop that drives revenue and growth.
 
 **Dependencies:** Epic 0 (Project Foundation), Epic 2 (Leaderboard - adds CTAs to this)
 
@@ -1578,9 +1578,9 @@ So that I'm not confused when I reach the checkout page.
 **Given** the expanded DAO row displays the "Get Report" CTA
 **When** the CTA renders
 **Then** the button text accurately reflects the actual pricing structure:
-  - **Option A (Single Tier):** "Get Full Report — €99 →" if only one price exists
-  - **Option B (Tiered Pricing):** "See Report Options → from €99" if multiple tiers exist
-  - **Option C (Promotional):** "Get Report — €49 Launch Special (reg. €99) →" if promotional pricing
+  - **Option A (Single Tier):** "Get Full Report — €49 →" if only one price exists
+  - **Option B (Tiered Pricing):** "See Report Options → from €49" if multiple tiers exist
+  - **Option C (Promotional):** "Get Report — €49 Launch Special →" if promotional pricing
 **And** CTA price matches the price shown on the checkout/order page
 **And** no user confusion in user testing about pricing
 **And** conversion tracking shows no price-mismatch bounces

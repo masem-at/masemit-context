@@ -90,7 +90,7 @@ Softer B2B version: *"Real users. Real metrics. Real decisions."*
 > *"Submit your DAO. Get the truth."*
 >
 > Automated governance analysis report  
-> €99-199 one-time | Delivered in 24 hours
+> €49-149 one-time | Delivered in 24 hours
 
 ### What My Report Contains
 
@@ -120,7 +120,7 @@ Softer B2B version: *"Real users. Real metrics. Real decisions."*
 
 ### Why This Validates Everything
 
-- If people pay €99 for a report → they'll pay for a dashboard
+- If people pay €49 for a report → they'll pay for a dashboard
 - Sample reports = content marketing = presence building
 - Each report = learning about real DAO pain points
 - No dashboard UI needed
@@ -138,7 +138,7 @@ Softer B2B version: *"Real users. Real metrics. Real decisions."*
 | No good governance analytics | Major gap in my research |
 | MiCA regulation coming | Compliance = budget |
 | Whale voting = known pain point | Problem is acknowledged |
-| Treasury = money to spend | Can afford €99-199 |
+| Treasury = money to spend | Can afford €49-149 |
 
 ### Secondary (later)
 
@@ -165,7 +165,7 @@ DApp teams needing funnel analytics
 | Milestone | Indicator |
 |-----------|-----------|
 | Technical validation | I can fetch + analyze + generate report for 3 different DAOs |
-| Market validation | 5 strangers pay €99+ for a report |
+| Market validation | 5 strangers pay €49+ for a report |
 | Positioning validation | "Wallets lie" content gets engagement (shares, replies, follows) |
 | Network validation | 10+ genuine Web3 connections made through my presence |
 
@@ -260,7 +260,7 @@ DApp teams needing funnel analytics
 ## Open Questions (For Later)
 
 1. Which DAO to use for first sample report?
-2. Exact pricing: €99 or €149 or €199?
+2. Exact pricing: €49 (Deep Dive) / €149 (Governance Audit) — confirmed
 3. Report delivery: email only or also downloadable portal?
 4. Payment processing: Stripe? Crypto?
 5. Build in public or stealth until first customer?

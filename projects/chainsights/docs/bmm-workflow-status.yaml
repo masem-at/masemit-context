@@ -44,7 +44,7 @@ workflow_status:
         agent: "analyst"
         command: "/bmad:bmm:workflows:create-product-brief"
         status: "docs/analysis/product-brief-chainsights-2025-12-15.md"
-        note: "Identity-first analytics, Elena persona, €99-199 reports, 10-report validation - COMPLETED 2025-12-15"
+        note: "Identity-first analytics, Elena persona, €49-149 reports, 10-report validation - COMPLETED 2025-12-15"
 
   # Phase 1: Planning
   - phase: 1

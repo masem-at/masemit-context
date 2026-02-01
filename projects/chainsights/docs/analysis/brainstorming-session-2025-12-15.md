@@ -94,7 +94,7 @@ Mario synthesized all insights into a comprehensive strategic document:
 
 This document contains:
 - Complete product philosophy
-- Bridge product concept (€99-199 Governance Reports)
+- Bridge product concept (€49-149 Governance Reports)
 - Go/No-Go criteria for platform development
 - Presence building plan
 - Technical stack decisions
@@ -110,7 +110,7 @@ The realization that the tellingCube pattern (user input → AI analysis → gen
 | AI generates business data | AI analyzes on-chain data |
 | Consistent, useful output | Governance truth report |
 
-**Validation before code.** If people pay €99 for a report, they'll pay for a dashboard.
+**Validation before code.** If people pay €49 for a report, they'll pay for a dashboard.
 
 ---
 

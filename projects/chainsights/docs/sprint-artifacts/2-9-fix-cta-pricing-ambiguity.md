@@ -23,9 +23,9 @@
 **Given** the expanded DAO row displays the "Get Report" CTA
 **When** the CTA renders
 **Then** the button text accurately reflects the actual pricing structure:
-  - **Option A (Single Tier):** "Get Full Report — €99 →" if only one price exists
-  - **Option B (Tiered Pricing):** "See Report Options → from €99" if multiple tiers exist
-  - **Option C (Promotional):** "Get Report — €49 Launch Special (reg. €99) →" if promotional pricing
+  - **Option A (Single Tier):** "Get Full Report — €49 →" if only one price exists
+  - **Option B (Tiered Pricing):** "See Report Options → from €49" if multiple tiers exist
+  - **Option C (Promotional):** "Get Report — €49 Launch Special (reg. €49) →" if promotional pricing
 **And** CTA price matches the price shown on the checkout/order page
 **And** no user confusion in user testing about pricing
 **And** conversion tracking shows no price-mismatch bounces
@@ -34,7 +34,7 @@
 **Implementation Notes (from Epic):**
 - Addresses UX-P0-2 (Critical pricing fix)
 - Decision needed from Mario on actual pricing structure
-- Default to €99 single tier if not specified
+- Default to €49 single tier if not specified
 - Component: Update `src/components/ExpandableDAORow.tsx` CTA section
 
 ---
@@ -46,26 +46,26 @@
 **Current CTA Locations:**
 1. **`ExpandableDAORow.tsx` (line 317):** "Get Report" - NO pricing shown
 2. **`MobileDAOCard.tsx` (line 259):** "Get Report" - NO pricing shown
-3. **`header.tsx` (line 43):** "Get Report — €99" - Shows pricing but links to pricing section
-4. **`pricing.tsx` (lines 81, 148):** Shows €99 (Standard) and €199 (Deep Dive)
+3. **`header.tsx` (line 43):** "Get Report — €49" - Shows pricing but links to pricing section
+4. **`pricing.tsx` (lines 81, 148):** Shows €49 (Deep Dive) and €149 (Governance Audit)
 5. **`hero.tsx` (line 54):** "Get Report" - NO pricing shown
 
 **Problem Identified:**
 - Leaderboard CTAs ("Get Report") link to `/quiz?dao={slug}` - user doesn't see pricing
-- Header CTA shows €99 but only scrolls to pricing section
-- Mismatch: Users expect €99 from header but leaderboard doesn't confirm
-- Two pricing tiers exist (€99, €199) but leaderboard CTA is ambiguous
+- Header CTA shows €49 but only scrolls to pricing section
+- Mismatch: Users expect €49 from header but leaderboard doesn't confirm
+- Two pricing tiers exist (€49, €149) but leaderboard CTA is ambiguous
 
 **Current Pricing Structure (from `pricing.tsx`):**
-- **Standard:** €99 (one-time) - Recent governance snapshot
-- **Deep Dive:** €199 (one-time) - Complete historical analysis
+- **Deep Dive:** €49 (one-time) - Recent governance snapshot
+- **Governance Audit:** €149 (one-time) - Complete historical analysis
 
 **User Flow Gap:**
-1. User sees "Get Report — €99" in header
+1. User sees "Get Report — €49" in header
 2. User expands DAO row → sees "Get Report" (no price)
 3. User clicks → goes to quiz/order flow
-4. User sees pricing options (€99 or €199)
-5. **CONFUSION:** "Wait, I thought it was €99?"
+4. User sees pricing options (€49 or €149)
+5. **CONFUSION:** "Wait, I thought it was €49?"
 
 ---
 
@@ -89,7 +89,7 @@
 ### Architectural Considerations
 
 **Option A: Hardcoded Single Tier (Simplest)**
-- Change button text to "Get Report — from €99 →"
+- Change button text to "Get Report — from €49 →"
 - Pros: Simple, matches header
 - Cons: Requires code change for price updates
 
@@ -208,7 +208,7 @@ Update CTA button text with pricing.
 
 **Changes:**
 - Import `PRICING_CONFIG`
-- Update button text from "Get Report" to "See Report Options — from €99"
+- Update button text from "Get Report" to "See Report Options — from €49"
 - Keep href as `/quiz?dao=${ranking.slug}`
 
 ---
@@ -219,7 +219,7 @@ Mirror ExpandableDAORow changes.
 
 **Changes:**
 - Import `PRICING_CONFIG`
-- Update button text from "Get Report" to "See Report Options — from €99"
+- Update button text from "Get Report" to "See Report Options — from €49"
 - Ensure touch target size remains ≥48px
 
 ---
@@ -230,7 +230,7 @@ Update header CTA to use config.
 
 **Changes:**
 - Import `PRICING_CONFIG`
-- Change "Get Report — €99" to use `PRICING_CONFIG.displayText`
+- Change "Get Report — €49" to use `PRICING_CONFIG.displayText`
 
 ---
 
@@ -252,8 +252,8 @@ Document new environment variables.
 **Add:**
 ```
 # Pricing Configuration
-NEXT_PUBLIC_STANDARD_PRICE=99
-NEXT_PUBLIC_DEEP_DIVE_PRICE=199
+NEXT_PUBLIC_DEEP_DIVE_PRICE=49
+NEXT_PUBLIC_GOVERNANCE_AUDIT_PRICE=149
 ```
 
 ---
@@ -293,17 +293,17 @@ Add tests for CTA text rendering:
 
 | Variable | Type | Default | Purpose |
 |----------|------|---------|---------|
-| `NEXT_PUBLIC_STANDARD_PRICE` | number | 99 | Standard tier price |
-| `NEXT_PUBLIC_DEEP_DIVE_PRICE` | number | 199 | Deep Dive tier price |
+| `NEXT_PUBLIC_DEEP_DIVE_PRICE` | number | 49 | Deep Dive tier price |
+| `NEXT_PUBLIC_GOVERNANCE_AUDIT_PRICE` | number | 149 | Governance Audit tier price |
 
 ### Component Updates Summary
 
 | Component | Current CTA | New CTA |
 |-----------|-------------|---------|
-| ExpandableDAORow | "Get Report" | "See Report Options — from €99" |
-| MobileDAOCard | "Get Report" | "See Report Options — from €99" |
-| header.tsx | "Get Report — €99" | "Get Report — from €99" |
-| hero.tsx | "Get Report" | "Get Report — from €99" |
+| ExpandableDAORow | "Get Report" | "See Report Options — from €49" |
+| MobileDAOCard | "Get Report" | "See Report Options — from €49" |
+| header.tsx | "Get Report — €49" | "Get Report — from €49" |
+| hero.tsx | "Get Report" | "Get Report — from €49" |
 
 ---
 
@@ -325,10 +325,10 @@ Add tests for CTA text rendering:
 ### Manual Testing Checklist
 
 **Visual Consistency:**
-- [ ] Header CTA shows "from €99"
-- [ ] Hero CTA shows "from €99"
-- [ ] Expanded DAO row CTA shows "from €99"
-- [ ] Mobile card CTA shows "from €99"
+- [ ] Header CTA shows "from €49"
+- [ ] Hero CTA shows "from €49"
+- [ ] Expanded DAO row CTA shows "from €49"
+- [ ] Mobile card CTA shows "from €49"
 - [ ] Pricing page still shows correct tier prices
 
 **User Flow:**
@@ -428,10 +428,10 @@ claude-opus-4-5-20251101
 ## Definition of Done
 
 - [ ] Pricing configuration module created and tested
-- [ ] ExpandableDAORow CTA shows "See Report Options — from €99"
-- [ ] MobileDAOCard CTA shows "See Report Options — from €99"
-- [ ] Header CTA shows "Get Report — from €99"
-- [ ] Hero CTA shows "Get Report — from €99"
+- [ ] ExpandableDAORow CTA shows "See Report Options — from €49"
+- [ ] MobileDAOCard CTA shows "See Report Options — from €49"
+- [ ] Header CTA shows "Get Report — from €49"
+- [ ] Hero CTA shows "Get Report — from €49"
 - [ ] All CTA prices match pricing page
 - [ ] Unit tests pass for pricing config
 - [ ] Component tests updated for new CTA text
@@ -447,11 +447,11 @@ claude-opus-4-5-20251101
 ### Question 1: CTA Button Text Style
 
 **Options:**
-1. "See Report Options — from €99" (emphasizes multiple options)
-2. "Get Report — from €99" (consistent with header)
-3. "View Pricing — from €99" (most explicit)
+1. "See Report Options — from €49" (emphasizes multiple options)
+2. "Get Report — from €49" (consistent with header)
+3. "View Pricing — from €49" (most explicit)
 
-**Recommendation:** Option 2 - "Get Report — from €99"
+**Recommendation:** Option 2 - "Get Report — from €49"
 - Matches existing header language
 - "from" indicates there are options
 - More action-oriented than "View Pricing"

@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-01T18:50:25Z",
-  "commit_sha": "887fcbff6b3aa914a7bb7a73d6ac3201bae18a11",
-  "commit_message": "fix: update deprecated €99 reference in epics.md\n"
+  "synced_at": "2026-02-01T19:23:42Z",
+  "commit_sha": "75072dd124229b0b38f491d000066d59ef62d8d2",
+  "commit_message": "fix: replace all deprecated €99/€199 pricing with €49/€149\n"
 }

@@ -9,27 +9,27 @@
 
 ### 📋 To John (PM) — Pricing Psychology
 
-**His Question:** "What's your answer to the pricing psychology question? Why €99-199 and not €49 or €299?"
+**His Question:** "What's your answer to the pricing psychology question? Why €49-149 and not €29 or €299?"
 
 ---
 
 **Why not €49:**
 
-- Too cheap signals "automated garbage." If I'm promising truth about your governance, €49 says "we ran a script."
-- Also: if I can't sell at €99, I won't sell at €49 either. Price isn't the real objection — trust is.
+- Too cheap signals "automated garbage." If I'm promising truth about your governance, a very low price says "we ran a script."
+- Price isn't the real objection — trust is.
 
 **Why not €299:**
 
 - I have zero brand recognition. No case studies. No testimonials. €299 requires trust I haven't earned yet.
-- €99 is an "let's see what this guy delivers" bet. €299 is a procurement decision.
+- €49 is an "let's see what this guy delivers" bet. €299 is a procurement decision.
 
 **The real answer:**
 
-- €99 is my validation price. If 5 strangers pay €99, I know the value prop works.
-- €199 is for "I want the full analysis" — maybe more chains, more depth, or faster delivery.
+- €49 is my validation price. If 5 strangers pay €49, I know the value prop works.
+- €149 is for "I want the full analysis" — maybe more chains, more depth, or faster delivery.
 - Once I have 10+ reports and testimonials? Then I can test €299.
 
-And honestly? A DAO treasury with €100K+ won't blink at €99. That's a rounding error. The question isn't "can they afford it" — it's "do they believe it's valuable." Pricing signals confidence, and €99 says "I'm serious, but I'm not arrogant."
+And honestly? A DAO treasury with €100K+ won't blink at €49. That's a rounding error. The question isn't "can they afford it" — it's "do they believe it's valuable." Pricing signals confidence, and €49 says "I'm serious, but I'm not arrogant."
 
 ---
 
@@ -63,7 +63,7 @@ Manual (me):
 
 **The scalability question:**
 
-- At €99/report with 30-60 min of my review time? I'm making €100-200/hour. That's fine.
+- At €49/report with 30-60 min of my review time? I'm making €50-100/hour. That's fine.
 - I don't need scale yet. I need *learning*.
 - Once I've done 20-30 reports, I'll know: what always needs manual review vs. what can be fully automated
 
@@ -114,7 +114,7 @@ If a DAO publishes my report publicly because they value the honesty? That's my 
 
 | Topic | Decision | Rationale |
 |-------|----------|-----------|
-| **Pricing** | €99 (validation) / €199 (premium) | Low enough to try, high enough to signal quality |
+| **Pricing** | €49 (Deep Dive) / €149 (Governance Audit) | Low enough to try, high enough to signal quality |
 | **Automation** | Semi-automated with manual review | Learning > scale at this stage |
 | **Emotional Design** | Diagnosis, not judgment | Empowerment over shame drives action |
 

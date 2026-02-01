@@ -34,7 +34,7 @@ Offer customers €20 cashback when they share their ChainSights report experien
 
 ```
 Flow:
-1. Elena purchases report for €99
+1. Elena purchases report for €49
 2. Elena receives report with "Share & Save" offer on last page
 3. Elena receives follow-up email 24h later (reminder)
 4. Elena tweets about her experience (honest, in her own words)
@@ -267,7 +267,7 @@ Customer Journey with Share & Save:
 ┌─────────┐     ┌─────────┐     ┌─────────┐     ┌─────────┐
 │  Buy    │ ──► │ Receive │ ──► │ Share   │ ──► │ Their   │
 │ Report  │     │ Report  │     │ (honest)│     │ Network │
-│  €99    │     │ +Offer  │     │ +€20    │     │  Sees   │
+│  €49    │     │ +Offer  │     │ +€10    │     │  Sees   │
 └─────────┘     └─────────┘     └─────────┘     └─────────┘
                                                      │
                      ┌───────────────────────────────┘

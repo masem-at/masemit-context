@@ -46,7 +46,7 @@ A public leaderboard that transforms governance assessment into an engaging, vir
 Static scores are boring. Change indicators (+/-) generate narrative, FOMO, and social sharing. DAOs share improvements, communities tag underperformers, and rank changes become Twitter threads.
 
 **2. Controversy as Growth Engine**
-Lower-ranked DAOs will dispute rankings - that's a feature, not a bug. Criticism converts to sales ("Get the full story with our €99 detailed report") and generates organic reach. Our 5-layer defense strategy (transparency, nuance, empathy, legal protection, response playbook) ensures constructive outcomes.
+Lower-ranked DAOs will dispute rankings - that's a feature, not a bug. Criticism converts to sales ("Get the full story with our €49 detailed report") and generates organic reach. Our 5-layer defense strategy (transparency, nuance, empathy, legal protection, response playbook) ensures constructive outcomes.
 
 **3. Hybrid Monetization Model**
 Free if you opt-in to public listing, paid for private detailed reports. This maximizes both lead generation AND revenue while turning potential friction into opportunity.
@@ -114,7 +114,7 @@ Framed as a "governance health check" and ecosystem improvement tool, not a comp
 
 **Month 1 Success Indicators:**
 - 15-20 total DAOs on leaderboard (mix of Featured + Customer Reports)
-- 10+ customer reports sold (€99-199 each)
+- 10+ customer reports sold (€49-149 each)
 - 60%+ customer opt-in rate for public listing
 - 20%+ marketing opt-in rate on free score lookups
 - 5+ paid report purchases directly attributed to leaderboard traffic
@@ -322,7 +322,7 @@ Marcus leads governance operations for a mid-sized DeFi protocol. He knows voter
 
 Marcus visits the leaderboard, sees his DAO scored 52/100, and feels defensive. But as he reads the methodology and component breakdown, he realizes the assessment is fair: participation is down to 12% (score: 35), delegate engagement is weak (score: 48), and small holders aren't participating (score: 40). The data doesn't lie.
 
-Instead of opting out, Marcus presents the ChainSights analysis to the core team. They commission a full €99 report to get detailed recommendations. The report reveals that their governance UI is confusing and delegates aren't getting notifications. Six months later, after implementing changes, their score improves to 67/100. Marcus emails ChainSights: "Thanks for the wake-up call. We needed this."
+Instead of opting out, Marcus presents the ChainSights analysis to the core team. They commission a full €49 report to get detailed recommendations. The report reveals that their governance UI is confusing and delegates aren't getting notifications. Six months later, after implementing changes, their score improves to 67/100. Marcus emails ChainSights: "Thanks for the wake-up call. We needed this."
 
 **This journey reveals requirements for:**
 - Constructive framing (criticism → improvement opportunity)
@@ -371,9 +371,9 @@ An hour later, he receives an email: "Please remove our DAO from your leaderboar
 
 ### Journey 5: Priya Customer - Commissioning a Report
 
-Priya is the governance lead for a new L2 DAO. She sees competitors ranked on ChainSights and wonders where her DAO would stand. She clicks "Get Scored → €99" and fills out the order form. There's a checkbox: "☑️ List my DAO on the ChainSights Leaderboard (optional free visibility)."
+Priya is the governance lead for a new L2 DAO. She sees competitors ranked on ChainSights and wonders where her DAO would stand. She clicks "Get Scored → €49" and fills out the order form. There's a checkbox: "☑️ List my DAO on the ChainSights Leaderboard (optional free visibility)."
 
-Priya hesitates - what if the score is bad? But she reads: "You can request removal anytime" and checks the box. She pays €99 via Stripe.
+Priya hesitates - what if the score is bad? But she reads: "You can request removal anytime" and checks the box. She pays €49 via Stripe.
 
 Three days later, she receives a comprehensive PDF report: GVS score 68 (Stable), with detailed component breakdowns, benchmarking against similar L2 DAOs, and specific recommendations (e.g., "Consider implementing delegate incentives - your DEI score of 55 could improve to 70+").
 
@@ -399,7 +399,7 @@ Maya (ChainSights marketing) sees the tweet and responds within 2 hours using th
 
 David calms down and actually reads the methodology page. He realizes the low score is because their delegate system isn't on-chain and ChainSights couldn't detect it. He replies: "Fair point - our governance is mostly off-chain. Can you handle that in future versions?"
 
-Maya responds: "Great feedback! We're tracking requests for hybrid on-chain/off-chain support. Want to get a detailed report to tell your full story? €99 includes qualitative analysis." David doesn't buy immediately, but he stops criticizing and adds ChainSights to his watchlist. Three months later, when they improve on-chain governance, he commissions a report.
+Maya responds: "Great feedback! We're tracking requests for hybrid on-chain/off-chain support. Want to get a detailed report to tell your full story? €49 includes qualitative analysis." David doesn't buy immediately, but he stops criticizing and adds ChainSights to his watchlist. Three months later, when they improve on-chain governance, he commissions a report.
 
 **This journey reveals requirements for:**
 - Social media monitoring (track mentions of @ChainSights)
@@ -431,7 +431,7 @@ These journeys reveal the following capability areas needed for the DAO Rankings
 - Confidence indicators (High/Medium/Low data quality)
 
 **Customer Journey:**
-- "Get Scored" CTA with clear pricing (€99-199)
+- "Get Scored" CTA with clear pricing (€49-149)
 - Order form with DAO info, email, payment
 - Leaderboard opt-in checkbox with consent language
 - Stripe payment integration
@@ -508,7 +508,7 @@ ChainSights deliberately **embraces controversy** as a product strategy, not a r
 
 **Novel Positioning:**
 - **5-Layer Defense Strategy:** Transparency, Nuance, Empathy, Legal Protection, Response Playbook
-- **Criticism → Sales Pipeline:** "Your score is wrong!" → "Get the full story with our detailed report (€99)"
+- **Criticism → Sales Pipeline:** "Your score is wrong!" → "Get the full story with our detailed report (€49)"
 - **Opt-Out as Trust Signal:** Easy removal (24-hour guarantee) prevents hostage perception
 - **Constructive Framing:** "Governance health check," not "DAO competition"
 
@@ -533,7 +533,7 @@ ChainSights combines **public visibility** with **opt-in listing**, creating a u
 - Free visibility incentivizes opt-in (60-70% target rate)
 
 **Paid Tier:**
-- Detailed GVS reports (€99-199) with component breakdowns
+- Detailed GVS reports (€49-149) with component breakdowns
 - Historical tracking and benchmarking
 - Actionable recommendations
 

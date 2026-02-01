@@ -25,7 +25,7 @@ party_mode_insights: true
 
 **ChainSights** is an identity-first Web3 analytics platform that tells the truth about who's actually participating in blockchain ecosystems.
 
-While existing tools count wallets, ChainSights counts *people* — exposing the gap between reported metrics and reality. Our first product is automated governance reports for DAOs, delivered as one-time purchases (€99-199) to validate demand before building a full platform.
+While existing tools count wallets, ChainSights counts *people* — exposing the gap between reported metrics and reality. Our first product is automated governance reports for DAOs, delivered as one-time purchases (€49-149) to validate demand before building a full platform.
 
 **Core Philosophy:** "Wallets lie. We don't."
 
@@ -33,7 +33,7 @@ While existing tools count wallets, ChainSights counts *people* — exposing the
 
 **Target Market:** DAOs needing governance truth, with expansion to DApp funnel analytics.
 
-**Bridge Product:** Automated Governance Truth Reports (€99-199, semi-automated with manual quality review)
+**Bridge Product:** Automated Governance Truth Reports (€49-149, semi-automated with manual quality review)
 
 **Founder Fit:** Built in Austria by a founder who understands European business compliance (insurance industry background), positioned authentically for MiCA-era Web3.
 
@@ -105,7 +105,7 @@ The entire industry is built on a lie of convenience. Wallet counts are easy to 
 | **Identity-first philosophy** | Every metric is identity-aware by default. Not a feature — a worldview. |
 | **"Wallets lie. We don't."** | Memorable, provocative, true. Category-defining positioning. |
 | **Diagnosis, not judgment** | Report emotional arc: Curiosity → Uncomfortable clarity → Normalization → Empowerment → Gratitude. Trusted advisor, not auditor. |
-| **Report-first, not dashboard-first** | Lower barrier (€99 one-time vs. subscription). Validates demand before building. Learning > scale. |
+| **Report-first, not dashboard-first** | Lower barrier (€49 one-time vs. subscription). Validates demand before building. Learning > scale. |
 | **Built in EU, for EU** | Austrian founder with compliance background. Authentic MiCA positioning, not marketing speak. |
 
 ### Why Now
@@ -129,7 +129,7 @@ The entire industry is built on a lie of convenience. Wallet counts are easy to 
 
 | Decision | Rationale |
 |----------|-----------|
-| **Pricing: €99 (validation) / €199 (premium)** | Low enough to try, high enough to signal quality. "If I can't sell at €99, I won't sell at €49 either. Trust is the objection, not price." |
+| **Pricing: €49 (Deep Dive) / €149 (Governance Audit)** | Low enough to try, high enough to signal quality. Trust is the objection, not price. |
 | **Automation: Semi-automated with manual review** | Learning > scale at this stage. Document every manual fix — patterns become automation roadmap. |
 | **Emotional Design: Diagnosis arc** | Empowerment over shame drives action. Goal: "We're sharing this with our community because transparency matters." |
 
@@ -164,8 +164,8 @@ She's preparing for a community AMA where she knows the "centralization" questio
 
 **Why She's the Ideal Buyer:**
 - Elena is both **buyer AND user** — she has discretionary budget authority
-- If a DAO requires a governance proposal for €99, that DAO is too decentralized for MVP sales cycle
-- €99 is a "rounding error" in a €100K+ treasury — the question isn't "can she afford it" but "does she believe it's valuable"
+- If a DAO requires a governance proposal for €49, that DAO is too decentralized for MVP sales cycle
+- €49 is a "rounding error" in a €100K+ treasury — the question isn't "can she afford it" but "does she believe it's valuable"
 
 ### Primary Segment: Protocol DAOs (DeFi)
 
@@ -205,7 +205,7 @@ Watch for these personas in actual sales — don't design for them yet:
 |-------|-------------------|----------------|
 | **Awareness** | Twitter criticism → Googles "DAO governance analysis" | Finds ChainSights |
 | **Consideration** | Sees sample report sections, "Wallets lie" positioning | "This is exactly what I need" |
-| **Purchase** | €99 via Stripe (expenses it) or USDC | Frictionless checkout |
+| **Purchase** | €49 via Stripe (expenses it) or USDC | Frictionless checkout |
 | **Delivery** | Report arrives within 24 hours | Professional quality surprises her |
 | **Consumption** | Opens with anxiety → Reads with relief or awakening | Feels proud she ordered it |
 | **Outcome** | Uses in community call, shares publicly | Earns respect for transparency |
@@ -225,8 +225,8 @@ Watch for these personas in actual sales — don't design for them yet:
 | **Tiny DAOs (5-20)** | They know each other personally. No identity mystery to solve. |
 | **Enterprise DAOs (1000+)** | Sales cycle too long, need procurement process. Later market. |
 | **Non-governance use cases** | NFT trading, DeFi yield tracking — not MVP focus. |
-| **Price shoppers** | If €99 feels expensive, trust is the real objection. Can't solve with discounts. |
-| **DAOs requiring proposal for €99** | Too decentralized for MVP sales cycle. Come back when they have discretionary budgets. |
+| **Price shoppers** | If €49 feels expensive, trust is the real objection. Can't solve with discounts. |
+| **DAOs requiring proposal for €49** | Too decentralized for MVP sales cycle. Come back when they have discretionary budgets. |
 
 ### Market Size (Rough Validation)
 
@@ -234,7 +234,7 @@ Watch for these personas in actual sales — don't design for them yet:
 - ~30% are Protocol DAOs = ~4,800
 - ~50% are medium-sized = ~2,400 target DAOs
 - 1-2 Elenas per DAO = ~2,400-4,800 potential buyers
-- €99-199 per report = **€240K-480K addressable market for reports alone**
+- €49-149 per report = **€240K-480K addressable market for reports alone**
 
 This is more than enough to validate the model.
 
@@ -303,7 +303,7 @@ This is more than enough to validate the model.
 | **Delivery System** | Email PDF within 24 hours | Fast turnaround |
 
 **MVP User Flow:**
-Landing page → Sample sections → Payment (€99) → Intake form → Pipeline + QA → PDF delivered <24h
+Landing page → Sample sections → Payment (€49) → Intake form → Pipeline + QA → PDF delivered <24h
 
 ### Out of Scope for MVP
 
@@ -315,7 +315,7 @@ Landing page → Sample sections → Payment (€99) → Intake form → Pipelin
 | API Access | No integration customers yet |
 | Subscription Model | One-time validates willingness to pay |
 | Automated Delivery | Manual review = learning opportunity |
-| User Accounts | Unnecessary friction for €99 purchase |
+| User Accounts | Unnecessary friction for €49 purchase |
 
 *Philosophy: If Elena doesn't need it for her first report, it's not MVP.*
 

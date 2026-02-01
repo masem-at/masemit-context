@@ -103,7 +103,7 @@ From `docs/ux/checkout-crypto-donations-ux-spec.md`:
 │  ⟠ Pay with Crypto                               [✕ Close] │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  Order Total: €99.00                                        │
+│  Order Total: €49.00                                        │
 │                                                             │
 │  ┌─────────────────────────────────────────────────────┐   │
 │  │                                                     │   │
@@ -278,7 +278,7 @@ describe('CryptoCheckoutModal', () => {
 
   it('displays order total', () => {
     render(<CryptoCheckoutModal {...defaultProps} />)
-    expect(screen.getByText(/€99/)).toBeInTheDocument()
+    expect(screen.getByText(/€49/)).toBeInTheDocument()
   })
 
   it('shows loading state during checkout', async () => {

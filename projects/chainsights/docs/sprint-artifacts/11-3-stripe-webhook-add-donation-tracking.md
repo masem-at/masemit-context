@@ -58,7 +58,7 @@ import { createDonation } from '@/lib/donations'
 
 ```typescript
 // Calculate donation amount (3% of price)
-const donationAmount = (tier.priceCents * 0.03 / 100).toFixed(2) // e.g., "2.97" for €99
+const donationAmount = (tier.priceCents * 0.03 / 100).toFixed(2) // e.g., "1.47" for €49
 
 const session = await stripe.checkout.sessions.create({
   // ... existing params ...

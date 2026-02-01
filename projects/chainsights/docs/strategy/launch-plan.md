@@ -55,7 +55,7 @@ Risks of leading with ENS:
 | Gitcoin | ??% |
 | Aave | ??% |
 
-> "Want your DAO analyzed? €99. chainsights.one"
+> "Want your DAO analyzed? €49. chainsights.one"
 
 ### Why This Works
 
@@ -110,7 +110,7 @@ That's what I'm building @ChainSights_one to find out.
 [link to PDF]
 
 Want your DAO analyzed?
-€99. chainsights.one
+€49. chainsights.one
 
 Wallets lie. We don't.
 ```

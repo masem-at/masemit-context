@@ -196,7 +196,7 @@ ORDER BY created_at DESC;
 1. Transaction hash format (must start with 0x, 66 chars)
 2. Transaction is confirmed (at least 3 blocks)
 3. Sent to correct treasury wallet
-4. Amount is correct (€99 = ~109 USDC, €199 = ~218 USDC)
+4. Amount is correct (€49 = ~54 USDC, €149 = ~163 USDC)
 5. Is USDC token (not ETH, USDT, or other token)
 
 **Common issues:**

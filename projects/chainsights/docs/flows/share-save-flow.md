@@ -20,7 +20,7 @@ Share & Save is ChainSights' viral growth mechanism. Customers get €20 back wh
 ┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
 │  Customer   │     │   Report    │     │  Customer   │     │    Admin    │
 │   Buys      │ ──► │  Delivered  │ ──► │   Tweets    │ ──► │  Verifies   │
-│  €99/€199   │     │  (w/ offer) │     │ @ChainSights│     │   Tweet     │
+│  €49/€149   │     │  (w/ offer) │     │ @ChainSights│     │   Tweet     │
 └─────────────┘     └─────────────┘     └─────────────┘     └─────────────┘
                                                                    │
                     ┌──────────────────────────────────────────────┘

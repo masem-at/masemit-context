@@ -2,7 +2,7 @@
 
 ## The Misunderstanding
 
-The team proposed "Phase 2 in 2-3 months" for community/customer reports. But here's the thing: **paid custom reports are already available today** (€99-199). There's no need to wait months for customer DAOs to appear on the leaderboard.
+The team proposed "Phase 2 in 2-3 months" for community/customer reports. But here's the thing: **paid custom reports are already available today** (€49-149). There's no need to wait months for customer DAOs to appear on the leaderboard.
 
 ## How It Actually Works
 
@@ -11,7 +11,7 @@ The team proposed "Phase 2 in 2-3 months" for community/customer reports. But he
 | Report Type | Price | GVS Score Created | Leaderboard Eligible |
 |-------------|-------|-------------------|---------------------|
 | Demo/Marketing Analysis (by ChainSights) | Free (internal) | ✅ Yes | ✅ Yes – "Featured Analysis" |
-| Customer Report | €99-199 | ✅ Yes | ✅ Yes – with customer opt-in |
+| Customer Report | €49-149 | ✅ Yes | ✅ Yes – with customer opt-in |
 
 **Both paths create GVS scores using the same methodology. Both can feed the leaderboard immediately.**
 
@@ -30,7 +30,7 @@ The team proposed "Phase 2 in 2-3 months" for community/customer reports. But he
 #4  Aave           58  [Customer Report]  ← Customer opted in
 
 ────────────────────────────────────────────
-📊 Get your DAO scored → €99
+📊 Get your DAO scored → €49
    ☑️ Include in public leaderboard (optional)
 ```
 

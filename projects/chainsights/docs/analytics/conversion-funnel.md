@@ -10,7 +10,7 @@
 
 This document defines the 5-stage conversion funnel for ChainSights DAO Governance Reports. The funnel tracks user journey from initial awareness to report purchase, enabling data-driven optimization of conversion rates.
 
-**Conversion Goal:** Report orders (€99 Standard or €199 Deep Dive)
+**Conversion Goal:** Report orders (€49 Deep Dive or €149 Governance Audit)
 
 ---
 

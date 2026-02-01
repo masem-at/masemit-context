@@ -107,7 +107,7 @@ Validate that wallet clustering is possible with Snapshot data alone, or if we n
 | stripe_session_id | string | Stripe checkout session |
 | stripe_payment_intent | string | Payment intent ID |
 | status | enum | pending, paid, processing, draft_ready, approved, delivered, failed |
-| amount_cents | int | Payment amount (9900 for €99) |
+| amount_cents | int | Payment amount (4900 for €49) |
 | created_at | timestamp | Order creation time |
 | updated_at | timestamp | Last update time |
 

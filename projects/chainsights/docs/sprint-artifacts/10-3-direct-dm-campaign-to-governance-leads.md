@@ -118,7 +118,7 @@ Hey [Name],
 
 I built ChainSights, a governance analytics platform. We score DAOs on governance health.
 
-Your DAO scores 6.5/10. Want a detailed report for €99?
+Your DAO scores 6.5/10. Want a detailed report for €49?
 
 - Mario
 ```

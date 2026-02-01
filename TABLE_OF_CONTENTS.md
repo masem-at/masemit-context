@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-01 18:50:25 UTC
+> Last updated: 2026-02-01 19:23:42 UTC
 
 ## Quick Access
 
@@ -100,13 +100,14 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-02-01T18:50:25Z
+> Source: `masem-at/chainsights` | Last sync: 2026-02-01T19:23:42Z
 
 
 **docs/**
 - [`DEPLOYMENT.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/DEPLOYMENT.md)
 
 **docs/_masemIT/**
+- [`01-chainsights-launch-posts.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/01-chainsights-launch-posts.md)
 - [`02-chainsights-launch-posts-v2.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/02-chainsights-launch-posts-v2.md)
 - [`ChainSights_Branding_EN.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/ChainSights_Branding_EN.md)
 - [`ChainSights_Email_Templates.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/ChainSights_Email_Templates.md)
@@ -124,10 +125,16 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`bmad-naming-response.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/bmad-naming-response.md)
 - [`bmad-team-response.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/bmad-team-response.md)
 - [`bmad-v6-custom-agents-README.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/bmad-v6-custom-agents-README.md)
+
+**docs/_masemIT/bugs/**
+- [`issue-free-check-open-universe.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/bugs/issue-free-check-open-universe.md)
+
+**docs/_masemIT/**
 - [`build-cycle.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/build-cycle.md)
 - [`cdp_api_key.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/cdp_api_key.json)
 - [`chainsights-data-arbitrum.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/chainsights-data-arbitrum.json)
 - [`chainsights-event-tracking-implementation.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/chainsights-event-tracking-implementation.md)
+- [`chainsights-hero-ab-test.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/chainsights-hero-ab-test.md)
 - [`chainsights-monetization-expansion.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/chainsights-monetization-expansion.md)
 - [`gvs-requirement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/gvs-requirement.md)
 - [`handoff-stripe-webhook-analytics.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/handoff-stripe-webhook-analytics.md)
@@ -137,6 +144,8 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 **docs/_masemIT/requirements/**
 - [`chainsights-bugs-auth-backlog.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/requirements/chainsights-bugs-auth-backlog.md)
+- [`dao-governance-index-requirement-v1.1.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/requirements/dao-governance-index-requirement-v1.1.md)
+- [`dao-governance-index-requirement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/requirements/dao-governance-index-requirement.md)
 
 **docs/_masemIT/**
 - [`snapshot-api-docu.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/snapshot-api-docu.md)

@@ -57,7 +57,7 @@ That distinction matters. We show it. Others don't.
 
 | | Standard | Deep Dive |
 |---|----------|-----------|
-| **Price** | **€99** | **€199** |
+| **Price** | **€49** | **€149** |
 | Proposals analyzed | Last 10 | Full history |
 | Power distribution | ✓ | ✓ |
 | Participation analysis | ✓ | ✓ |
@@ -127,9 +127,9 @@ Not just diagnosis — specific steps to improve your governance health.
 
 We use Snapshot data and on-chain signals to analyze voting patterns and power distribution. We're transparent about confidence levels — we'll tell you "302 unique voters (high confidence)" rather than claiming false precision. Our methodology is documented in every report.
 
-### Why €99?
+### Why €49?
 
-A governance analysis typically requires 10+ hours of manual work. At €99, you're paying less than €10/hour for expert-level insights delivered in 24 hours. If one community question answered or one governance risk identified is worth €99, the report pays for itself.
+A governance analysis typically requires 10+ hours of manual work. At €49, you're paying less than €5/hour for expert-level insights delivered in 24 hours. If one community question answered or one governance risk identified is worth €49, the report pays for itself.
 
 ### What if I don't like the results?
 
@@ -157,7 +157,7 @@ Stop guessing. Start knowing.
 
 **Get your report in 24 hours.**
 
-[Get Your Report — €99]
+[Get Your Report — €49]
 
 or
 
@@ -178,5 +178,5 @@ Questions? hello@chainsights.one | Twitter: @ChainSights_one
 ## Meta Tags
 
 **Title:** ChainSights — Governance Truth Reports for DAOs
-**Description:** Identity-first governance analytics. See who actually controls your DAO — not just wallet counts. Reports delivered in 24 hours. €99.
+**Description:** Identity-first governance analytics. See who actually controls your DAO — not just wallet counts. Reports delivered in 24 hours. €49.
 **OG Image Text:** "302 voters out of 142,908 followers. That's 0.2%. — Wallets lie. We don't."

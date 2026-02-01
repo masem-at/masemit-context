@@ -129,8 +129,8 @@ ORDER BY created_at DESC;
 
 ### Exchange Rate:
 - Currently hardcoded: 1 EUR = 1.09 USD
-- €99 = ~109 USDC
-- €199 = ~218 USDC
+- €49 = ~54 USDC
+- €149 = ~163 USDC
 - Update periodically in `src/lib/crypto/verify-transaction.ts` if needed
 
 ### Supported Networks:

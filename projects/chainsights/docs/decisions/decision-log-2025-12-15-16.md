@@ -9,8 +9,8 @@
 
 ### D1: Two-Tier Pricing Model
 **Decision:** Launch with two pricing tiers instead of single price
-- **Standard:** €99 (last 10 proposals, 24h delivery)
-- **Deep Dive:** €199 (full history + trends, 48h delivery)
+- **Deep Dive:** €49 (last 10 proposals, 24h delivery)
+- **Governance Audit:** €149 (full history + trends, 48h delivery)
 
 **Rationale:**
 - Allows customers to start small and upgrade

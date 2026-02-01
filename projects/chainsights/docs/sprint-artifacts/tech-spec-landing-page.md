@@ -9,14 +9,14 @@
 
 ### Problem Statement
 
-Elena (Governance Lead at a mid-sized DeFi DAO) needs to find ChainSights, understand its value immediately, and purchase a Governance Truth Report for €99. Currently, no landing page exists — she can't discover or buy the product.
+Elena (Governance Lead at a mid-sized DeFi DAO) needs to find ChainSights, understand its value immediately, and purchase a Governance Truth Report for €49. Currently, no landing page exists — she can't discover or buy the product.
 
 ### Solution
 
 Build a high-converting landing page that:
 1. Communicates the "Wallets lie. We don't." value proposition instantly
 2. Shows sample report sections to reduce pre-purchase anxiety
-3. Enables frictionless €99 payment via Stripe
+3. Enables frictionless €49 payment via Stripe
 4. Collects DAO contract address for report generation
 
 ### Scope
@@ -25,7 +25,7 @@ Build a high-converting landing page that:
 - Hero section with headline and CTA
 - Value proposition section (why identity-first matters)
 - Sample report preview (placeholder structure)
-- Pricing section with single €99 CTA
+- Pricing section with single €49 CTA
 - Trust signals (founder, methodology, Austrian company)
 - Stripe Checkout integration
 - Basic intake form (DAO address collection post-payment)
@@ -142,7 +142,7 @@ chainsights/
 - [ ] **Task 2: Hero Section**
   - Large headline: "Wallets lie. We don't."
   - Subheadline: "Identity-first governance analytics for DAOs"
-  - Primary CTA button: "Get Your Report — €99" (links to #pricing)
+  - Primary CTA button: "Get Your Report — €49" (links to #pricing)
   - Subtle animated gradient or glow effect on headline
   - Mobile responsive
 
@@ -166,7 +166,7 @@ chainsights/
   - CTA: "See what your report will contain"
 
 - [ ] **Task 5: Pricing Section**
-  - Single tier: "Governance Truth Report — €99"
+  - Single tier: "Governance Truth Report — €49"
   - What's included list:
     - True participation score
     - Wallet clustering analysis
@@ -194,7 +194,7 @@ chainsights/
 - [ ] **Task 8: Stripe Integration**
   - Create Stripe account + get API keys
   - Implement /api/checkout/route.ts:
-    - Create Checkout Session for €99 one-time payment
+    - Create Checkout Session for €49 one-time payment
     - Success URL: /success?session_id={CHECKOUT_SESSION_ID}
     - Cancel URL: / (back to landing)
   - Wire up CTA buttons to trigger checkout
@@ -226,7 +226,7 @@ chainsights/
 
 - [ ] **AC1:** Landing page loads in <3s on mobile (Lighthouse performance >80)
 - [ ] **AC2:** "Wallets lie. We don't." headline is visible above fold on all devices
-- [ ] **AC3:** Clicking any CTA button initiates Stripe Checkout for €99
+- [ ] **AC3:** Clicking any CTA button initiates Stripe Checkout for €49
 - [ ] **AC4:** After successful payment, user sees intake form
 - [ ] **AC5:** Intake form submission sends notification (email or webhook)
 - [ ] **AC6:** All text is readable (WCAG AA contrast compliance)

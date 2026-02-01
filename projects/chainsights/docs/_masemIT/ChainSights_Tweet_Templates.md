@@ -139,8 +139,8 @@ Is your DAO any different?
 
 When someone asks "How much does this cost?":
 ```
-€99 Standard (last 10 proposals)
-€199 Deep Dive (full history)
+€49 Deep Dive (last 10 proposals)
+€149 Governance Audit (full history)
 
 24-48 hour delivery.
 Identity-aware metrics. Delegate vs whale breakdown.
@@ -186,7 +186,7 @@ For report footer:
 For social media images:
 ```
 Scan for your governance report
-chainsights.one | €99 | 24 hours
+chainsights.one | €49 | 24 hours
 ```
 
 ---

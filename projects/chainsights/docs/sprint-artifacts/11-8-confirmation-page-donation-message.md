@@ -40,7 +40,7 @@ Status: done
   - [x] 3.4 Or pass order total via query param from redirect
 - [x] Task 4: Write unit tests (AC: all)
   - [x] 4.1 Test component renders with correct donation amount
-  - [x] 4.2 Test 3% calculation is correct (€99 → €2.97, €199 → €5.97)
+  - [x] 4.2 Test 3% calculation is correct (€49 → €1.47, €149 → €4.47)
   - [x] 4.3 Test hoki.help link has correct href and target
   - [x] 4.4 Test aria-label is present
   - [x] 4.5 Test component handles edge cases (0, undefined)
@@ -89,8 +89,8 @@ function calculateDonation(orderTotal: number): number {
   return orderTotal * DONATION_PERCENTAGE
 }
 
-// €99.00 * 0.03 = €2.97
-// €199.00 * 0.03 = €5.97
+// €49.00 * 0.03 = €1.47
+// €149.00 * 0.03 = €4.47
 ```
 
 ### Getting Order Total
@@ -206,18 +206,18 @@ import { describe, it, expect } from 'vitest'
 import { DonationImpactBox } from '@/components/DonationImpactBox'
 
 describe('DonationImpactBox', () => {
-  it('displays correct donation amount for €99 order', () => {
-    render(<DonationImpactBox orderTotal={99} />)
-    expect(screen.getByText(/€2\.97/)).toBeInTheDocument()
+  it('displays correct donation amount for €49 order', () => {
+    render(<DonationImpactBox orderTotal={49} />)
+    expect(screen.getByText(/€1\.47/)).toBeInTheDocument()
   })
 
-  it('displays correct donation amount for €199 order', () => {
-    render(<DonationImpactBox orderTotal={199} />)
-    expect(screen.getByText(/€5\.97/)).toBeInTheDocument()
+  it('displays correct donation amount for €149 order', () => {
+    render(<DonationImpactBox orderTotal={149} />)
+    expect(screen.getByText(/€4\.47/)).toBeInTheDocument()
   })
 
   it('displays emotional headline', () => {
-    render(<DonationImpactBox orderTotal={99} />)
+    render(<DonationImpactBox orderTotal={49} />)
     expect(screen.getByText(/You just helped a family/i)).toBeInTheDocument()
   })
 

@@ -118,7 +118,7 @@ It's been a month since your ChainSights report.
 
 Quick thought: Governance changes over time. New proposals, new voters, shifting power dynamics.
 
-If you'd like an updated analysis, reply "UPDATE" and I'll send you a refresh at 50% off (€49 instead of €99).
+If you'd like an updated analysis, reply "UPDATE" and I'll send you a refresh at a special rate.
 
 Same methodology, fresh data.
 
@@ -137,15 +137,15 @@ ChainSights
 
 Hi [NAME],
 
-I hear you — €99 is real money.
+I hear you — €49 is real money.
 
 Here's how I think about it:
 
 A governance analysis done manually takes 10-15 hours. At any reasonable consulting rate, that's €500-1500.
 
-We do it in 24 hours for €99 because the process is (mostly) automated.
+We do it in 24 hours for €49 because the process is (mostly) automated.
 
-If one insight — one community question answered, one governance risk identified, one regulatory checkbox ticked — is worth €99, the report pays for itself.
+If one insight — one community question answered, one governance risk identified, one regulatory checkbox ticked — is worth €49, the report pays for itself.
 
 If not, no worries. Maybe later.
 

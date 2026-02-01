@@ -104,7 +104,7 @@ Add texture patterns to score bar fills using CSS gradients:
 **Affected Requirements:** FR71-FR73 (CTA & Conversion)
 
 **Problem:**
-Expanded row shows "Get Full Report — €49" but PRD specifies €99-199 pricing. Price inconsistency causes:
+Expanded row shows "Get Full Report — €49" but PRD specifies €49-149 pricing. Price inconsistency causes:
 - User confusion (is this a discount? different tier?)
 - Bounce on checkout page when they see different price
 - Loss of trust ("bait and switch" feeling)
@@ -116,19 +116,19 @@ Expanded row shows "Get Full Report — €49" but PRD specifies €99-199 prici
 
 **Recommended Fix Options:**
 
-**Option A - Single Tier (if €99 is the only price):**
+**Option A - Single Tier (if €49 is the only price):**
 ```
-│  [Get Full Report — €99 →]    [Share on 𝕏]            │
+│  [Get Full Report — €49 →]    [Share on 𝕏]            │
 ```
 
 **Option B - Tiered Pricing (if multiple tiers exist):**
 ```
-│  [See Report Options → from €99]    [Share on 𝕏]      │
+│  [See Report Options → from €49]    [Share on 𝕏]      │
 ```
 
-**Option C - Promotional Pricing (if €49 is temporary):**
+**Option C - Promotional Pricing:**
 ```
-│  [Get Report — €49 Launch Special (reg. €99) →]      │
+│  [Get Report — €49 Deep Dive →]                       │
 ```
 
 **Decision Needed:**

@@ -16,8 +16,8 @@
 
 | Product | Advertised Price | Netto | 20% USt | Customer Pays |
 |---------|------------------|-------|---------|---------------|
-| ChainSights Standard | €99 | €82.50 | €16.50 | €99 |
-| ChainSights Deep Dive | €199 | €165.83 | €33.17 | €199 |
+| ChainSights Deep Dive | €49 | €40.83 | €8.17 | €49 |
+| ChainSights Governance Audit | €149 | €124.17 | €24.83 | €149 |
 | TellingCube [plans] | [TBD] | [TBD] | [TBD] | [TBD] |
 
 **Rationale:** Cleaner UX for B2C customers, price = what they pay.
@@ -38,10 +38,10 @@
 
 **Example Invoice Line:**
 ```
-ChainSights Standard Report        €82.50
-USt 20%                            €16.50
+ChainSights Deep Dive Report        €40.83
+USt 20%                             €8.17
 ────────────────────────────────────────────
-Gesamt                             €99.00
+Gesamt                             €49.00
 ```
 
 ---
@@ -53,7 +53,7 @@ Gesamt                             €99.00
 | Field | Value |
 |-------|-------|
 | VAT Rate | 0% |
-| Invoice shows | Netto only (€99 or €199) |
+| Invoice shows | Netto only (€49 or €149) |
 | Invoice note | Reverse Charge statement |
 | Requirement | Validate VAT ID via VIES |
 
@@ -62,7 +62,7 @@ Gesamt                             €99.00
 
 **VIES Validation:** https://ec.europa.eu/taxation_customs/vies/
 
-**Important:** Customer pays the gross price equivalent (€99/€199) but receives a netto invoice. The "VAT portion" becomes additional revenue for you in this scenario.
+**Important:** Customer pays the gross price equivalent (€49/€149) but receives a netto invoice. The "VAT portion" becomes additional revenue for you in this scenario.
 
 ---
 
@@ -102,7 +102,7 @@ Gesamt                             €99.00
 **Invoice Note:**
 > *"Nicht steuerbar – Leistungsort außerhalb der EU / Not subject to Austrian VAT – place of supply outside EU"*
 
-**Important:** Customer pays €99/€199. Since no VAT applies, this is 100% revenue (no VAT to remit).
+**Important:** Customer pays €49/€149. Since no VAT applies, this is 100% revenue (no VAT to remit).
 
 **Watch for:** Local tax obligations in customer's country if you scale significantly (see third-country rules in `austria-stripe-invoicing-2025.md`).
 
@@ -121,11 +121,11 @@ Every invoice must include:
 | 5 | Sequential invoice number | CS-2025-0001 |
 | 6 | Invoice date | 2025-12-16 |
 | 7 | Service date | 2025-12-16 |
-| 8 | Service description | ChainSights Standard Governance Report |
-| 9 | Netto amount | €82.50 |
+| 8 | Service description | ChainSights Deep Dive Governance Report |
+| 9 | Netto amount | €40.83 |
 | 10 | VAT rate | 20% |
-| 11 | VAT amount | €16.50 |
-| 12 | Gross amount | €99.00 |
+| 11 | VAT amount | €8.17 |
+| 12 | Gross amount | €49.00 |
 
 **For Reverse Charge:** Omit VAT rate/amount, add RC statement, include customer UID.
 
@@ -299,7 +299,7 @@ The checkout API (`src/app/api/checkout/route.ts`) now includes:
 - `automatic_tax: { enabled: true }` — Enables Stripe Tax
 - `billing_address_collection: 'required'` — Collects address for tax calculation
 - `tax_id_collection: { enabled: true }` — Allows B2B customers to provide VAT ID
-- `tax_behavior: 'inclusive'` — Prices include VAT (€99/€199 gross)
+- `tax_behavior: 'inclusive'` — Prices include VAT (€49/€149 gross)
 - `customer_creation: 'always'` — Creates customer record for invoicing
 
 ### Stripe Dashboard Setup (Required)
@@ -332,7 +332,7 @@ Complete these steps in Stripe Dashboard:
 - ✓ Tax reporting for UVA
 - ✓ OSS threshold monitoring
 
-**Cost:** €0.50 per transaction (<1% at €99-199 prices)
+**Cost:** €0.50 per transaction (~1% at €49-149 prices)
 
 ---
 

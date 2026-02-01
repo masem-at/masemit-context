@@ -83,7 +83,7 @@ Now you're ready to promote! See Maya's marketing plan in the commit messages.
 - [ ] Frontend deployed
 - [ ] Free tier tested end-to-end
 - [ ] Quota enforcement working
-- [ ] Paid tier still works (€99/€199)
+- [ ] Paid tier still works (€49/€149)
 - [ ] Social sharing buttons work
 - [ ] Twitter handle is correct (@ChainSights_one)
 

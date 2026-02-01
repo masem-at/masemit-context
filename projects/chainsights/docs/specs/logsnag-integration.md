@@ -66,7 +66,7 @@ Trigger: Stripe webhook `checkout.session.completed`
   tags: {
     email: "customer@example.com",
     tier: "standard", // or "deep_dive"
-    amount: "€99",
+    amount: "€49",
   }
 }
 ```
@@ -425,7 +425,7 @@ After implementation, your LogSnag dashboard shows:
 💰 Order Created
    email: mario@example.com
    tier: deep_dive
-   amount: €199
+   amount: €149
    2 minutes ago
 ```
 

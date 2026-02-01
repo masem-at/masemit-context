@@ -36,7 +36,7 @@ She's preparing for a community AMA where she knows the "centralization" questio
 
 She Googles "DAO governance analysis" or "DAO decentralization report" and finds ChainSights.
 
-€99 is nothing compared to the cost of another Twitter shitstorm.
+€49 is nothing compared to the cost of another Twitter shitstorm.
 
 ---
 
@@ -50,13 +50,13 @@ She Googles "DAO governance analysis" or "DAO decentralization report" and finds
 | Medium (50-500) | Multi-sig with 3-5 signers, but <€500 often approved quickly |
 | Large (1000+) | Formal proposal process, could take weeks |
 
-**For €99:**
+**For €49:**
 
-- In most DAOs with any treasury, €99 falls under "operational discretion"
+- In most DAOs with any treasury, €49 falls under "operational discretion"
 - A governance lead or core contributor can usually expense this without a vote
 - It's the cost of a nice dinner — not a procurement decision
 
-**For €199-299:**
+**For €149-299:**
 
 - Might need a quick "hey, I want to buy this" in a core team Discord channel
 - Still not formal governance, but needs a nod from 2-3 people
@@ -84,7 +84,7 @@ That means: **Not fully decentralized operations yet.** Ironically, the DAOs tha
 
 - Big enough to have the "who's actually voting?" problem
 - Small enough that one person (Elena) can make the purchase decision
-- Treasury usually €50K-500K — €99 is trivial
+- Treasury usually €50K-500K — €49 is trivial
 - Often preparing for growth, want to "professionalize" governance
 - MiCA pressure hits them — they're big enough to worry about compliance, small enough to not have a legal team yet
 
@@ -117,7 +117,7 @@ That means: **Not fully decentralized operations yet.** Ironically, the DAOs tha
 >
 > Her DAO has ~200 active governance participants and a €2M treasury. They've been operating for 18 months and recently faced criticism on Twitter about "whale dominance" in voting.
 >
-> She's preparing for a community call and wants to address the centralization concerns with data, not opinions. She finds ChainSights, thinks "€99 to finally answer this question? Done."
+> She's preparing for a community call and wants to address the centralization concerns with data, not opinions. She finds ChainSights, thinks "€49 to finally answer this question? Done."
 >
 > She buys the report, reviews it (finds out 3 entities control 58% of voting power — roughly what she suspected), and uses it in the community call. The transparency earns respect.
 >
@@ -136,7 +136,7 @@ That means: **Not fully decentralized operations yet.** Ironically, the DAOs tha
 | **Budget Authority** | Discretionary or quick multi-sig approval |
 | **Pain Point** | Can't prove/disprove decentralization claims |
 | **Trigger** | Community criticism, upcoming AMA, MiCA concerns |
-| **Price Sensitivity** | €99 is trivial, €299 needs justification |
+| **Price Sensitivity** | €49 is trivial, €299 needs justification |
 
 ---
 

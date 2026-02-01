@@ -1195,7 +1195,7 @@ function ExpandedDetails({ dao }: { dao: RankingData }) {
           className="bg-aqua text-navy hover:bg-aqua/90"
           onClick={() => window.location.href = `/checkout?dao=${dao.daoId}`}
         >
-          Get Full Report — €99
+          Get Full Report — €49
         </Button>
         <Button
           variant="outline"
@@ -1234,7 +1234,7 @@ function ExpandedDetails({ dao }: { dao: RankingData }) {
 **Integration:** "Get Full Report" button links to existing checkout flow
 
 **Flow:**
-1. User clicks "Get Full Report — €99"
+1. User clicks "Get Full Report — €49"
 2. Redirects to `/checkout?dao={daoId}&tier=deep_dive`
 3. Existing checkout page handles payment
 4. Existing pipeline generates report

@@ -96,7 +96,7 @@ related_doc: "../analysis/product-brief-crypto-payments-donations-2026-01-19.md"
 │  ⟠ Pay with Crypto                               [✕ Close] │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  Order Total: €99.00                                        │
+│  Order Total: €49.00                                        │
 │                                                             │
 │  ┌─────────────────────────────────────────────────────┐   │
 │  │                                                     │   │
@@ -214,7 +214,7 @@ related_doc: "../analysis/product-brief-crypto-payments-donations-2026-01-19.md"
 
 ```
 donation_amount = order_total * 0.03
-// €99.00 * 0.03 = €2.97
+// €49.00 * 0.03 = €1.47
 ```
 
 ---
