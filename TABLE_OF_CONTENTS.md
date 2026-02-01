@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-01 08:50:58 UTC
+> Last updated: 2026-02-01 14:43:22 UTC
 
 ## Quick Access
 
@@ -396,6 +396,19 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`project-overview.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/project-overview.md)
 - [`project-scan-report.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/project-scan-report.json)
 - [`source-tree-analysis.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/source-tree-analysis.md)
+
+### tellingCube
+
+> Source: `masem-at/masmit-niche-finder` | Last sync: 2026-02-01T14:43:22Z
+
+
+**docs/**
+- [`company-info.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/tellingCube/docs/company-info.md)
+- [`foerderrecherche-esg-saas-masemit.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/tellingCube/docs/foerderrecherche-esg-saas-masemit.md)
+
+**esg-reporting-saas/**
+- [`esg-plan-c-validierung-pollmann-interview.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/tellingCube/esg-reporting-saas/esg-plan-c-validierung-pollmann-interview.md)
+- [`product-brief-esg-reporting-saas-2026-01-31.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/tellingCube/esg-reporting-saas/product-brief-esg-reporting-saas-2026-01-31.md)
 
 ### tellingcube
 
