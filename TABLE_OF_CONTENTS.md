@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all projects in this context repository.
-> Last updated: 2026-02-01 15:18:12 UTC
+> Last updated: 2026-02-01 15:25:59 UTC
 
 ## How to use
 
@@ -41,6 +41,13 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 ### hoki-help
 
 - Files: 1
+
+### hoki-help
+
+- Source: `masem-at/hoki-help`
+- Last sync: 2026-02-01T15:25:59Z
+- Files: 1
+- **[📋 Project TOC](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/hoki.help/TOC.md)**
 
 ### masem-analytics
 
