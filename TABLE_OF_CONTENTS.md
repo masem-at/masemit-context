@@ -410,7 +410,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`project-scan-report.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/project-scan-report.json)
 - [`source-tree-analysis.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/source-tree-analysis.md)
 
-### tellingCube
+### niche-finder
 
 > Source: `masem-at/masmit-niche-finder` | Last sync: 2026-02-01T14:43:22Z
 
