@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-01 14:43:22 UTC
+> Last updated: 2026-02-01 14:45:45 UTC
 
 ## Quick Access
 
@@ -354,6 +354,19 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 **docs/ux/**
 - [`checkout-crypto-donations-ux-spec.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/ux/checkout-crypto-donations-ux-spec.md)
 
+### esg-reporting
+
+> Source: `masem-at/masmit-niche-finder` | Last sync: 2026-02-01T14:45:45Z
+
+
+**docs/**
+- [`company-info.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/esg-reporting/docs/company-info.md)
+- [`foerderrecherche-esg-saas-masemit.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/esg-reporting/docs/foerderrecherche-esg-saas-masemit.md)
+
+**esg-reporting-saas/**
+- [`esg-plan-c-validierung-pollmann-interview.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/esg-reporting/esg-reporting-saas/esg-plan-c-validierung-pollmann-interview.md)
+- [`product-brief-esg-reporting-saas-2026-01-31.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/esg-reporting/esg-reporting-saas/product-brief-esg-reporting-saas-2026-01-31.md)
+
 ### hoki-help
 
 
@@ -403,7 +416,6 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 
 **docs/**
-- [`company-info.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/tellingCube/docs/company-info.md)
 - [`foerderrecherche-esg-saas-masemit.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/tellingCube/docs/foerderrecherche-esg-saas-masemit.md)
 
 **esg-reporting-saas/**
