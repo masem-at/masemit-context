@@ -1,7 +1,7 @@
 ---
 project_name: 'chainsights'
 user_name: 'Mario'
-date: '2026-01-28'
+date: '2026-02-01'
 sections_completed: ['technology_stack', 'language_rules', 'framework_rules', 'testing_rules', 'code_quality', 'workflow_rules', 'critical_rules', 'pricing', 'naming', 'feature_flags', 'seo_aeo_llmo']
 status: 'complete'
 rule_count: 120
@@ -61,7 +61,8 @@ _This file contains critical rules and patterns that AI agents must follow when 
 | Pricing Page | **IMPLEMENTED** | `/pricing` with 3 tiers, analytics tracking, nav link in header |
 | Stripe Customer Portal | **IMPLEMENTED** | `/api/billing-portal` + portal link in delivery/recovery emails + `/account` fallback page |
 | Matrix Server-Side Auth | **IMPLEMENTED** | Server-side row limiting, admin whitelist via `MATRIX_ADMIN_EMAILS` env |
-| Customer Account (Magic Link) | **NOT BUILT** | Phase 2 auth: email-based login, report history, dashboard |
+| Magic Link Authentication | **IMPLEMENTED** | Passwordless auth via `cs_session` JWT cookie (30 days). jose Edge-compatible. SignInModal, UserMenu in header. Resolves admin access + session persistence. |
+| DAO Prefill + Recovery Email | **IMPLEMENTED** | Checkout passes DAO data through Stripe metadata → success page prefill. Hourly cron sends recovery email for orphan orders (paid, no intake form, 30min–24h). |
 | API Access | **NOT BUILT** | Phase 3 - future |
 
 ---
@@ -122,6 +123,9 @@ Must reflect current tiers:
 |-----|--------|------------|-----|
 | Donations not recording | **FIXED** | `payment_intent.succeeded` webhook was not enabled | Enabled in Stripe Dashboard |
 | Quick Checks not recording | **FIXED** | Was recording correctly, just in `quick_checks` table | Verified working |
+| BUG-1: Admin no chart access | **FIXED** | No session management, admin had no way to authenticate | Magic Link Auth (2026-02-01) |
+| BUG-2: Email unlock not persistent | **FIXED** | Stateless per-page email check, no session | Magic Link Auth with 30-day JWT session (2026-02-01) |
+| BUG-3: GovernanceIndex visible | **FIXED** | Unvalidated benchmarks shown publicly | Section hidden until S&P methodology defined (2026-01-31) |
 
 ### Content Inconsistencies
 
@@ -156,6 +160,9 @@ Must reflect current tiers:
 | 2026-01-30 | Pricing Page as static page | Independent of auth, can be built immediately. Static Server Component with tier CTAs |
 | 2026-01-30 | Portal link in confirmation emails | Stripe `billingPortal.sessions.create()` URL in report delivery email. `/account` page only as fallback |
 | 2026-01-31 | Matrix server-side auth | Server-side row limiting replaces client-side `?subscribed=true` bypass. Admin whitelist via `MATRIX_ADMIN_EMAILS` env. Access: anonymous=5, free=10, subscriber/admin=all |
+| 2026-01-31 | Hide GovernanceIndex on detail pages | Unvalidated benchmarks removed until DAO S&P methodology defined |
+| 2026-01-31 | Matrix random sort for anon/free | Seeded daily shuffle prevents lowest-scoring DAOs always appearing first |
+| 2026-02-01 | Magic Link Authentication | Passwordless auth: jose JWT, cs_session cookie (30d), middleware session resolution, SignInModal + UserMenu. Resolves BUG-1 (admin access) + BUG-2 (session persistence) |
 
 ---
 
@@ -463,7 +470,7 @@ npm run test:e2e          # E2E tests
 
 **Maintenance:**
 
-- Last Updated: 2026-01-30
+- Last Updated: 2026-02-01
 - Review frequency: Quarterly or after major tech stack changes
 - Target: <500 lines, focused on non-obvious critical rules
 
