@@ -63,6 +63,7 @@ _This file contains critical rules and patterns that AI agents must follow when 
 | Matrix Server-Side Auth | **IMPLEMENTED** | Server-side row limiting, admin whitelist via `MATRIX_ADMIN_EMAILS` env |
 | Magic Link Authentication | **IMPLEMENTED** | Passwordless auth via `cs_session` JWT cookie (30 days). jose Edge-compatible. SignInModal, UserMenu in header. Resolves admin access + session persistence. |
 | DAO Prefill + Recovery Email | **IMPLEMENTED** | Checkout passes DAO data through Stripe metadata → success page prefill. Hourly cron sends recovery email for orphan orders (paid, no intake form, 30min–24h). |
+| /check Flow Page | **IMPLEMENTED** | Replaces modal chain with single-page progressive disclosure flow at `/check`. All CTAs redirect here. Modals deleted. |
 | API Access | **NOT BUILT** | Phase 3 - future |
 
 ---
@@ -163,6 +164,7 @@ Must reflect current tiers:
 | 2026-01-31 | Hide GovernanceIndex on detail pages | Unvalidated benchmarks removed until DAO S&P methodology defined |
 | 2026-01-31 | Matrix random sort for anon/free | Seeded daily shuffle prevents lowest-scoring DAOs always appearing first |
 | 2026-02-01 | Magic Link Authentication | Passwordless auth: jose JWT, cs_session cookie (30d), middleware session resolution, SignInModal + UserMenu. Resolves BUG-1 (admin access) + BUG-2 (session persistence) |
+| 2026-02-01 | /check Flow Page Refactor | Replaced 4-5 chained modals with single `/check` page using progressive disclosure. All CTAs site-wide redirect to `/check`. Deleted report-selection-modal, QuickCheckEmailModal, QuickCheckResultsModal. Stripe Hosted Checkout kept for paid tiers (inline Payment Element deferred to backlog). |
 
 ---
 

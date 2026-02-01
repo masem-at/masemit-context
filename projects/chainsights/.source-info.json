@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-01T19:23:42Z",
-  "commit_sha": "75072dd124229b0b38f491d000066d59ef62d8d2",
-  "commit_message": "fix: replace all deprecated €99/€199 pricing with €49/€149\n"
+  "synced_at": "2026-02-01T20:21:27Z",
+  "commit_sha": "9f7a62a9e33a45c6d443595c68c0999f43b68fc5",
+  "commit_message": "feat: replace modal chain with /check flow page (progressive disclosure)\n"
 }
