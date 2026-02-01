@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all projects in this context repository.
-> Last updated: 2026-02-01 15:27:43 UTC
+> Last updated: 2026-02-01 15:33:20 UTC
 
 ## How to use
 
@@ -64,6 +64,13 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - Last sync: 2026-02-01T15:13:05Z
 - Files: 4
 - **[📋 Project TOC](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/nice-finder/TOC.md)**
+
+### telling-cube
+
+- Source: `masem-at/telling-cube`
+- Last sync: 2026-02-01T15:33:19Z
+- Files: 246
+- **[📋 Project TOC](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/telling-cube/TOC.md)**
 
 ### tellingCube
 

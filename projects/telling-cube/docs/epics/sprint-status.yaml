@@ -1,0 +1,90 @@
+# Sprint Status Tracking
+# Last Updated: 2026-01-18
+# Branch: develop
+
+project: tellingCube
+current_sprint: 1
+
+# Sprint Overview
+sprints:
+  - number: 1
+    name: "Curated Reports Free Tier"
+    epic: epic-01-curated-reports
+    status: completed
+    start_date: 2026-01-18
+    end_date: 2026-01-18
+    target_date: null
+    current_story: null
+    completed_stories:
+      - "1.1 - Generate 5 Curated Example Scenarios"
+      - "1.2 - Create Static JSON Export Structure"
+      - "1.3 - Build Example Browsing API Endpoints"
+      - "1.4 - Design Example Selection UI Cards"
+      - "1.5 - Implement Example Detail View"
+      - "1.6 - Add Upgrade CTAs and Messaging"
+      - "1.7 - Update Homepage Flow"
+
+  - number: 2
+    name: "Multi-Year Scenarios"
+    epic: epic-02-multi-year-scenarios
+    status: planned
+    start_date: null
+    target_date: null
+    dependencies:
+      - sprint_1_complete
+
+  - number: 3
+    name: "HR Data Domain"
+    epic: epic-03-hr-data-domain
+    status: planned
+    start_date: null
+    target_date: null
+    dependencies:
+      - sprint_2_complete  # Uses Multi-Year infrastructure
+
+# Epic Status Summary
+epics:
+  epic-01-curated-reports:
+    status: completed
+    stories_total: 7
+    stories_done: 7
+    stories_in_progress: 0
+    current_story: null
+    points_total: 21
+    points_done: 21  # All stories complete
+
+  epic-02-multi-year-scenarios:
+    status: ready_for_dev
+    stories_total: 9
+    stories_done: 0
+    points_total: 34
+    points_done: 0
+
+  epic-03-hr-data-domain:
+    status: ready_for_dev
+    stories_total: 9
+    stories_done: 0
+    points_total: 33
+    points_done: 0
+
+# Git Workflow (from project-context.md)
+git:
+  working_branch: develop
+  production_branch: master
+  feature_branch_pattern: "feature/{epic}-{story}"
+
+# Deployment
+environments:
+  production:
+    url: https://tellingcube.com
+    branch: master
+  staging:
+    url: https://tellingcube-git-develop-mario.vercel.app
+    branch: develop
+
+# Notes
+notes:
+  - "Epic 3 depends on Epic 2 (Multi-Year infrastructure)"
+  - "All development on develop branch"
+  - "PRs target develop, not master"
+  - "project-context.md is the bible"

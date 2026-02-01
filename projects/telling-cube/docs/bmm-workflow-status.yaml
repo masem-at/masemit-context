@@ -1,0 +1,81 @@
+# Workflow Status Template
+
+# This tracks progress through BMM methodology Analysis, Planning, and Solutioning phases.
+# Implementation phase is tracked separately in sprint-status.yaml
+
+# STATUS DEFINITIONS:
+# ==================
+# Initial Status (before completion):
+#   - required: Must be completed to progress
+#   - optional: Can be completed but not required
+#   - recommended: Strongly suggested but not required
+#   - conditional: Required only if certain conditions met (e.g., if_has_ui)
+#
+# Completion Status:
+#   - {file-path}: File created/found (e.g., "docs/product-brief.md")
+#   - skipped: Optional/conditional workflow that was skipped
+
+generated: "2025-12-16"
+project: "tellingCube"
+project_type: "web-application"
+selected_track: "bmad-method"
+field_type: "brownfield"
+workflow_path: "method-brownfield"
+
+workflow_status:
+  # Phase 0: Discovery (Optional) - COMPLETED
+  - id: brainstorm-project
+    status: "docs/archive/early-planning/brainstorming-session-results.md"
+    phase: 0
+    optional: true
+
+  - id: research
+    status: "docs/archive/market-research/"
+    phase: 0
+    optional: true
+
+  - id: product-brief
+    status: "docs/brief.md"
+    phase: 0
+    optional: true
+
+  # Phase 1: Planning - COMPLETED
+  - id: prd
+    status: "docs/prd.md"
+    phase: 1
+    required: true
+
+  - id: create-ux-design
+    status: "docs/ux/"
+    phase: 1
+    conditional: "if_has_ui"
+
+  # Phase 2: Solutioning - PARTIALLY COMPLETED
+  - id: create-architecture
+    status: "docs/architecture.md"
+    phase: 2
+    recommended: true
+
+  - id: create-epics-and-stories
+    status: "docs/stories/"
+    phase: 2
+    required: true
+
+  - id: test-design
+    status: "skipped"
+    phase: 2
+    recommended: true
+    note: "MVP launch priority - can add post-launch"
+
+  - id: implementation-readiness
+    status: "skipped"
+    phase: 2
+    required: true
+    note: "Artifacts exist, validated through implementation"
+
+  # Phase 3: Implementation - ACTIVE
+  - id: sprint-planning
+    status: "in-progress"
+    phase: 3
+    required: true
+    note: "MVP launching 2025-12-17"

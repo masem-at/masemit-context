@@ -1,0 +1,195 @@
+# generated: 2026-01-19
+# project: tellingCube
+# project_key: telling-cube
+# tracking_system: file-system
+# story_location: docs/sprint-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - drafted: Story file created in stories folder
+#   - ready-for-dev: Draft approved and story context created
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - completed: Retrospective has been done
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically drafts next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2026-01-19
+project: tellingCube
+project_key: telling-cube
+tracking_system: file-system
+story_location: docs/sprint-artifacts
+
+development_status:
+  # ═══════════════════════════════════════════════════════════════════════════
+  # EPIC 1: Curated Reports Free Tier (COMPLETED)
+  # ═══════════════════════════════════════════════════════════════════════════
+  epic-1: done
+  1-1-generate-curated-example-scenarios: done
+  1-2-create-static-json-export-structure: done
+  1-3-build-example-browsing-api-endpoints: done
+  1-4-design-example-selection-ui-cards: done
+  1-5-implement-example-detail-view: done
+  1-6-add-upgrade-ctas-and-messaging: done
+  1-7-update-homepage-flow: done
+  epic-1-retrospective: optional
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # EPIC 2: Multi-Year Scenarios (3-5 Years)
+  # Sprint: 2 | Priority: High | Effort: 3-4 weeks
+  # ═══════════════════════════════════════════════════════════════════════════
+  epic-2: done
+  2-1-extend-scenario-model-for-multi-year: done
+  2-2-year-duration-selector-ui: done
+  2-3-multi-year-event-generation-logic: done
+  2-4-time-dimension-extensions: done
+  2-5-extended-json-csv-export: done
+  2-6-multi-year-chart-trend-line: done
+  2-7-yoy-comparison-chart: done
+  2-8-progressive-generation-ui: done
+  2-9-tier-based-access-control: done
+  epic-2-retrospective: optional  # Epic 2 complete! All 9 stories done.
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # EPIC 3: HR Data Domain
+  # Sprint: 3 | Priority: High | Effort: 2-3 weeks
+  # Dependencies: Epic 2 (Multi-Year)
+  # ═══════════════════════════════════════════════════════════════════════════
+  epic-3: done  # All 12 stories complete
+  3-1-hr-event-types-employee-entity: done
+  3-2-hr-event-generation-logic: done
+  3-3-hr-export-api-endpoints: done
+  3-4-hr-view-page: done
+  3-5-headcount-by-department-chart: done
+  3-6-turnover-trend-chart: done
+  3-7-compensation-distribution-chart: done  # IBCS salary chart + Cost per FTE KPI
+  3-8-workforce-demographics-charts: done  # Age + tenure distribution charts
+  3-9-privacy-disclaimer-synthetic-data-badge: done  # All 5 ACs complete - code review passed
+  3-10-net-based-charity-calculation: done  # VAT-aware charity from NET
+  3-11-api-docs-hr-endpoint: done  # Document HR API endpoints
+  3-12-api-docs-bug-fixes: done  # Fix header links + dark mode
+  epic-3-retrospective: optional
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # EPIC 4: Auth & User Dashboard (BIG BANG LAUNCH) - PHASE 2
+  # Sprint: 2 | Priority: High | Foundation for Epics 5, 6, 7
+  # Source: docs/epics-big-bang.md
+  # Started: 2026-01-21
+  # ═══════════════════════════════════════════════════════════════════════════
+  epic-4: done  # All 9 stories complete
+  4-1-database-schema-entitlements-model: done
+  4-2-magic-link-request-api: done
+  4-3-magic-link-verification-jwt-session: done
+  4-4-session-management-apis: done
+  4-5-login-page-ui: done
+  4-6-dashboard-layout-welcome-banner: done
+  4-7-scenario-cards-with-view-download: done
+  4-8-dashboard-data-api: done
+  4-9-auth-aware-navigation: done  # Redirect, Home link, Dashboard everywhere, Logout
+  epic-4-retrospective: optional
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # EPIC 5: Scheduled Generation (QStash) (BIG BANG LAUNCH)
+  # Sprint: 3 | Priority: High | Depends on: Epic 4
+  # Source: docs/epics-big-bang.md
+  # Started: 2026-01-21
+  # Completed: 2026-01-21
+  # Note: Stories 5.1-5.4 were largely pre-implemented
+  # ═══════════════════════════════════════════════════════════════════════════
+  epic-5: done
+  5-1-scenarios-table-status-extensions: done  # Pre-existing schema
+  5-2-generation-queue-api: done  # Auth integration + email param passing
+  5-3-qstash-job-handler: done  # Pre-existing worker + email sending
+  5-4-generation-status-polling-api: done  # Added estimatedTimeRemaining
+  5-5-generation-completion-email: done  # Email templates + Resend integration
+  5-6-active-generation-banner-ui: done  # Banner with progress + polling
+  5-7-cancel-generation-feature: done  # Cancel API + UI button
+  epic-5-retrospective: optional
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # EPIC 6: Hybrid Pricing & Subscriptions (BIG BANG LAUNCH)
+  # Sprint: 5 | Priority: High | Depends on: Epic 4
+  # Source: docs/epics-big-bang.md
+  # Started: 2026-01-21
+  # Completed: 2026-01-21
+  # ═══════════════════════════════════════════════════════════════════════════
+  epic-6: done
+  6-1-stripe-products-configuration: done  # lib/stripe/config.ts, .env.example
+  6-2-one-time-purchase-webhook-handler: done  # Webhook creates users, sends welcome email
+  6-3-subscription-webhook-handlers: done  # Handles subscription lifecycle events
+  6-4-pricing-page-two-path-selection: done  # app/pricing/page.tsx
+  6-5-individual-pricing-options: done  # Single, Lifetime, Lifetime+ cards
+  6-6-team-agency-pricing-options: done  # Pro, Team cards
+  6-7-coupon-code-support: done  # BRIAN10, PHTC2026, HOKIHEART
+  6-8-generation-dialog-tier-restrictions: done  # GenerationDialog with lock icons
+  6-9-upgrade-prompts-ctas: done  # SmartUpgradeBanner, InlineUpgradeCTA
+  epic-6-retrospective: optional
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # EPIC 7: Launch Polish (BIG BANG LAUNCH)
+  # Sprint: 6 | Priority: High | Depends on: Epics 4, 5, 6
+  # Source: docs/epics-big-bang.md
+  # Started: 2026-01-21
+  # Completed: 2026-01-21
+  # ═══════════════════════════════════════════════════════════════════════════
+  epic-7: done
+  7-1-generate-3-new-curated-scenarios: done  # Completed 3x3 matrix (was 4, had 6 already)
+  7-2-landing-page-9-curated-tiles: done  # Updated ExampleCards.tsx
+  7-3-live-donation-counter: done  # /api/charity/total + DonationCounter component
+  7-4-charity-footer-badge: done  # Footer.tsx hoki.help badge
+  7-5-purchase-confirmation-email-with-charity: done  # Email template with 3%/5% calculation
+  7-6-early-supporter-migration: done  # migrate-early-supporters.ts script
+  7-7-post-purchase-generation-dialog-auto-open: done  # ?welcome=true param + auto-open
+  epic-7-retrospective: optional
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # EPIC 8: Healthcare Sector + Reconciliation Fix
+  # Sprint: 7 | Priority: Medium | Effort: 2-3 days
+  # Source: docs/epics/epic-08-healthcare-sector.md
+  # Phase 1 (8.1-8.4): Code complete but BLOCKED by reconciliation bug
+  # Phase 2 (8.5-8.11): Reconciliation fix
+  # ═══════════════════════════════════════════════════════════════════════════
+  epic-8: done  # All 11 stories complete
+  8-1-healthcare-sector-configuration: done  # BLOCKED - data mismatch
+  8-2-healthcare-hr-roles: done  # BLOCKED - data mismatch
+  8-3-curated-healthcare-example: done  # BLOCKED - data mismatch (reverted from prod)
+  8-4-sector-teaser-ui: done  # BLOCKED - data mismatch
+  8-5-investigate-payroll-event-generation: done  # Root cause documented
+  8-6-fix-payroll-reconciliation: done  # HR now uses event-sourced payroll - PERFECT MATCH
+  8-7-fix-duplicate-month-bug: done  # Fixed date iteration, 6 tests added
+  8-8-add-generation-time-validation: done  # Validation before JSON write, code review passed
+  8-9-regenerate-healthcare-example: done  # Expansion narrative added, regenerated, validated
+  8-10-validate-all-curated-examples: done  # All 9 examples pass validation (0.00% diff)
+  8-11-add-ci-reconciliation-test: done  # GitHub Actions workflow added
+  epic-8-retrospective: optional
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # EPIC 9: Critical Bug Fixes
+  # Sprint: 8 | Priority: CRITICAL | Effort: 1 day
+  # Source: Party Mode bug triage session 2026-01-25
+  # Completed: 2026-01-25
+  # ═══════════════════════════════════════════════════════════════════════════
+  epic-9: done
+  9-1-fix-paid-user-scenario-retention: done  # CRITICAL - Data loss for paid users - FIXED
+  9-2-fix-dashboard-dark-mode: done  # Medium - Visual inconsistency - FIXED
+  epic-9-retrospective: optional

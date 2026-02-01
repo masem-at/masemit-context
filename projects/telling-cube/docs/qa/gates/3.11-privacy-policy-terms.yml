@@ -1,0 +1,117 @@
+# Quality Gate Decision - Story 3.11: Privacy Policy & Terms
+# Reviewed by Quinn (Test Architect)
+
+schema: 1
+story: "3.11"
+story_title: "Privacy Policy & Terms"
+gate: "CONCERNS"
+status_reason: "Implementation complete with good legal content, but missing cookie banner (AC3), no Footer on legal pages themselves, missing metadata/SEO for legal pages, and no test coverage for critical compliance features."
+reviewer: "Quinn (Test Architect)"
+updated: "2025-11-20T16:45:00Z"
+
+waiver: { active: false }
+
+top_issues:
+  - id: "LEGAL-001"
+    severity: high
+    finding: "Cookie banner (AC3) not implemented - required for GDPR compliance"
+    suggested_action: "Implement CookieBanner component with localStorage consent tracking or waive for PoC with documented legal risk"
+  - id: "SEO-001"
+    severity: medium
+    finding: "Privacy and Terms pages missing metadata (title, description) - will show generic site metadata in search results"
+    suggested_action: "Add metadata export to app/privacy/page.tsx and app/terms/page.tsx for proper SEO"
+  - id: "UX-001"
+    severity: medium
+    finding: "Legal pages (privacy, terms) don't have Footer component - inconsistent navigation experience"
+    suggested_action: "Add Footer to app/privacy/page.tsx and app/terms/page.tsx for consistent site-wide navigation"
+  - id: "AC-001"
+    severity: medium
+    finding: "AC6 requires legal pages to be indexed by search engines, but no robots.txt verification or metadata confirmation"
+    suggested_action: "Verify robots.txt doesn't block /privacy and /terms, add metadata to ensure indexing"
+  - id: "TEST-001"
+    severity: medium
+    finding: "No automated tests for legal pages - critical compliance features untested"
+    suggested_action: "Add basic rendering tests and link validation tests for Footer and legal page links"
+
+quality_score: 60
+# Calculation: 100 - (20 × 0 FAILs) - (10 × 5 CONCERNS) = 50, adjusted up to 60 for good content quality
+
+evidence:
+  tests_reviewed: 0
+  risks_identified: 5
+  trace:
+    ac_covered: [1, 2, 4, 5]  # AC1, AC2, AC4, AC5 implemented
+    ac_gaps: [3, 6]  # AC3 (cookie banner) missing, AC6 (SEO/indexing) partially implemented
+
+nfr_validation:
+  security:
+    status: CONCERNS
+    notes: "Missing cookie consent banner (GDPR requirement). Legal pages functional but compliance incomplete without AC3."
+  performance:
+    status: PASS
+    notes: "Static pages render efficiently (142 B initial load per build output). No performance concerns."
+  reliability:
+    status: PASS
+    notes: "Pages build successfully, content is static and reliable. Links functional."
+  maintainability:
+    status: PASS
+    notes: "Clean, readable React components. Good separation of concerns. Easy to update legal content."
+  accessibility:
+    status: PASS
+    notes: "Semantic HTML structure with proper heading hierarchy. Good color contrast. Links have hover states. Prose styling enhances readability."
+  legal_compliance:
+    status: CONCERNS
+    notes: "Content quality excellent and covers GDPR requirements. Missing cookie banner implementation (AC3). Would benefit from professional legal review post-PoC as noted in story."
+
+recommendations:
+  immediate:
+    - action: "Implement cookie banner (AC3) OR explicitly waive for PoC with documented risk acceptance from Product Owner"
+      refs: ["components/CookieBanner.tsx (to be created)", "app/layout.tsx"]
+    - action: "Add Footer component to legal pages for consistent navigation"
+      refs: ["app/privacy/page.tsx", "app/terms/page.tsx"]
+    - action: "Add metadata export to legal pages for proper SEO"
+      refs: ["app/privacy/page.tsx:1", "app/terms/page.tsx:1"]
+  future:
+    - action: "Add automated tests for legal page rendering and link validation"
+      refs: ["__tests__/legal-pages.test.tsx (to be created)"]
+    - action: "Verify robots.txt configuration allows indexing of /privacy and /terms"
+      refs: ["app/robots.txt"]
+    - action: "Get professional legal review before scaling beyond PoC"
+      refs: ["Story noted in Out of Scope section"]
+    - action: "Consider i18n for German legal pages (post-PoC)"
+      refs: ["Story noted in Out of Scope section"]
+
+acceptance_criteria_assessment:
+  AC1_privacy_policy_page:
+    status: PASS
+    notes: "Privacy Policy page at /privacy with all required sections. Content comprehensive and GDPR-compliant. Last updated date present (Nov 20, 2025). Proper styling with TailwindCSS prose."
+  AC2_terms_conditions_page:
+    status: PASS
+    notes: "Terms page at /terms with all required sections including founding member benefits, payment terms, refund policy, governing law (Germany). Professional and complete."
+  AC3_cookie_notice:
+    status: FAIL
+    notes: "Cookie banner component NOT implemented. CookieBanner.tsx does not exist. This is a GDPR compliance requirement."
+  AC4_footer_links:
+    status: PASS
+    notes: "Footer component created with Privacy Policy, Terms, Contact Support links. Copyright notice present. Responsive design (mobile/desktop). Integrated on landing (app/page.tsx), results, and confirmation pages."
+  AC5_legal_links_checkout:
+    status: PASS
+    notes: "Legal disclaimer added to PricingSection with links to /privacy and /terms. Opens in new tab (target='_blank'). Clear text: 'By purchasing, you agree to our...'"
+  AC6_responsive_accessible:
+    status: CONCERNS
+    notes: "Pages responsive and use semantic HTML. CONCERNS: Missing metadata for SEO, no Footer on legal pages themselves, no explicit robots.txt verification for indexing."
+
+risk_summary:
+  totals:
+    critical: 0
+    high: 1  # LEGAL-001: Missing cookie banner
+    medium: 4  # SEO-001, UX-001, AC-001, TEST-001
+    low: 0
+  highest: "high"
+  recommendations:
+    must_fix:
+      - "Implement cookie banner (AC3) or waive with PO approval"
+    monitor:
+      - "SEO metadata for legal pages"
+      - "Test coverage for compliance features"
+      - "Footer consistency across all pages"
