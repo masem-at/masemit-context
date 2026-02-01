@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all projects in this context repository.
-> Last updated: 2026-02-01 15:13:05 UTC
+> Last updated: 2026-02-01 15:18:12 UTC
 
 ## How to use
 
@@ -24,7 +24,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### _internal
 
-- Files: 3
+- Files: 17
 
 ### chainsights
 
@@ -52,7 +52,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 - Source: `masem-at/masmit-niche-finder`
 - Last sync: 2026-02-01T15:13:05Z
-- Files: 5
+- Files: 4
 - **[📋 Project TOC](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/nice-finder/TOC.md)**
 
 ### tellingCube
