@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-01 14:45:45 UTC
+> Last updated: 2026-02-01 14:48:58 UTC
 
 ## Quick Access
 
@@ -356,7 +356,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### esg-reporting
 
-> Source: `masem-at/masmit-niche-finder` | Last sync: 2026-02-01T14:45:45Z
+> Source: `masem-at/masmit-niche-finder` | Last sync: 2026-02-01T14:48:58Z
 
 
 **docs/**
@@ -410,7 +410,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`project-scan-report.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/project-scan-report.json)
 - [`source-tree-analysis.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/masem-analytics/docs/source-tree-analysis.md)
 
-### niche-finder
+### tellingCube
 
 > Source: `masem-at/masmit-niche-finder` | Last sync: 2026-02-01T14:43:22Z
 

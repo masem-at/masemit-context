@@ -10,5 +10,3 @@ author: Sempre
 # Product Brief: esg-reporting-saas
 
 <!-- Content will be appended sequentially through collaborative workflow steps -->
-
-
