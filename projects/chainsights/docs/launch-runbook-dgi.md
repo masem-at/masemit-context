@@ -14,22 +14,29 @@
 - [ ] Confirm ≥40 DAOs in `daoIndexMembership` with confidence ≥ medium
 - [ ] Test as non-admin: `/governance-index` shows Coming Soon, `/methodology/dgi` shows Coming Soon
 - [ ] Test as admin: both pages render full content
-- [ ] Set `DGI_LAUNCH_DATE` const in `src/components/header.tsx` to actual launch date (controls "NEW" badge expiry)
 - [ ] Prepare marketing content (X thread, LinkedIn, Discord — see `docs/_masemIT/requirements/chainsights-dgi-promotion-strategy.md`)
 - [ ] Verify `/dgi` redirects to `/governance-index` (shareable short URL for campaigns)
 
 ## Launch Day
 
-### 1. Flip Feature Flags (Vercel Dashboard → Settings → Environment Variables)
+### 1. Set "NEW" Badge Date + Flip Feature Flags
 
-Set **both** to `true` and redeploy:
+**a) Update badge date** — set to today's date so the "NEW" badge shows for 14 days:
+
+File: `src/components/header.tsx`, line ~25:
+```ts
+const DGI_LAUNCH_DATE = new Date('2026-XX-XX') // ← set to today
+```
+Commit and push.
+
+**b) Flip feature flags** (Vercel Dashboard → Settings → Environment Variables):
 
 | Variable | Value |
 |----------|-------|
 | `DGI_PUBLIC` | `true` |
 | `NEXT_PUBLIC_DGI_PUBLIC` | `true` |
 
-Trigger redeploy (or push any commit).
+The push from step (a) triggers the redeploy automatically.
 
 ### 2. Verify (within 5 minutes)
 

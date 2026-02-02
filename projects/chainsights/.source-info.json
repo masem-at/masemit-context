@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-02T13:10:49Z",
-  "commit_sha": "1b3e00055731313ef5c3fc477366e7b71bb62c01",
-  "commit_message": "docs: mark admin dashboard cleanup as done — all HIGH items complete\n"
+  "synced_at": "2026-02-02T15:26:14Z",
+  "commit_sha": "cbfdf9d12000889b91a3fec6e8a63ed4cfc63f76",
+  "commit_message": "docs: add NEW badge date step to DGI launch runbook\n"
 }
