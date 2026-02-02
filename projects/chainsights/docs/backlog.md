@@ -15,8 +15,12 @@ _(none currently)_
 
 ## HIGH Priority
 
+- [ ] **Landing Page Engagement Tracking** — Scroll depth, time-on-page, section visibility. Requirement: `docs/_masemIT/requirements/feature-landing-engagement-tracking.md`. Needed to diagnose why 96% of visitors bounce from landing page.
+- [ ] **LogSnag Retry** — Server-side fetch to LogSnag API drops with SocketError on Vercel cold starts. Add 1x retry in `src/lib/logsnag.ts`.
+- [ ] **DGI Coming Soon Page** — Soft-landing for direct URL access to gated DGI pages (instead of silent redirect). Optional: email capture for launch notification.
 - [ ] **DGI GVS Calculation** — Run initial GVS for all DGI DAOs (new ones have no scores). Verify daily job picks them up.
 - [ ] **DGI Public Landing** — Decide: dedicated `/dgi` page or just show on `/rankings`? Need a shareable URL for the launch campaign.
+- [ ] **DGI Launch Runbook** — Extract launch checklist from story into standalone `docs/launch-runbook-dgi.md` with pre-launch, launch day, post-launch, rollback sections.
 - [ ] **Stripe Payment Inline on /check** — Currently uses Stripe Hosted Checkout (redirect). Plan was inline Payment Element in Step 3. Status: deferred, Hosted Checkout works but is less seamless.
 - [ ] **Admin Dashboard Stats Cleanup** — `featuredDAOs` prop still passed to dashboard. Clean up unused props now that featured/DGI are consolidated.
 
@@ -38,6 +42,8 @@ _(none currently)_
 
 ## DONE (Recently Completed)
 
+- [x] Admin DGI Bypass — DGI gates skip for admin role (server + client), Mario can test production-like — 2026-02-02
+- [x] Fix cta_click tracking — trackAndNavigate() prevents race condition where router.push kills XHR — 2026-02-02
 - [x] DGI Navigation Links + Event Tracking — Header, Footer, Rankings cross-link, all gated behind feature flag — 2026-02-02
 - [x] DGI Hidden Until Launch — feature flag `DGI_PUBLIC`, guards on 5 pages/routes — 2026-02-02
 - [x] Anon IP Rate Limiting — 2/IP/hour for anonymous `/api/quick-check` — 2026-02-02
