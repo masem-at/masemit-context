@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-02 12:26:33 UTC
+> Last updated: 2026-02-02 13:10:15 UTC
 
 ## Quick Access
 
@@ -100,7 +100,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-02-02T12:26:33Z
+> Source: `masem-at/chainsights` | Last sync: 2026-02-02T13:10:15Z
 
 
 **docs/**

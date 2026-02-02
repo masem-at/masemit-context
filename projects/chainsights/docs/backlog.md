@@ -21,7 +21,7 @@ _(none currently)_
 - [x] ~~**DGI GVS Calculation**~~ — DONE 2026-02-02 (daily job already processed all 44 DAOs)
 - [x] ~~**DGI Public Landing**~~ — DONE 2026-02-02 (`/dgi` redirects to `/governance-index`)
 - [x] ~~**DGI Launch Runbook**~~ — DONE 2026-02-02 (`docs/launch-runbook-dgi.md`)
-- [ ] **Stripe Payment Inline on /check** — Currently uses Stripe Hosted Checkout (redirect). Plan was inline Payment Element in Step 3. Status: deferred, Hosted Checkout works but is less seamless.
+- [x] ~~**Stripe Payment Inline on /check**~~ — DONE 2026-02-02 (Embedded Checkout via `@stripe/react-stripe-js`)
 - [ ] **Admin Dashboard Stats Cleanup** — `featuredDAOs` prop still passed to dashboard. Clean up unused props now that featured/DGI are consolidated.
 
 ## MEDIUM Priority
@@ -42,6 +42,7 @@ _(none currently)_
 
 ## DONE (Recently Completed)
 
+- [x] Stripe Payment Inline — Embedded Checkout replaces Hosted Checkout redirect on /check — 2026-02-02
 - [x] DGI Launch Runbook — `docs/launch-runbook-dgi.md` with pre-launch, launch day, post-launch, rollback — 2026-02-02
 - [x] DGI Public Landing — `/dgi` redirects to `/governance-index` for shareable launch URLs — 2026-02-02
 - [x] DGI Coming Soon Page — branded teaser with email capture replaces silent redirect/404 — 2026-02-02

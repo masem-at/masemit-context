@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-02T12:26:33Z",
-  "commit_sha": "565085cbb758477fb84e8714c57453d3b0053f91",
-  "commit_message": "docs: add DGI launch runbook + mark DGI public landing and runbook as done\n"
+  "synced_at": "2026-02-02T13:10:15Z",
+  "commit_sha": "06a2ab560a187e8dbb1e634858f0d11a734fc3f5",
+  "commit_message": "refactor: remove unused featuredDAOs prop from admin dashboard\n"
 }
