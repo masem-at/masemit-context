@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-02T13:10:15Z",
-  "commit_sha": "06a2ab560a187e8dbb1e634858f0d11a734fc3f5",
-  "commit_message": "refactor: remove unused featuredDAOs prop from admin dashboard\n"
+  "synced_at": "2026-02-02T13:10:49Z",
+  "commit_sha": "1b3e00055731313ef5c3fc477366e7b71bb62c01",
+  "commit_message": "docs: mark admin dashboard cleanup as done — all HIGH items complete\n"
 }

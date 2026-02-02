@@ -22,7 +22,7 @@ _(none currently)_
 - [x] ~~**DGI Public Landing**~~ — DONE 2026-02-02 (`/dgi` redirects to `/governance-index`)
 - [x] ~~**DGI Launch Runbook**~~ — DONE 2026-02-02 (`docs/launch-runbook-dgi.md`)
 - [x] ~~**Stripe Payment Inline on /check**~~ — DONE 2026-02-02 (Embedded Checkout via `@stripe/react-stripe-js`)
-- [ ] **Admin Dashboard Stats Cleanup** — `featuredDAOs` prop still passed to dashboard. Clean up unused props now that featured/DGI are consolidated.
+- [x] ~~**Admin Dashboard Stats Cleanup**~~ — DONE 2026-02-02
 
 ## MEDIUM Priority
 
@@ -42,6 +42,7 @@ _(none currently)_
 
 ## DONE (Recently Completed)
 
+- [x] Admin Dashboard Stats Cleanup — removed unused featuredDAOs prop, badge shows total DAO count — 2026-02-02
 - [x] Stripe Payment Inline — Embedded Checkout replaces Hosted Checkout redirect on /check — 2026-02-02
 - [x] DGI Launch Runbook — `docs/launch-runbook-dgi.md` with pre-launch, launch day, post-launch, rollback — 2026-02-02
 - [x] DGI Public Landing — `/dgi` redirects to `/governance-index` for shareable launch URLs — 2026-02-02
