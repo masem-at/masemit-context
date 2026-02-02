@@ -38,6 +38,7 @@ _(none currently)_
 
 ## DONE (Recently Completed)
 
+- [x] DGI Navigation Links + Event Tracking — Header, Footer, Rankings cross-link, all gated behind feature flag — 2026-02-02
 - [x] DGI Hidden Until Launch — feature flag `DGI_PUBLIC`, guards on 5 pages/routes — 2026-02-02
 - [x] Anon IP Rate Limiting — 2/IP/hour for anonymous `/api/quick-check` — 2026-02-02
 - [x] Admin GVS Trigger — Recalc GVS buttons (per-DAO + all) on `/admin/daos` — 2026-02-02

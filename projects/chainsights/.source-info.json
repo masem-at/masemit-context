@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-02T07:26:46Z",
-  "commit_sha": "0bf7e6019dd7d38ad5d090455f98690fef8e111e",
-  "commit_message": "feat: DGI feature flag, anon IP rate limiting, admin GVS recalc\n"
+  "synced_at": "2026-02-02T08:05:35Z",
+  "commit_sha": "215c8b5ffbda53b39af3f27bf784d7b95819377f",
+  "commit_message": "docs: mark DGI navigation links story as done in backlog\n"
 }
