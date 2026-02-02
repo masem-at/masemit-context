@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-02T09:46:49Z",
-  "commit_sha": "72795c0f59c8908083e530c9cc6c6f41426a7280",
-  "commit_message": "docs: mark LogSnag retry as done in backlog\n"
+  "synced_at": "2026-02-02T12:26:33Z",
+  "commit_sha": "565085cbb758477fb84e8714c57453d3b0053f91",
+  "commit_message": "docs: add DGI launch runbook + mark DGI public landing and runbook as done\n"
 }

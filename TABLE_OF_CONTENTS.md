@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-02 09:46:49 UTC
+> Last updated: 2026-02-02 12:26:33 UTC
 
 ## Quick Access
 
@@ -100,7 +100,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-02-02T09:46:49Z
+> Source: `masem-at/chainsights` | Last sync: 2026-02-02T12:26:33Z
 
 
 **docs/**
@@ -226,6 +226,9 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 **docs/flows/**
 - [`share-save-flow.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/flows/share-save-flow.md)
+
+**docs/**
+- [`launch-runbook-dgi.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/launch-runbook-dgi.md)
 
 **docs/legal/**
 - [`gdpr-compliance-checklist.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/legal/gdpr-compliance-checklist.md)

@@ -17,10 +17,10 @@ _(none currently)_
 
 - [x] ~~**Landing Page Engagement Tracking**~~ — DONE 2026-02-02
 - [x] ~~**LogSnag Retry**~~ — DONE 2026-02-02
-- [ ] **DGI Coming Soon Page** — Soft-landing for direct URL access to gated DGI pages (instead of silent redirect). Optional: email capture for launch notification.
-- [ ] **DGI GVS Calculation** — Run initial GVS for all DGI DAOs (new ones have no scores). Verify daily job picks them up.
-- [ ] **DGI Public Landing** — Decide: dedicated `/dgi` page or just show on `/rankings`? Need a shareable URL for the launch campaign.
-- [ ] **DGI Launch Runbook** — Extract launch checklist from story into standalone `docs/launch-runbook-dgi.md` with pre-launch, launch day, post-launch, rollback sections.
+- [x] ~~**DGI Coming Soon Page**~~ — DONE 2026-02-02
+- [x] ~~**DGI GVS Calculation**~~ — DONE 2026-02-02 (daily job already processed all 44 DAOs)
+- [x] ~~**DGI Public Landing**~~ — DONE 2026-02-02 (`/dgi` redirects to `/governance-index`)
+- [x] ~~**DGI Launch Runbook**~~ — DONE 2026-02-02 (`docs/launch-runbook-dgi.md`)
 - [ ] **Stripe Payment Inline on /check** — Currently uses Stripe Hosted Checkout (redirect). Plan was inline Payment Element in Step 3. Status: deferred, Hosted Checkout works but is less seamless.
 - [ ] **Admin Dashboard Stats Cleanup** — `featuredDAOs` prop still passed to dashboard. Clean up unused props now that featured/DGI are consolidated.
 
@@ -42,6 +42,10 @@ _(none currently)_
 
 ## DONE (Recently Completed)
 
+- [x] DGI Launch Runbook — `docs/launch-runbook-dgi.md` with pre-launch, launch day, post-launch, rollback — 2026-02-02
+- [x] DGI Public Landing — `/dgi` redirects to `/governance-index` for shareable launch URLs — 2026-02-02
+- [x] DGI Coming Soon Page — branded teaser with email capture replaces silent redirect/404 — 2026-02-02
+- [x] DGI GVS Calculation — all 44 DAOs scored by daily job, no manual action needed — 2026-02-02
 - [x] LogSnag Retry — 1x retry in catch block for Vercel cold-start SocketError drops — 2026-02-02
 - [x] Landing Page Engagement Tracking — scroll depth, time-on-page, section visibility via EngagementTracker component — 2026-02-02
 - [x] Admin DGI Bypass — DGI gates skip for admin role (server + client), Mario can test production-like — 2026-02-02
