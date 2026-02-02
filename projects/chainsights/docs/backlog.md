@@ -15,7 +15,7 @@ _(none currently)_
 
 ## HIGH Priority
 
-- [ ] **Landing Page Engagement Tracking** — Scroll depth, time-on-page, section visibility. Requirement: `docs/_masemIT/requirements/feature-landing-engagement-tracking.md`. Needed to diagnose why 96% of visitors bounce from landing page.
+- [x] ~~**Landing Page Engagement Tracking**~~ — DONE 2026-02-02
 - [ ] **LogSnag Retry** — Server-side fetch to LogSnag API drops with SocketError on Vercel cold starts. Add 1x retry in `src/lib/logsnag.ts`.
 - [ ] **DGI Coming Soon Page** — Soft-landing for direct URL access to gated DGI pages (instead of silent redirect). Optional: email capture for launch notification.
 - [ ] **DGI GVS Calculation** — Run initial GVS for all DGI DAOs (new ones have no scores). Verify daily job picks them up.
@@ -42,6 +42,7 @@ _(none currently)_
 
 ## DONE (Recently Completed)
 
+- [x] Landing Page Engagement Tracking — scroll depth, time-on-page, section visibility via EngagementTracker component — 2026-02-02
 - [x] Admin DGI Bypass — DGI gates skip for admin role (server + client), Mario can test production-like — 2026-02-02
 - [x] Fix cta_click tracking — trackAndNavigate() prevents race condition where router.push kills XHR — 2026-02-02
 - [x] DGI Navigation Links + Event Tracking — Header, Footer, Rankings cross-link, all gated behind feature flag — 2026-02-02

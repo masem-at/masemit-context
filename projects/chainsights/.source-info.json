@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-02T09:20:18Z",
-  "commit_sha": "0e1a5c0a1e15e5b83bf10a1dfc395ef2f40268ee",
-  "commit_message": "docs: update backlog with completed fixes + new HIGH items\n"
+  "synced_at": "2026-02-02T09:37:35Z",
+  "commit_sha": "5079c4f9f3d6b6fdb2dbec61dea10a5081f497af",
+  "commit_message": "docs: mark landing page engagement tracking as done\n"
 }
