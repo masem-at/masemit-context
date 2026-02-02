@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-02T09:37:35Z",
-  "commit_sha": "5079c4f9f3d6b6fdb2dbec61dea10a5081f497af",
-  "commit_message": "docs: mark landing page engagement tracking as done\n"
+  "synced_at": "2026-02-02T09:46:49Z",
+  "commit_sha": "72795c0f59c8908083e530c9cc6c6f41426a7280",
+  "commit_message": "docs: mark LogSnag retry as done in backlog\n"
 }

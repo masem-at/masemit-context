@@ -16,7 +16,7 @@ _(none currently)_
 ## HIGH Priority
 
 - [x] ~~**Landing Page Engagement Tracking**~~ — DONE 2026-02-02
-- [ ] **LogSnag Retry** — Server-side fetch to LogSnag API drops with SocketError on Vercel cold starts. Add 1x retry in `src/lib/logsnag.ts`.
+- [x] ~~**LogSnag Retry**~~ — DONE 2026-02-02
 - [ ] **DGI Coming Soon Page** — Soft-landing for direct URL access to gated DGI pages (instead of silent redirect). Optional: email capture for launch notification.
 - [ ] **DGI GVS Calculation** — Run initial GVS for all DGI DAOs (new ones have no scores). Verify daily job picks them up.
 - [ ] **DGI Public Landing** — Decide: dedicated `/dgi` page or just show on `/rankings`? Need a shareable URL for the launch campaign.
@@ -42,6 +42,7 @@ _(none currently)_
 
 ## DONE (Recently Completed)
 
+- [x] LogSnag Retry — 1x retry in catch block for Vercel cold-start SocketError drops — 2026-02-02
 - [x] Landing Page Engagement Tracking — scroll depth, time-on-page, section visibility via EngagementTracker component — 2026-02-02
 - [x] Admin DGI Bypass — DGI gates skip for admin role (server + client), Mario can test production-like — 2026-02-02
 - [x] Fix cta_click tracking — trackAndNavigate() prevents race condition where router.push kills XHR — 2026-02-02
