@@ -4,7 +4,7 @@
 **Requirement:** `docs/_masemIT/bugs/issue-free-check-open-universe.md`
 **Architecture:** `docs/architecture-open-universe.md`
 **Estimated Effort:** 31–33h
-**Priority:** HIGH — Conversion-Killer / DGI-50 Blocker
+**Priority:** HIGH — Conversion-Killer / DGI Blocker
 
 ---
 

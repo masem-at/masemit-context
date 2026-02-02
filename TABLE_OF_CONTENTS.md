@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-01 22:24:21 UTC
+> Last updated: 2026-02-02 05:38:02 UTC
 
 ## Quick Access
 
@@ -100,7 +100,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-02-01T22:24:21Z
+> Source: `masem-at/chainsights` | Last sync: 2026-02-02T05:38:02Z
 
 
 **docs/**
@@ -144,6 +144,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 **docs/_masemIT/requirements/**
 - [`chainsights-bugs-auth-backlog.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/requirements/chainsights-bugs-auth-backlog.md)
+- [`chainsights-dgi-promotion-strategy.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/requirements/chainsights-dgi-promotion-strategy.md)
 - [`dao-governance-index-requirement-v1.1.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/requirements/dao-governance-index-requirement-v1.1.md)
 - [`dao-governance-index-requirement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/_masemIT/requirements/dao-governance-index-requirement.md)
 
@@ -186,6 +187,9 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 **docs/architecture/**
 - [`crypto-payments-donations-architecture.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/architecture/crypto-payments-donations-architecture.md)
+
+**docs/**
+- [`backlog.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/backlog.md)
 
 **docs/billing/**
 - [`masemit-vat-requirements.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/billing/masemit-vat-requirements.md)

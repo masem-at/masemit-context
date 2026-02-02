@@ -4,7 +4,7 @@
 **Priority:** 🔴 HIGH — Conversion-Killer
 **Reporter:** Mario Semper (PO)
 **Date:** 2026-02-01
-**Affects:** Lead Generation, Customer Acquisition, DGI-50 Expansion
+**Affects:** Lead Generation, Customer Acquisition, DGI Expansion
 
 ---
 
@@ -17,7 +17,7 @@ Der Free Check funktioniert aktuell **nur für DAOs die bereits in unserer inter
 ### Warum das ein Problem ist
 
 1. **Conversion-Killer:** Visitor gibt seinen DAO ein → "No data" → Absprung. Wir verlieren den Lead komplett.
-2. **Skalierungs-Blocker:** Wir planen DGI-50 (Erweiterung auf 50 DAOs). Selbst WIR können keine Quick Checks für Kandidaten machen ohne sie erst manuell zur DB hinzuzufügen.
+2. **Skalierungs-Blocker:** Wir planen DGI (Erweiterung auf 50 DAOs). Selbst WIR können keine Quick Checks für Kandidaten machen ohne sie erst manuell zur DB hinzuzufügen.
 3. **Promise-Bruch (UX):** Die UI zeigt ein Suchfeld/"Select DAO" — der User erwartet dass er JEDES DAO eingeben kann. Die Einschränkung auf 21 vorselektierte ist nirgends kommuniziert. Das Suchfeld suggeriert Offenheit, dann blocken wir 99.8%.
 4. **Wettbewerbsnachteil:** Snapshot hat 13.000+ Spaces. Wir blocken 99.8% davon ab.
 5. **625x Markt-Expansion:** Aktuell 21 DAOs erreichbar (0.16% des Snapshot-Universums). Nach Fix: 13.000+ Spaces = **625-facher adressierbarer Markt**.
@@ -111,7 +111,7 @@ Space in `daos`-Tabelle?
 
 | # | Requirement | Details |
 |---|-------------|---------|
-| R11 | Upsell-CTA nach on-the-fly Check | "Want this DAO tracked daily? Request inclusion in our DGI-50" |
+| R11 | Upsell-CTA nach on-the-fly Check | "Want this DAO tracked daily? Request inclusion in our DGI" |
 | R12 | Rate-Limiting für on-the-fly Checks | Siehe Rate-Limiting unten |
 
 ---
@@ -143,7 +143,7 @@ Space in `daos`-Tabelle?
 |---|---|---|---|
 | **Anonymous** (kein Email) | 2 / IP / Stunde | IP-basiert | Genug zum Testen, schützt vor Scraping |
 | **Free** (nach Email-Gate) | 5 / Email / Tag | Email-basiert | Lead ist identifiziert, mehr Vertrauen |
-| **@masem.at / Admin** | Unlimited | Whitelist | Mario braucht das für DGI-50 Prüfung |
+| **@masem.at / Admin** | Unlimited | Whitelist | Mario braucht das für DGI Prüfung |
 
 **Wichtig:**
 - Das bestehende Rate-Limit für @masem.at Test-Bypass-Emails ist ein anderer Scope — NICHT auf Free Checks anwenden.
@@ -178,7 +178,7 @@ On-the-fly Check
 **Begründung gegen Auto-Promotion in Daily Job:**
 - Unkontrolliertes Wachstum: Jemand checkt 50 Spam-DAOs → wir berechnen die ab morgen täglich
 - API-Kosten-Explosion: Jeder DAO im Daily Job = tägliche Snapshot API-Calls
-- Widerspricht dem DGI-50 Kurations-Prinzip: Mario entscheidet manuell was in den Index kommt
+- Widerspricht dem DGI Kurations-Prinzip: Mario entscheidet manuell was in den Index kommt
 
 **`reportedDaos` Schema-Erweiterung:**
 
@@ -377,7 +377,7 @@ Wenn dieses Feature live ist, wird "Works with **any** Snapshot DAO" ein Killer-
 
 | Feature | Auswirkung |
 |---------|------------|
-| **DGI-50 Expansion** | Ermöglicht Mario, neue Kandidaten direkt per Free Check zu prüfen |
+| **DGI Expansion** | Ermöglicht Mario, neue Kandidaten direkt per Free Check zu prüfen |
 | **Report Sales** | User die ihren DAO im Free Check sehen → höhere Deep Dive / Audit Conversion |
 | **Lead-Gen** | Massiv größerer adressierbarer Markt (13.000+ Spaces statt 21) |
 | **Pricing Page** | "Works with any Snapshot DAO" wird zum Feature statt Einschränkung |
@@ -410,11 +410,11 @@ _Revidierte Schätzung (PO-Review 2026-02-01) — berücksichtigt Scope-Erweiter
 ## Priorität-Begründung
 
 Dieses Issue blockiert:
-1. **DGI-50 Rollout** — wir können keine neuen DAOs prüfen
+1. **DGI Rollout** — wir können keine neuen DAOs prüfen
 2. **Jede Marketing-Kampagne** — wenn wir Traffic schicken und der User sein DAO nicht findet, ist das Budget verbrannt
 3. **Organic Growth** — jeder DAO-Lead der seinen Space nicht findet ist verloren
 
-**Empfehlung:** Vor dem nächsten Marketing-Push fixen. Idealerweise zusammen mit DGI-50 Epic 1.
+**Empfehlung:** Vor dem nächsten Marketing-Push fixen. Idealerweise zusammen mit DGI Epic 1.
 
 ---
 

@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-01T22:24:21Z",
-  "commit_sha": "2edf3043af808021c9bae42aac9e1e56c87e163b",
-  "commit_message": "feat: add bulk DAO import script + DGI-50 CSV + update project context\n"
+  "synced_at": "2026-02-02T05:38:02Z",
+  "commit_sha": "575c84363c91967306988854b65be15e4108879e",
+  "commit_message": "refactor: rename DGI-50 to DGI across all docs and files\n"
 }
