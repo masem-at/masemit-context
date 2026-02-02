@@ -11,9 +11,7 @@
 
 ## CRITICAL / Blockers
 
-- [ ] **DGI Hidden Until Launch** — DGI content (rankings filter, DGI badge, DGI category columns) must NOT be visible to public users. Admin-only until launch day. Add feature flag or env var `DGI_PUBLIC=false`. On launch day: flip to `true`. Affects: `/rankings` page, DAO detail pages, any public-facing DGI references.
-- [ ] **Anon IP Rate Limiting** — Anonymous users (no session) can hammer the API. Need IP-based rate limiting for `/api/quick-check` and other public endpoints. Current rate limiting is email-based only (5/email/day for on-the-fly). Anon users bypass this entirely.
-- [ ] **Admin DAO Management — GVS Trigger** — New DAOs added via bulk-add have NO GVS scores. Need "Trigger GVS Recalc" button on `/admin/daos` or auto-trigger after bulk-add.
+_(none currently)_
 
 ## HIGH Priority
 
@@ -40,6 +38,9 @@
 
 ## DONE (Recently Completed)
 
+- [x] DGI Hidden Until Launch — feature flag `DGI_PUBLIC`, guards on 5 pages/routes — 2026-02-02
+- [x] Anon IP Rate Limiting — 2/IP/hour for anonymous `/api/quick-check` — 2026-02-02
+- [x] Admin GVS Trigger — Recalc GVS buttons (per-DAO + all) on `/admin/daos` — 2026-02-02
 - [x] Consolidate admin DAO management (`/admin/daos`) — 2026-02-02
 - [x] Bulk DAO import script + DGI CSV — 2026-02-01
 - [x] Unified admin auth (magic link only) — 2026-02-01
