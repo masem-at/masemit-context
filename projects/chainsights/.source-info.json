@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-02T15:26:14Z",
-  "commit_sha": "cbfdf9d12000889b91a3fec6e8a63ed4cfc63f76",
-  "commit_message": "docs: add NEW badge date step to DGI launch runbook\n"
+  "synced_at": "2026-02-03T06:59:42Z",
+  "commit_sha": "daa24d361d6654e80cc1e0d3b68946a17b616b8e",
+  "commit_message": "docs: add masemit tracker integration reference\n"
 }
