@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for masem-analytics.
 > Source: `masem-at/masemit-analytics`
-> Last sync: 2026-02-01 15:18:12 UTC | Commit: `50a40793ca50e2e776f00a893c2335b5d78adaa3`
+> Last sync: 2026-02-03 06:55:09 UTC | Commit: `e808f9a1ccd1ff8d467047b67112665dee8a81e6`
 
 ---
 
@@ -11,6 +11,14 @@
 
 - [`all-projects-event-tracking.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/all-projects-event-tracking.md)
 - [`analytics-conversion-features-requirement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/analytics-conversion-features-requirement.md)
+
+## docs/_masemit/bugs-issues-tickets
+
+- [`BUG-analytics-tracker-coverage.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/bugs-issues-tickets/BUG-analytics-tracker-coverage.md)
+- [`FIX-SPEC-tracker-spa-route-change.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/bugs-issues-tickets/FIX-SPEC-tracker-spa-route-change.md)
+
+## docs/_masemit
+
 - [`build-cycle.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/build-cycle.md)
 - [`event-tracking-requirement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/event-tracking-requirement.md)
 - [`handoff-stripe-webhook-analytics.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/handoff-stripe-webhook-analytics.md)

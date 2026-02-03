@@ -2,7 +2,7 @@
   "source_repo": "masem-at/masemit-analytics",
   "project_name": "masem-analytics",
   "source_folders": "docs",
-  "synced_at": "2026-02-01T15:18:12Z",
-  "commit_sha": "50a40793ca50e2e776f00a893c2335b5d78adaa3",
-  "commit_message": "\n"
+  "synced_at": "2026-02-03T06:55:09Z",
+  "commit_sha": "e808f9a1ccd1ff8d467047b67112665dee8a81e6",
+  "commit_message": "docs: add tracker integration guide with API endpoint\n"
 }
