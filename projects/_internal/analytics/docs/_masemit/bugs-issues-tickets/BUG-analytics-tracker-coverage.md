@@ -43,17 +43,20 @@ Vergleich von Vercel-Logs (728 Rows, ~12h Zeitfenster 2026-02-02 17:45 – 2026-
 **Fix:** `strategy="afterInteractive"` in `src/app/layout.tsx`  
 **Verifiziert:** DevTools zeigt `pageView` Pings mit korrekten Pfaden nach SPA-Navigation
 
-### BUG-2: Bot-Traffic wird nicht gefiltert
+### ✅ BUG-2: Bot-Traffic wird nicht gefiltert — GEFIXT
 
-**Schweregrad:** High  
-**Symptom:** 64 von 85 Neon-Events kommen von `Linux/Chrome/desktop` mit wechselnden device_ids, teilweise in Paaren im Sekundentakt. Nur 22 Events sind `Windows/Chrome` (wahrscheinlich echter Traffic).  
-**Vermutete Ursache:** Vercel Speed Insights, Lighthouse-Checks, Monitoring oder Headless-Browser-Bots werden als echte User getrackt.  
-**Impact:** Event-Zahlen sind aufgeblasen, Unique-Visitor-Counts und Conversion-Rates verfälscht.
+**Schweregrad:** High
+**Status:** ✅ Gefixt (2026-02-03)
+**Symptom:** 64 von 85 Neon-Events kommen von `Linux/Chrome/desktop` mit wechselnden device_ids, teilweise in Paaren im Sekundentakt.
+**Root Cause:** Keine Bot-Detection im Tracker
+**Fix:** Bot-Detection in tracker.js v1.3.0 implementiert:
+- `navigator.webdriver` Check (Headless Chrome, Puppeteer, Playwright)
+- Bekannte Bot-UAs (Googlebot, GPTBot, ClaudeBot, Lighthouse, etc.)
+- Vercel Preview Deployments (*.vercel.app)
+- Localhost/Development environments
+- Missing `navigator.languages` (bot indicator)
 
-**Fix prüfen:**
-- [ ] Bot-Detection in tracker.js implementiert? (`navigator.webdriver`, bekannte Bot-UAs)
-- [ ] Serverseitiger Bot-Filter auf der Ingestion-API?
-- [ ] Vercel Speed Insights / Preview-Deployments erzeugen Events?
+**Verifizierung:** Nach Deploy prüfen ob Linux/Chrome Bot-Traffic verschwindet
 
 ### BUG-3: Mobile/Safari wird nicht getrackt
 
@@ -71,7 +74,7 @@ Vergleich von Vercel-Logs (728 Rows, ~12h Zeitfenster 2026-02-02 17:45 – 2026-
 
 - [x] pageView Events werden auf ALLEN Seiten gefeuert, nicht nur `/`
 - [x] SPA-Navigation tracked korrekt (Route-Change erzeugt neuen pageView)
-- [ ] Bot-Traffic gefiltert (kein `navigator.webdriver`, keine bekannten Bot-UAs)
+- [x] Bot-Traffic gefiltert (kein `navigator.webdriver`, keine bekannten Bot-UAs)
 - [ ] Safari/iOS erzeugt Events (Console-Error-frei)
 - [ ] Vergleichstest: Vercel-Logs vs Neon-Events für 1h zeigt >80% Abdeckung
 
