@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-04 21:19:58 UTC
+> Last updated: 2026-02-04 21:21:29 UTC
 
 ## Quick Access
 
@@ -111,7 +111,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-02-04T21:19:58Z
+> Source: `masem-at/chainsights` | Last sync: 2026-02-04T21:21:29Z
 
 
 **docs/**
@@ -228,6 +228,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 **docs/**
 - [`epics-admin-dashboard.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/epics-admin-dashboard.md)
 - [`epics-phase-2.5.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/epics-phase-2.5.md)
+- [`epics-phase-3.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/epics-phase-3.md)
 - [`epics.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/epics.md)
 
 **docs/features/**

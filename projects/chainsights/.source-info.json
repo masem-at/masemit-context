@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-04T21:19:58Z",
-  "commit_sha": "c2a072a464368e9a57b4aa69dd83474f5da5bf31",
-  "commit_message": "feat: add account dashboard with subscription management (Epic 18)\n"
+  "synced_at": "2026-02-04T21:21:29Z",
+  "commit_sha": "eaacbcbde6a09b4c1ac2166b6c63badd16c30cda",
+  "commit_message": "docs: add Epic 19 Engagement Hub for Phase 3\n"
 }
