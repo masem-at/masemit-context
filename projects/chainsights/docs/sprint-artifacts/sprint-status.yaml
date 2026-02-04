@@ -254,12 +254,12 @@ development_status:
   # Central cockpit for DAO community engagement tracking
   # Dependencies: daos table, Admin Auth (both exist)
   # Note: X API access beantragt for future Phase 3a
-  epic-19-engagement-hub: backlog
-  19-1-extend-daos-table-with-community-links: backlog
-  19-2-admin-dao-edit-community-links-section: backlog
-  19-3-engagement-hub-overview-page: backlog
-  19-4-create-engagement-log-table: backlog
-  19-5-engagement-timeline-per-dao: backlog
-  19-6-add-engagement-log-entry-form: backlog
-  19-7-engagement-hub-navigation-and-analytics: backlog
+  epic-19-engagement-hub: in-progress
+  19-1-extend-daos-table-with-community-links: done
+  19-2-admin-dao-edit-community-links-section: done
+  19-3-engagement-hub-overview-page: done
+  19-4-create-engagement-log-table: done
+  19-5-engagement-timeline-per-dao: done
+  19-6-add-engagement-log-entry-form: done
+  19-7-engagement-hub-navigation-and-analytics: done
   epic-19-retrospective: optional

@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-04T21:21:29Z",
-  "commit_sha": "eaacbcbde6a09b4c1ac2166b6c63badd16c30cda",
-  "commit_message": "docs: add Epic 19 Engagement Hub for Phase 3\n"
+  "synced_at": "2026-02-04T21:48:04Z",
+  "commit_sha": "b0466011e9de1de91fdd9d209dfe8a81b38e18a0",
+  "commit_message": "feat: add Engagement Hub for DAO community tracking (Epic 19)\n"
 }
