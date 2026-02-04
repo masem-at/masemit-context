@@ -194,3 +194,40 @@ development_status:
   15-1-create-content-section-with-featured-daos: done
   15-2-add-free-tier-management-link: done
   epic-15-retrospective: optional
+
+  # ============================================
+  # PHASE 2.5: Report Enhancement + Pricing + Account
+  # Source: docs/epics-phase-2.5.md
+  # Date Added: 2026-02-04
+  # ============================================
+
+  # Epic 16: DGI Benchmark in Reports (Phase 2.5)
+  # Adds dimension-by-dimension benchmark comparison to paid reports
+  # Dependencies: None (uses existing dgiSnapshots data)
+  epic-16-dgi-benchmark-in-reports: backlog
+  16-1-extend-dgi-query-for-component-averages: backlog
+  16-2-calculate-component-benchmarks-in-analysis: backlog
+  16-3-render-headline-benchmark-for-deep-dive: backlog
+  16-4-render-full-benchmark-section-for-governance-audit: backlog
+  epic-16-retrospective: optional
+
+  # Epic 17: Pricing Page (Phase 2.5)
+  # Creates transparent /pricing page with all products
+  # Dependencies: None (can run parallel to Epic 16)
+  epic-17-pricing-page: backlog
+  17-1-create-pricing-page-with-report-tiers: backlog
+  17-2-add-matrix-subscription-and-faq-sections: backlog
+  17-3-navigation-link-seo-and-analytics: backlog
+  17-4-update-tiercards-with-benchmark-badge: backlog
+  epic-17-retrospective: optional
+
+  # Epic 18: Account Dashboard (Phase 2.5)
+  # Self-service subscription management and report history
+  # Dependencies: Magic Link Auth (already deployed)
+  epic-18-account-dashboard: backlog
+  18-1-create-account-page-with-auth-protection: backlog
+  18-2-display-subscription-status: backlog
+  18-3-integrate-stripe-customer-portal: backlog
+  18-4-display-report-history-with-downloads: backlog
+  18-5-navigation-and-analytics-integration: backlog
+  epic-18-retrospective: optional
