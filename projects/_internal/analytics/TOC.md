@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for masem-analytics.
 > Source: `masem-at/masemit-analytics`
-> Last sync: 2026-02-03 07:06:38 UTC | Commit: `ae41c5bfafdf1f9f7949d9da4a7eeae50ba86c83`
+> Last sync: 2026-02-04 18:04:49 UTC | Commit: `9be4b6d990703e6d4911cfdbaf6d9be8edd4dfd9`
 
 ---
 
@@ -22,6 +22,13 @@
 - [`build-cycle.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/build-cycle.md)
 - [`event-tracking-requirement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/event-tracking-requirement.md)
 - [`handoff-stripe-webhook-analytics.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/handoff-stripe-webhook-analytics.md)
+
+## docs/_masemit/requirements
+
+- [`TASK-funnel-editor-event-data-filter.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/requirements/TASK-funnel-editor-event-data-filter.md)
+
+## docs/_masemit
+
 - [`tech-spec-conversion-features-phase1.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/tech-spec-conversion-features-phase1.md)
 
 ## docs

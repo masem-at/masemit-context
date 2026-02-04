@@ -2,7 +2,7 @@
   "source_repo": "masem-at/masemit-analytics",
   "project_name": "masem-analytics",
   "source_folders": "docs",
-  "synced_at": "2026-02-03T07:06:38Z",
-  "commit_sha": "ae41c5bfafdf1f9f7949d9da4a7eeae50ba86c83",
-  "commit_message": "feat: add bot detection to tracker v1.3.0\n"
+  "synced_at": "2026-02-04T18:04:49Z",
+  "commit_sha": "9be4b6d990703e6d4911cfdbaf6d9be8edd4dfd9",
+  "commit_message": "feat: enhance funnel editor with event_data filter and path matching modes\n"
 }
