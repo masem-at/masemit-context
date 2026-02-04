@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-04T20:07:18Z",
-  "commit_sha": "820140411e9a6bb8cb401e0ddf2384d675afe62d",
-  "commit_message": "docs: add Epic 17.5 Feedback Bubble to Phase 2.5\n"
+  "synced_at": "2026-02-04T21:19:58Z",
+  "commit_sha": "c2a072a464368e9a57b4aa69dd83474f5da5bf31",
+  "commit_message": "feat: add account dashboard with subscription management (Epic 18)\n"
 }
