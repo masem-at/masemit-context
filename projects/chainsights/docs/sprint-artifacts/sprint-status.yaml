@@ -221,6 +221,18 @@ development_status:
   17-4-update-tiercards-with-benchmark-badge: backlog
   epic-17-retrospective: optional
 
+  # Epic 17.5: Feedback Bubble (Phase 2.5)
+  # Anonymous feedback widget on all pages
+  # Dependencies: None (standalone)
+  # Source: docs/_masemIT/requirements/ticket-feedback-bubble.md
+  epic-17-5-feedback-bubble: backlog
+  17-5-1-create-feedback-database-schema: backlog
+  17-5-2-build-feedback-api-endpoint: backlog
+  17-5-3-build-feedback-bubble-component: backlog
+  17-5-4-integrate-globally-and-add-analytics: backlog
+  17-5-5-add-email-notification-for-new-feedback: backlog
+  epic-17-5-retrospective: optional
+
   # Epic 18: Account Dashboard (Phase 2.5)
   # Self-service subscription management and report history
   # Dependencies: Magic Link Auth (already deployed)

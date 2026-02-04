@@ -501,6 +501,174 @@ So that **I can easily access my account or log in**.
 
 ---
 
+---
+
+### Epic 4: Feedback Bubble (Epic 17.5)
+
+Enable anonymous, frictionless feedback collection via a floating widget on all pages, giving ChainSights qualitative user insights.
+
+**User Outcome:** Visitors can share thoughts in 5 seconds – one click, one sentence, done.
+
+**Business Outcome:** ChainSights finally gets qualitative data about what visitors think, need, and miss.
+
+**FRs covered:** FR4.1-FR4.5 (see below)
+
+**Dependencies:** None (standalone component)
+
+**Source:** `docs/_masemIT/requirements/ticket-feedback-bubble.md`
+
+#### Functional Requirements
+
+| ID | Requirement |
+|----|-------------|
+| FR4.1 | `feedback` table stores message, page, device, country, placeholder_shown |
+| FR4.2 | POST `/api/feedback` accepts message with rate limiting (10/IP/hour, 3/session) |
+| FR4.3 | Floating bubble (48px, bottom-right) expands to full-width input bar on click |
+| FR4.4 | Analytics events: `feedback_bubble_click`, `feedback_submitted`, `feedback_dismissed` |
+| FR4.5 | Email notification to admin on new feedback submission |
+
+---
+
+#### Story 4.1: Create Feedback Database Schema
+
+As a **developer**,
+I want **a `feedback` table in the database**,
+So that **user feedback can be stored with context for later analysis**.
+
+**Acceptance Criteria:**
+
+**Given** the database schema needs to be extended
+**When** the migration runs
+**Then** a `feedback` table exists with:
+- `id` (UUID, primary key)
+- `message` (TEXT, not null, max 500 chars)
+- `page` (VARCHAR 200, not null)
+- `referrer` (VARCHAR 500, nullable)
+- `country` (VARCHAR 5, nullable – from Vercel geo headers)
+- `device` (VARCHAR 20 – 'mobile' | 'desktop' | 'tablet')
+- `placeholder_shown` (VARCHAR 200)
+- `created_at` (TIMESTAMP, default NOW())
+
+**And** no user identification fields (anonymous by design)
+
+**Files:** `src/lib/db/schema.ts`, migration via `npm run db:generate`
+
+**FRs:** FR4.1
+
+---
+
+#### Story 4.2: Build Feedback API Endpoint
+
+As a **visitor**,
+I want **to submit feedback via API**,
+So that **my thoughts are captured without page reload**.
+
+**Acceptance Criteria:**
+
+**Given** I submit feedback via POST `/api/feedback`
+**When** the request contains `{ message, page, placeholderShown }`
+**Then** feedback is stored in database with device/country from headers
+**And** response is `200 { success: true }`
+
+**Given** message is empty or > 500 chars
+**When** I submit
+**Then** response is `400 { error: "..." }`
+
+**Given** I've submitted 10+ times this hour (same IP)
+**When** I submit again
+**Then** response is `429 { error: "Too many submissions" }`
+
+**Files:** `src/app/api/feedback/route.ts` (new)
+
+**FRs:** FR4.2
+
+---
+
+#### Story 4.3: Build Feedback Bubble Component
+
+As a **visitor**,
+I want **a floating feedback bubble that expands on click**,
+So that **I can share thoughts quickly without leaving the page**.
+
+**Acceptance Criteria:**
+
+**Given** I'm on any page (except /admin/*)
+**When** the page loads
+**Then** I see a small floating bubble (48px, bottom-right, #009BB1)
+
+**Given** I click the bubble
+**When** it expands
+**Then** it animates (300ms) to a full-width input bar
+**And** input is autofocused
+**And** a random placeholder is shown from rotating list
+
+**Given** I type and press Enter or click ✓
+**When** feedback is submitted successfully
+**Then** I see "Thanks! Your feedback shapes what we build next." for 2s
+**And** bubble collapses back
+
+**Given** I press Escape or click ✕
+**When** I haven't submitted
+**Then** bubble collapses without submitting
+
+**Given** I've submitted 3x this session
+**When** I try again
+**Then** bubble is hidden for rest of session
+
+**Files:** `src/components/feedback-bubble.tsx` (new)
+
+**FRs:** FR4.3
+
+---
+
+#### Story 4.4: Integrate Globally & Add Analytics
+
+As a **product owner**,
+I want **the feedback bubble on all pages with analytics tracking**,
+So that **I can measure engagement and collect feedback site-wide**.
+
+**Acceptance Criteria:**
+
+**Given** the FeedbackBubble component exists
+**When** I add it to the root layout
+**Then** it appears on all pages except `/admin/*`
+
+**Given** a user interacts with the bubble
+**When** they open, submit, or dismiss
+**Then** analytics events fire:
+- `feedback_bubble_click` (opened)
+- `feedback_submitted` (sent, with message length)
+- `feedback_dismissed` (closed without sending)
+
+**Files:** `src/app/layout.tsx`, `src/components/feedback-bubble.tsx`
+
+**FRs:** FR4.4
+
+---
+
+#### Story 4.5: Add Email Notification for New Feedback
+
+As a **product owner**,
+I want **an email alert when feedback is submitted**,
+So that **I see it immediately without checking a dashboard**.
+
+**Acceptance Criteria:**
+
+**Given** feedback is successfully stored in database
+**When** the API processes the request
+**Then** an email is sent to `contact@masem.at` via Resend containing:
+- Subject: `[ChainSights Feedback] {page}`
+- Body: message, page, device, country, placeholder shown, timestamp
+
+**And** email failure does NOT block the API response (fire-and-forget)
+**And** email sending can be toggled via env var `FEEDBACK_EMAIL_ENABLED`
+
+**Files:** `src/app/api/feedback/route.ts`
+
+**FRs:** FR4.5
+
+---
+
 ## Summary
 
 | Epic | Stories | Total FRs |
@@ -508,4 +676,5 @@ So that **I can easily access my account or log in**.
 | Epic 1: DGI Benchmark in Reports | 4 | FR1.1-FR1.8, NFR6 |
 | Epic 2: Pricing Page | 4 | FR2.1-FR2.6, NFR1-NFR3 |
 | Epic 3: Account Dashboard | 5 | FR3.1-FR3.6, NFR1, NFR2, NFR4, NFR5 |
-| **Total** | **13 Stories** | **20 FRs + 6 NFRs** |
+| Epic 4: Feedback Bubble (17.5) | 5 | FR4.1-FR4.5 |
+| **Total** | **18 Stories** | **25 FRs + 6 NFRs** |
