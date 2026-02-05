@@ -1,6 +1,6 @@
 # ChainSights Phase 3.5: Open DAO Matrix (Freemium Pivot)
 
-**Status:** Ready for Development
+**Status:** In Progress
 **Created:** 2026-02-05
 **Priority:** High
 **Effort:** Small-Medium
@@ -40,8 +40,9 @@ Problem:
 Solution:
 - All 46 DAOs visible in Matrix (no login required)
 - All 5 charts visible on Detail pages (no login required)
-- CSV/JSON export remains behind subscription gate
-- Report CTAs guide users to paid analysis
+- CSV/JSON export free for everyone (subscription model removed)
+- Login/auth hidden (kept for admin access only)
+- Report CTAs guide users to paid analysis (only paid feature)
 
 ### What Changes
 
@@ -52,26 +53,32 @@ Solution:
 | Matrix — sorting + filtering | Login required | Free |
 | Detail — HPR/DEI/PDI/GPI charts | Locked | Open |
 | Detail — Benchmark vs Avg | Locked | Open |
+| CSV/JSON Export | €19/mo subscription | **Free** |
+| Rankings page | Tiered access | **Free as "Top 10 DAOs"** |
+| Login/Sign-in | Visible | **Hidden** (admin only) |
 
 #### Stays Behind Paywall
 | Feature | Gate |
 |---------|------|
-| CSV Export | Subscription (€19/mo) |
-| JSON Export | Subscription (€19/mo) |
-| Historical data > 4 weeks | Subscription |
-| AI-powered Reports | One-time (€49/€149) |
+| AI-powered Reports | One-time (€0/€49/€149) |
+
+**Subscription model completely removed.** Only revenue = Report purchases.
 
 ### Acceptance Criteria
 
 - [x] DAO Matrix shows all 46 DAOs without login
 - [x] Sorting and filtering work without login
-- [ ] DAO Detail pages show all 5 charts without login
-- [x] CSV/JSON Export stays behind subscription gate (🔒 icon)
-- [ ] Report CTA banner on every DAO Detail page
+- [x] DAO Detail pages show all 5 charts without login
+- [x] Report CTA banner on every DAO Detail page
 - [x] "Sign in to unlock" removed from all content pages
 - [x] All new analytics events fire correctly
 - [x] Feature flag `OPEN_MATRIX` for quick rollback
-- [ ] OG Meta tags per DAO page (can be follow-up)
+- [x] OG Meta tags per DAO page
+- [ ] CSV/JSON Export free for everyone (no gate)
+- [ ] Rankings renamed to "Top 10 DAOs" at `/top-daos`
+- [ ] Vanity URLs for all 46 DAOs (`/{slug}` → `/matrix/{slug}`)
+- [ ] Login button hidden (admin access preserved)
+- [ ] Subscription infrastructure removed/disabled
 
 ---
 
@@ -209,18 +216,107 @@ Add:
 
 ---
 
+### Story 21-4: Rankings → Top 10 + Subscription Sunset
+
+**As a** visitor,
+**I want** a simple "Top 10 DAOs" entry point and no login friction,
+**So that** I can quickly see the best DAOs and access all data without barriers.
+
+#### Part A: Rankings → Top 10 DAOs
+
+**Given** I visit `/top-daos`
+**When** the page loads
+**Then** I see "Top 10 DAOs by Governance Health" as the title
+**And** I see exactly 10 DAOs ranked by GVS score
+**And** there is NO login gate or paywall
+**And** I see a CTA at the bottom: "Want to see all 46 DAOs? [View Full DAO Matrix →]"
+**And** `top_daos_view` event fires
+
+**Given** I visit `/rankings`
+**When** the redirect occurs
+**Then** I am 301 redirected to `/top-daos`
+
+**Given** I visit `/{dao-slug}` (e.g., `/radiant-capital`)
+**When** the redirect occurs
+**Then** I am 301 redirected to `/matrix/{dao-slug}`
+
+**Navigation:**
+- Nav label changes from "Rankings" to "Top 10"
+
+**OG Meta Tags:**
+- Title: "Top 10 DAOs by Governance Health | ChainSights"
+- Description: "The highest-scoring DAOs ranked by DGI. See who leads in governance health."
+
+#### Part B: Subscription Sunset
+
+**Given** I am on any page
+**When** I look at the header
+**Then** there is NO "Sign In" button visible
+**And** there is NO "UserMenu" component visible
+
+**Given** I click CSV or JSON export in the Matrix
+**When** the export triggers
+**Then** the file downloads immediately (no modal, no gate)
+**And** `matrix_export` event fires with format and dao_count
+
+**Given** I visit `/account`
+**When** the page loads
+**Then** I am redirected to `/pricing` (or see a minimal page)
+
+**Given** I am an admin and visit `/admin`
+**When** I need to authenticate
+**Then** Magic Link auth still works (hidden but functional)
+**And** `/admin/*` routes remain protected
+
+#### Technical Notes
+
+**Part A - Rankings → Top 10:**
+- Rename page component and route
+- Update nav label in Header component
+- Add redirects in `next.config.js` or middleware:
+  - `/rankings` → `/top-daos` (301)
+  - `/{dao-slug}` → `/matrix/{dao-slug}` (301) for all 46 DAO slugs
+- Limit display to top 10 DAOs
+- Add "View Full Matrix" CTA at bottom
+- Update OG meta tags
+
+**Part B - Subscription Sunset:**
+- Hide SignInModal trigger in Header (`visible: false` or conditional render)
+- Hide UserMenu component
+- Remove export gate logic in Matrix (no modal, direct download)
+- Remove `export_gate_hit` event, add `matrix_export` event
+- Remove or redirect `/account` page
+- Keep Magic Link auth infrastructure (for admin)
+- Deactivate/remove Stripe subscription webhook handlers
+- Remove subscription-related code paths (but keep code commented/flagged for potential future use)
+
+**Files:**
+- `src/components/Header.tsx` — hide login button
+- `src/app/matrix/matrix-client.tsx` — remove export gate
+- `src/app/rankings/` → rename to `src/app/top-daos/`
+- `next.config.js` or `middleware.ts` — redirects
+- `src/app/account/page.tsx` — redirect or simplify
+- Stripe webhook handlers — deactivate subscription events
+
+---
+
 ## New Funnel
 
 ```
-matrix_dao_click
-  → dao_detail_view
-    → dao_chart_interact
-      → dao_detail_report_cta_view
-        → dao_detail_report_cta_click
-          → quick_check_start
-            → quick_check_complete
-              → checkout_complete
+top_daos_view (entry point for casuals)
+  ↓
+matrix_view (full exploration)
+  → matrix_dao_click
+    → dao_detail_view
+      → dao_chart_interact
+        → dao_detail_report_cta_view
+          → dao_detail_report_cta_click
+            → quick_check_start
+              → quick_check_complete
+                → checkout_complete (€49/€149 reports only)
 ```
+
+**No login required anywhere in funnel. Only payment = report purchase.**
 
 ---
 
@@ -237,11 +333,12 @@ Each shareable with rich previews = organic reach multiplier.
 
 ## Out of Scope
 
-- Comparison Mode (stays subscription feature)
+- Comparison Mode (future, if needed)
 - Share buttons on detail pages (future)
 - Custom OG images per DAO (future)
-- Changes to pricing/tiers
-- Report generation or content
+- Report generation or content changes
+- "Governance Index" → "Methodology" rename (separate ticket)
+- Category-specific Top 10 (e.g., "Top 10 DeFi DAOs")
 
 ---
 
@@ -258,11 +355,17 @@ Each shareable with rich previews = organic reach multiplier.
 
 ## Rollout Plan
 
-1. Add `OPEN_MATRIX` feature flag
-2. Remove paywall logic (Matrix + Detail pages)
-3. Add Report CTA banner on Detail pages
-4. Update Export buttons with 🔒 icon
-5. Implement new analytics events
-6. Add OG meta tags per DAO
-7. Deploy with flag = true
-8. Monitor: traffic, engagement, conversions vs. before
+**Done (Stories 21-1 to 21-3):**
+1. ✅ Add `OPEN_MATRIX` feature flag
+2. ✅ Remove paywall logic (Matrix + Detail pages)
+3. ✅ Add Report CTA banner on Detail pages
+4. ✅ Implement new analytics events
+5. ✅ Add OG meta tags per DAO
+
+**Story 21-4:**
+6. Rename Rankings → Top 10 DAOs
+7. Add redirects (Rankings + Vanity URLs)
+8. Remove export gate (CSV/JSON free)
+9. Hide login button + UserMenu
+10. Sunset subscription infrastructure
+11. Deploy and monitor

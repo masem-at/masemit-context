@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-05T18:21:14Z",
-  "commit_sha": "5de3c5ea3ff4b9d82b0e8b08ffcbe5d6763a9d3c",
-  "commit_message": "feat(matrix): remove paywall - all DAOs visible (Story 21-1)\n"
+  "synced_at": "2026-02-05T19:13:05Z",
+  "commit_sha": "95f2d6bd818e1741d97b3b1b063a24759ba2e7d4",
+  "commit_message": "feat: Story 21-4 - Freemium pivot with Top 10 DAOs page\n"
 }
