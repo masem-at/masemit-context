@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-05T16:04:15Z",
-  "commit_sha": "75c6064293332634d290e174c0adfc0a5752dbf6",
-  "commit_message": "docs: add MMS Analytics API integration documentation\n"
+  "synced_at": "2026-02-05T16:05:57Z",
+  "commit_sha": "1dcd2febfcb4298a2ecf2c1c73a789962645c9af",
+  "commit_message": "feat: implement MMS Analytics API client (Story 20-5)\n"
 }

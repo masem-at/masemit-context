@@ -174,13 +174,14 @@ In Web3, building relationships is critical. One DM to a DAO leader can result i
 - **Env:** `MMS_API_URL`, `MMS_API_KEY` (already configured)
 
 #### Acceptance Criteria
-- [ ] Create `src/lib/mms/analytics.ts` client module
-- [ ] `getReferrers(from, to, limit)` function with proper error handling
-- [ ] Type definitions for API response (`ReferrersResponse`)
+- [x] Create `src/lib/mms/analytics.ts` client module
+- [x] `getReferrers(from, to, limit)` function with proper error handling
+- [x] Type definitions for API response (`ReferrersResponse`)
+- [x] `getCommunityTraffic()` helper for filtered community channels
+- [x] `formatChannelName()` for user-friendly display names
+- [x] Graceful fallback if API unavailable (returns null, not error)
 - [ ] Integrate into `getEngagementReportData()` (Story 20-1)
 - [ ] PDF section shows: domain, visits, pageviews, engagement ratio
-- [ ] Filter to show only community channels (discord, x, forum domains)
-- [ ] Graceful fallback if API unavailable (section hidden, not error)
 
 #### Example Output in PDF
 ```
