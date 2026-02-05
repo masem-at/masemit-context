@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-05T11:21:36Z",
-  "commit_sha": "b0aa41087c557724312a0b22c46332d4472f4711",
-  "commit_message": "feat: add Engagement Report PDF generation (Epic 20)\n"
+  "synced_at": "2026-02-05T16:04:15Z",
+  "commit_sha": "75c6064293332634d290e174c0adfc0a5752dbf6",
+  "commit_message": "docs: add MMS Analytics API integration documentation\n"
 }

@@ -75,10 +75,10 @@ In Web3, building relationships is critical. One DM to a DAO leader can result i
 - Planned posts
 - DAOs to approach next
 
-#### 6. Traffic Attribution (DEFERRED)
-- Referrals from community channels (from Analytics)
+#### 6. Traffic Attribution ✅ API READY
+- Referrals from community channels (from MMS Analytics API)
 - Which engagement channel drives actual visitors
-- **Status:** Waiting for discussion with analytics.masem.at / MMS team
+- **API:** `GET /v1/analytics/referrers` — [docs/integrations/mms-analytics-api.md](integrations/mms-analytics-api.md)
 
 ### Acceptance Criteria
 
@@ -162,6 +162,37 @@ In Web3, building relationships is critical. One DM to a DAO leader can result i
 
 ---
 
+### Story 20-5: Integrate MMS Analytics for Traffic Attribution
+
+**As a** ChainSights admin
+**I want** to see which community channels drive traffic
+**So that** I can measure the ROI of engagement efforts
+
+#### API Reference
+- **Docs:** [docs/integrations/mms-analytics-api.md](integrations/mms-analytics-api.md)
+- **Endpoint:** `GET /v1/analytics/referrers?project=chainsights`
+- **Env:** `MMS_API_URL`, `MMS_API_KEY` (already configured)
+
+#### Acceptance Criteria
+- [ ] Create `src/lib/mms/analytics.ts` client module
+- [ ] `getReferrers(from, to, limit)` function with proper error handling
+- [ ] Type definitions for API response (`ReferrersResponse`)
+- [ ] Integrate into `getEngagementReportData()` (Story 20-1)
+- [ ] PDF section shows: domain, visits, pageviews, engagement ratio
+- [ ] Filter to show only community channels (discord, x, forum domains)
+- [ ] Graceful fallback if API unavailable (section hidden, not error)
+
+#### Example Output in PDF
+```
+Traffic from Community Channels (KW 5)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Discord     45 visits   98 pv   2.2x engagement
+X/Twitter   23 visits   31 pv   1.3x engagement
+Forum       12 visits   34 pv   2.8x engagement
+```
+
+---
+
 ## Deferred: Phase 3a/b/c (Signal Scanner)
 
 **Status:** Blocked — X API Access beantragt
@@ -173,12 +204,22 @@ In Web3, building relationships is critical. One DM to a DAO leader can result i
 
 ---
 
-## Deferred: Traffic Attribution Integration
+## Traffic Attribution Integration
 
-**Status:** Pending discussion with analytics.masem.at / MMS team
+**Status:** ✅ API Ready — Integration pending (Story 20-5)
+**API Docs:** [docs/integrations/mms-analytics-api.md](integrations/mms-analytics-api.md)
 
-- API integration to pull referral data
+**Env Variables (configured):**
+- `MMS_API_URL=https://api.masem.at`
+- `MMS_API_KEY=mms_chainsights_xxxxx`
+
+**Endpoint:** `GET /v1/analytics/referrers`
+- Returns: domain, visits, pageviews, visitors per referrer
+- Parameters: project=chainsights, from, to, limit
+
+**Use in Report:**
 - Which engagement channels drive traffic
+- Visits + Pageviews = engagement quality metric
 - ROI per platform/DAO
 
 ---

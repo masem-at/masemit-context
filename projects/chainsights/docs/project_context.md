@@ -199,6 +199,7 @@ Must reflect current tiers:
 - Resend 6.6.0 (email)
 - QStash 2.8.4 (job scheduling)
 - Vercel Analytics 1.6.1
+- MMS Analytics API (traffic attribution) — [docs/integrations/mms-analytics-api.md](integrations/mms-analytics-api.md)
 
 **Testing:**
 - Vitest 4.0.16 (unit + integration)
