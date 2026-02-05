@@ -85,7 +85,7 @@ In Web3, building relationships is critical. One DM to a DAO leader can result i
 - [ ] "Generate Report" button in `/admin/engagement`
 - [ ] Date range selector (week picker, defaults to last week)
 - [ ] PDF generation using existing PDF infrastructure
-- [ ] Report includes all sections except Traffic Attribution (deferred)
+- [x] Report includes all sections including Traffic Attribution
 - [ ] Professional styling consistent with Governance Reports
 - [ ] Download triggers immediately (no email)
 
@@ -180,8 +180,8 @@ In Web3, building relationships is critical. One DM to a DAO leader can result i
 - [x] `getCommunityTraffic()` helper for filtered community channels
 - [x] `formatChannelName()` for user-friendly display names
 - [x] Graceful fallback if API unavailable (returns null, not error)
-- [ ] Integrate into `getEngagementReportData()` (Story 20-1)
-- [ ] PDF section shows: domain, visits, pageviews, engagement ratio
+- [x] Integrate into `getEngagementReportData()` (Story 20-1)
+- [x] PDF section shows: domain, visits, pageviews, engagement ratio
 
 #### Example Output in PDF
 ```
@@ -207,7 +207,7 @@ Forum       12 visits   34 pv   2.8x engagement
 
 ## Traffic Attribution Integration
 
-**Status:** ✅ API Ready — Integration pending (Story 20-5)
+**Status:** ✅ Complete (Story 20-5)
 **API Docs:** [docs/integrations/mms-analytics-api.md](integrations/mms-analytics-api.md)
 
 **Env Variables (configured):**
