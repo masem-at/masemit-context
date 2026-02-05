@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-05T16:56:33Z",
-  "commit_sha": "1603a60176cddb16f130c5b919b30efca6085c62",
-  "commit_message": "feat: integrate traffic attribution into engagement report PDF\n"
+  "synced_at": "2026-02-05T17:09:40Z",
+  "commit_sha": "c046051eda0410dfeccc169d3e73346e7fe2a45a",
+  "commit_message": "docs: mark Epic 20 (Engagement Report) as complete\n"
 }
