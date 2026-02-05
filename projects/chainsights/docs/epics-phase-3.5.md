@@ -1,6 +1,6 @@
 # ChainSights Phase 3.5: Open DAO Matrix (Freemium Pivot)
 
-**Status:** In Progress
+**Status:** Complete (Stories 21-1 to 21-4 Done)
 **Created:** 2026-02-05
 **Priority:** High
 **Effort:** Small-Medium
@@ -362,10 +362,10 @@ Each shareable with rich previews = organic reach multiplier.
 4. ✅ Implement new analytics events
 5. ✅ Add OG meta tags per DAO
 
-**Story 21-4:**
-6. Rename Rankings → Top 10 DAOs
-7. Add redirects (Rankings + Vanity URLs)
-8. Remove export gate (CSV/JSON free)
-9. Hide login button + UserMenu
-10. Sunset subscription infrastructure
+**Done (Story 21-4):**
+6. ✅ Rename Rankings → Top 10 DAOs
+7. ✅ Add redirects (Rankings + Vanity URLs via dynamic DB lookup)
+8. ✅ Remove export gate (CSV/JSON free)
+9. ✅ Hide login button + UserMenu (`SHOW_AUTH_UI` flag)
+10. ✅ Redirect /account to /pricing
 11. Deploy and monitor
