@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for masem-analytics.
 > Source: `masem-at/masemit-analytics`
-> Last sync: 2026-02-04 18:04:49 UTC | Commit: `9be4b6d990703e6d4911cfdbaf6d9be8edd4dfd9`
+> Last sync: 2026-02-05 11:27:03 UTC | Commit: `eb746b26b2c1b1398beb61a36e79048efea5c623`
 
 ---
 
@@ -15,6 +15,7 @@
 ## docs/_masemit/bugs-issues-tickets
 
 - [`BUG-analytics-tracker-coverage.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/bugs-issues-tickets/BUG-analytics-tracker-coverage.md)
+- [`BUG-tracker-device-id-inconsistency.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/bugs-issues-tickets/BUG-tracker-device-id-inconsistency.md)
 - [`FIX-SPEC-tracker-spa-route-change.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/analytics/docs/_masemit/bugs-issues-tickets/FIX-SPEC-tracker-spa-route-change.md)
 
 ## docs/_masemit

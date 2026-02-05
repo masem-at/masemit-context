@@ -2,7 +2,7 @@
   "source_repo": "masem-at/masemit-analytics",
   "project_name": "masem-analytics",
   "source_folders": "docs",
-  "synced_at": "2026-02-04T18:04:49Z",
-  "commit_sha": "9be4b6d990703e6d4911cfdbaf6d9be8edd4dfd9",
-  "commit_message": "feat: enhance funnel editor with event_data filter and path matching modes\n"
+  "synced_at": "2026-02-05T11:27:03Z",
+  "commit_sha": "eb746b26b2c1b1398beb61a36e79048efea5c623",
+  "commit_message": "docs: mark device_id inconsistency bug as fixed\n"
 }
