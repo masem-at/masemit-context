@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-05T06:31:43Z",
-  "commit_sha": "8fa232cb6f109bec2570dc04df814232fd5144c8",
-  "commit_message": "docs: add Epic 20 Engagement Report (PDF) for Phase 3\n"
+  "synced_at": "2026-02-05T11:21:36Z",
+  "commit_sha": "b0aa41087c557724312a0b22c46332d4472f4711",
+  "commit_message": "feat: add Engagement Report PDF generation (Epic 20)\n"
 }

@@ -268,9 +268,9 @@ development_status:
   # Weekly PDF report for engagement tracking
   # Dependencies: Epic 19 (done)
   # Trigger: Manual button in Admin
-  epic-20-engagement-report: backlog
-  20-1-create-engagement-report-data-aggregation: backlog
-  20-2-build-engagement-report-pdf-template: backlog
-  20-3-add-report-generation-ui-to-admin: backlog
-  20-4-add-highlights-input-optional: backlog
+  epic-20-engagement-report: done
+  20-1-create-engagement-report-data-aggregation: done
+  20-2-build-engagement-report-pdf-template: done
+  20-3-add-report-generation-ui-to-admin: done
+  20-4-add-highlights-input-optional: done
   epic-20-retrospective: optional
