@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-05T18:07:06Z",
-  "commit_sha": "8b82e87835c6f2d4886e8661e04d531b708fabad",
-  "commit_message": "docs: add Phase 3.5 - Open DAO Matrix (Freemium Pivot)\n"
+  "synced_at": "2026-02-05T18:21:14Z",
+  "commit_sha": "5de3c5ea3ff4b9d82b0e8b08ffcbe5d6763a9d3c",
+  "commit_message": "feat(matrix): remove paywall - all DAOs visible (Story 21-1)\n"
 }

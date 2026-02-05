@@ -63,14 +63,14 @@ Solution:
 
 ### Acceptance Criteria
 
-- [ ] DAO Matrix shows all 46 DAOs without login
-- [ ] Sorting and filtering work without login
+- [x] DAO Matrix shows all 46 DAOs without login
+- [x] Sorting and filtering work without login
 - [ ] DAO Detail pages show all 5 charts without login
-- [ ] CSV/JSON Export stays behind subscription gate (🔒 icon)
+- [x] CSV/JSON Export stays behind subscription gate (🔒 icon)
 - [ ] Report CTA banner on every DAO Detail page
-- [ ] "Sign in to unlock" removed from all content pages
-- [ ] All new analytics events fire correctly
-- [ ] Feature flag `OPEN_MATRIX` for quick rollback
+- [x] "Sign in to unlock" removed from all content pages
+- [x] All new analytics events fire correctly
+- [x] Feature flag `OPEN_MATRIX` for quick rollback
 - [ ] OG Meta tags per DAO page (can be follow-up)
 
 ---
