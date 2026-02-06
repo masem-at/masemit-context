@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-06T08:00:09Z",
-  "commit_sha": "52b0fd4bff66fe93d44249995a9b6898a5e23746",
-  "commit_message": "feat: make entire Matrix rows clickable (Story 21-6)\n"
+  "synced_at": "2026-02-06T17:33:54Z",
+  "commit_sha": "abe7489b2903ac30a57b3f1a4a4e05fa336b208b",
+  "commit_message": "fix: remove DAO Matrix subscription paywall from pricing and account pages\n"
 }

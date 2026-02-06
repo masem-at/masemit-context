@@ -57,10 +57,10 @@ _This file contains critical rules and patterns that AI agents must follow when 
 | Deep Dive (€49) | **ENABLED** | Live, working |
 | Governance Audit (€149) | **IMPLEMENTED** | Phase 2 - historical trends, peer comparison, enhanced PDF all implemented |
 | Share & Save (€20 cashback) | **DISABLED** | Hide everywhere, do not delete code |
-| DAO Matrix (€19/mo) | **IMPLEMENTED** | Phase 2 - interactive table with subscription paywall, CTAs in header/hero/rankings |
+| DAO Matrix (€19/mo) | **PAYWALL REMOVED** | 2026-02-05 Decision: Matrix is NOW 100% FREE. Remove ALL paywalls, subscription CTAs, row limits, chart limits. Keep only Deep Dive (€49) and Governance Audit (€149) as paid products. See Paywall Removal Checklist below. |
 | Pricing Page | **IMPLEMENTED** | `/pricing` with 3 tiers, analytics tracking, nav link in header |
 | Stripe Customer Portal | **IMPLEMENTED** | `/api/billing-portal` + portal link in delivery/recovery emails + `/account` fallback page |
-| Matrix Server-Side Auth | **IMPLEMENTED** | Server-side row limiting, admin whitelist via `MATRIX_ADMIN_EMAILS` env |
+| Matrix Server-Side Auth | **REMOVED (Paywall removed)** | Row limiting, chart limits, subscription gates ALL removed. Matrix is fully free. |
 | Magic Link Authentication | **IMPLEMENTED** | Passwordless auth via `cs_session` JWT cookie (30 days). jose Edge-compatible. SignInModal, UserMenu in header. Resolves admin access + session persistence. |
 | DAO Prefill + Recovery Email | **IMPLEMENTED** | Checkout passes DAO data through Stripe metadata → success page prefill. Hourly cron sends recovery email for orphan orders (paid, no intake form, 30min–24h). |
 | /check Flow Page | **IMPLEMENTED** | Replaces modal chain with single-page progressive disclosure flow at `/check`. All CTAs redirect here. Modals deleted. |
@@ -82,6 +82,26 @@ _This file contains critical rules and patterns that AI agents must follow when 
 2. DAO Matrix (€19/mo) - Interactive table with subscription paywall
 
 **DO NOT** ask Mario about Phase 2 requirements. Everything is documented.
+
+### Paywall Removal Checklist (2026-02-05 — CRITICAL)
+**Decision:** DAO Matrix is 100% FREE. Only Deep Dive (€49) and Governance Audit (€149) remain paid.
+Remove/update ALL subscription & paywall references in:
+- `src/app/pricing/page.tsx` — Remove DAO Matrix Subscription section entirely
+- `src/app/pricing/matrix-subscription-cards.tsx` — Delete or gut this component
+- `src/app/pricing/faq-accordion.tsx` — Remove subscription FAQs
+- `src/lib/db/subscriptions.ts` — Remove row limits (anon=5, free=10), chart limits; return full access for all
+- `src/app/matrix/page.tsx` — Remove server-side row limiting, show all DAOs to everyone
+- `src/app/matrix/matrix-client.tsx` — Remove paywall overlay, subscribe CTAs, hidden row logic
+- `src/app/api/matrix/route.ts` — Remove access-level gating, return all data
+- `src/app/api/matrix/subscribe/route.ts` — Delete or disable subscription endpoint
+- `src/app/matrix/[slug]/page.tsx` — Remove chart access limits, show all charts
+- `src/app/matrix/[slug]/matrix-detail-client.tsx` — Remove locked chart logic
+- `src/components/matrix-detail/LockedChartOverlay.tsx` — Delete component
+- `src/app/account/page.tsx` — Remove Matrix subscribe section
+- `src/app/account/subscribe-button.tsx` — Delete or disable
+- `src/lib/stripe.ts` — Remove SUBSCRIPTIONS config for Matrix
+- `src/app/api/webhooks/stripe/route.ts` — Remove subscription webhook handlers (keep payment handlers for reports)
+- Update Schema.org and llms.txt if they reference Matrix subscription
 
 ### Share & Save Hiding Checklist
 When `SHARE_REWARDS_ENABLED = false`, hide in:
@@ -168,6 +188,7 @@ Must reflect current tiers:
 | 2026-02-01 | /check Flow Page Refactor | Replaced 4-5 chained modals with single `/check` page using progressive disclosure. All CTAs site-wide redirect to `/check`. Deleted report-selection-modal, QuickCheckEmailModal, QuickCheckResultsModal. Stripe Hosted Checkout kept for paid tiers (inline Payment Element deferred to backlog). |
 | 2026-02-01 | Open-Universe Free Check | Free Check works with any Snapshot space (13,000+). Three-path lookup in `/api/quick-check`: L3 daos table → L2 reportedDaos 24h cache → on-the-fly ReadableStream/SSE. Confidence: low (5-19 proposals), high (>=20), reject (<5). Rate limit: 5 on-the-fly/email/day. V2 async deferred (triggers: >100/wk, first timeout, p95 >25s). |
 | 2026-02-01 | Unified Admin Auth | Removed password-based admin auth (ADMIN_PASSWORD, chainsights_admin_session, Bearer token, sessionStorage). Single gate: cs_session JWT with role=admin. Middleware guard on /admin routes. Deleted /admin/login page + /api/admin/auth route. |
+| 2026-02-05 | **PAYWALL REMOVAL — Matrix FREE** | **CRITICAL DECISION:** ALL paywalls removed except Deep Dive (€49) and Governance Audit (€149). DAO Matrix is 100% FREE — no subscription, no row limits, no chart limits, no gating. Remove ALL subscription CTAs, pricing cards, Stripe subscription flows for Matrix. Auth (Magic Link) stays as infrastructure but NOT as paywall gate. Mario publicly announced this on LinkedIn, X, and forums. See Paywall Removal Checklist. |
 
 ---
 
