@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-06T06:52:39Z",
-  "commit_sha": "b78228ca52212ca93d1bc2a37c42a9a3078dfe7a",
-  "commit_message": "feat(Story 21-5): add slug_alias for human-friendly vanity URLs\n"
+  "synced_at": "2026-02-06T08:00:09Z",
+  "commit_sha": "52b0fd4bff66fe93d44249995a9b6898a5e23746",
+  "commit_message": "feat: make entire Matrix rows clickable (Story 21-6)\n"
 }

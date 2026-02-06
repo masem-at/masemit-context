@@ -1,6 +1,6 @@
 # ChainSights Phase 3.5: Open DAO Matrix (Freemium Pivot)
 
-**Status:** In Progress (Stories 21-1 to 21-4 Done, Story 21-5 Pending)
+**Status:** ✅ Complete (All Stories Done)
 **Created:** 2026-02-05
 **Updated:** 2026-02-06
 **Priority:** High
@@ -78,7 +78,8 @@ Solution:
 - [x] CSV/JSON Export free for everyone (no gate)
 - [x] Rankings renamed to "Top 10 DAOs" at `/top-daos`
 - [x] Vanity URLs work for exact slugs (`/{slug}` → `/matrix/{slug}`)
-- [ ] **Vanity URL aliases** for human-friendly names (e.g., `/radiant-capital` → `radiantcapital-eth`) — **Story 21-5**
+- [x] **Vanity URL aliases** for human-friendly names (e.g., `/radiant-capital` → `radiantcapital-eth`) — **Story 21-5**
+- [x] **Clickable Matrix rows** — entire row navigates to detail page — **Story 21-6**
 - [x] Login button hidden (admin access preserved)
 - [x] Subscription infrastructure removed/disabled
 
@@ -371,6 +372,37 @@ if (dao) {
 
 ---
 
+### Story 21-6: Clickable Matrix Rows
+
+**As a** visitor browsing the DAO Matrix,
+**I want** to click anywhere on a row to navigate to the detail page,
+**So that** I don't have to precisely click the DAO name link.
+
+#### Acceptance Criteria
+
+**Given** I am on `/matrix`
+**When** I hover over any row
+**Then** I see a pointer cursor indicating clickability
+
+**Given** I click anywhere on a DAO row (not just the name)
+**When** the click event fires
+**Then** I am navigated to `/matrix/{slug}`
+**And** a `matrix_dao_click` analytics event fires
+
+#### Technical Notes
+
+- Add `cursor-pointer` to `<tr>` elements
+- Add `onClick` handler using `useRouter().push()`
+- Use `e.stopPropagation()` on the name Link to prevent double navigation
+- Analytics event already exists, just moved to row level
+
+**Files:**
+- `src/app/matrix/matrix-client.tsx` — row click handler
+
+**Status:** ✅ Done (2026-02-06)
+
+---
+
 ## New Funnel
 
 ```
@@ -441,7 +473,12 @@ Each shareable with rich previews = organic reach multiplier.
 10. ✅ Redirect /account to /pricing
 11. ✅ Deployed and monitoring
 
-**Pending (Story 21-5):**
-12. ⏳ Add `slug_alias` column to `daos` table for human-friendly vanity URLs
-13. ⏳ Update middleware to check both `slug` AND `slug_alias`
-14. ⏳ Populate aliases for existing DAOs (e.g., `radiant-capital` → `radiantcapital-eth`)
+**Done (Story 21-5):**
+12. ✅ Add `slug_alias` column to `daos` table for human-friendly vanity URLs
+13. ✅ Update middleware to check both `slug` AND `slug_alias`
+14. ✅ Populate aliases for existing DAOs (e.g., `radiant-capital` → `radiantcapital-eth`)
+
+**Done (Story 21-6):**
+15. ✅ Make entire Matrix rows clickable (not just DAO name)
+16. ✅ Add pointer cursor on row hover
+17. ✅ Analytics event fires on row click

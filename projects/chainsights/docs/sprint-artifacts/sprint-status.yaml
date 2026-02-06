@@ -284,10 +284,11 @@ development_status:
   # Epic 21: Open DAO Matrix (Freemium Pivot)
   # Removes paywalls, makes all data free, subscription sunset
   # Dependencies: None (frontend-only changes)
-  epic-21-open-dao-matrix: in-progress
+  epic-21-open-dao-matrix: done
   21-1-remove-matrix-paywall: done
   21-2-remove-detail-page-chart-locks: done
   21-3-analytics-events-og-meta-tags: done
   21-4-rankings-to-top10-subscription-sunset: done
-  21-5-vanity-url-aliases: in-progress
+  21-5-vanity-url-aliases: done
+  21-6-clickable-matrix-rows: done
   epic-21-retrospective: optional
