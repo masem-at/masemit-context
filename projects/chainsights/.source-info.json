@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-05T19:24:22Z",
-  "commit_sha": "41985eb977d3f52284a709a34ec83fc83a929eb5",
-  "commit_message": "docs: mark Phase 3.5 (Open DAO Matrix) complete\n"
+  "synced_at": "2026-02-06T06:52:39Z",
+  "commit_sha": "b78228ca52212ca93d1bc2a37c42a9a3078dfe7a",
+  "commit_message": "feat(Story 21-5): add slug_alias for human-friendly vanity URLs\n"
 }

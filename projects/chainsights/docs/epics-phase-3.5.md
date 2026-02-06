@@ -1,7 +1,8 @@
 # ChainSights Phase 3.5: Open DAO Matrix (Freemium Pivot)
 
-**Status:** Complete (Stories 21-1 to 21-4 Done)
+**Status:** In Progress (Stories 21-1 to 21-4 Done, Story 21-5 Pending)
 **Created:** 2026-02-05
+**Updated:** 2026-02-06
 **Priority:** High
 **Effort:** Small-Medium
 **Source:** docs/_masemIT/requirements/ticket-open-dao-matrix.md
@@ -74,11 +75,12 @@ Solution:
 - [x] All new analytics events fire correctly
 - [x] Feature flag `OPEN_MATRIX` for quick rollback
 - [x] OG Meta tags per DAO page
-- [ ] CSV/JSON Export free for everyone (no gate)
-- [ ] Rankings renamed to "Top 10 DAOs" at `/top-daos`
-- [ ] Vanity URLs for all 46 DAOs (`/{slug}` → `/matrix/{slug}`)
-- [ ] Login button hidden (admin access preserved)
-- [ ] Subscription infrastructure removed/disabled
+- [x] CSV/JSON Export free for everyone (no gate)
+- [x] Rankings renamed to "Top 10 DAOs" at `/top-daos`
+- [x] Vanity URLs work for exact slugs (`/{slug}` → `/matrix/{slug}`)
+- [ ] **Vanity URL aliases** for human-friendly names (e.g., `/radiant-capital` → `radiantcapital-eth`) — **Story 21-5**
+- [x] Login button hidden (admin access preserved)
+- [x] Subscription infrastructure removed/disabled
 
 ---
 
@@ -300,6 +302,75 @@ Add:
 
 ---
 
+### Story 21-5: Vanity URL Aliases
+
+**As a** visitor or DAO sharing their ChainSights link,
+**I want** human-friendly URLs like `/radiant-capital` to work,
+**So that** I don't need to know the technical Snapshot slug.
+
+#### Problem
+
+Current vanity URLs only work with exact Snapshot-based slugs:
+- ✅ `chainsights.one/radiantcapital-eth` → works (exact slug match)
+- ❌ `chainsights.one/radiant-capital` → 404 (human-friendly, but not in DB)
+
+Users expect intuitive URLs based on DAO names, not Snapshot space IDs.
+
+#### Solution
+
+Add `slug_alias` column to `daos` table. Middleware checks both:
+1. `slug` (original, e.g., `radiantcapital-eth`)
+2. `slug_alias` (human-friendly, e.g., `radiant-capital`)
+
+Both redirect to `/matrix/{slug}` (canonical URL uses original slug).
+
+#### Acceptance Criteria
+
+**Given** I visit `/{slug}` where `slug` matches a DAO's `slug` column
+**When** the middleware checks
+**Then** I am 301 redirected to `/matrix/{slug}`
+
+**Given** I visit `/{alias}` where `alias` matches a DAO's `slug_alias` column
+**When** the middleware checks
+**Then** I am 301 redirected to `/matrix/{slug}` (using the canonical slug, not the alias)
+
+**Given** I visit `/radiant-capital` and that alias exists for `radiantcapital-eth`
+**When** the redirect occurs
+**Then** I land on `/matrix/radiantcapital-eth`
+
+#### Technical Notes
+
+**Database:**
+- Add `slug_alias VARCHAR(100)` to `daos` table (nullable, unique if set)
+- Index on `slug_alias` for fast lookups
+
+**Middleware update:**
+```typescript
+// Check both slug and slug_alias
+const dao = await findDaoBySlugOrAlias(segment)
+if (dao) {
+  return redirect(`/matrix/${dao.slug}`, 301) // Always use canonical slug
+}
+```
+
+**Initial aliases to populate:**
+| DAO | slug | slug_alias |
+|-----|------|------------|
+| Radiant Capital | radiantcapital-eth | radiant-capital |
+| Arbitrum | arbitrumfoundation-eth | arbitrum |
+| Optimism | opcollective-eth | optimism |
+| Uniswap | uniswap | uni |
+| Aave | aave-eth | aave |
+| ... | ... | ... |
+
+**Files:**
+- `drizzle/0019_*.sql` — migration adding `slug_alias`
+- `src/lib/db/schema.ts` — add column to schema
+- `src/lib/db/queries/leaderboard.ts` — update `daoSlugExists()` to check both
+- `src/middleware.ts` — no change needed if query handles both
+
+---
+
 ## New Funnel
 
 ```
@@ -364,8 +435,13 @@ Each shareable with rich previews = organic reach multiplier.
 
 **Done (Story 21-4):**
 6. ✅ Rename Rankings → Top 10 DAOs
-7. ✅ Add redirects (Rankings + Vanity URLs via dynamic DB lookup)
+7. ✅ Add redirects (Rankings + Vanity URLs via dynamic DB lookup for exact slugs)
 8. ✅ Remove export gate (CSV/JSON free)
 9. ✅ Hide login button + UserMenu (`SHOW_AUTH_UI` flag)
 10. ✅ Redirect /account to /pricing
-11. Deploy and monitor
+11. ✅ Deployed and monitoring
+
+**Pending (Story 21-5):**
+12. ⏳ Add `slug_alias` column to `daos` table for human-friendly vanity URLs
+13. ⏳ Update middleware to check both `slug` AND `slug_alias`
+14. ⏳ Populate aliases for existing DAOs (e.g., `radiant-capital` → `radiantcapital-eth`)
