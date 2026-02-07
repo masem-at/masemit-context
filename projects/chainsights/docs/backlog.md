@@ -4,8 +4,8 @@
 > Every agent MUST load this file before asking "what's next?"
 > Update this file after completing items. Never let work items exist only in conversation.
 
-**Last Updated:** 2026-02-02
-**Updated By:** Mario + Claude
+**Last Updated:** 2026-02-06
+**Updated By:** Mario + Claude (John/PM)
 
 ---
 
@@ -26,6 +26,7 @@ _(none currently)_
 
 ## MEDIUM Priority
 
+- [ ] **Spendenabwicklung auf MMS Service umstellen** — Lokale `donations`-Tabelle + Logik durch zentralen MMS Donations Service (`https://api.masem.at/docs/donations`) ersetzen. Betroffen: Stripe-Webhook (`handlePaymentIntentSucceeded`), Coinbase-Webhook (`handleChargeConfirmed`), `/api/donations/total`, `HeroDonationCounter`, `ImpactContent`, `DonationBadge`, `DonationImpactBox`. MMS übernimmt Berechnung (Prozentsatz), Speicherung, Target-Verteilung. ChainSights ruft `POST /v1/donations` statt lokaler DB-Insert auf und `GET /v1/donations/summary` für Totals. Env: `MMS_API_URL` + `MMS_API_KEY` bereits gesetzt. CHOKIHEART-Logik (5%) über `donation_percentage_override` abbildbar.
 - [ ] **DAO S&P Governance Benchmark** — Define benchmark methodology (category averages, inclusion criteria, weighting). Blocked by: Mario's methodology decisions. See `docs/_masemIT/requirements/chainsights-bugs-auth-backlog.md` Part 3.
 - [ ] **Mirror Account + Whitepaper** — Create chainsights.mirror.xyz. Publish DGI methodology whitepaper. Needed for Wikipedia citation path.
 - [ ] **Social Media Assets** — LinkedIn + X images in `public/images/linkedin/` and `public/images/x/` (untracked). Finalize and commit.
