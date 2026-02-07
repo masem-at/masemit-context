@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-07T11:24:17Z",
-  "commit_sha": "9328d2d0ed8c192f92eb3e19578f133e54ca1fe2",
-  "commit_message": "feat: add /blog with first DGI article\n"
+  "synced_at": "2026-02-07T12:18:57Z",
+  "commit_sha": "b31d0c27df485be71bfb2975082561170dd710ec",
+  "commit_message": "chore: update sprint status — close 7 completed epics, reopen epic 18\n"
 }
