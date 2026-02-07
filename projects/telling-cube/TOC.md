@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for telling-cube.
 > Source: `masem-at/telling-cube`
-> Last sync: 2026-02-01 15:33:19 UTC | Commit: `b642bba947df78086ffb3c13c34a30ea307cd753`
+> Last sync: 2026-02-07 10:10:08 UTC | Commit: `bad29e588362dbb53559652ba655f3369be32a40`
 
 ---
 
@@ -30,6 +30,10 @@
 
 - [`mail_ceo_ibcs.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/telling-cube/docs/_masemIT/mail_ceo_ibcs.md)
 - [`readme.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/telling-cube/docs/_masemIT/readme.md)
+
+## docs/_masemIT/tasks
+
+- [`bugfix-stories-single-tier-flow.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/telling-cube/docs/_masemIT/tasks/bugfix-stories-single-tier-flow.md)
 
 ## docs
 

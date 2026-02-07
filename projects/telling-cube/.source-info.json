@@ -2,7 +2,7 @@
   "source_repo": "masem-at/telling-cube",
   "project_name": "telling-cube",
   "source_folders": "docs",
-  "synced_at": "2026-02-01T15:33:19Z",
-  "commit_sha": "b642bba947df78086ffb3c13c34a30ea307cd753",
-  "commit_message": "\n"
+  "synced_at": "2026-02-07T10:10:08Z",
+  "commit_sha": "bad29e588362dbb53559652ba655f3369be32a40",
+  "commit_message": "fix: auto-login after Stripe purchase with magic link fallback (BF-1)\n"
 }
