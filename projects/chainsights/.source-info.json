@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-07T12:23:06Z",
-  "commit_sha": "7d3f55b1ee1f4d4c322fc8b2e0e2b994a7240320",
-  "commit_message": "chore: add Epic 22 (Governance Signal Scanner) to sprint status\n"
+  "synced_at": "2026-02-07T12:33:40Z",
+  "commit_sha": "fcac9e62a5aa1e43c6268c822bcadeb4b17a8417",
+  "commit_message": "chore: close Epic 16 (DGI Benchmark) + Epic 17 (Pricing Page)\n"
 }
