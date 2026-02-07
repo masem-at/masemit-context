@@ -236,7 +236,7 @@ development_status:
   # Epic 18: Account Dashboard (Phase 2.5)
   # Self-service subscription management and report history
   # Dependencies: Magic Link Auth (already deployed)
-  epic-18-account-dashboard: in-progress
+  epic-18-account-dashboard: done
   18-1-create-account-page-with-auth-protection: done
   18-2-display-subscription-status: done
   18-3-integrate-stripe-customer-portal: done

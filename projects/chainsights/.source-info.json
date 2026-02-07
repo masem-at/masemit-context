@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-07T12:18:57Z",
-  "commit_sha": "b31d0c27df485be71bfb2975082561170dd710ec",
-  "commit_message": "chore: update sprint status — close 7 completed epics, reopen epic 18\n"
+  "synced_at": "2026-02-07T12:22:10Z",
+  "commit_sha": "b4553196601c9291a53295e1a3dcd893aba14e20",
+  "commit_message": "chore: fix epic-18 status back to done (was incorrectly reverted)\n"
 }
