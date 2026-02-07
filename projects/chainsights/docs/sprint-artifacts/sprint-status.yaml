@@ -292,3 +292,34 @@ development_status:
   21-5-vanity-url-aliases: done
   21-6-clickable-matrix-rows: done
   epic-21-retrospective: optional
+
+  # ============================================
+  # Governance Signal Scanner
+  # Source: docs/_masemIT/requirements/ticket-engagement-hub-phase3.md (Phase 3)
+  #         docs/_masemIT/requirements/ticket-signal-scanner-relevance-scoring.md
+  # Date Added: 2026-02-07
+  # ============================================
+
+  # Epic 22: Governance Signal Scanner
+  # Automated scanning of DAO community channels for engagement opportunities
+  # Dependencies: Epic 19 (Engagement Hub Phase 1+2, done)
+  # Note: X API access beantragt, Discord future scope
+  epic-22-governance-signal-scanner: in-progress
+
+  # Phase 3b: Forum RSS Scanner
+  22-1-forum-rss-scanner-basic: done
+  22-2-relevance-scoring-phase-1: done
+
+  # Phase 3b.2: Scoring Enhancements
+  22-3-reply-count-fetch-discourse-api: backlog
+  22-4-score-breakdown-logging: backlog
+  22-5-ai-evaluation-for-edge-cases: backlog
+
+  # Phase 3a: X/Twitter Scanner (blocked on API key)
+  22-6-x-twitter-search-scanner: backlog
+  22-7-x-signal-scoring-integration: backlog
+
+  # Phase 3c: Discord (future)
+  22-8-discord-webhook-monitoring: backlog
+
+  epic-22-retrospective: optional

@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-07T12:22:10Z",
-  "commit_sha": "b4553196601c9291a53295e1a3dcd893aba14e20",
-  "commit_message": "chore: fix epic-18 status back to done (was incorrectly reverted)\n"
+  "synced_at": "2026-02-07T12:23:06Z",
+  "commit_sha": "7d3f55b1ee1f4d4c322fc8b2e0e2b994a7240320",
+  "commit_message": "chore: add Epic 22 (Governance Signal Scanner) to sprint status\n"
 }
