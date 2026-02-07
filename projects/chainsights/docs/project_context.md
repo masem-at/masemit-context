@@ -86,9 +86,9 @@ _This file contains critical rules and patterns that AI agents must follow when 
 ### Paywall Removal Checklist (2026-02-05 — CRITICAL)
 **Decision:** DAO Matrix is 100% FREE. Only Deep Dive (€49) and Governance Audit (€149) remain paid.
 Remove/update ALL subscription & paywall references in:
-- `src/app/pricing/page.tsx` — Remove DAO Matrix Subscription section entirely
-- `src/app/pricing/matrix-subscription-cards.tsx` — Delete or gut this component
-- `src/app/pricing/faq-accordion.tsx` — Remove subscription FAQs
+- `src/app/pricing/page.tsx` — ✅ Done (no subscription section)
+- `src/app/pricing/matrix-subscription-cards.tsx` — ✅ Deleted (2026-02-07)
+- `src/app/pricing/faq-accordion.tsx` — ✅ Done (FAQ says "Matrix is free")
 - `src/lib/db/subscriptions.ts` — Remove row limits (anon=5, free=10), chart limits; return full access for all
 - `src/app/matrix/page.tsx` — Remove server-side row limiting, show all DAOs to everyone
 - `src/app/matrix/matrix-client.tsx` — Remove paywall overlay, subscribe CTAs, hidden row logic

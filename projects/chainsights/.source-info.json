@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-07T12:33:40Z",
-  "commit_sha": "fcac9e62a5aa1e43c6268c822bcadeb4b17a8417",
-  "commit_message": "chore: close Epic 16 (DGI Benchmark) + Epic 17 (Pricing Page)\n"
+  "synced_at": "2026-02-07T12:42:33Z",
+  "commit_sha": "69ef173f7419c4f0175e4371deb4d3e36f766e0e",
+  "commit_message": "chore: delete unused matrix-subscription-cards component\n"
 }
