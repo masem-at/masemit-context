@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-07T09:25:58Z",
-  "commit_sha": "8fb0557bb8ed593fed02efdc56e1ba443a944dc3",
-  "commit_message": "feat: improve DGI benchmark in reports + add project documentation\n"
+  "synced_at": "2026-02-07T09:46:21Z",
+  "commit_sha": "4bc01bc6d153b2a81a7c1f2a526d8cb99ac006f5",
+  "commit_message": "fix: reduce GovernanceIndex CTA button to text width\n"
 }

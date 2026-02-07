@@ -15,7 +15,7 @@ _(none currently)_
 
 ## HIGH Priority
 
-- [ ] **DGI Benchmark in Reports** — Deep Dive (€49): headline comparison ("Your DAO scores 7.2 — DeFi average is 5.8"). Audit (€149): full "How You Compare" with percentiles, category breakdown, strengths/weaknesses vs peers.
+- [x] ~~**DGI Benchmark in Reports**~~ — DONE 2026-02-06 (Deep Dive: category-specific headline, Audit: full "How You Compare" page)
 - [x] ~~**GovernanceIndex Re-enabled**~~ — DONE 2026-02-06 (BUG-3 reversed, category averages displayed)
 - [x] ~~**Free Check Rate Limit 10/h**~~ — DONE 2026-02-06 (`ANON_IP_LIMIT` 2→10)
 - [x] ~~**Share & Save Reactivated**~~ — DONE 2026-02-06 (Mario enables `SHARE_REWARDS_ENABLED=true`)
@@ -31,7 +31,7 @@ _(none currently)_
 ## MEDIUM Priority
 
 - [ ] **Spendenabwicklung auf MMS Service umstellen** — Lokale `donations`-Tabelle + Logik durch zentralen MMS Donations Service (`https://api.masem.at/docs/donations`) ersetzen. Betroffen: Stripe-Webhook (`handlePaymentIntentSucceeded`), Coinbase-Webhook (`handleChargeConfirmed`), `/api/donations/total`, `HeroDonationCounter`, `ImpactContent`, `DonationBadge`, `DonationImpactBox`. MMS übernimmt Berechnung (Prozentsatz), Speicherung, Target-Verteilung. ChainSights ruft `POST /v1/donations` statt lokaler DB-Insert auf und `GET /v1/donations/summary` für Totals. Env: `MMS_API_URL` + `MMS_API_KEY` bereits gesetzt. CHOKIHEART-Logik (5%) über `donation_percentage_override` abbildbar.
-- [ ] **DAO S&P Governance Benchmark** — GovernanceIndex re-enabled (2026-02-06). Remaining: DGI Benchmark in Reports (moved to HIGH), public methodology page, Mirror whitepaper (Mario handles).
+- [ ] **DAO S&P Governance Benchmark** — GovernanceIndex re-enabled + DGI Benchmark in Reports done (2026-02-06). Remaining: public methodology page, Mirror whitepaper (Mario handles).
 - [ ] **Mirror Account + Whitepaper** — Create chainsights.mirror.xyz. Publish DGI methodology whitepaper. Needed for Wikipedia citation path.
 - [ ] **Social Media Assets** — LinkedIn + X images in `public/images/linkedin/` and `public/images/x/` (untracked). Finalize and commit.
 - [x] ~~**DGI Launch Content**~~ — DONE 2026-02-06 (LinkedIn, X, Discord posts published by Mario)
@@ -47,6 +47,9 @@ _(none currently)_
 
 ## DONE (Recently Completed)
 
+- [x] Project Documentation — API Reference, DB Schema, Testing Strategy, Ops Runbook, Developer Onboarding — 2026-02-06
+- [x] DGI Benchmark in Reports — Deep Dive headline + Audit "How You Compare" page with category averages — 2026-02-06
+- [x] GovernanceIndex CTA button width fix — w-full → w-fit for text-width button — 2026-02-06
 - [x] GovernanceIndex re-enabled on Matrix Detail pages — BUG-3 reversed, category averages displayed — 2026-02-06
 - [x] Free Check Rate Limit increased to 10/IP/hour — was 2, now 10 since Matrix is free — 2026-02-06
 - [x] Share & Save reactivated — Mario enables `SHARE_REWARDS_ENABLED=true` — 2026-02-06
