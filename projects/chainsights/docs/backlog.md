@@ -5,7 +5,7 @@
 > Update this file after completing items. Never let work items exist only in conversation.
 
 **Last Updated:** 2026-02-06
-**Updated By:** Mario + Claude (John/PM)
+**Updated By:** Mario + Claude (Barry/Dev, John/PM, Mary/Analyst, Paige/Writer)
 
 ---
 
@@ -15,6 +15,10 @@ _(none currently)_
 
 ## HIGH Priority
 
+- [ ] **DGI Benchmark in Reports** — Deep Dive (€49): headline comparison ("Your DAO scores 7.2 — DeFi average is 5.8"). Audit (€149): full "How You Compare" with percentiles, category breakdown, strengths/weaknesses vs peers.
+- [x] ~~**GovernanceIndex Re-enabled**~~ — DONE 2026-02-06 (BUG-3 reversed, category averages displayed)
+- [x] ~~**Free Check Rate Limit 10/h**~~ — DONE 2026-02-06 (`ANON_IP_LIMIT` 2→10)
+- [x] ~~**Share & Save Reactivated**~~ — DONE 2026-02-06 (Mario enables `SHARE_REWARDS_ENABLED=true`)
 - [x] ~~**Landing Page Engagement Tracking**~~ — DONE 2026-02-02
 - [x] ~~**LogSnag Retry**~~ — DONE 2026-02-02
 - [x] ~~**DGI Coming Soon Page**~~ — DONE 2026-02-02
@@ -27,11 +31,11 @@ _(none currently)_
 ## MEDIUM Priority
 
 - [ ] **Spendenabwicklung auf MMS Service umstellen** — Lokale `donations`-Tabelle + Logik durch zentralen MMS Donations Service (`https://api.masem.at/docs/donations`) ersetzen. Betroffen: Stripe-Webhook (`handlePaymentIntentSucceeded`), Coinbase-Webhook (`handleChargeConfirmed`), `/api/donations/total`, `HeroDonationCounter`, `ImpactContent`, `DonationBadge`, `DonationImpactBox`. MMS übernimmt Berechnung (Prozentsatz), Speicherung, Target-Verteilung. ChainSights ruft `POST /v1/donations` statt lokaler DB-Insert auf und `GET /v1/donations/summary` für Totals. Env: `MMS_API_URL` + `MMS_API_KEY` bereits gesetzt. CHOKIHEART-Logik (5%) über `donation_percentage_override` abbildbar.
-- [ ] **DAO S&P Governance Benchmark** — Define benchmark methodology (category averages, inclusion criteria, weighting). Blocked by: Mario's methodology decisions. See `docs/_masemIT/requirements/chainsights-bugs-auth-backlog.md` Part 3.
+- [ ] **DAO S&P Governance Benchmark** — GovernanceIndex re-enabled (2026-02-06). Remaining: DGI Benchmark in Reports (moved to HIGH), public methodology page, Mirror whitepaper (Mario handles).
 - [ ] **Mirror Account + Whitepaper** — Create chainsights.mirror.xyz. Publish DGI methodology whitepaper. Needed for Wikipedia citation path.
 - [ ] **Social Media Assets** — LinkedIn + X images in `public/images/linkedin/` and `public/images/x/` (untracked). Finalize and commit.
-- [ ] **DGI Launch Content** — Fill in X thread template placeholders with real data (scores, insights). See `docs/_masemIT/requirements/chainsights-dgi-promotion-strategy.md`.
-- [ ] **Share & Save Re-evaluation** — Currently disabled. Decide: reactivate, modify, or remove code entirely?
+- [x] ~~**DGI Launch Content**~~ — DONE 2026-02-06 (LinkedIn, X, Discord posts published by Mario)
+- [x] ~~**Share & Save Re-evaluation**~~ — DONE 2026-02-06 (Decision: reactivate. Mario enables flag.)
 
 ## LOW Priority / Backlog
 
@@ -43,6 +47,15 @@ _(none currently)_
 
 ## DONE (Recently Completed)
 
+- [x] GovernanceIndex re-enabled on Matrix Detail pages — BUG-3 reversed, category averages displayed — 2026-02-06
+- [x] Free Check Rate Limit increased to 10/IP/hour — was 2, now 10 since Matrix is free — 2026-02-06
+- [x] Share & Save reactivated — Mario enables `SHARE_REWARDS_ENABLED=true` — 2026-02-06
+- [x] DGI Launch Content — LinkedIn, X, Discord posts published — 2026-02-06
+- [x] Farcaster URL field in Engagement Hub — DB column, table icon, edit dialog, API, report platform — 2026-02-06
+- [x] Dynamic Sitemap with DAO pages — `/matrix/{slug}` entries, ISR 24h revalidation — 2026-02-06
+- [x] Bing IndexNow on build — `scripts/indexnow.mjs`, production-only, non-fatal — 2026-02-06
+- [x] Feedback Bubble Email Fix — await Resend call (serverless fire-and-forget bug) — 2026-02-06
+- [x] Engagement Report current week picker — loop starts at i=0 instead of i=1 — 2026-02-06
 - [x] Admin Dashboard Stats Cleanup — removed unused featuredDAOs prop, badge shows total DAO count — 2026-02-02
 - [x] Stripe Payment Inline — Embedded Checkout replaces Hosted Checkout redirect on /check — 2026-02-02
 - [x] DGI Launch Runbook — `docs/launch-runbook-dgi.md` with pre-launch, launch day, post-launch, rollback — 2026-02-02

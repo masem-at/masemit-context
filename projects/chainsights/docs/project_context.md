@@ -56,7 +56,7 @@ _This file contains critical rules and patterns that AI agents must follow when 
 | Free Check | **ENABLED** | Live, working |
 | Deep Dive (€49) | **ENABLED** | Live, working |
 | Governance Audit (€149) | **IMPLEMENTED** | Phase 2 - historical trends, peer comparison, enhanced PDF all implemented |
-| Share & Save (€20 cashback) | **DISABLED** | Hide everywhere, do not delete code |
+| Share & Save (€20 cashback) | **ENABLED** | Reactivated 2026-02-06. €20 partial Stripe refund for tweeting about report. Flag: `SHARE_REWARDS_ENABLED=true` |
 | DAO Matrix (€19/mo) | **PAYWALL REMOVED** | 2026-02-05 Decision: Matrix is NOW 100% FREE. Remove ALL paywalls, subscription CTAs, row limits, chart limits. Keep only Deep Dive (€49) and Governance Audit (€149) as paid products. See Paywall Removal Checklist below. |
 | Pricing Page | **IMPLEMENTED** | `/pricing` with 3 tiers, analytics tracking, nav link in header |
 | Stripe Customer Portal | **IMPLEMENTED** | `/api/billing-portal` + portal link in delivery/recovery emails + `/account` fallback page |
@@ -135,7 +135,7 @@ Must reflect current tiers:
 - ✅ Use "Free Check" (not "Quick Check")
 - ✅ Use "€49 Deep Dive" (not €99)
 - ✅ Use "€149 Governance Audit" (not €199)
-- ❌ NO mention of Share & Save cashback (while disabled)
+- ✅ Include Share & Save cashback info (re-enabled 2026-02-06)
 
 ---
 
@@ -147,7 +147,7 @@ Must reflect current tiers:
 | Quick Checks not recording | **FIXED** | Was recording correctly, just in `quick_checks` table | Verified working |
 | BUG-1: Admin no chart access | **FIXED** | No session management, admin had no way to authenticate | Magic Link Auth (2026-02-01) |
 | BUG-2: Email unlock not persistent | **FIXED** | Stateless per-page email check, no session | Magic Link Auth with 30-day JWT session (2026-02-01) |
-| BUG-3: GovernanceIndex visible | **FIXED** | Unvalidated benchmarks shown publicly | Section hidden until S&P methodology defined (2026-01-31) |
+| BUG-3: GovernanceIndex visible | **RESOLVED** | Unvalidated benchmarks shown publicly | Section hidden 2026-01-31, re-enabled 2026-02-06 — methodology stable enough |
 
 ### Content Inconsistencies
 
@@ -161,7 +161,7 @@ Must reflect current tiers:
 |------|----------|-----------|
 | 2026-01-28 | €99 → €49 for Deep Dive | Lower friction, impulse buy territory |
 | 2026-01-28 | "Quick Check" → "Free Check" (user-facing) | Clearer value proposition |
-| 2026-01-28 | Hide Share & Save temporarily | Validate purchases first, reactivate later |
+| 2026-01-28 | Hide Share & Save temporarily | Validate purchases first, reactivate later. **Re-enabled 2026-02-06.** |
 | 2026-01-28 | Quiz CTA → Report Modal | Don't send engaged users back to landing page |
 | 2026-01-28 | Matrix deferred to Phase 2 | Validate report demand first |
 | 2026-01-28 | Unify DAO data architecture | Paid reports auto-populate rankings + gvsSnapshots for Quick Check consistency |
@@ -183,6 +183,11 @@ Must reflect current tiers:
 | 2026-01-30 | Portal link in confirmation emails | Stripe `billingPortal.sessions.create()` URL in report delivery email. `/account` page only as fallback |
 | 2026-01-31 | Matrix server-side auth | Server-side row limiting replaces client-side `?subscribed=true` bypass. Admin whitelist via `MATRIX_ADMIN_EMAILS` env. Access: anonymous=5, free=10, subscriber/admin=all |
 | 2026-01-31 | Hide GovernanceIndex on detail pages | Unvalidated benchmarks removed until DAO S&P methodology defined |
+| 2026-02-06 | Re-enable GovernanceIndex on detail pages | Methodology stable (4 categories, GVS calculation running). Category averages displayed. |
+| 2026-02-06 | Reactivate Share & Save (€20 cashback) | Mario enables `SHARE_REWARDS_ENABLED=true`. Purchase → tweet → claim → Stripe partial refund. |
+| 2026-02-06 | DGI Benchmark in Reports | Deep Dive (€49): headline comparison. Audit (€149): full "How You Compare" section with percentiles. |
+| 2026-02-06 | Free Check rate limit 2→10/hour | Matrix free, so higher limit appropriate. Still limits AI/API cost per IP. |
+| 2026-02-06 | DGI Launch Content done | LinkedIn, X, Discord posts already published by Mario. |
 | 2026-01-31 | Matrix random sort for anon/free | Seeded daily shuffle prevents lowest-scoring DAOs always appearing first |
 | 2026-02-01 | Magic Link Authentication | Passwordless auth: jose JWT, cs_session cookie (30d), middleware session resolution, SignInModal + UserMenu. Resolves BUG-1 (admin access) + BUG-2 (session persistence) |
 | 2026-02-01 | /check Flow Page Refactor | Replaced 4-5 chained modals with single `/check` page using progressive disclosure. All CTAs site-wide redirect to `/check`. Deleted report-selection-modal, QuickCheckEmailModal, QuickCheckResultsModal. Stripe Hosted Checkout kept for paid tiers (inline Payment Element deferred to backlog). |
