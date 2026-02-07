@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-07T09:12:16Z",
-  "commit_sha": "4f3be57eeec64980429fdcd59dd8656f6bc1ab13",
-  "commit_message": "feat: re-enable GovernanceIndex, increase rate limit, document decisions\n"
+  "synced_at": "2026-02-07T09:25:58Z",
+  "commit_sha": "8fb0557bb8ed593fed02efdc56e1ba443a944dc3",
+  "commit_message": "feat: improve DGI benchmark in reports + add project documentation\n"
 }

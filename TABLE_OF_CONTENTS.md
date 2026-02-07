@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-07 09:12:16 UTC
+> Last updated: 2026-02-07 09:25:58 UTC
 
 ## Quick Access
 
@@ -112,7 +112,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-02-07T09:12:16Z
+> Source: `masem-at/chainsights` | Last sync: 2026-02-07T09:25:58Z
 
 
 **docs/**
@@ -193,6 +193,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`weekly-review-template.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/analytics/weekly-review-template.md)
 
 **docs/**
+- [`api-reference.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/api-reference.md)
 - [`architecture-dgi.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/architecture-dgi.md)
 - [`architecture-magic-link-auth.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/architecture-magic-link-auth.md)
 - [`architecture-matrix-details.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/architecture-matrix-details.md)
@@ -211,6 +212,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 **docs/**
 - [`bmm-workflow-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/bmm-workflow-status.yaml)
+- [`db-schema-reference.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/db-schema-reference.md)
 
 **docs/decisions/**
 - [`decision-log-2025-12-15-16.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/decisions/decision-log-2025-12-15-16.md)
@@ -227,6 +229,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`weekly-ranking-feature.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/design/weekly-ranking-feature.md)
 
 **docs/**
+- [`developer-onboarding.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/developer-onboarding.md)
 - [`epics-admin-dashboard.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/epics-admin-dashboard.md)
 - [`epics-phase-2.5.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/epics-phase-2.5.md)
 - [`epics-phase-3.5.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/epics-phase-3.5.md)
@@ -300,6 +303,9 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`rocketpool-minipool-discussion.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/marketing/rocketpool-minipool-discussion.md)
 - [`seed-campaign-targets.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/marketing/seed-campaign-targets.md)
 - [`target-dao-list.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/marketing/target-dao-list.md)
+
+**docs/**
+- [`operations-runbook.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/operations-runbook.md)
 
 **docs/operations/**
 - [`disaster-recovery.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/operations/disaster-recovery.md)
@@ -421,6 +427,9 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 **docs/tech-specs/**
 - [`ai-costs-dashboard.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/tech-specs/ai-costs-dashboard.md)
+
+**docs/**
+- [`testing-strategy.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/testing-strategy.md)
 
 **docs/testing/**
 - [`01-chainsights-review-truth-network-eth.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/testing/01-chainsights-review-truth-network-eth.md)
