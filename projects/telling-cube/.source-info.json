@@ -2,7 +2,7 @@
   "source_repo": "masem-at/telling-cube",
   "project_name": "telling-cube",
   "source_folders": "docs",
-  "synced_at": "2026-02-07T10:10:08Z",
-  "commit_sha": "bad29e588362dbb53559652ba655f3369be32a40",
-  "commit_message": "fix: auto-login after Stripe purchase with magic link fallback (BF-1)\n"
+  "synced_at": "2026-02-07T15:41:16Z",
+  "commit_sha": "b57d14ead8308d06638c8a34b17db016545202f5",
+  "commit_message": "feat: add Controlling View with Plan vs. Actual variance analysis\n"
 }

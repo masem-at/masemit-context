@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for telling-cube.
 > Source: `masem-at/telling-cube`
-> Last sync: 2026-02-07 10:10:08 UTC | Commit: `bad29e588362dbb53559652ba655f3369be32a40`
+> Last sync: 2026-02-07 15:41:16 UTC | Commit: `b57d14ead8308d06638c8a34b17db016545202f5`
 
 ---
 
@@ -30,6 +30,10 @@
 
 - [`mail_ceo_ibcs.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/telling-cube/docs/_masemIT/mail_ceo_ibcs.md)
 - [`readme.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/telling-cube/docs/_masemIT/readme.md)
+
+## docs/_masemIT/requirements
+
+- [`controlling-view-requirements.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/telling-cube/docs/_masemIT/requirements/controlling-view-requirements.md)
 
 ## docs/_masemIT/tasks
 
