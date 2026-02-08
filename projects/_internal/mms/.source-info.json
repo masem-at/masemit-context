@@ -1,0 +1,8 @@
+{
+  "source_repo": "masem-at/mms",
+  "project_name": "MMS",
+  "source_folders": "_bmad-output",
+  "synced_at": "2026-02-08T14:33:40Z",
+  "commit_sha": "b8d212f95903c975fbe44203cced3cf1043fbaa1",
+  "commit_message": "docs: add Consents & Email Preferences API documentation\n"
+}

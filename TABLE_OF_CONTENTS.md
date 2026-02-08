@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all projects in this context repository.
-> Last updated: 2026-02-07 15:41:16 UTC
+> Last updated: 2026-02-08 14:33:40 UTC
 
 ## How to use
 
@@ -24,7 +24,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### _internal
 
-- Files: 30
+- Files: 59
 
 ### chainsights
 
