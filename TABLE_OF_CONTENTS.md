@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-08 14:50:28 UTC
+> Last updated: 2026-02-08 15:31:40 UTC
 
 ## Quick Access
 
@@ -155,7 +155,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-02-08T14:50:28Z
+> Source: `masem-at/chainsights` | Last sync: 2026-02-08T15:31:40Z
 
 
 **docs/**
@@ -464,6 +464,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`epic-matrix-server-auth.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-matrix-server-auth.md)
 - [`epic-open-universe.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-open-universe.md)
 - [`sprint-2026-01-30.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/sprint-2026-01-30.md)
+- [`story-mms-consent-party-integration.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/story-mms-consent-party-integration.md)
 
 **docs/strategy/**
 - [`launch-plan.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/strategy/launch-plan.md)

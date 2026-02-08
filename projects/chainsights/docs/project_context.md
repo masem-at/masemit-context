@@ -196,16 +196,20 @@ Must reflect current tiers:
 | 2026-02-07 | Blog on chainsights.one/blog | Own blog instead of Mirror/Paragraph. SEO control, conversion proximity, no platform dependency. Tech: Markdown in repo (`src/content/blog/`), `next-mdx-remote` + `gray-matter`, SSG, BlogPosting schema. First article: `/blog/introducing-the-dgi`. Occasional publishing, no CMS needed. |
 | 2026-02-05 | **PAYWALL REMOVAL — Matrix FREE** | **CRITICAL DECISION:** ALL paywalls removed except Deep Dive (€49) and Governance Audit (€149). DAO Matrix is 100% FREE — no subscription, no row limits, no chart limits, no gating. Remove ALL subscription CTAs, pricing cards, Stripe subscription flows for Matrix. Auth (Magic Link) stays as infrastructure but NOT as paywall gate. Mario publicly announced this on LinkedIn, X, and forums. See Paywall Removal Checklist. |
 | 2026-02-08 | Free Governance Score Card | Post-result CTA on /check: user enters email → receives branded PDF Score Card (rank, benchmark, insights) via Resend. Lead capture via MMS `createParty`. IP rate limit 5/hr. DB migration: `score_card` tier. **Follow-up required: Cookie Consent, Privacy Policy, Unsubscribe.** |
+| 2026-02-08 | MMS Consent & Party Integration Plan | Full GDPR compliance plan approved. See `docs/stories/story-mms-consent-party-integration.md`. Scope: (1) extend `createParty` with consent fields, (2) Unsubscribe flow via MMS tokens, (3) Stripe Webhook → createParty + status upgrade to `customer`, (4) Cookie Consent Banner gating masemIT tracker, (5) Privacy Policy update, (6) TellingCube integration guide. |
 
 ## Follow-Up: Score Card Compliance (P0/P1)
 
-Shipped with Score Card (2026-02-08) — must be done before heavy promotion:
+Shipped with Score Card (2026-02-08) — must be done before heavy promotion.
+**Full implementation plan:** `docs/stories/story-mms-consent-party-integration.md`
 
-| Priority | Item | Why |
-|----------|------|-----|
-| **P0** | Cookie Consent Banner | Score Card sets no cookies, but site uses masemIT tracker. GDPR/ePrivacy requires consent banner before any tracking. |
-| **P0** | Privacy Policy Update | Privacy page must mention: Score Card email collection, MMS lead storage, PDF generation, marketing consent checkbox purpose. |
-| **P1** | Unsubscribe Flow | Users who check marketing consent need a way to unsubscribe. Currently consent is only logged to LogSnag, not persisted in DB (F14 from review). |
+| Priority | Item | Story Phase | Status |
+|----------|------|-------------|--------|
+| **P0** | Cookie Consent Banner | Phase 3 | PLANNED |
+| **P0** | Privacy Policy Update | Phase 4 | PLANNED |
+| **P1** | Unsubscribe Flow | Phase 2 | PLANNED |
+| **P1** | MMS Party for Paid Reports | Phase 2 | PLANNED |
+| **P2** | TellingCube Integration Guide | Phase 5 | PLANNED |
 
 ---
 
