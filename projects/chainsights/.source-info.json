@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-07T12:42:33Z",
-  "commit_sha": "69ef173f7419c4f0175e4371deb4d3e36f766e0e",
-  "commit_message": "chore: delete unused matrix-subscription-cards component\n"
+  "synced_at": "2026-02-08T14:50:28Z",
+  "commit_sha": "4dbb0fdaf7deba569e5f033af5d4955b790e465a",
+  "commit_message": "docs: add Score Card decision + compliance follow-ups to project_context\n"
 }
