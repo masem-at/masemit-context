@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-08 15:31:40 UTC
+> Last updated: 2026-02-08 16:03:36 UTC
 
 ## Quick Access
 
@@ -155,7 +155,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-02-08T15:31:40Z
+> Source: `masem-at/chainsights` | Last sync: 2026-02-08T16:03:36Z
 
 
 **docs/**
@@ -293,6 +293,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 **docs/integrations/**
 - [`mms-analytics-api.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/integrations/mms-analytics-api.md)
+- [`mms-party-consent-integration-guide.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/integrations/mms-party-consent-integration-guide.md)
 
 **docs/**
 - [`launch-runbook-dgi.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/launch-runbook-dgi.md)

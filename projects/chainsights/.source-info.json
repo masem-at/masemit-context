@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-08T15:31:40Z",
-  "commit_sha": "002ab0a9ed77342a4fb0aa36a9d6270fdd7ed37d",
-  "commit_message": "feat: GDPR compliance — cookie consent, unsubscribe, MMS party integration\n"
+  "synced_at": "2026-02-08T16:03:36Z",
+  "commit_sha": "25547bd7b31b73c60189a5840f15a67bb1c37eb5",
+  "commit_message": "docs: add MMS Party & Consent integration guide for TellingCube\n"
 }
