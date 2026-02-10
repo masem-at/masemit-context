@@ -1,5 +1,12 @@
 # Phase 2 Design: Governance Audit + DAO Matrix
 
+> **⚠️ PRICING OUTDATED (as of 2026-02-05)**
+> This document contains stale prices. Current pricing:
+> - Free Check: €0 | Deep Dive: **€49** | Governance Audit: **€149**
+> - DAO Matrix: **FREE** (paywall removed 2026-02-05)
+> - ❌ €99 Standard, €199 Deep Dive, €19/mo Matrix, €99/yr Matrix are ALL deprecated
+> See `docs/project_context.md` for authoritative pricing.
+
 **Status:** Ready for Implementation
 **Created:** 2026-01-28
 **Source Requirements:** `docs/_masemIT/chainsights-monetization-expansion.md`, `docs/_masemIT/bmad-team-response.md`

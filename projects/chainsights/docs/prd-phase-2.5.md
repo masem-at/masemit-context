@@ -13,6 +13,13 @@ priority_order: [1, 2, 3]
 
 # PRD Phase 2.5: Report Enhancement + Pricing + Account
 
+> **⚠️ PRICING OUTDATED (as of 2026-02-05)**
+> This document contains stale prices. Current pricing:
+> - Free Check: €0 | Deep Dive: **€49** | Governance Audit: **€149**
+> - DAO Matrix: **FREE** (paywall removed 2026-02-05)
+> - ❌ €19/mo Matrix and €99/yr Matrix subscriptions are deprecated
+> See `docs/project_context.md` for authoritative pricing.
+
 **Author:** Mario
 **Date:** 2026-02-04
 **Status:** Approved for Implementation

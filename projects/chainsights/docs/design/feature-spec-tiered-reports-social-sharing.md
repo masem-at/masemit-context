@@ -1,5 +1,10 @@
 # Feature Specification: Tiered Reports & Social Sharing
 
+> **⚠️ PRICING OUTDATED (as of 2026-01-28)**
+> This document uses old pricing ($99 Standard, $199 Deep Dive). Current pricing:
+> - Free Check: €0 | Deep Dive: **€49** | Governance Audit: **€149**
+> - "Standard" tier is deprecated. See `docs/project_context.md` for authoritative pricing.
+
 **Document Version:** 1.0
 **Date:** 2024-12-20
 **Status:** Implementation Planning
