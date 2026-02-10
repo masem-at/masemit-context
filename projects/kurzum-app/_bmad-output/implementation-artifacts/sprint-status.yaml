@@ -1,0 +1,71 @@
+# generated: 2026-02-10
+# project: kurzum-app
+# project_key: NOKEY
+# tracking_system: file-system
+# story_location: _bmad-output/implementation-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog -> in-progress: Automatically when first story is created (via create-story)
+#   - in-progress -> done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically creates next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2026-02-10
+project: kurzum-app
+project_key: NOKEY
+tracking_system: file-system
+story_location: _bmad-output/implementation-artifacts
+
+development_status:
+  # Epic 1: Project Foundation & Brand Identity
+  epic-1: in-progress
+  1-1-initialize-nextjs-project-with-design-system: done
+  1-2-implement-logo-and-brand-assets: backlog
+  epic-1-retrospective: optional
+
+  # Epic 2: Landing Page Content & Storytelling
+  epic-2: backlog
+  2-1-section-layout-system-and-hero-section: backlog
+  2-2-problem-section-with-animated-pain-points: backlog
+  2-3-concrete-example-chat-mockup: backlog
+  2-4-solution-steps-and-usp-sections: backlog
+  2-5-pilot-program-section-and-footer: backlog
+  epic-2-retrospective: optional
+
+  # Epic 3: Waitlist Registration & Lead Pipeline
+  epic-3: backlog
+  3-1-waitlist-form-with-client-side-validation: backlog
+  3-2-database-schema-and-integration-clients: backlog
+  3-3-waitlist-api-route: backlog
+  3-4-double-opt-in-email-and-confirmation-flow: backlog
+  epic-3-retrospective: optional
+
+  # Epic 4: Launch Readiness — SEO, Analytics & Legal
+  epic-4: backlog
+  4-1-legal-pages-impressum-and-datenschutzerklaerung: backlog
+  4-2-seo-meta-tags-and-social-sharing: backlog
+  4-3-analytics-integration-and-event-tracking: backlog
+  epic-4-retrospective: optional

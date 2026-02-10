@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-10T21:59:20Z",
-  "commit_sha": "104b1d86bd280fd29ab79ca8745cb32136f82868",
-  "commit_message": "Add architecture, UX spec, epics, and implementation readiness report\n"
+  "synced_at": "2026-02-10T22:39:05Z",
+  "commit_sha": "e02d24630f06581b711cd9d2b3fb5cb121a9a312",
+  "commit_message": "Implement Story 1.1: Initialize Next.js project with design system\n"
 }
