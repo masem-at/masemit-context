@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-09T09:14:29Z",
-  "commit_sha": "3d63b745d8be0e9d891d25f20ae3d9835ae85a99",
-  "commit_message": "\n"
+  "synced_at": "2026-02-10T16:44:06Z",
+  "commit_sha": "81c7496e67661a7272be9fc6c405d1827da6e93c",
+  "commit_message": "Add PRD and validation report for kurzum.app\n"
 }
