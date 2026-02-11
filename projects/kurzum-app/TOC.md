@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-11 08:41:45 UTC | Commit: `e1b48e2fffb377c702be93a0cfc263ecc37571e4`
+> Last sync: 2026-02-11 09:11:02 UTC | Commit: `2045a6b73d9fa1e239a7327a62851f4052cf43d4`
 
 ---
 

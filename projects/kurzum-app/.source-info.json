@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-11T08:41:45Z",
-  "commit_sha": "e1b48e2fffb377c702be93a0cfc263ecc37571e4",
-  "commit_message": "Implement Story 3.1: Waitlist form with client-side validation and review fixes\n"
+  "synced_at": "2026-02-11T09:11:02Z",
+  "commit_sha": "2045a6b73d9fa1e239a7327a62851f4052cf43d4",
+  "commit_message": "Move ChatMockup into Hero, rename Gewerk to Fachbereich, improve error messages\n"
 }

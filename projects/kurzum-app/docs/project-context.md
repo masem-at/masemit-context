@@ -117,8 +117,8 @@ Q3-Q4 2026: SHK dazu, Innungs-Partnerschaft, €3-5k MRR
 **Warum nur die Landing Page:** Laut FFG-Richtlinien sind Vorbereitungsmaßnahmen (Research, Marktvalidierung, Rekrutierung) vor Projektstart erlaubt und gelten NICHT als Projektbeginn. Die Landing Page ist eine solche Vorbereitungsmaßnahme. Die eigentliche App-Entwicklung darf erst nach FFG-Bewilligung (erwartet Mai/Juni 2026) starten.
 
 **Landing Page Umfang:**
-- Hero + Problem + Beispiel + Lösung + USP + Pilotprogramm + Anmeldeformular + Footer
-- Wartelisten-Formular: Name, E-Mail, Firma, Gewerk, Betriebsgröße, optional Telefon + Nachricht
+- Hero (mit integriertem Monteur-Martin-Beispiel) + Problem + Lösung + USP + Pilotprogramm + Anmeldeformular + Footer
+- Wartelisten-Formular: Name, E-Mail, Firma, Fachbereich, Betriebsgröße, optional Telefon + Nachricht
 - Double-Opt-In via Resend E-Mail
 - MMS API (api.masem.at) für Party/Contact/Consent-Management
 - NeonDB für kurzum-spezifische Business-Daten (Gewerk, Betriebsgröße etc.)
@@ -134,6 +134,16 @@ Q3-Q4 2026: SHK dazu, Innungs-Partnerschaft, €3-5k MRR
 - UX-Design: `_bmad-output/planning-artifacts/ux-design-specification.md`
 - Architektur: `_bmad-output/planning-artifacts/architecture.md`
 - PRD: `_bmad-output/planning-artifacts/prd.md`
+
+### Landing Page Layout-Änderung (2026-02-11)
+
+**Entscheidung:** ChatMockup (Monteur-Martin-Beispiel) aus eigenständiger Sektion entfernt und direkt in die HeroSection integriert. Placeholder-Bild im Hero ersetzt.
+
+**Neue Sektionsreihenfolge:** Hero (mit Beispiel) → Problem → Lösung → USPs → Pilot → Formular → Footer
+
+**Begründung:** Das Monteur-Martin-Beispiel ist der stärkste Conversion-Trigger und gehört above-the-fold in den Hero. Eine separate Beispiel-Sektion war redundant.
+
+**Zusätzlich:** Label "Gewerk" im Formular zu "Fachbereich" geändert (allgemeinverständlicher für breitere Zielgruppe).
 
 ## Key Risk
 
