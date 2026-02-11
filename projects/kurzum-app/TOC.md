@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-11 13:57:41 UTC | Commit: `f719d9b3ba91cd579009fc08c508d1deab7c673b`
+> Last sync: 2026-02-11 14:57:49 UTC | Commit: `6f7c7ad335d5a994721fe40d7db52997b0d15443`
 
 ---
 
@@ -20,6 +20,7 @@
 - [`3-2-database-schema-and-integration-clients.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/3-2-database-schema-and-integration-clients.md)
 - [`3-3-waitlist-api-route.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/3-3-waitlist-api-route.md)
 - [`3-4-double-opt-in-email-and-confirmation-flow.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/3-4-double-opt-in-email-and-confirmation-flow.md)
+- [`4-1-legal-pages-impressum-and-datenschutzerklaerung.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/4-1-legal-pages-impressum-and-datenschutzerklaerung.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts

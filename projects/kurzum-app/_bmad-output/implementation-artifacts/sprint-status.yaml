@@ -64,8 +64,8 @@ development_status:
   epic-3-retrospective: optional
 
   # Epic 4: Launch Readiness — SEO, Analytics & Legal
-  epic-4: backlog
-  4-1-legal-pages-impressum-and-datenschutzerklaerung: backlog
+  epic-4: in-progress
+  4-1-legal-pages-impressum-and-datenschutzerklaerung: done
   4-2-cookie-consent-banner-with-mms-api-integration: backlog
   4-3-seo-meta-tags-and-social-sharing: backlog
   4-4-analytics-integration-and-event-tracking: backlog
