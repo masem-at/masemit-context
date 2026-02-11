@@ -1,6 +1,6 @@
 # Story 4.2: SEO, Meta Tags & Social Sharing
 
-Status: ready-for-dev
+Status: done
 
 ## Story
 
@@ -24,44 +24,44 @@ so that organic traffic and LinkedIn Ads campaigns drive qualified visitors to t
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Enhance metadata in `app/layout.tsx` (AC: #1, #2)
-  - [ ] 1.1 Add `metadataBase: new URL("https://kurzum.app")` to Metadata
-  - [ ] 1.2 Add `alternates: { canonical: "/" }` for canonical URL
-  - [ ] 1.3 Add `openGraph` object: title, description, url, siteName, locale `"de_AT"`, type `"website"`, images (auto-resolved from `opengraph-image.tsx`)
-  - [ ] 1.4 Add `twitter: { card: "summary_large_image" }`
-  - [ ] 1.5 Add `keywords` array with target keywords (see Dev Notes)
-  - [ ] 1.6 Verify `<html lang="de">` is set (already exists — confirm only)
+- [x] Task 1: Enhance metadata in `app/layout.tsx` (AC: #1, #2)
+  - [x] 1.1 Add `metadataBase: new URL("https://kurzum.app")` to Metadata
+  - [x] 1.2 Add `alternates: { canonical: "/" }` for canonical URL
+  - [x] 1.3 Add `openGraph` object: title, description, url, siteName, locale `"de_AT"`, type `"website"`, images (auto-resolved from `opengraph-image.tsx`)
+  - [x] 1.4 Add `twitter: { card: "summary_large_image" }`
+  - [x] 1.5 Add `keywords` array with target keywords (see Dev Notes)
+  - [x] 1.6 Verify `<html lang="de">` is set (already exists — confirmed)
 
-- [ ] Task 2: Create dynamic OG image `app/opengraph-image.tsx` (AC: #3)
-  - [ ] 2.1 Create `app/opengraph-image.tsx` using Next.js `ImageResponse` API
-  - [ ] 2.2 Export `size = { width: 1200, height: 630 }`, `contentType = "image/png"`, `alt` string
-  - [ ] 2.3 Render brand elements: wordmark "kurzum." in Inter Bold + waveform SVG path, centered
-  - [ ] 2.4 Use brand colors: Anthracite `#1C1917` background, Orange `#F97316` for logo/text
-  - [ ] 2.5 Add tagline below logo: "Sprich statt tipp." in white/light color
-  - [ ] 2.6 Load Inter font via `fetch` from `public/fonts/inter-var.woff2` for `ImageResponse`
+- [x] Task 2: Create dynamic OG image `app/opengraph-image.tsx` (AC: #3)
+  - [x] 2.1 Create `app/opengraph-image.tsx` using Next.js `ImageResponse` API
+  - [x] 2.2 Export `size = { width: 1200, height: 630 }`, `contentType = "image/png"`, `alt` string
+  - [x] 2.3 Render brand elements: wordmark "kurzum." + waveform SVG path, centered
+  - [x] 2.4 Use brand colors: Anthracite `#1C1917` background, Orange `#F97316` for logo/text
+  - [x] 2.5 Add tagline below logo: "Sprich statt tipp." in Stone 50 color
+  - [x] 2.6 Font: Uses Satori default font (woff2 not supported by Satori, runtime=nodejs with force-dynamic)
 
-- [ ] Task 3: Add JSON-LD structured data (AC: #4)
-  - [ ] 3.1 Create `components/seo/json-ld.tsx` — Server Component exporting `<JsonLd />`
-  - [ ] 3.2 Embed Organization schema: name, url, logo, address (masemIT e.U., Alleegasse 26, 3851 Kautzen, AT), contactPoint (contact@masem.at)
-  - [ ] 3.3 Embed SoftwareApplication schema: name "kurzum", description, offers (€10/user/month), operatingSystem, applicationCategory
-  - [ ] 3.4 Add `<JsonLd />` to `app/page.tsx` (NOT layout.tsx — only on landing page)
+- [x] Task 3: Add JSON-LD structured data (AC: #4)
+  - [x] 3.1 Create `components/seo/json-ld.tsx` — Server Component exporting `<JsonLd />`
+  - [x] 3.2 Embed Organization schema: name, url, logo, address (masemIT e.U., Alleegasse 26, 3851 Kautzen, AT), contactPoint (contact@masem.at)
+  - [x] 3.3 Embed SoftwareApplication schema: name "kurzum", description, offers (€10/user/month), operatingSystem, applicationCategory
+  - [x] 3.4 Add `<JsonLd />` to `app/page.tsx` (NOT layout.tsx — only on landing page)
 
-- [ ] Task 4: Create `app/robots.ts` (AC: #5)
-  - [ ] 4.1 Export default function returning `MetadataRoute.Robots`
-  - [ ] 4.2 Allow: `/`, `/impressum`, `/datenschutz`
-  - [ ] 4.3 Disallow: `/api/*`, `/confirmed`
-  - [ ] 4.4 Add sitemap URL: `https://kurzum.app/sitemap.xml`
+- [x] Task 4: Create `app/robots.ts` (AC: #5)
+  - [x] 4.1 Export default function returning `MetadataRoute.Robots`
+  - [x] 4.2 Allow: `/`, `/impressum`, `/datenschutz`
+  - [x] 4.3 Disallow: `/api/*`, `/confirmed`
+  - [x] 4.4 Add sitemap URL: `https://kurzum.app/sitemap.xml`
 
-- [ ] Task 5: Create `app/sitemap.ts` (AC: #5)
-  - [ ] 5.1 Export default function returning `MetadataRoute.Sitemap`
-  - [ ] 5.2 Include pages: `/` (priority 1.0), `/impressum` (priority 0.3), `/datenschutz` (priority 0.3)
-  - [ ] 5.3 Set `lastModified` to current build date
-  - [ ] 5.4 Set `changeFrequency` appropriately (monthly for landing, yearly for legal)
+- [x] Task 5: Create `app/sitemap.ts` (AC: #5)
+  - [x] 5.1 Export default function returning `MetadataRoute.Sitemap`
+  - [x] 5.2 Include pages: `/` (priority 1.0), `/impressum` (priority 0.3), `/datenschutz` (priority 0.3)
+  - [x] 5.3 Set `lastModified` to current build date
+  - [x] 5.4 Set `changeFrequency` appropriately (monthly for landing, yearly for legal)
 
-- [ ] Task 6: Verify Build & Lint (AC: #6)
-  - [ ] 6.1 Run `pnpm build` — zero errors
-  - [ ] 6.2 Run `pnpm lint` — zero errors
-  - [ ] 6.3 Verify OG image renders at `/opengraph-image` route (build output confirms generation)
+- [x] Task 6: Verify Build & Lint (AC: #6)
+  - [x] 6.1 Run `pnpm build` — zero errors
+  - [x] 6.2 Run `pnpm lint` — zero errors
+  - [x] 6.3 Verify OG image renders at `/opengraph-image` route (build output confirms ƒ dynamic generation)
 
 ## Dev Notes
 
@@ -219,10 +219,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 ### Agent Model Used
 
+Claude Opus 4.6
+
 ### Debug Log References
+
+- OG Image build error: `fetch` with `import.meta.url` fails in Turbopack prerender (`not implemented... yet...`)
+- OG Image build error: Satori rejects woff2 format (`Unsupported OpenType signature wOF2`)
+- OG Image build error: Satori rejects OTF format (`Unsupported OpenType signature`)
+- Resolution: Fetch Inter Bold as woff from Google Fonts API (old User-Agent trick for woff format), use `revalidate = 86400` for daily cache with graceful fallback to Satori default font
 
 ### Completion Notes List
 
+- Task 1: Extended `app/layout.tsx` Metadata with `metadataBase`, `alternates.canonical`, `openGraph` (title, description, url, siteName, locale de_AT, type website), `twitter` (summary_large_image), `keywords` (4 target keywords). Existing title/description/icons preserved.
+- Task 2: Created `app/opengraph-image.tsx` with 1200x630 dynamic OG image. Waveform SVG inlined from waveform-icon.tsx. Anthracite background, Orange logo/waveform, Stone 50 tagline. Uses dynamic runtime due to Satori woff2 incompatibility.
+- Task 3: Created `components/seo/json-ld.tsx` with Organization (masemIT e.U.) + SoftwareApplication (kurzum) schemas. Embedded via `<JsonLd />` in `app/page.tsx`.
+- Task 4: Created `app/robots.ts` — allows public pages, disallows /api/ and /confirmed, includes sitemap URL.
+- Task 5: Created `app/sitemap.ts` — 3 public pages with priorities and change frequencies.
+- Task 6: Build + lint pass with zero errors. OG image confirmed as dynamic route in build output.
+
 ### File List
 
+- `app/layout.tsx` (modified — extended Metadata)
+- `app/page.tsx` (modified — added JsonLd import)
+- `app/opengraph-image.tsx` (new — dynamic OG image generation)
+- `app/robots.ts` (new — robots.txt generation)
+- `app/sitemap.ts` (new — sitemap.xml generation)
+- `components/seo/json-ld.tsx` (new — JSON-LD structured data)
+- `_bmad-output/implementation-artifacts/sprint-status.yaml` (modified — story status)
+
 ### Change Log
+
+- 2026-02-11: Implemented Story 4.2 — SEO, Meta Tags & Social Sharing. All 6 tasks completed. Build + lint pass.
+- 2026-02-11: Code review fixes — M1: Replaced force-dynamic with revalidate=86400 for OG image caching. M2: Added Inter Bold font loading via Google Fonts API (woff format). M3: Removed redundant openGraph.title/description (auto-inherited from root metadata).
+
+## Senior Developer Review (AI)
+
+**Review Outcome:** Approve (with fixes applied)
+**Review Date:** 2026-02-11
+**Issues Found:** 0 High, 3 Medium, 2 Low
+
+### Action Items
+
+- [x] M1: OG Image force-dynamic → revalidate=86400 for caching [app/opengraph-image.tsx]
+- [x] M2: Load Inter Bold via Google Fonts API instead of Satori default font [app/opengraph-image.tsx]
+- [x] M3: Remove redundant openGraph.title/description — Next.js auto-inherits [app/layout.tsx]
+- L1: JsonLd placement outside main — informational only, no change needed
+- L2: /confirmed double-covered in robots.ts + page metadata — informational only

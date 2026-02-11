@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-11T18:59:13Z",
-  "commit_sha": "21bad5252debd0ce512fab9c014651c056051a1a",
-  "commit_message": "Add Story 4.2 (SEO), decision log, update sprint status\n"
+  "synced_at": "2026-02-11T19:15:32Z",
+  "commit_sha": "4fc9f5f5f2d0a486034aa956b7e5e143f89b5ad0",
+  "commit_message": "Mark Story 4.2 done, update sprint status\n"
 }
