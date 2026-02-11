@@ -41,15 +41,15 @@ story_location: _bmad-output/implementation-artifacts
 
 development_status:
   # Epic 1: Project Foundation & Brand Identity
-  epic-1: in-progress
+  epic-1: done
   1-1-initialize-nextjs-project-with-design-system: done
-  1-2-implement-logo-and-brand-assets: backlog
+  1-2-implement-logo-and-brand-assets: done
   epic-1-retrospective: optional
 
   # Epic 2: Landing Page Content & Storytelling
-  epic-2: backlog
-  2-1-section-layout-system-and-hero-section: backlog
-  2-2-problem-section-with-animated-pain-points: backlog
+  epic-2: in-progress
+  2-1-section-layout-system-and-hero-section: done
+  2-2-problem-section-with-animated-pain-points: done
   2-3-concrete-example-chat-mockup: backlog
   2-4-solution-steps-and-usp-sections: backlog
   2-5-pilot-program-section-and-footer: backlog

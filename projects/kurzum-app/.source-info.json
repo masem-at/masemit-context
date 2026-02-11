@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-10T22:39:05Z",
-  "commit_sha": "e02d24630f06581b711cd9d2b3fb5cb121a9a312",
-  "commit_message": "Implement Story 1.1: Initialize Next.js project with design system\n"
+  "synced_at": "2026-02-11T04:13:05Z",
+  "commit_sha": "2f0a947973bb189838f41fe39c38879a2fef8cbe",
+  "commit_message": "Implement Stories 1.2, 2.1, 2.2: Logo, hero section, problem section with review fixes\n"
 }

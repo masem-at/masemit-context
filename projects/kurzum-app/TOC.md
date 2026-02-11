@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-10 22:39:05 UTC | Commit: `e02d24630f06581b711cd9d2b3fb5cb121a9a312`
+> Last sync: 2026-02-11 04:13:05 UTC | Commit: `2f0a947973bb189838f41fe39c38879a2fef8cbe`
 
 ---
 
@@ -10,6 +10,9 @@
 ## _bmad-output/implementation-artifacts
 
 - [`1-1-initialize-nextjs-project-with-design-system.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/1-1-initialize-nextjs-project-with-design-system.md)
+- [`1-2-implement-logo-and-brand-assets.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/1-2-implement-logo-and-brand-assets.md)
+- [`2-1-section-layout-system-and-hero-section.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-1-section-layout-system-and-hero-section.md)
+- [`2-2-problem-section-with-animated-pain-points.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-2-problem-section-with-animated-pain-points.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
