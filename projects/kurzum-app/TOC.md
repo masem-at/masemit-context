@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-11 14:57:49 UTC | Commit: `6f7c7ad335d5a994721fe40d7db52997b0d15443`
+> Last sync: 2026-02-11 18:59:13 UTC | Commit: `21bad5252debd0ce512fab9c014651c056051a1a`
 
 ---
 
@@ -21,6 +21,7 @@
 - [`3-3-waitlist-api-route.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/3-3-waitlist-api-route.md)
 - [`3-4-double-opt-in-email-and-confirmation-flow.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/3-4-double-opt-in-email-and-confirmation-flow.md)
 - [`4-1-legal-pages-impressum-and-datenschutzerklaerung.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/4-1-legal-pages-impressum-and-datenschutzerklaerung.md)
+- [`4-2-seo-meta-tags-and-social-sharing.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/4-2-seo-meta-tags-and-social-sharing.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
@@ -53,5 +54,6 @@
 ## docs
 
 - [`company-info.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/company-info.md)
+- [`decisions.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions.md)
 - [`project-context.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/project-context.md)
 

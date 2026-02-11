@@ -149,6 +149,10 @@ Q3-Q4 2026: SHK dazu, Innungs-Partnerschaft, €3-5k MRR
 
 **Inertia** — "WhatsApp funktioniert doch." Gegenmittel: Regulatorischer Druck (DSGVO, Zeiterfassungsgesetz) + überwältigend einfaches Produkt + Innungs-Vertrieb.
 
+## Decision Log
+
+Team-Entscheidungen aus Diskussionen und Party Mode Sessions: [`docs/decisions.md`](decisions.md)
+
 ## Research Documents
 
 - `_bmad-output/planning-artifacts/research/domain-interne-kommunikation-kmu-handwerk-research-2026-02-08.md`

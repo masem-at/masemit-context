@@ -56,7 +56,7 @@ development_status:
   epic-2-retrospective: optional
 
   # Epic 3: Waitlist Registration & Lead Pipeline
-  epic-3: in-progress
+  epic-3: done
   3-1-waitlist-form-with-client-side-validation: done
   3-2-database-schema-and-integration-clients: done
   3-3-waitlist-api-route: done
@@ -66,7 +66,6 @@ development_status:
   # Epic 4: Launch Readiness — SEO, Analytics & Legal
   epic-4: in-progress
   4-1-legal-pages-impressum-and-datenschutzerklaerung: done
-  4-2-cookie-consent-banner-with-mms-api-integration: backlog
-  4-3-seo-meta-tags-and-social-sharing: backlog
-  4-4-analytics-integration-and-event-tracking: backlog
+  4-2-seo-meta-tags-and-social-sharing: ready-for-dev
+  4-3-analytics-integration-and-event-tracking: backlog
   epic-4-retrospective: optional

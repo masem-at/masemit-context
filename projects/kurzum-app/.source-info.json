@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-11T14:57:49Z",
-  "commit_sha": "6f7c7ad335d5a994721fe40d7db52997b0d15443",
-  "commit_message": "Implement Story 4.1: Legal pages (Impressum & Datenschutzerklärung) with review fixes\n"
+  "synced_at": "2026-02-11T18:59:13Z",
+  "commit_sha": "21bad5252debd0ce512fab9c014651c056051a1a",
+  "commit_message": "Add Story 4.2 (SEO), decision log, update sprint status\n"
 }
