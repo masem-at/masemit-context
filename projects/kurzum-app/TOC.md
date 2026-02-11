@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-11 06:20:17 UTC | Commit: `62bc1e745cf478a3094b7e11a3c0b8e1132a2e43`
+> Last sync: 2026-02-11 08:41:45 UTC | Commit: `e1b48e2fffb377c702be93a0cfc263ecc37571e4`
 
 ---
 
@@ -16,6 +16,7 @@
 - [`2-3-concrete-example-chat-mockup.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-3-concrete-example-chat-mockup.md)
 - [`2-4-solution-steps-and-usp-sections.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-4-solution-steps-and-usp-sections.md)
 - [`2-5-pilot-program-section-and-footer.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-5-pilot-program-section-and-footer.md)
+- [`3-1-waitlist-form-with-client-side-validation.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/3-1-waitlist-form-with-client-side-validation.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts

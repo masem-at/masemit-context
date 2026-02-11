@@ -56,8 +56,8 @@ development_status:
   epic-2-retrospective: optional
 
   # Epic 3: Waitlist Registration & Lead Pipeline
-  epic-3: backlog
-  3-1-waitlist-form-with-client-side-validation: backlog
+  epic-3: in-progress
+  3-1-waitlist-form-with-client-side-validation: done
   3-2-database-schema-and-integration-clients: backlog
   3-3-waitlist-api-route: backlog
   3-4-double-opt-in-email-and-confirmation-flow: backlog
