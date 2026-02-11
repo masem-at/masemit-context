@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all projects in this context repository.
-> Last updated: 2026-02-11 09:11:02 UTC
+> Last updated: 2026-02-11 13:57:41 UTC
 
 ## How to use
 
@@ -24,7 +24,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### _internal
 
-- Files: 58
+- Files: 57
 
 ### chainsights
 
@@ -55,8 +55,8 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 ### kurzum-app
 
 - Source: `masem-at/kurzum-app`
-- Last sync: 2026-02-11T09:11:02Z
-- Files: 23
+- Last sync: 2026-02-11T13:57:41Z
+- Files: 26
 - **[📋 Project TOC](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/TOC.md)**
 
 ### masem-analytics
@@ -78,16 +78,6 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - Last sync: 2026-02-07T15:41:16Z
 - Files: 248
 - **[📋 Project TOC](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/telling-cube/TOC.md)**
-
-### tellingCube
-
-- Source: `masem-at/masmit-niche-finder`
-- Last sync: 2026-02-01T14:43:22Z
-- Files: 3
-
-### tellingcube
-
-- Files: 1
 
 ---
 

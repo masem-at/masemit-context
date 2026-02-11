@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-11 09:11:02 UTC | Commit: `2045a6b73d9fa1e239a7327a62851f4052cf43d4`
+> Last sync: 2026-02-11 13:57:41 UTC | Commit: `f719d9b3ba91cd579009fc08c508d1deab7c673b`
 
 ---
 
@@ -17,6 +17,9 @@
 - [`2-4-solution-steps-and-usp-sections.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-4-solution-steps-and-usp-sections.md)
 - [`2-5-pilot-program-section-and-footer.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-5-pilot-program-section-and-footer.md)
 - [`3-1-waitlist-form-with-client-side-validation.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/3-1-waitlist-form-with-client-side-validation.md)
+- [`3-2-database-schema-and-integration-clients.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/3-2-database-schema-and-integration-clients.md)
+- [`3-3-waitlist-api-route.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/3-3-waitlist-api-route.md)
+- [`3-4-double-opt-in-email-and-confirmation-flow.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/3-4-double-opt-in-email-and-confirmation-flow.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
