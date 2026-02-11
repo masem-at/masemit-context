@@ -47,12 +47,12 @@ development_status:
   epic-1-retrospective: optional
 
   # Epic 2: Landing Page Content & Storytelling
-  epic-2: in-progress
+  epic-2: done
   2-1-section-layout-system-and-hero-section: done
   2-2-problem-section-with-animated-pain-points: done
   2-3-concrete-example-chat-mockup: done
   2-4-solution-steps-and-usp-sections: done
-  2-5-pilot-program-section-and-footer: backlog
+  2-5-pilot-program-section-and-footer: done
   epic-2-retrospective: optional
 
   # Epic 3: Waitlist Registration & Lead Pipeline
@@ -66,6 +66,7 @@ development_status:
   # Epic 4: Launch Readiness — SEO, Analytics & Legal
   epic-4: backlog
   4-1-legal-pages-impressum-and-datenschutzerklaerung: backlog
-  4-2-seo-meta-tags-and-social-sharing: backlog
-  4-3-analytics-integration-and-event-tracking: backlog
+  4-2-cookie-consent-banner-with-mms-api-integration: backlog
+  4-3-seo-meta-tags-and-social-sharing: backlog
+  4-4-analytics-integration-and-event-tracking: backlog
   epic-4-retrospective: optional
