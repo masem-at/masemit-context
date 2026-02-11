@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-10T18:45:45Z",
-  "commit_sha": "490a012a4d3497f7a222a71cc57f11febf24b504",
-  "commit_message": "feat: Governance Attention Map — full pipeline + UI + PDF\n"
+  "synced_at": "2026-02-11T07:07:52Z",
+  "commit_sha": "4f7f9247428801668daa7e2e29734df386a9854f",
+  "commit_message": "fix: deterministic Decentralization Score replaces LLM-generated score\n"
 }

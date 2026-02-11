@@ -60,7 +60,13 @@ _This file contains critical rules and patterns that AI agents must follow when 
 | DAO Matrix (€19/mo) | **PAYWALL REMOVED** | 2026-02-05 Decision: Matrix is NOW 100% FREE. Remove ALL paywalls, subscription CTAs, row limits, chart limits. Keep only Deep Dive (€49) and Governance Audit (€149) as paid products. See Paywall Removal Checklist below. |
 | Pricing Page | **IMPLEMENTED** | `/pricing` with 3 tiers, analytics tracking, nav link in header |
 | Stripe Customer Portal | **IMPLEMENTED** | `/api/billing-portal` + portal link in delivery/recovery emails + `/account` fallback page |
-| Matrix Server-Side Auth | **REMOVED (Paywall removed)** | Row limiting, chart limits, subscription gates ALL removed. Matrix is fully free. |
+| Matrix Server-Side Auth | **BYPASSED (not deleted)** | Paywall code bypassed via `OPEN_MATRIX=true` feature flag. Dead code remains — tech debt to clean up. |
+| Cookie Consent Banner | **IMPLEMENTED** | `CookieConsentBanner.tsx` in layout.tsx. Gated masemIT tracker. MMS Consents API via `/api/consent` proxy. |
+| Unsubscribe Flow | **IMPLEMENTED** | `/unsubscribe?token=xxx` page + `/api/unsubscribe` proxy to MMS. |
+| MMS Party Integration | **IMPLEMENTED** | `createParty` with consent fields, Stripe webhook → customer upgrade, Score Card email with unsubscribe link. |
+| DGI Navigation Links | **IMPLEMENTED** | Header, Footer, Rankings cross-link. Gated behind `NEXT_PUBLIC_DGI_PUBLIC`. NEW badge on header link. |
+| Score Card (Free PDF) | **IMPLEMENTED** | `/api/score-card` route, `@react-pdf/renderer`, MMS lead capture, Resend email delivery. Shipped 2026-02-08. |
+| Engagement Hub | **IMPLEMENTED** | `/admin/engagement` overview + timeline. Schema: engagement fields on daos, engagement_log, signals tables. Forum scanner + relevance scoring (3-tier). |
 | Magic Link Authentication | **IMPLEMENTED** | Passwordless auth via `cs_session` JWT cookie (30 days). jose Edge-compatible. SignInModal, UserMenu in header. Resolves admin access + session persistence. |
 | DAO Prefill + Recovery Email | **IMPLEMENTED** | Checkout passes DAO data through Stripe metadata → success page prefill. Hourly cron sends recovery email for orphan orders (paid, no intake form, 30min–24h). |
 | /check Flow Page | **IMPLEMENTED** | Replaces modal chain with single-page progressive disclosure flow at `/check`. All CTAs redirect here. Modals deleted. |
@@ -89,19 +95,20 @@ Remove/update ALL subscription & paywall references in:
 - `src/app/pricing/page.tsx` — ✅ Done (no subscription section)
 - `src/app/pricing/matrix-subscription-cards.tsx` — ✅ Deleted (2026-02-07)
 - `src/app/pricing/faq-accordion.tsx` — ✅ Done (FAQ says "Matrix is free")
-- `src/lib/db/subscriptions.ts` — Remove row limits (anon=5, free=10), chart limits; return full access for all
-- `src/app/matrix/page.tsx` — Remove server-side row limiting, show all DAOs to everyone
-- `src/app/matrix/matrix-client.tsx` — Remove paywall overlay, subscribe CTAs, hidden row logic
-- `src/app/api/matrix/route.ts` — Remove access-level gating, return all data
-- `src/app/api/matrix/subscribe/route.ts` — Delete or disable subscription endpoint
-- `src/app/matrix/[slug]/page.tsx` — Remove chart access limits, show all charts
-- `src/app/matrix/[slug]/matrix-detail-client.tsx` — Remove locked chart logic
-- `src/components/matrix-detail/LockedChartOverlay.tsx` — Delete component
-- `src/app/account/page.tsx` — Remove Matrix subscribe section
-- `src/app/account/subscribe-button.tsx` — Delete or disable
-- `src/lib/stripe.ts` — Remove SUBSCRIPTIONS config for Matrix
+- `src/lib/db/subscriptions.ts` — ⚠️ BYPASSED via `OPEN_MATRIX` flag (code still present, returns Infinity when flag=true)
+- `src/app/matrix/page.tsx` — ⚠️ BYPASSED via `isOpenMatrixEnabled()` (row limiting code still present)
+- `src/app/matrix/matrix-client.tsx` — ⚠️ BYPASSED (paywall overlay hidden when `isOpenMatrix=true`, CTAs still in code)
+- `src/app/api/matrix/route.ts` — ⚠️ BYPASSED (access-level gating code still present)
+- `src/app/api/matrix/subscribe/route.ts` — ⚠️ FILE STILL EXISTS (subscription checkout endpoint operational)
+- `src/app/matrix/[slug]/page.tsx` — ⚠️ BYPASSED (chart limits bypassed when `openMatrix=true`)
+- `src/app/matrix/[slug]/matrix-detail-client.tsx` — ⚠️ BYPASSED (LockedChartOverlay hidden, not deleted)
+- `src/components/matrix-detail/LockedChartOverlay.tsx` — ⚠️ FILE STILL EXISTS (component conditionally hidden)
+- `src/app/account/page.tsx` — ⚠️ PARTIAL (shows "Matrix is free" message, but subscription UI code remains)
+- `src/app/account/subscribe-button.tsx` — ⚠️ FILE STILL EXISTS (not rendered in current UI)
+- `src/lib/stripe.ts` — ⚠️ SUBSCRIPTIONS config still present (€19/mo, €99/yr)
 - `src/app/api/webhooks/stripe/route.ts` — Remove subscription webhook handlers (keep payment handlers for reports)
 - Update Schema.org and llms.txt if they reference Matrix subscription
+- **NOTE (2026-02-10):** Paywall is functionally disabled via `OPEN_MATRIX=true` feature flag but dead code remains. Tech debt ticket: delete all paywall code if decision is permanent.
 
 ### Share & Save Hiding Checklist
 When `SHARE_REWARDS_ENABLED = false`, hide in:
@@ -197,6 +204,7 @@ Must reflect current tiers:
 | 2026-02-05 | **PAYWALL REMOVAL — Matrix FREE** | **CRITICAL DECISION:** ALL paywalls removed except Deep Dive (€49) and Governance Audit (€149). DAO Matrix is 100% FREE — no subscription, no row limits, no chart limits, no gating. Remove ALL subscription CTAs, pricing cards, Stripe subscription flows for Matrix. Auth (Magic Link) stays as infrastructure but NOT as paywall gate. Mario publicly announced this on LinkedIn, X, and forums. See Paywall Removal Checklist. |
 | 2026-02-08 | Free Governance Score Card | Post-result CTA on /check: user enters email → receives branded PDF Score Card (rank, benchmark, insights) via Resend. Lead capture via MMS `createParty`. IP rate limit 5/hr. DB migration: `score_card` tier. **Follow-up required: Cookie Consent, Privacy Policy, Unsubscribe.** |
 | 2026-02-08 | MMS Consent & Party Integration Plan | Full GDPR compliance plan approved. See `docs/stories/story-mms-consent-party-integration.md`. Scope: (1) extend `createParty` with consent fields, (2) Unsubscribe flow via MMS tokens, (3) Stripe Webhook → createParty + status upgrade to `customer`, (4) Cookie Consent Banner gating masemIT tracker, (5) Privacy Policy update, (6) TellingCube integration guide. |
+| 2026-02-10 | Deterministic Decentralization Score | Root cause fix: LLM was generating score non-deterministically (drifted 4→3→3→3→2 for Lido). Now computed via formula: `giniScore×0.4 + nakamotoScore×0.3 + concentrationScore×0.3` in `computeDecentralizationScore()` in `src/lib/ai/analysis.ts`. LLM score always overridden. PDF still shows GVS on cover (separate display decision). |
 
 ## Follow-Up: Score Card Compliance (P0/P1)
 
@@ -205,11 +213,11 @@ Shipped with Score Card (2026-02-08) — must be done before heavy promotion.
 
 | Priority | Item | Story Phase | Status |
 |----------|------|-------------|--------|
-| **P0** | Cookie Consent Banner | Phase 3 | PLANNED |
-| **P0** | Privacy Policy Update | Phase 4 | PLANNED |
-| **P1** | Unsubscribe Flow | Phase 2 | PLANNED |
-| **P1** | MMS Party for Paid Reports | Phase 2 | PLANNED |
-| **P2** | TellingCube Integration Guide | Phase 5 | PLANNED |
+| **P0** | Cookie Consent Banner | Phase 3 | ✅ DONE (2026-02-09) — `CookieConsentBanner.tsx`, loaded in layout.tsx, MMS Consents API proxy |
+| **P0** | Privacy Policy Update | Phase 4 | ✅ DONE (2026-02-09) — Score Card, MMS, cookies, masemIT tracker sections added |
+| **P1** | Unsubscribe Flow | Phase 2 | ✅ DONE (2026-02-09) — `/unsubscribe` page + `/api/unsubscribe` proxy to MMS |
+| **P1** | MMS Party for Paid Reports | Phase 2 | ✅ DONE (2026-02-09) — Stripe webhook calls `createParty` + `updatePartyStatus('customer')` |
+| **P2** | TellingCube Integration Guide | Phase 5 | ✅ DONE (2026-02-09) — `docs/integrations/mms-party-consent-integration-guide.md` (405 lines) |
 
 ---
 
