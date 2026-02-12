@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-12T12:27:19Z",
-  "commit_sha": "f84e9840772b2df7a16e916f31ca14cf8f7aae28",
-  "commit_message": "Add pilot acquisition research: 20 Austrian electrical companies + email template\n"
+  "synced_at": "2026-02-12T14:15:35Z",
+  "commit_sha": "2b55af568083ea3e94b0bac5b026b39a50bbe6bf",
+  "commit_message": "Add Bing site verification and pilot outreach emails\n"
 }
