@@ -69,3 +69,28 @@ development_status:
   4-2-seo-meta-tags-and-social-sharing: done
   4-3-analytics-integration-and-event-tracking: done
   epic-4-retrospective: optional
+
+  # ═══════════════════════════════════════════════════
+  # Sprint 0: Auth-Protected Prototype (KW 8-12)
+  # Briefing: docs/_masemIT/bmad-briefing-kurzum-sprint0.md
+  # Architecture: docs/architecture-sprint0-supplement.md
+  # UX: docs/ux-sprint0-app-specs.md
+  # ═══════════════════════════════════════════════════
+
+  # Epic 5: Authentication & App Foundation
+  epic-5: backlog
+  5-1-database-schema-extension-and-app-shell: backlog
+  5-2-magic-link-authentication: backlog
+  epic-5-retrospective: optional
+
+  # Epic 6: Voice Capture & AI Pipeline
+  epic-6: backlog
+  6-1-voice-recording-and-upload: backlog
+  6-2-mistral-voxtral-stt-integration-and-evaluation: backlog
+  6-3-mistral-llm-summarization: backlog
+  epic-6-retrospective: optional
+
+  # Epic 7: Dashboard & Research Documentation
+  epic-7: backlog
+  7-1-voice-message-dashboard: backlog
+  epic-7-retrospective: optional

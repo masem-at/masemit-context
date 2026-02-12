@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-12T16:50:01Z",
-  "commit_sha": "1181b372e33cf60d65e8e405dbee5f829caedf32",
-  "commit_message": "Add FFG compliance rules to CLAUDE.md and project-context\n"
+  "synced_at": "2026-02-12T18:08:45Z",
+  "commit_sha": "5ddc8218e11a60d7c3fbc3d8d0d696ffbd1e45e6",
+  "commit_message": "Sprint 0 planning: architecture supplement, UX specs, epics & stories\n"
 }

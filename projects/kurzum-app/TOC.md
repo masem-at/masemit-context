@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-12 16:50:01 UTC | Commit: `1181b372e33cf60d65e8e405dbee5f829caedf32`
+> Last sync: 2026-02-12 18:08:45 UTC | Commit: `5ddc8218e11a60d7c3fbc3d8d0d696ffbd1e45e6`
 
 ---
 
@@ -62,6 +62,7 @@
 
 ## docs
 
+- [`architecture-sprint0-supplement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/architecture-sprint0-supplement.md)
 - [`company-info.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/company-info.md)
 - [`decisions.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions.md)
 - [`project-context.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/project-context.md)
@@ -71,4 +72,8 @@
 - [`pilot-akquise-elektrotechnik-2026-02.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/pilot-akquise-elektrotechnik-2026-02.md)
 - [`pilot-mail-vorlage.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/pilot-mail-vorlage.md)
 - [`pilot-mails-komplett.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/pilot-mails-komplett.md)
+
+## docs
+
+- [`ux-sprint0-app-specs.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/ux-sprint0-app-specs.md)
 

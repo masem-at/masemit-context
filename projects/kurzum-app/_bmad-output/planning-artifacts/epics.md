@@ -704,3 +704,357 @@ So that I can measure conversion rate, optimize messaging, and prove market inte
 **When** a Lighthouse audit is run
 **Then** the Performance score is ≥90 (tracker script does not degrade performance)
 **And** no third-party cookie warnings appear
+
+---
+
+# Sprint 0: Auth-Protected Prototype (KW 8–12, 17.02. – 16.03.2026)
+
+**Scope:** Voice Recording → Transkription → Zusammenfassung, hinter Magic Link Auth
+**Briefing:** `docs/_masemIT/bmad-briefing-kurzum-sprint0.md`
+**Architecture:** `docs/architecture-sprint0-supplement.md`
+**UX:** `docs/ux-sprint0-app-specs.md`
+**FFG-Sitzung:** 19.03.2026
+**Ziel:** Demonstrierbarer E2E-Prototyp, Forschungsdokumentation
+
+### Sprint 0 Requirements Inventory
+
+**Functional Requirements (from Briefing AP 0.1–0.6):**
+
+S0-FR1: Magic Link authentication — email-only login, no passwords, no social logins
+S0-FR2: Session management — httpOnly cookie, DB-backed sessions, 7-day expiry
+S0-FR3: Protected routes — `/app/*` and `/api/voice/*` behind auth middleware
+S0-FR4: Voice recording in browser — MediaRecorder API, WebM/Opus, max 5 minutes
+S0-FR5: Audio upload to Vercel Blob (EU region) with progress indication
+S0-FR6: Mistral Voxtral STT integration — transcription of voice messages
+S0-FR7: Mistral LLM summarization — structured JSON output (status, material, nextSteps, problems, project)
+S0-FR8: Dashboard — list of voice messages with AI summaries, grouped by day
+S0-FR9: Summary card — expandable, shows transcript + audio player when expanded
+S0-FR10: Processing feedback — 3-step indicator (Upload → Transkription → Zusammenfassung)
+S0-FR11: Error handling — user-friendly German messages for mic, upload, STT, LLM failures
+S0-FR12: Audio retention — 90-day auto-delete with `audioDeletedAt` tracking (DSGVO)
+S0-FR13: STT evaluation — Voxtral vs. Whisper benchmark documented for FFG
+S0-FR14: Magic Link email template — kurzum branding, 15-min expiry, single-use token
+
+**Non-Functional Requirements:**
+
+S0-NFR1: Voice → AI Summary < 30 seconds end-to-end (NFR1 from PRD)
+S0-NFR2: Time-to-Record < 2 seconds from app open (NFR3 from PRD)
+S0-NFR3: All data processing in EU (Frankfurt) — NeonDB, Vercel Blob, Mistral AI
+S0-NFR4: Mobile-first, 48px touch targets, WCAG AA contrast
+S0-NFR5: Tap-to-Record (not hold) — glove-friendly interaction
+S0-NFR6: No API keys in frontend — Mistral keys server-side only
+S0-NFR7: DB sessions (not JWT) — server-side revocable
+S0-NFR8: Rate limiting on magic link requests — 5 per email per hour
+
+### Sprint 0 FR Coverage Map
+
+| FR | Epic | Story | Description |
+|---|---|---|---|
+| S0-FR1 | Epic 5 | 5.2 | Magic Link login flow |
+| S0-FR2 | Epic 5 | 5.2 | Session management (DB-backed) |
+| S0-FR3 | Epic 5 | 5.1 | Auth middleware on protected routes |
+| S0-FR4 | Epic 6 | 6.1 | Voice recording (MediaRecorder API) |
+| S0-FR5 | Epic 6 | 6.1 | Audio upload to Vercel Blob |
+| S0-FR6 | Epic 6 | 6.2 | Mistral Voxtral STT |
+| S0-FR7 | Epic 6 | 6.3 | Mistral LLM summarization |
+| S0-FR8 | Epic 7 | 7.1 | Dashboard page |
+| S0-FR9 | Epic 7 | 7.1 | Summary card (expandable) |
+| S0-FR10 | Epic 6 | 6.1 | Processing feedback (3-step) |
+| S0-FR11 | Epic 6 | 6.1 | Error states (mic, upload, STT, LLM) |
+| S0-FR12 | Epic 5 | 5.1 | Audio retention tracking in schema |
+| S0-FR13 | Epic 6 | 6.2 | STT evaluation & benchmark |
+| S0-FR14 | Epic 5 | 5.2 | Magic Link email template |
+
+## Epic List — Sprint 0
+
+### Epic 5: Authentication & App Foundation
+After this epic, users can log in via Magic Link, see a protected app shell with 2-tab navigation, and the database schema supports voice messages. The foundation for all Sprint 0 features is in place.
+**FRs covered:** S0-FR1, S0-FR2, S0-FR3, S0-FR12
+**NFRs covered:** S0-NFR3, S0-NFR4, S0-NFR6, S0-NFR7, S0-NFR8
+
+### Epic 6: Voice Capture & AI Pipeline
+After this epic, users can record voice messages, see them transcribed by Mistral Voxtral, and receive structured AI summaries. The core voice→AI loop works end-to-end. STT evaluation is documented for FFG.
+**FRs covered:** S0-FR4, S0-FR5, S0-FR6, S0-FR7, S0-FR10, S0-FR11, S0-FR13
+**NFRs covered:** S0-NFR1, S0-NFR2, S0-NFR5
+
+### Epic 7: Dashboard & Research Documentation
+After this epic, users see all their voice messages with AI summaries in a clean dashboard. Research results are documented for the FFG audit trail.
+**FRs covered:** S0-FR8, S0-FR9
+**NFRs covered:** S0-NFR4
+
+---
+
+## Epic 5: Authentication & App Foundation
+
+After this epic, users can log in via Magic Link, see a protected app shell with 2-tab navigation, and the database schema supports voice messages.
+
+### Story 5.1: Database Schema Extension & App Shell
+
+As a **developer**,
+I want the database extended with users, sessions, magic_links, and voice_messages tables, plus a protected app shell with 2-tab navigation,
+So that all Sprint 0 features have a foundation to build on.
+
+**Acceptance Criteria:**
+
+**Given** the existing NeonDB project with waitlist_entries
+**When** the Sprint 0 schema is added to lib/db/schema.ts
+**Then** four new tables are defined: `users`, `magic_links`, `sessions`, `voice_messages`
+**And** all use UUID primary keys (defaultRandom) per team decision
+**And** all timestamps use `withTimezone: true`
+**And** `voice_messages` includes STT/LLM provider and duration fields for FFG research documentation
+**And** `voice_messages.audioDeletedAt` tracks DSGVO retention compliance
+**And** drizzle-kit generates a migration file committed to git
+
+**Given** the schema exists
+**When** the app route group is created at `app/(app)/`
+**Then** a layout.tsx renders the app shell: header (logo + user name + logout) + page content + bottom navigation
+**And** bottom navigation has 2 tabs: 🎙️ Aufnahme | 📋 Übersicht
+**And** active tab shows Orange underline + filled icon, inactive shows muted outline
+**And** bottom nav is sticky, min 48px height per tab
+**And** on desktop (≥768px) bottom nav is replaced by header navigation
+
+**Given** the app shell exists
+**When** Next.js middleware is configured
+**Then** all routes matching `/(app)/:path*` and `/api/voice/:path*` require a valid session cookie
+**And** unauthenticated requests to protected routes redirect to `/login`
+**And** middleware reads session token from cookie and validates against DB
+
+**Given** the login page route exists
+**When** a user with a valid session visits `/login`
+**Then** they are automatically redirected to `/app`
+
+### Story 5.2: Magic Link Authentication
+
+As a **user (Stefan)**,
+I want to log in by entering my email and clicking a link from my inbox,
+So that I can access the protected app area without remembering a password.
+
+**Approach:** Port auth logic from ChainSights or TellingCube (whichever is better/newer). Copy and adapt — NO cross-project dependency.
+
+**Acceptance Criteria:**
+
+**Given** the app shell and schema exist (Story 5.1)
+**When** the login page at `/login` is implemented
+**Then** it displays: kurzum logo, tagline "Sprich statt tipp.", email input (autofocus, type="email"), Turnstile widget, "Login-Link senden" button (Orange, full-width), and hint text explaining the magic link concept
+**And** the button is disabled until email is valid
+**And** Turnstile uses invisible mode (managed widget as fallback)
+
+**Given** the login form is submitted
+**When** POST `/api/auth/login` receives email + Turnstile token
+**Then** Turnstile token is verified server-side
+**And** rate limit is checked (5 magic links per email per hour, Upstash)
+**And** user is created if email doesn't exist yet (auto-registration)
+**And** a magic link token (UUID v4, 15-min expiry) is stored in `magic_links` table
+**And** a login email is sent via Resend with the magic link URL
+**And** the user is redirected to `/login/check-email`
+
+**Given** the user received the email
+**When** they click the magic link → GET `/api/auth/verify?token=xxx`
+**Then** the token is looked up in `magic_links`, validated (not expired, not used)
+**And** the token is marked as used (`usedAt = now()`)
+**And** a session is created in `sessions` table (UUID token, 7-day expiry)
+**And** a httpOnly, Secure, SameSite=Lax cookie is set with the session token
+**And** the user's `lastLoginAt` is updated
+**And** the user is redirected to `/app`
+
+**Given** an expired or invalid token
+**When** verification fails
+**Then** the user is redirected to `/login?error=expired` or `/login?error=invalid`
+**And** the login page shows a warm amber banner with the appropriate message
+
+**Given** the user wants to log out
+**When** they click the logout button in the app header
+**Then** POST `/api/auth/logout` deletes the session from DB
+**And** the session cookie is cleared
+**And** the user is redirected to `/login`
+
+**Given** the login email is needed
+**When** lib/email.ts is extended with `sendLoginEmail()`
+**Then** the email uses kurzum branding (same style as confirmation email)
+**And** subject is "kurzum. — Dein Login-Link"
+**And** body contains a prominent Orange button "Jetzt einloggen"
+**And** hint text explains 15-min expiry and single-use
+**And** all dynamic content uses `escapeHtml()`
+
+---
+
+## Epic 6: Voice Capture & AI Pipeline
+
+After this epic, users can record voice messages, see them transcribed by Mistral Voxtral, and receive structured AI summaries.
+
+### Story 6.1: Voice Recording & Upload
+
+As a **user (Markus)**,
+I want to record a voice message with one tap and send it for AI processing,
+So that I can document my work on the construction site in 30 seconds without typing.
+
+**Acceptance Criteria:**
+
+**Given** the user is authenticated and on `/app` or `/app/record`
+**When** the recording page is displayed
+**Then** a large microphone button (80x80px, Orange, centered) is the primary action
+**And** helper text says "Zum Aufnehmen tippen" (disappears after first use)
+**And** first-time visitors see: "Sprich einfach los — die KI kümmert sich um den Rest."
+
+**Given** the user taps the record button
+**When** microphone permission is granted (or already granted)
+**Then** recording starts using MediaRecorder API (WebM/Opus preferred, WAV fallback)
+**And** the button changes to a stop icon (⏹), color changes to red
+**And** a pulsing red indicator + timer (0:00, counting up) appear
+**And** a live audio level bar reacts to volume (AnalyserNode)
+**And** recording automatically stops at 5 minutes
+
+**Given** the user taps stop
+**When** recording ends
+**Then** a preview screen shows: waveform visualization + play/pause button + recording duration
+**And** two buttons appear: "Verwerfen" (ghost/outline) and "Senden" (Orange, primary)
+**And** a "Nochmal aufnehmen" text link is available as tertiary action
+
+**Given** the user taps "Senden"
+**When** the audio is uploaded
+**Then** POST `/api/voice` sends the audio as multipart/form-data
+**And** the API uploads to Vercel Blob (EU region), creates a `voice_messages` DB entry
+**And** a 3-step processing indicator appears: ✅ Hochgeladen → ⏳ Wird transkribiert → ○ Zusammenfassung
+**And** each step transitions as processing completes
+**And** text says "Das dauert wenige Sekunden."
+**And** the user can navigate away — the message appears in the dashboard when done
+
+**Given** microphone permission is denied or not available
+**When** the error occurs
+**Then** a warm amber message explains the issue in German with instructions to enable the microphone
+**And** no technical error codes are shown
+
+**Given** upload or processing fails
+**When** an error occurs
+**Then** a user-friendly German message appears with a retry option
+**And** the recording is preserved locally for retry
+
+### Story 6.2: Mistral Voxtral STT Integration & Evaluation
+
+As a **developer + researcher**,
+I want voice messages transcribed by Mistral Voxtral with documented evaluation results,
+So that the core AI pipeline works and FFG research requirements are met.
+
+**FFG Forschungsfrage #1:** "Wie lässt sich domänenspezifische Spracherkennung bei Baustellenlärm und österreichischen Dialekten optimieren?"
+
+**Acceptance Criteria:**
+
+**Given** a voice message is uploaded (Story 6.1)
+**When** the `/api/voice` route processes it
+**Then** `lib/ai/mistral.ts` calls Mistral Voxtral STT API with the audio URL
+**And** the transcript is stored in `voice_messages.transcript`
+**And** `sttProvider` is set to "voxtral"
+**And** `sttDurationMs` records processing time for research documentation
+**And** the MISTRAL_API_KEY is server-side only (never in NEXT_PUBLIC_*)
+
+**Given** Mistral Voxtral returns a transcript
+**When** the result is stored
+**Then** EU data residency is confirmed (Mistral API processes in EU)
+
+**Given** test audio files are prepared
+**When** STT evaluation is conducted
+**Then** tests cover: clear Hochdeutsch, Austrian dialect (Waldviertlerisch, Wienerisch), background noise, Elektro-Fachbegriffe (FI-Schalter, Sicherungsautomat B16, Zählerkasten)
+**And** Word Error Rate (WER) is measured per scenario
+**And** processing latency is measured per scenario
+**And** cost per minute of audio is calculated
+**And** results are documented in `docs/research/stt-evaluation-voxtral-YYYY-MM.md`
+**And** commit messages reflect research character: "Evaluate Mistral Voxtral for Austrian dialect: WER X%"
+
+**Given** Whisper large-v3 is available as benchmark
+**When** the same test audio is processed
+**Then** a comparison matrix (Voxtral vs. Whisper) is documented with WER, latency, cost, EU-compliance
+**And** the matrix is stored in the research documentation for FFG
+
+**Given** the STT API is unavailable or returns an error
+**When** the failure occurs
+**Then** `voice_messages.status` is set to "error"
+**And** the error is logged (English, structured, no PII)
+**And** the user sees "Die Spracherkennung hat nicht funktioniert" (German, warm tone)
+
+### Story 6.3: Mistral LLM Summarization
+
+As a **user (Stefan)**,
+I want each voice message automatically summarized into a structured format,
+So that I can see status, material needs, next steps, and problems at a glance.
+
+**FFG Forschungsfrage #2:** "Wie können unstrukturierte Sprachnachrichten semantisch in strukturierte Zusammenfassungen transformiert werden?"
+
+**Acceptance Criteria:**
+
+**Given** a voice message has been transcribed (Story 6.2)
+**When** the `/api/voice` route continues processing
+**Then** `lib/ai/mistral.ts` calls Mistral chat/completions API with the transcript + system prompt
+**And** the system prompt instructs: Handwerker-Kontext, JSON output with fields: status, material (array), nextSteps, problems (null if none), project
+**And** the summary is parsed and stored in `voice_messages.summary` (JSONB)
+**And** `llmProvider` is set (e.g., "mistral-large")
+**And** `llmDurationMs` records processing time
+**And** `voice_messages.status` is set to "done", `processedAt` is set to `now()`
+
+**Given** the LLM returns a summary
+**When** the result is validated
+**Then** it matches the expected JSON schema (VoiceSummary type)
+**And** empty/null fields are handled gracefully (e.g., no material → empty array, no problems → null)
+
+**Given** prompt engineering is conducted
+**When** multiple prompt variants are tested
+**Then** results are documented: which prompts produce ≥85% semantic correctness
+**And** the winning prompt is stored in `lib/ai/prompts.ts` (version-controlled)
+**And** test results are documented in `docs/research/llm-summarization-evaluation-YYYY-MM.md`
+
+**Given** the LLM API fails or returns invalid JSON
+**When** the failure occurs
+**Then** the transcript is preserved (fallback display)
+**And** `voice_messages.status` is set to "error" or "partial" (transcript OK, summary failed)
+**And** the user sees the transcript with a note "Zusammenfassung konnte nicht erstellt werden"
+
+---
+
+## Epic 7: Dashboard & Research Documentation
+
+After this epic, users see all their voice messages with AI summaries in a clean dashboard.
+
+### Story 7.1: Voice Message Dashboard
+
+As a **user (Stefan)**,
+I want to see all voice messages with their AI summaries on a clean dashboard,
+So that I have a morning overview of all field reports without making a single phone call.
+
+**Acceptance Criteria:**
+
+**Given** the user is authenticated and voice messages exist
+**When** the dashboard page at `/app` is loaded
+**Then** voice messages are displayed as summary cards, sorted newest first
+**And** messages are grouped by day: "Heute", "Gestern", or date (e.g., "Mo, 24. Feb")
+**And** relative timestamps are used: "vor 2 Std", "gestern 16:30"
+
+**Given** a voice message has a summary
+**When** the summary card is rendered
+**Then** it shows: 🎙️ username + relative time (header), summary.status with ✅, summary.material with 📦 (if not empty), summary.problems with ⚠️ (if not null, orange highlight), summary.nextSteps with → (if not empty), summary.project with 📍
+**And** only fields with content are shown — no "Material: —" for empty fields
+**And** problems are visually highlighted with an amber background tint
+
+**Given** a summary card is tapped
+**When** the card expands
+**Then** the full transcript is shown (collapsed by default, toggled by tap)
+**And** an audio player (waveform + play/pause) appears if audio is still available
+**And** metadata is shown in muted small text: recording duration, STT provider, processing time
+
+**Given** a voice message is still processing
+**When** it appears in the dashboard
+**Then** it shows: username + "gerade eben" + ⏳ "KI verarbeitet..." + mini progress bar
+
+**Given** no voice messages exist (first login)
+**When** the dashboard loads
+**Then** an empty state is shown: 🎙️ icon, "Noch keine Nachrichten.", encouraging text, and a CTA button "Erste Aufnahme starten" (links to record page)
+**And** no onboarding wizard or multi-step tutorial
+
+**Given** the dashboard is viewed on mobile
+**When** rendered
+**Then** cards are full-width with appropriate padding
+**And** all interactive elements have ≥48px touch targets
+**And** the page is scrollable with pull-to-refresh (optional, Sprint 0)
+
+**Given** the dashboard is viewed on desktop
+**When** rendered
+**Then** content is centered with max-width 720px
+**And** cards have comfortable spacing

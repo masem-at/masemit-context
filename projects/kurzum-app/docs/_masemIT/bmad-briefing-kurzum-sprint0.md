@@ -39,7 +39,7 @@ Ein authentifizierter Benutzer kann:
 
 | Bereich | Technologie | Begründung |
 |---------|-------------|------------|
-| **Frontend** | Next.js 14+ (App Router) | Standard bei masemIT, SSR/SSG |
+| **Frontend** | Next.js 16 (App Router, Turbopack) | Standard bei masemIT, SSR/SSG, LTS stable |
 | **Styling** | Tailwind CSS | Standard bei masemIT |
 | **Database** | NeonDB PostgreSQL + Drizzle ORM | Standard bei masemIT, Frankfurt Region |
 | **Deployment** | Vercel Pro | Standard bei masemIT |
@@ -56,7 +56,7 @@ Ein authentifizierter Benutzer kann:
 | **STT (Speech-to-Text)** | **Mistral Voxtral** | Primär | EU-gehostet, DSGVO-konform |
 | **STT Fallback** | Whisper (self-hosted) | Fallback | Open-source, kann EU-hosted werden |
 | **LLM (Zusammenfassung)** | **Mistral Large/Medium** | Primär | EU-gehostet, DSGVO-konform |
-| **Audio Storage** | Vercel Blob / Cloudflare R2 | Temp | EU-only, Auto-Delete nach 90 Tagen |
+| **Audio Storage** | Vercel Blob (EU) | Temp | EU-Region, Auto-Delete nach 90 Tagen. Cloudflare R2 als Fallback |
 
 **WICHTIG:** Mistral AI ist keine Option unter vielen – es ist die im Product Brief und FFG-Antrag festgelegte Entscheidung. DSGVO-by-Design erfordert EU-hosted AI. Andere Provider (OpenAI, Anthropic) dürfen nur als Evaluierungs-Benchmark verwendet werden, NICHT als Produktions-Provider.
 
@@ -69,15 +69,13 @@ Ein authentifizierter Benutzer kann:
 
 **Aufgaben:**
 - [ ] Next.js Projekt initialisieren (`kurzum-app` Repository)
-- [ ] NeonDB Datenbank anlegen (Frankfurt Region, separates Projekt)
+- [ ] Bestehendes NeonDB-Projekt erweitern (Frankfurt Region, Schema neben waitlist_entries)
 - [ ] Drizzle ORM konfigurieren
 - [ ] Vercel Projekt verknüpfen (kurzum.app Domain ist bereits konfiguriert)
 - [ ] Environment Variables setzen (DB, Resend, Turnstile, Mistral API Key)
 - [ ] Basis-Layout: Header, Footer, Landing Page Route (`/`), App Route (`/app`)
 - [ ] Tailwind + gemeinsame Komponenten (Button, Card, Input)
-- [ ] QStash-Integration vorbereiten (für asynchrone KI-Verarbeitung)
-
-**Ergebnis:** Leeres aber deploybares Next.js Projekt unter kurzum.app
+**Ergebnis:** Deploybares Next.js Projekt unter kurzum.app mit erweitertem Schema
 
 **Schema (Drizzle):**
 ```typescript
@@ -122,10 +120,13 @@ export const voiceMessages = pgTable('voice_messages', {
 
 ---
 
-### AP 0.2: Magic Link Authentication (2–3 Tage)
+### AP 0.2: Magic Link Authentication (1–2 Tage)
 **Owner:** Dev Agent
 
+**Ansatz:** Eigenbau Magic Link (kein NextAuth — Overkill für reinen E-Mail-Login). Auth-Logik aus ChainSights oder TellingCube portieren (Code kopieren + anpassen, KEINE Cross-Project-Dependency). Die bessere/neuere Implementierung verwenden.
+
 **Aufgaben:**
+- [ ] Bestehende Magic-Link-Implementierung aus ChainSights/TellingCube evaluieren und portieren
 - [ ] Login-Seite (`/login`) mit E-Mail-Eingabe + Turnstile
 - [ ] Magic Link generieren (Token, 15 Min. Gültigkeit)
 - [ ] E-Mail via Resend senden (Template: "Dein kurzum Login-Link")
@@ -227,24 +228,19 @@ export const voiceMessages = pgTable('voice_messages', {
 - [ ] Whisper large-v3 als Benchmark testen (gleiche Test-Audio)
 - [ ] Ergebnis: Vergleichsmatrix Voxtral vs. Whisper (dokumentiert für FFG)
 
-**Asynchrone Verarbeitung (QStash):**
+**Verarbeitung (synchron für Sprint 0):**
 ```
-User Upload → API speichert Audio → QStash Job → Mistral Voxtral STT
-                                                      ↓
-                                                 Transcript in DB
-                                                      ↓
-                                              QStash Job → Mistral LLM
-                                                      ↓
-                                               Summary in DB → Push
+User Upload → API speichert Audio → await Mistral Voxtral STT → await Mistral LLM → Response
 ```
+QStash-Queue wird erst eingeführt wenn Pipeline >30s braucht oder Burst-Handling nötig wird.
 
 **API-Endpoint:**
 ```typescript
-// POST /api/voice (Upload + Queue)
+// POST /api/voice (Upload + synchrone Verarbeitung)
 // Input: Audio-File (multipart/form-data)
-// Output: { id: string, status: 'processing' }
+// Output: { id: string, status: 'done', transcript, summary }
 
-// GET /api/voice/:id (Poll for result)
+// GET /api/voice/:id (Einzelne Nachricht abrufen)
 // Output: { id, status, transcript?, summary? }
 ```
 
@@ -282,7 +278,7 @@ User Upload → API speichert Audio → QStash Job → Mistral Voxtral STT
 - [ ] Prompt-Varianten testen und Ergebnisse dokumentieren
 - [ ] Evaluierung: Semantische Korrektheit ≥85% (Ziel aus FFG-Antrag)
 - [ ] Ziel: Zusammenfassung von 2 Min Sprache auf ≤5 strukturierte Sätze
-- [ ] Integration: Transcript → QStash → Summarize → Store → Notify
+- [ ] Integration: Transcript → await Summarize → Store (synchron, kein QStash in Sprint 0)
 
 **Output-Format (JSON):**
 ```json
@@ -346,14 +342,13 @@ User Upload → API speichert Audio → QStash Job → Mistral Voxtral STT
 ## 5. Branching & Deployment
 
 - **Repository:** `masem-at/kurzum-app` (GitHub)
-- **Branch Strategy:** `main` → Vercel Production, `develop` → Vercel Preview
+- **Branch Strategy:** Trunk-based. `main` → Vercel Production, Feature Branches → PR → Vercel Preview → Merge
 - **URL:** kurzum.app (Landing Page öffentlich, `/app/*` hinter Auth)
 - **Environment Variables (Vercel):**
-  - `DATABASE_URL` (NeonDB Frankfurt)
+  - `DATABASE_URL` (NeonDB Frankfurt — bestehendes Projekt)
   - `RESEND_API_KEY`
   - `TURNSTILE_SITE_KEY` + `TURNSTILE_SECRET_KEY`
   - `MISTRAL_API_KEY`
-  - `QSTASH_TOKEN` + `QSTASH_CURRENT_SIGNING_KEY` + `QSTASH_NEXT_SIGNING_KEY`
   - `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN`
   - `SESSION_SECRET`
 
@@ -366,7 +361,7 @@ User Upload → API speichert Audio → QStash Job → Mistral Voxtral STT
 | Mistral Voxtral STT-Qualität bei Dialekt unzureichend | Mittel | Whisper self-hosted als Fallback, dokumentierte Evaluierung |
 | Audio-Upload zu groß/langsam | Niedrig | Client-seitige Kompression (Opus), Chunked Upload |
 | Mistral LLM halluziniert Inhalte | Mittel | Transcript immer als Referenz behalten, Prompt-Tuning |
-| Mistral AI Latenz/Verfügbarkeit | Niedrig-Mittel | QStash-Queue, graceful degradation (FR26), "Processing" State |
+| Mistral AI Latenz/Verfügbarkeit | Niedrig-Mittel | Synchron mit Loading-State, QStash nachrüsten bei Bedarf, graceful degradation (FR26) |
 | FFG-Ablehnung am 19.03. | Mittel | Kosten bis dahin überschaubar, Projekt trotzdem fortsetzen |
 
 ---
@@ -393,5 +388,24 @@ User Upload → API speichert Audio → QStash Job → Mistral Voxtral STT
 - **Landing Page:** https://kurzum.app
 - **DO/DON'T Liste:** kurzum-bmad-do-dont-liste.md
 - **Pilot-Mails:** pilot-mails-komplett.md
-- **Existing Stack Referenz:** ChainSights (gleicher Tech-Stack, gleiche Patterns)
+- **Existing Stack Referenz:** ChainSights + TellingCube (gleicher Tech-Stack, gleiche Patterns)
 - **Personas:** Markus (Monteur), Stefan (Meister), Andrea (Büro) – siehe Product Brief
+
+---
+
+## 9. Entscheidungen aus Team-Review (2026-02-12)
+
+Folgende Entscheidungen wurden im BMAD Party Mode Review getroffen und sind verbindlich:
+
+| # | Thema | Entscheidung | Begründung |
+|---|-------|-------------|------------|
+| 1 | **Next.js Version** | Next.js 16 (16.1.6 LTS stable) | Projekt läuft bereits auf 16, Turbopack + React Compiler stable |
+| 2 | **Auth-Ansatz** | Eigenbau Magic Link, KEIN NextAuth | Simpler für reinen E-Mail-Login, weniger Dependencies, volle Kontrolle |
+| 3 | **Audio Storage** | Vercel Blob (EU), R2 als Fallback | Einfachste Integration im Vercel-Ökosystem, EU-Region verfügbar |
+| 4 | **Branch-Strategie** | Trunk-based (main + Feature Branches) | Solo/Kleinteam, kurze Iterationen, Vercel Preview per PR |
+| 5 | **NeonDB** | Bestehendes Projekt erweitern | Waitlist-Daten bereits dort, spart Kosten, Schema-Erweiterung trivial |
+| 6 | **Prototyp bis 19.03.** | Ziel: demonstrierbar, aber kein Blocker | FFG sieht Prototyp nicht, aber Demo für Pilotbetriebe wertvoll |
+| 7 | **Primary Keys** | UUID (defaultRandom) | Konsistent mit allen masemIT-Projekten, kein Informationsleak, API-safe |
+| 8 | **QStash** | Erst bei Bedarf (>30s Pipeline oder Burst) | Synchrone Verarbeitung reicht für Prototyp, YAGNI |
+| 9 | **Auth portieren** | Bessere Impl. aus ChainSights/TellingCube kopieren | Code kopieren + anpassen, KEINE Cross-Project-Dependency. Spart 1-2 Tage |
+| 10 | **Testing** | Minimal: manuelle Tests + dokumentierte curl Smoke Tests | Fokus Forschung & Prototyp, kein Test-Framework in Sprint 0 |
