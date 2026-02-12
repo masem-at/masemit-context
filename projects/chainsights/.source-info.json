@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-11T07:07:52Z",
-  "commit_sha": "4f7f9247428801668daa7e2e29734df386a9854f",
-  "commit_message": "fix: deterministic Decentralization Score replaces LLM-generated score\n"
+  "synced_at": "2026-02-12T08:36:09Z",
+  "commit_sha": "733a8290081eda2c2a7f5084894803fbaff82f43",
+  "commit_message": "docs: update project context and drizzle migration journal\n"
 }
