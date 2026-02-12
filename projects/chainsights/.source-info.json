@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-12T08:36:09Z",
-  "commit_sha": "733a8290081eda2c2a7f5084894803fbaff82f43",
-  "commit_message": "docs: update project context and drizzle migration journal\n"
+  "synced_at": "2026-02-12T11:05:09Z",
+  "commit_sha": "4a68961ae4185c10e686c7593ee45b522339f8e5",
+  "commit_message": "feat: methodology version marker (v1.1) on trend charts + PDF footnote\n"
 }
