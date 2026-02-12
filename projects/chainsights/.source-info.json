@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-12T16:39:53Z",
-  "commit_sha": "cad6122688118db0bd81055ba7494c03f6827a75",
-  "commit_message": "feat: VQS API endpoint (Story 9-2) with code review fixes\n"
+  "synced_at": "2026-02-12T17:32:27Z",
+  "commit_sha": "4f4c1d3d43c78f9b2b9ff740b1e3fab00f95481d",
+  "commit_message": "feat: Delegate Vote Quality scorecard on Matrix Details (Story 9-3) with code review fixes\n"
 }
