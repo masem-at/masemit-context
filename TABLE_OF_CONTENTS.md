@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-12 11:05:09 UTC
+> Last updated: 2026-02-12 12:19:06 UTC
 
 ## Quick Access
 
@@ -152,7 +152,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-02-12T11:05:09Z
+> Source: `masem-at/chainsights` | Last sync: 2026-02-12T12:19:06Z
 
 
 **docs/**
@@ -473,6 +473,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 - [`epic-matrix-details.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-matrix-details.md)
 - [`epic-matrix-server-auth.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-matrix-server-auth.md)
 - [`epic-open-universe.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-open-universe.md)
+- [`epic-wallet-label-filtering.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-wallet-label-filtering.md)
 - [`sprint-2026-01-30.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/sprint-2026-01-30.md)
 - [`story-mms-consent-party-integration.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/story-mms-consent-party-integration.md)
 

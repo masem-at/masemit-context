@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-12T11:05:09Z",
-  "commit_sha": "4a68961ae4185c10e686c7593ee45b522339f8e5",
-  "commit_message": "feat: methodology version marker (v1.1) on trend charts + PDF footnote\n"
+  "synced_at": "2026-02-12T12:19:06Z",
+  "commit_sha": "cfd90d0b3f1c61919e34067ed143b73cf9bf0af5",
+  "commit_message": "fix: code review fixes for Epic 8 wallet label filtering\n"
 }
