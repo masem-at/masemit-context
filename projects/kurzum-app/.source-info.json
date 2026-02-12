@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-12T21:02:52Z",
-  "commit_sha": "bf08b0f1b093b767cc32fc44affafbfcb96c556c",
-  "commit_message": "Implement auth-protected app prototype: schema, app shell, magic link auth (Epic 5)\n"
+  "synced_at": "2026-02-12T21:39:28Z",
+  "commit_sha": "fdf389e93d9810ce5875ed5665d0e6dc63596cc5",
+  "commit_message": "Implement voice recording with MediaRecorder API and Vercel Blob upload (Story 6.1)\n"
 }
