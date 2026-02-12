@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all context files with raw URLs for AI agents.
-> Last updated: 2026-02-12 16:05:39 UTC
+> Last updated: 2026-02-12 16:39:53 UTC
 
 ## Quick Access
 
@@ -152,7 +152,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 ### chainsights
 
-> Source: `masem-at/chainsights` | Last sync: 2026-02-12T16:05:39Z
+> Source: `masem-at/chainsights` | Last sync: 2026-02-12T16:39:53Z
 
 
 **docs/**
@@ -467,6 +467,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 **docs/stories/**
 - [`9-1-signals-focus-originality-vqs.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/9-1-signals-focus-originality-vqs.md)
+- [`9-2-api-endpoint-vqs-data.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/9-2-api-endpoint-vqs-data.md)
 - [`epic-check-flow-page.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-check-flow-page.md)
 - [`epic-dgi.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-dgi.md)
 - [`epic-hero-ab-test.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/chainsights/docs/stories/epic-hero-ab-test.md)
