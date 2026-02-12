@@ -78,9 +78,9 @@ development_status:
   # ═══════════════════════════════════════════════════
 
   # Epic 5: Authentication & App Foundation
-  epic-5: backlog
-  5-1-database-schema-extension-and-app-shell: backlog
-  5-2-magic-link-authentication: backlog
+  epic-5: in-progress
+  5-1-database-schema-extension-and-app-shell: done
+  5-2-magic-link-authentication: done
   epic-5-retrospective: optional
 
   # Epic 6: Voice Capture & AI Pipeline

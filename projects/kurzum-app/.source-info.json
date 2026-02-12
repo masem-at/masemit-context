@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-12T18:08:45Z",
-  "commit_sha": "5ddc8218e11a60d7c3fbc3d8d0d696ffbd1e45e6",
-  "commit_message": "Sprint 0 planning: architecture supplement, UX specs, epics & stories\n"
+  "synced_at": "2026-02-12T21:02:52Z",
+  "commit_sha": "bf08b0f1b093b767cc32fc44affafbfcb96c556c",
+  "commit_message": "Implement auth-protected app prototype: schema, app shell, magic link auth (Epic 5)\n"
 }

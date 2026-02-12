@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-12 18:08:45 UTC | Commit: `5ddc8218e11a60d7c3fbc3d8d0d696ffbd1e45e6`
+> Last sync: 2026-02-12 21:02:52 UTC | Commit: `bf08b0f1b093b767cc32fc44affafbfcb96c556c`
 
 ---
 
@@ -23,6 +23,8 @@
 - [`4-1-legal-pages-impressum-and-datenschutzerklaerung.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/4-1-legal-pages-impressum-and-datenschutzerklaerung.md)
 - [`4-2-seo-meta-tags-and-social-sharing.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/4-2-seo-meta-tags-and-social-sharing.md)
 - [`4-3-analytics-integration-and-event-tracking.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/4-3-analytics-integration-and-event-tracking.md)
+- [`5-1-database-schema-extension-and-app-shell.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/5-1-database-schema-extension-and-app-shell.md)
+- [`5-2-magic-link-authentication.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/5-2-magic-link-authentication.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
