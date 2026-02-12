@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-12T09:49:38Z",
-  "commit_sha": "d8308724a63c4466210e000a7930cdab08455314",
-  "commit_message": "Replace contact@masem.at with servus@kurzum.app, unify pricing to €10/User/Monat\n"
+  "synced_at": "2026-02-12T12:27:19Z",
+  "commit_sha": "f84e9840772b2df7a16e916f31ca14cf8f7aae28",
+  "commit_message": "Add pilot acquisition research: 20 Austrian electrical companies + email template\n"
 }
