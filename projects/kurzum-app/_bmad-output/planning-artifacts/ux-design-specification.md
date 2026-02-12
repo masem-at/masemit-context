@@ -548,7 +548,7 @@ Long single-page scroll with distinct visual sections. Each section is its own r
 
 **8. Footer**
 - Background: Dark (matches hero, creates bookend)
-- Content: Impressum, Datenschutz, contact@masem.at, masem.at link
+- Content: Impressum, Datenschutz, servus@kurzum.app, masem.at link
 - Minimal — legal necessities only
 
 **Global Animation Rules:**
@@ -1266,7 +1266,7 @@ Form errors are inline. Confirmations are inline (form replaces with confirmatio
 
 **Anatomy:**
 - Background: `bg-stone-900`
-- Content: Impressum link, Datenschutz link, contact@masem.at, masem.at link
+- Content: Impressum link, Datenschutz link, servus@kurzum.app, masem.at link
 - Layout: Centered, small text (`text-sm text-stone-400`), links with `hover:text-stone-200`
 - Logo/brand: "kurzum.app" in `text-stone-500`, small
 

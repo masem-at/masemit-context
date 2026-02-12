@@ -34,7 +34,7 @@ LP-FR8: Waitlist form with 7 fields — 5 required (Name, E-Mail, Firmenname, Ge
 LP-FR9: Form submission creates party in MMS API (api.masem.at) and stores kurzum-specific business data in local NeonDB (waitlist_entries table)
 LP-FR10: Double-opt-in email sent via Resend after successful form submission, containing confirmation link with unique token
 LP-FR11: Email confirmation page (/confirmed) validates token, updates waitlist_entries.confirmed_at, updates MMS party status to "prospect", sends notification to founder
-LP-FR12: Footer with Impressum link, Datenschutzerklärung link, contact@masem.at, masem.at link
+LP-FR12: Footer with Impressum link, Datenschutzerklärung link, servus@kurzum.app, masem.at link
 LP-FR13: Impressum page with masemIT e.U. legal information (FN 661236g, Alleegasse 26, 3851 Kautzen)
 LP-FR14: Datenschutzerklärung page with details about form data processing, AI processing transparency, data retention
 LP-FR15: SEO meta tags (Title, Description) + OG tags for LinkedIn sharing with preview image
@@ -398,7 +398,7 @@ So that I feel trusted enough to scroll to the form and the page feels complete 
 **And** it displays 4 elements:
   - Link to /impressum (text: "Impressum")
   - Link to /datenschutz (text: "Datenschutz")
-  - Contact: contact@masem.at (mailto link)
+  - Contact: servus@kurzum.app (mailto link)
   - Link to masem.at (external, opens in new tab)
 **And** links use --color-secondary (masemIT Teal) on dark background
 **And** footer is responsive and readable at 375px
@@ -593,7 +593,7 @@ So that I can verify who runs this service and how my data is handled — which 
   - Firmenname: masemIT e.U.
   - Firmenbuchnummer: FN 661236g
   - Adresse: Alleegasse 26, 3851 Kautzen
-  - Kontakt: contact@masem.at
+  - Kontakt: servus@kurzum.app
   - Unternehmensgegenstand, Gerichtsstand, UID-Nummer as legally required
 **And** the page uses the kurzum brand design (layout, colors, typography)
 **And** a link back to the landing page is available (logo in header or explicit link)
@@ -607,7 +607,7 @@ So that I can verify who runs this service and how my data is handled — which 
   - Legal basis (consent via form submission + double-opt-in)
   - Data retention period
   - Right to deletion, correction, and data portability
-  - Contact for data protection inquiries (contact@masem.at)
+  - Contact for data protection inquiries (servus@kurzum.app)
   - That no external tracking scripts are used (no Google Analytics, no Facebook Pixel)
   - masemIT Analytics usage (self-hosted, no cookies requiring consent)
   - Cloudflare Turnstile usage for bot protection

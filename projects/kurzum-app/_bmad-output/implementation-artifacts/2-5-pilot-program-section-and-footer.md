@@ -20,7 +20,7 @@ so that I feel trusted enough to scroll to the form and the page feels complete 
 2. **Given** the content sections are complete **When** the PageFooter is implemented as a Server Component **Then** it renders on a dark background (bg-primary) matching the hero (visual bookend) **And** it displays 4 elements:
    - Link to /impressum (text: "Impressum")
    - Link to /datenschutz (text: "Datenschutz")
-   - Contact: contact@masem.at (mailto link)
+   - Contact: servus@kurzum.app (mailto link)
    - Link to masem.at (external, opens in new tab)
    **And** links use text-secondary (masemIT Teal #009BB1) on dark background **And** footer is responsive and readable at 375px
 
@@ -56,7 +56,7 @@ so that I feel trusted enough to scroll to the form and the page feels complete 
   - [x] 3.5 Render 4 link elements:
     - Next.js `<Link href="/impressum">` for Impressum (internal route, Story 4.1)
     - Next.js `<Link href="/datenschutz">` for Datenschutz (internal route, Story 4.1)
-    - `<a href="mailto:contact@masem.at">` for email contact
+    - `<a href="mailto:servus@kurzum.app">` for email contact
     - `<a href="https://masem.at" target="_blank" rel="noopener noreferrer">` for masem.at (external)
   - [x] 3.6 Link styling: `text-secondary hover:text-secondary/80 transition-colors` — masemIT Teal on dark background
   - [x] 3.7 Responsive layout: `flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6` — stacked on mobile, inline on desktop
@@ -102,7 +102,7 @@ so that I feel trusted enough to scroll to the form and the page feels complete 
 |---------|------|-------|
 | Impressum | Internal Link | `/impressum` (Story 4.1 — page doesn't exist yet, Link still works) |
 | Datenschutz | Internal Link | `/datenschutz` (Story 4.1 — page doesn't exist yet, Link still works) |
-| Email | mailto Link | `mailto:contact@masem.at` |
+| Email | mailto Link | `mailto:servus@kurzum.app` |
 | masem.at | External Link | `https://masem.at` (target="_blank", rel="noopener noreferrer") |
 
 ### Critical: Dark Background Color Rules
@@ -174,7 +174,7 @@ import Link from "next/link";
 
 **mailto link:**
 ```tsx
-<a href="mailto:contact@masem.at">contact@masem.at</a>
+<a href="mailto:servus@kurzum.app">servus@kurzum.app</a>
 ```
 
 ### Critical: Touch Target Compliance (LP-NFR14)

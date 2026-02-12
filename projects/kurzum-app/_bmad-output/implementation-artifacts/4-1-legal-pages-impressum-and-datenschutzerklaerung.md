@@ -10,9 +10,9 @@ so that I can verify who runs this service and how my data is handled — which 
 
 ## Acceptance Criteria
 
-1. **Given** the footer with legal links exists (Epic 2, Story 2.5) **When** the `/impressum` page is implemented **Then** it displays the complete legal information for masemIT e.U.: Firmenname (masemIT e.U.), Firmenbuchnummer (FN 661236g), Adresse (Alleegasse 26, 3851 Kautzen, Austria), Kontakt (contact@masem.at), UID-Nummer (ATU82330407), Unternehmensgegenstand, Gerichtsstand **And** the page uses the kurzum brand design (layout, colors, typography) **And** a link back to the landing page is available (logo in header or explicit link)
+1. **Given** the footer with legal links exists (Epic 2, Story 2.5) **When** the `/impressum` page is implemented **Then** it displays the complete legal information for masemIT e.U.: Firmenname (masemIT e.U.), Firmenbuchnummer (FN 661236g), Adresse (Alleegasse 26, 3851 Kautzen, Austria), Kontakt (servus@kurzum.app), UID-Nummer (ATU82330407), Unternehmensgegenstand, Gerichtsstand **And** the page uses the kurzum brand design (layout, colors, typography) **And** a link back to the landing page is available (logo in header or explicit link)
 
-2. **Given** the impressum page exists **When** the `/datenschutz` page is implemented **Then** it explains in clear, non-legal German (duzen where appropriate): Which data is collected via the waitlist form, how data is processed (NeonDB Frankfurt, MMS API EU), purpose of processing (pilot program recruitment), legal basis (consent via form submission + double-opt-in), data retention period, right to deletion/correction/data portability, contact for data protection inquiries (contact@masem.at), that no external tracking scripts are used, masemIT Analytics usage (self-hosted, no cookies requiring consent), Cloudflare Turnstile usage for bot protection **And** the page uses the kurzum brand design
+2. **Given** the impressum page exists **When** the `/datenschutz` page is implemented **Then** it explains in clear, non-legal German (duzen where appropriate): Which data is collected via the waitlist form, how data is processed (NeonDB Frankfurt, MMS API EU), purpose of processing (pilot program recruitment), legal basis (consent via form submission + double-opt-in), data retention period, right to deletion/correction/data portability, contact for data protection inquiries (servus@kurzum.app), that no external tracking scripts are used, masemIT Analytics usage (self-hosted, no cookies requiring consent), Cloudflare Turnstile usage for bot protection **And** the page uses the kurzum brand design
 
 3. **Given** both legal pages exist **When** rendered on mobile (375px) **Then** text is readable with appropriate font size and line length **And** both pages are Server Components (static content, no client-side JS needed)
 
@@ -80,7 +80,7 @@ Alleegasse 26
 3851 Kautzen
 Österreich
 
-E-Mail: contact@masem.at
+E-Mail: servus@kurzum.app
 Web: https://masem.at
 
 Unternehmensgegenstand: IT-Dienstleistungen
@@ -105,7 +105,7 @@ Write in clear, accessible German. Duzen (informal "du") where addressing the us
 masemIT e.U.
 Mario Semper
 Alleegasse 26, 3851 Kautzen, Österreich
-contact@masem.at
+servus@kurzum.app
 ```
 
 **Section 2 — Welche Daten wir erheben**
@@ -153,7 +153,7 @@ Waitlist form data:
 - Datenübertragbarkeit (Art. 20 DSGVO)
 - Widerspruch (Art. 21 DSGVO)
 - Widerruf der Einwilligung (jederzeit, ohne Angabe von Gründen)
-- Kontakt: contact@masem.at
+- Kontakt: servus@kurzum.app
 
 **Section 8 — Beschwerderecht**
 - Österreichische Datenschutzbehörde (dsb.gv.at)
@@ -226,8 +226,8 @@ Use the project's existing text utility classes. **NO** `@tailwindcss/typography
 </ul>
 
 {/* Links in text */}
-<a href="mailto:contact@masem.at" className="text-accent hover:text-accent/80 underline underline-offset-4">
-  contact@masem.at
+<a href="mailto:servus@kurzum.app" className="text-accent hover:text-accent/80 underline underline-offset-4">
+  servus@kurzum.app
 </a>
 
 {/* Muted/small text */}

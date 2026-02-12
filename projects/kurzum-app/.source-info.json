@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-12T09:24:07Z",
-  "commit_sha": "0090a52de9f5fb7cdd8a649b7b55660b6388a1f8",
-  "commit_message": "Story 4.3: Analytics integration with masemIT tracker\n"
+  "synced_at": "2026-02-12T09:49:38Z",
+  "commit_sha": "d8308724a63c4466210e000a7930cdab08455314",
+  "commit_message": "Replace contact@masem.at with servus@kurzum.app, unify pricing to €10/User/Monat\n"
 }

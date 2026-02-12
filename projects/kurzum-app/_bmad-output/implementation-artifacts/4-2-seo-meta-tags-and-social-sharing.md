@@ -42,7 +42,7 @@ so that organic traffic and LinkedIn Ads campaigns drive qualified visitors to t
 
 - [x] Task 3: Add JSON-LD structured data (AC: #4)
   - [x] 3.1 Create `components/seo/json-ld.tsx` — Server Component exporting `<JsonLd />`
-  - [x] 3.2 Embed Organization schema: name, url, logo, address (masemIT e.U., Alleegasse 26, 3851 Kautzen, AT), contactPoint (contact@masem.at)
+  - [x] 3.2 Embed Organization schema: name, url, logo, address (masemIT e.U., Alleegasse 26, 3851 Kautzen, AT), contactPoint (servus@kurzum.app)
   - [x] 3.3 Embed SoftwareApplication schema: name "kurzum", description, offers (€10/user/month), operatingSystem, applicationCategory
   - [x] 3.4 Add `<JsonLd />` to `app/page.tsx` (NOT layout.tsx — only on landing page)
 
@@ -127,7 +127,7 @@ Use `<script type="application/ld+json">` in a Server Component. Two schemas:
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "email": "contact@masem.at",
+    "email": "servus@kurzum.app",
     "contactType": "customer service"
   }
 }

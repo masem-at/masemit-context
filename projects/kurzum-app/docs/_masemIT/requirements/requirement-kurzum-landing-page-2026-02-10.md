@@ -146,7 +146,7 @@ Das Beispiel aus dem FFG-Antrag/Product Brief verwenden:
 
 - Impressum (masemIT e.U., FN 661236g, Alleegasse 26, 3851 Kautzen)
 - Datenschutzerklärung
-- Kontakt: contact@masem.at
+- Kontakt: servus@kurzum.app
 - Link zu masem.at
 
 ---
