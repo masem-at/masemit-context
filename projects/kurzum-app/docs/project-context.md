@@ -145,6 +145,14 @@ Q3-Q4 2026: SHK dazu, Innungs-Partnerschaft, €3-5k MRR
 
 **Zusätzlich:** Label "Gewerk" im Formular zu "Fachbereich" geändert (allgemeinverständlicher für breitere Zielgruppe).
 
+## FFG Compliance Rules
+
+**MANDATORY for all agents and workflows.** Full Do/Don't list with legal framework, KI-provider hierarchy, and weekly priorities:
+
+- **Rules:** [`docs/_masemIT/kurzum-bmad-do-dont-liste.md`](_masemIT/kurzum-bmad-do-dont-liste.md)
+- **Key constraints:** Mistral AI (EU) as primary provider, all features behind auth, EU-only infrastructure, document everything for FFG audit
+- **Also enforced via:** `CLAUDE.md` (loaded every session)
+
 ## Key Risk
 
 **Inertia** — "WhatsApp funktioniert doch." Gegenmittel: Regulatorischer Druck (DSGVO, Zeiterfassungsgesetz) + überwältigend einfaches Produkt + Innungs-Vertrieb.

@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-12 14:15:35 UTC | Commit: `2b55af568083ea3e94b0bac5b026b39a50bbe6bf`
+> Last sync: 2026-02-12 16:50:01 UTC | Commit: `1181b372e33cf60d65e8e405dbee5f829caedf32`
 
 ---
 
@@ -44,9 +44,17 @@
 
 - [`ux-design-specification.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/planning-artifacts/ux-design-specification.md)
 
+## docs/_masemIT
+
+- [`bmad-briefing-kurzum-sprint0.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/_masemIT/bmad-briefing-kurzum-sprint0.md)
+
 ## docs/_masemIT/foerderungen
 
 - [`ffg.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/_masemIT/foerderungen/ffg.md)
+
+## docs/_masemIT
+
+- [`kurzum-bmad-do-dont-liste.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/_masemIT/kurzum-bmad-do-dont-liste.md)
 
 ## docs/_masemIT/requirements
 
