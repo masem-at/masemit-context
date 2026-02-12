@@ -136,5 +136,54 @@ gpi.ts:301-303                   → if (checkboxMap.size > 0) saveCheckboxSigna
 
 ---
 
-*Party Mode beendet auf Sempre's Anfrage ("nein - ende")*
-*Protokoll nachträglich erstellt am 2026-02-12 — Lektion gelernt: IMMER vor Party-Exit speichern.*
+## Teil 4: Session 2 — Methodology Page v1.3 Implementierung
+
+**Agents:** Paige (Tech Writer), Winston (Architect), Mary (Analyst)
+**Auslöser:** Sempre aktivierte Paige für Story 9-5
+
+### Durchgeführte Änderungen
+
+**Datei:** `src/app/rankings/methodology/page.tsx`
+
+| Änderung | Detail |
+|---|---|
+| Version | `1.2` → `1.3` |
+| `dateModified` (JSON-LD) | `2025-12-23` → `2026-02-12` |
+| Neue Sektion | VQS: 4 Signals, N/A-Handling, Coverage, Benchmarks |
+| Update Frequency | "every 7 days" → "daily" (korrigiert nach QStash-Refactor) |
+| Change Log | v1.3 Eintrag hinzugefügt, v1.2 separiert |
+| Icons | `Eye` + `Info` importiert |
+
+### VQS-Sektion Inhalte (Paige)
+
+1. **Einleitung**: VQS als Delegate-Level Score (0-10), Abgrenzung zu GVS
+2. **4 Signals**: Deliberation, Independence, Focus, Originality — jeweils mit verständlicher Erklärung
+3. **Composite-Berechnung**: 25% pro Signal, Redistribution bei N/A
+4. **Ranked-Choice Box** (gelb): Warum Independence + Originality bei manchen DAOs N/A sind
+5. **Coverage**: 24/47 DAOs, Gründe (Snapshot-only, 6-Monate-Lookback)
+6. **Benchmarks**: Median 3.7, Mean 4.1, Top-Quartil ≥5.0, 8.600+ Voters
+
+### Nicht umgesetzt (bewusst weggelassen)
+
+- **DAO-Archetypes** (Consensus/Mixed/Pluralistic): Verschoben — hängt an Consensus Penalty Entscheidung
+- **Consensus Penalty Erklärung**: Noch deferred, keine Dokumentation ohne Entscheidung
+
+### Validierung
+
+- TypeScript Build: OK (keine Fehler in methodology page)
+- Methodology Tests: 5/5 bestanden
+- VQS Tests: 61/61 bestanden
+- Commit: `b5c5764`
+
+### Offene Punkte
+
+| Item | Status |
+|---|---|
+| Consensus Penalty Entscheidung | Deferred — Post-Fix-Daten verfügbar, Team muss entscheiden |
+| DAO-Archetypes auf Methodology Page | Wartet auf Consensus Penalty Entscheidung |
+| Vercel Deploy verifizieren | Sempre prüft nach Build |
+
+---
+
+*Session 1 nachträglich protokolliert — Lektion gelernt: IMMER vor Party-Exit speichern.*
+*Session 2 protokolliert VOR Party-Exit. ✓*
