@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-12T17:32:27Z",
-  "commit_sha": "4f4c1d3d43c78f9b2b9ff740b1e3fab00f95481d",
-  "commit_message": "feat: Delegate Vote Quality scorecard on Matrix Details (Story 9-3) with code review fixes\n"
+  "synced_at": "2026-02-12T21:12:37Z",
+  "commit_sha": "b5c5764a2aa19c3f5843b3e5360a3e45b9f03c65",
+  "commit_message": "feat: Methodology Page v1.3 — VQS section, daily cadence, party mode notes\n"
 }
