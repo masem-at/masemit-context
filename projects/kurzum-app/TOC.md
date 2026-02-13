@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-13 10:46:40 UTC | Commit: `f51034a3667a85255a23c0f28b0de9f33504fb08`
+> Last sync: 2026-02-13 15:31:23 UTC | Commit: `0b2dcc05b275990797fb24afc47adb7f3f711355`
 
 ---
 
@@ -27,6 +27,8 @@
 - [`5-2-magic-link-authentication.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/5-2-magic-link-authentication.md)
 - [`6-1-voice-recording-and-upload.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/6-1-voice-recording-and-upload.md)
 - [`6-2-mistral-voxtral-stt-integration-and-evaluation.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/6-2-mistral-voxtral-stt-integration-and-evaluation.md)
+- [`6-3-mistral-llm-summarization.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/6-3-mistral-llm-summarization.md)
+- [`7-1-voice-message-dashboard.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/7-1-voice-message-dashboard.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
@@ -80,6 +82,7 @@
 - [`ADR-002 - Kein Cookie Consent Banner.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-002 - Kein Cookie Consent Banner.md)
 - [`ADR-003 - Mistral SDK statt REST fetch.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-003 - Mistral SDK statt REST fetch.md)
 - [`ADR-004 - STT Provider Evaluation Voxtral vs Whisper.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-004 - STT Provider Evaluation Voxtral vs Whisper.md)
+- [`ADR-005 - Prompt Engineering for Handwerker LLM Summarization.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-005 - Prompt Engineering for Handwerker LLM Summarization.md)
 
 ## docs
 
@@ -87,6 +90,8 @@
 
 ## docs/research
 
+- [`llm-evaluation-raw-results.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/llm-evaluation-raw-results.json)
+- [`llm-summarization-evaluation-2026-02.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/llm-summarization-evaluation-2026-02.md)
 - [`pilot-akquise-elektrotechnik-2026-02.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/pilot-akquise-elektrotechnik-2026-02.md)
 - [`pilot-mail-vorlage.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/pilot-mail-vorlage.md)
 - [`pilot-mails-komplett.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/pilot-mails-komplett.md)

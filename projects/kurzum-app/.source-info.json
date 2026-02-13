@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-13T10:46:40Z",
-  "commit_sha": "f51034a3667a85255a23c0f28b0de9f33504fb08",
-  "commit_message": "Mark Story 6.2 done: STT integration and evaluation complete\n"
+  "synced_at": "2026-02-13T15:31:23Z",
+  "commit_sha": "0b2dcc05b275990797fb24afc47adb7f3f711355",
+  "commit_message": "Implement voice message dashboard with AI summary cards (Story 7.1)\n"
 }

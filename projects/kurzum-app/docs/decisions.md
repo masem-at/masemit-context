@@ -11,3 +11,4 @@ Eingeführt am 2026-02-11 (Party Mode: Mary, John, Winston, Sally, Paige) — Di
 | [ADR-002](decisions/ADR-002%20-%20Kein%20Cookie%20Consent%20Banner.md) | 2026-02-11 | Kein Cookie Consent Banner | Entschieden |
 | [ADR-003](decisions/ADR-003%20-%20Mistral%20SDK%20statt%20REST%20fetch.md) | 2026-02-13 | Mistral SDK statt REST fetch | Entschieden |
 | [ADR-004](decisions/ADR-004%20-%20STT%20Provider%20Evaluation%20Voxtral%20vs%20Whisper.md) | 2026-02-13 | STT Provider Evaluation: Voxtral gewinnt 8/12, 2.7x schneller, EU-compliant | Entschieden |
+| [ADR-005](decisions/ADR-005%20-%20Prompt%20Engineering%20for%20Handwerker%20LLM%20Summarization.md) | 2026-02-13 | Prompt Engineering: Detailed Prompt v1 gewinnt mit 100% Validität, 96.3% semantische Korrektheit | Entschieden |

@@ -1,0 +1,835 @@
+{
+  "meta": {
+    "date": "2026-02-13T12:01:57.564Z",
+    "project": "kurzum.app",
+    "ffgAntragsnr": "69168884",
+    "forschungsfrage": "Semantische Transformation unstrukturierter Sprachnachrichten",
+    "model": "mistral-small-latest",
+    "promptVariants": [
+      "minimal",
+      "detailed",
+      "fewShot"
+    ],
+    "promptTexts": {
+      "minimal": "Fasse das Transkript als JSON zusammen. Felder: \"status\" (string), \"material\" (string[]), \"nextSteps\" (string), \"problems\" (string|null), \"project\" (string). Antworte NUR mit JSON.",
+      "detailed": "Du bist ein Assistent für Elektro-Handwerksbetriebe. Du erhältst das Transkript einer Sprachnachricht von einem Monteur auf der Baustelle.\n\nErstelle eine strukturierte Zusammenfassung als JSON mit genau diesen Feldern:\n\n- \"status\": Kurze Statusbeschreibung der Arbeit (1-2 Sätze)\n- \"material\": Array von erwähnten Materialien/Werkzeugen (leeres Array [] wenn keine genannt)\n- \"nextSteps\": Nächste geplante Schritte oder Aufgaben (1-2 Sätze)\n- \"problems\": Probleme, Störungen oder Verzögerungen (null wenn keine)\n- \"project\": Projekt- oder Kundenname (aus Kontext erschließen, \"Unbekannt\" wenn nicht erkennbar)\n\nRegeln:\n- Antworte NUR mit validem JSON, kein zusätzlicher Text\n- Verwende deutsche Sprache in den Werten\n- Interpretiere österreichische Dialektausdrücke korrekt\n- Fachbegriffe der Elektrotechnik korrekt übernehmen (z.B. FI-Schalter, Sicherungsautomat, Zählerkasten)\n- Wenn ein Feld nicht aus dem Transkript ableitbar ist, verwende sinnvolle Defaults (leeres Array, null, \"Unbekannt\")",
+      "fewShot": "Du bist ein Assistent für Elektro-Handwerksbetriebe. Fasse Sprachnachrichten als JSON zusammen.\n\nFelder:\n- \"status\": Kurze Statusbeschreibung (1-2 Sätze)\n- \"material\": Erwähnte Materialien (leeres Array wenn keine)\n- \"nextSteps\": Nächste Schritte (1-2 Sätze)\n- \"problems\": Probleme/Störungen (null wenn keine)\n- \"project\": Projekt-/Kundenname (\"Unbekannt\" wenn nicht erkennbar)\n\nBeispiel-Eingabe: \"Bin beim Müller fertig. Zählerkasten montiert, alles abgenommen. Fahr jetzt zum nächsten.\"\nBeispiel-Ausgabe: {\"status\":\"Zählerkasten montiert und Abnahme erledigt.\",\"material\":[\"Zählerkasten\"],\"nextSteps\":\"Weiterfahrt zum nächsten Kunden.\",\"problems\":null,\"project\":\"Müller\"}\n\nAntworte NUR mit validem JSON, deutsche Sprache. Fachbegriffe korrekt übernehmen."
+    },
+    "testCaseCount": 8,
+    "totalApiCalls": 24
+  },
+  "entries": [
+    {
+      "recordingFile": "text-01.ogg",
+      "textNum": 1,
+      "variant": "Hochdeutsch",
+      "background": "Stille",
+      "transcript": "Müller, Hauptstraße 5, drittes Obergeschoss links. Unterverteilung ist fertig verdrahtet. 24 Sicherungsautomaten eingebaut. Alles nach Plan. Der FI-Schutzschalter muss noch vom Meister abgenommen werden. Material reicht noch für die rechte Wohnung morgen.",
+      "results": [
+        {
+          "promptVariant": "minimal",
+          "rawContent": "{\n  \"status\": \"in progress\",\n  \"material\": [\"Sicherungsautomaten\", \"Kabel\"],\n  \"nextSteps\": \"FI-Schutzschalter abnehmen lassen\",\n  \"problems\": null,\n  \"project\": \"Elektroinstallation Müller, Hauptstraße 5, drittes Obergeschoss links\"\n}",
+          "parsedJson": {
+            "status": "in progress",
+            "material": [
+              "Sicherungsautomaten",
+              "Kabel"
+            ],
+            "nextSteps": "FI-Schutzschalter abnehmen lassen",
+            "problems": null,
+            "project": "Elektroinstallation Müller, Hauptstraße 5, drittes Obergeschoss links"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "in progress",
+              "material": [
+                "Sicherungsautomaten",
+                "Kabel"
+              ],
+              "nextSteps": "FI-Schutzschalter abnehmen lassen",
+              "problems": null,
+              "project": "Elektroinstallation Müller, Hauptstraße 5, drittes Obergeschoss links"
+            },
+            "errors": []
+          },
+          "latencyMs": 2444,
+          "inputTokens": 122,
+          "outputTokens": 72
+        },
+        {
+          "promptVariant": "detailed",
+          "rawContent": "{\n  \"status\": \"Die Unterverteilung ist fertig verdrahtet und 24 Sicherungsautomaten sind eingebaut. Alles verläuft nach Plan.\",\n  \"material\": [\"Sicherungsautomaten\", \"FI-Schutzschalter\"],\n  \"nextSteps\": \"Der FI-Schutzschalter muss vom Meister abgenommen werden. Morgen wird die rechte Wohnung bearbeitet.\",\n  \"problems\": null,\n  \"project\": \"Müller, Hauptstraße 5, drittes Obergeschoss links\"\n}",
+          "parsedJson": {
+            "status": "Die Unterverteilung ist fertig verdrahtet und 24 Sicherungsautomaten sind eingebaut. Alles verläuft nach Plan.",
+            "material": [
+              "Sicherungsautomaten",
+              "FI-Schutzschalter"
+            ],
+            "nextSteps": "Der FI-Schutzschalter muss vom Meister abgenommen werden. Morgen wird die rechte Wohnung bearbeitet.",
+            "problems": null,
+            "project": "Müller, Hauptstraße 5, drittes Obergeschoss links"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Die Unterverteilung ist fertig verdrahtet und 24 Sicherungsautomaten sind eingebaut. Alles verläuft nach Plan.",
+              "material": [
+                "Sicherungsautomaten",
+                "FI-Schutzschalter"
+              ],
+              "nextSteps": "Der FI-Schutzschalter muss vom Meister abgenommen werden. Morgen wird die rechte Wohnung bearbeitet.",
+              "problems": null,
+              "project": "Müller, Hauptstraße 5, drittes Obergeschoss links"
+            },
+            "errors": []
+          },
+          "latencyMs": 1065,
+          "inputTokens": 329,
+          "outputTokens": 108
+        },
+        {
+          "promptVariant": "fewShot",
+          "rawContent": "{\n  \"status\": \"Unterverteilung verdrahtet und 24 Sicherungsautomaten eingebaut. Alles nach Plan.\",\n  \"material\": [\"Sicherungsautomaten\", \"FI-Schutzschalter\"],\n  \"nextSteps\": \"Abnahme des FI-Schutzschalters durch den Meister. Material für die rechte Wohnung morgen bereit.\",\n  \"problems\": null,\n  \"project\": \"Müller, Hauptstraße 5\"\n}",
+          "parsedJson": {
+            "status": "Unterverteilung verdrahtet und 24 Sicherungsautomaten eingebaut. Alles nach Plan.",
+            "material": [
+              "Sicherungsautomaten",
+              "FI-Schutzschalter"
+            ],
+            "nextSteps": "Abnahme des FI-Schutzschalters durch den Meister. Material für die rechte Wohnung morgen bereit.",
+            "problems": null,
+            "project": "Müller, Hauptstraße 5"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Unterverteilung verdrahtet und 24 Sicherungsautomaten eingebaut. Alles nach Plan.",
+              "material": [
+                "Sicherungsautomaten",
+                "FI-Schutzschalter"
+              ],
+              "nextSteps": "Abnahme des FI-Schutzschalters durch den Meister. Material für die rechte Wohnung morgen bereit.",
+              "problems": null,
+              "project": "Müller, Hauptstraße 5"
+            },
+            "errors": []
+          },
+          "latencyMs": 1051,
+          "inputTokens": 277,
+          "outputTokens": 97
+        }
+      ]
+    },
+    {
+      "recordingFile": "text-02.ogg",
+      "textNum": 1,
+      "variant": "Waldviertlerisch",
+      "background": "Stille",
+      "transcript": "Müller Hauptstraße 5, 3. Obergeschoss links. Der Unterverteiler ist fertig. 24 Sicherungsautomaten eingebaut. Alles nach Plan. Der FI-Schutzschalter muss noch vom Meister abgenommen werden. Material reicht noch für die rechte Wohnung aus.",
+      "results": [
+        {
+          "promptVariant": "minimal",
+          "rawContent": "{\n  \"status\": \"in progress\",\n  \"material\": [\"24 Sicherungsautomaten\"],\n  \"nextSteps\": \"FI-Schutzschalter vom Meister abnehmen lassen\",\n  \"problems\": null,\n  \"project\": \"Müller Hauptstraße 5, 3. Obergeschoss links\"\n}",
+          "parsedJson": {
+            "status": "in progress",
+            "material": [
+              "24 Sicherungsautomaten"
+            ],
+            "nextSteps": "FI-Schutzschalter vom Meister abnehmen lassen",
+            "problems": null,
+            "project": "Müller Hauptstraße 5, 3. Obergeschoss links"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "in progress",
+              "material": [
+                "24 Sicherungsautomaten"
+              ],
+              "nextSteps": "FI-Schutzschalter vom Meister abnehmen lassen",
+              "problems": null,
+              "project": "Müller Hauptstraße 5, 3. Obergeschoss links"
+            },
+            "errors": []
+          },
+          "latencyMs": 743,
+          "inputTokens": 118,
+          "outputTokens": 66
+        },
+        {
+          "promptVariant": "detailed",
+          "rawContent": "{\n  \"status\": \"Der Unterverteiler ist fertig und 24 Sicherungsautomaten eingebaut. Alles verläuft nach Plan.\",\n  \"material\": [\"Sicherungsautomaten\", \"FI-Schutzschalter\"],\n  \"nextSteps\": \"Der FI-Schutzschalter muss noch vom Meister abgenommen werden. Material reicht noch für die rechte Wohnung aus.\",\n  \"problems\": null,\n  \"project\": \"Müller Hauptstraße 5, 3. Obergeschoss links\"\n}",
+          "parsedJson": {
+            "status": "Der Unterverteiler ist fertig und 24 Sicherungsautomaten eingebaut. Alles verläuft nach Plan.",
+            "material": [
+              "Sicherungsautomaten",
+              "FI-Schutzschalter"
+            ],
+            "nextSteps": "Der FI-Schutzschalter muss noch vom Meister abgenommen werden. Material reicht noch für die rechte Wohnung aus.",
+            "problems": null,
+            "project": "Müller Hauptstraße 5, 3. Obergeschoss links"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Der Unterverteiler ist fertig und 24 Sicherungsautomaten eingebaut. Alles verläuft nach Plan.",
+              "material": [
+                "Sicherungsautomaten",
+                "FI-Schutzschalter"
+              ],
+              "nextSteps": "Der FI-Schutzschalter muss noch vom Meister abgenommen werden. Material reicht noch für die rechte Wohnung aus.",
+              "problems": null,
+              "project": "Müller Hauptstraße 5, 3. Obergeschoss links"
+            },
+            "errors": []
+          },
+          "latencyMs": 1306,
+          "inputTokens": 325,
+          "outputTokens": 104
+        },
+        {
+          "promptVariant": "fewShot",
+          "rawContent": "{\n  \"status\": \"Unterverteiler mit 24 Sicherungsautomaten eingebaut. Alles nach Plan.\",\n  \"material\": [\"Sicherungsautomaten\", \"FI-Schutzschalter\"],\n  \"nextSteps\": \"Abnahme des FI-Schutzschalters durch den Meister abwarten. Material für rechte Wohnung bereit.\",\n  \"problems\": null,\n  \"project\": \"Müller Hauptstraße 5, 3. Obergeschoss links\"\n}",
+          "parsedJson": {
+            "status": "Unterverteiler mit 24 Sicherungsautomaten eingebaut. Alles nach Plan.",
+            "material": [
+              "Sicherungsautomaten",
+              "FI-Schutzschalter"
+            ],
+            "nextSteps": "Abnahme des FI-Schutzschalters durch den Meister abwarten. Material für rechte Wohnung bereit.",
+            "problems": null,
+            "project": "Müller Hauptstraße 5, 3. Obergeschoss links"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Unterverteiler mit 24 Sicherungsautomaten eingebaut. Alles nach Plan.",
+              "material": [
+                "Sicherungsautomaten",
+                "FI-Schutzschalter"
+              ],
+              "nextSteps": "Abnahme des FI-Schutzschalters durch den Meister abwarten. Material für rechte Wohnung bereit.",
+              "problems": null,
+              "project": "Müller Hauptstraße 5, 3. Obergeschoss links"
+            },
+            "errors": []
+          },
+          "latencyMs": 1504,
+          "inputTokens": 273,
+          "outputTokens": 99
+        }
+      ]
+    },
+    {
+      "recordingFile": "text-04.ogg",
+      "textNum": 2,
+      "variant": "Hochdeutsch",
+      "background": "Stille",
+      "transcript": "Für morgen brauche ich bitte folgendes Material. Drei Stück Sicherungsautomaten B16, einen FI-Schutzschalter 40 Ampere 0,03, 50 Meter NYMJ 3x1,5, eine PE-Schiene für den Zählerkasten und ein paar Wago-Klemmen. Liegt im Lager oder muss das bestellt werden?",
+      "results": [
+        {
+          "promptVariant": "minimal",
+          "rawContent": "{\n  \"status\": \"Materialanfrage\",\n  \"material\": [\n    \"Drei Stück Sicherungsautomaten B16\",\n    \"FI-Schutzschalter 40 Ampere 0,03\",\n    \"50 Meter NYMJ 3x1,5\",\n    \"PE-Schiene für den Zählerkasten\",\n    \"Wago-Klemmen\"\n  ],\n  \"nextSteps\": \"Material besorgen\",\n  \"problems\": null,\n  \"project\": \"Elektroinstallation\"\n}",
+          "parsedJson": {
+            "status": "Materialanfrage",
+            "material": [
+              "Drei Stück Sicherungsautomaten B16",
+              "FI-Schutzschalter 40 Ampere 0,03",
+              "50 Meter NYMJ 3x1,5",
+              "PE-Schiene für den Zählerkasten",
+              "Wago-Klemmen"
+            ],
+            "nextSteps": "Material besorgen",
+            "problems": null,
+            "project": "Elektroinstallation"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Materialanfrage",
+              "material": [
+                "Drei Stück Sicherungsautomaten B16",
+                "FI-Schutzschalter 40 Ampere 0,03",
+                "50 Meter NYMJ 3x1,5",
+                "PE-Schiene für den Zählerkasten",
+                "Wago-Klemmen"
+              ],
+              "nextSteps": "Material besorgen",
+              "problems": null,
+              "project": "Elektroinstallation"
+            },
+            "errors": []
+          },
+          "latencyMs": 1435,
+          "inputTokens": 142,
+          "outputTokens": 114
+        },
+        {
+          "promptVariant": "detailed",
+          "rawContent": "{\n  \"status\": \"Kein Status angegeben\",\n  \"material\": [\"Sicherungsautomaten B16\", \"FI-Schutzschalter 40 Ampere 0,03\", \"NYMJ 3x1,5\", \"PE-Schiene\", \"Wago-Klemmen\"],\n  \"nextSteps\": \"Material für morgen besorgen\",\n  \"problems\": null,\n  \"project\": \"Unbekannt\"\n}",
+          "parsedJson": {
+            "status": "Kein Status angegeben",
+            "material": [
+              "Sicherungsautomaten B16",
+              "FI-Schutzschalter 40 Ampere 0,03",
+              "NYMJ 3x1,5",
+              "PE-Schiene",
+              "Wago-Klemmen"
+            ],
+            "nextSteps": "Material für morgen besorgen",
+            "problems": null,
+            "project": "Unbekannt"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Kein Status angegeben",
+              "material": [
+                "Sicherungsautomaten B16",
+                "FI-Schutzschalter 40 Ampere 0,03",
+                "NYMJ 3x1,5",
+                "PE-Schiene",
+                "Wago-Klemmen"
+              ],
+              "nextSteps": "Material für morgen besorgen",
+              "problems": null,
+              "project": "Unbekannt"
+            },
+            "errors": []
+          },
+          "latencyMs": 5123,
+          "inputTokens": 349,
+          "outputTokens": 96
+        },
+        {
+          "promptVariant": "fewShot",
+          "rawContent": "{\n  \"status\": \"Materialliste für morgen erstellt.\",\n  \"material\": [\n    \"Sicherungsautomaten B16 (3x)\",\n    \"FI-Schutzschalter 40 Ampere 0,03\",\n    \"NYMJ 3x1,5 (50 Meter)\",\n    \"PE-Schiene für Zählerkasten\",\n    \"Wago-Klemmen\"\n  ],\n  \"nextSteps\": \"Materialverfügbarkeit im Lager prüfen oder bestellen.\",\n  \"problems\": null,\n  \"project\": \"Unbekannt\"\n}",
+          "parsedJson": {
+            "status": "Materialliste für morgen erstellt.",
+            "material": [
+              "Sicherungsautomaten B16 (3x)",
+              "FI-Schutzschalter 40 Ampere 0,03",
+              "NYMJ 3x1,5 (50 Meter)",
+              "PE-Schiene für Zählerkasten",
+              "Wago-Klemmen"
+            ],
+            "nextSteps": "Materialverfügbarkeit im Lager prüfen oder bestellen.",
+            "problems": null,
+            "project": "Unbekannt"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Materialliste für morgen erstellt.",
+              "material": [
+                "Sicherungsautomaten B16 (3x)",
+                "FI-Schutzschalter 40 Ampere 0,03",
+                "NYMJ 3x1,5 (50 Meter)",
+                "PE-Schiene für Zählerkasten",
+                "Wago-Klemmen"
+              ],
+              "nextSteps": "Materialverfügbarkeit im Lager prüfen oder bestellen.",
+              "problems": null,
+              "project": "Unbekannt"
+            },
+            "errors": []
+          },
+          "latencyMs": 4413,
+          "inputTokens": 297,
+          "outputTokens": 126
+        }
+      ]
+    },
+    {
+      "recordingFile": "text-06.ogg",
+      "textNum": 3,
+      "variant": "Dialekt",
+      "background": "Stille",
+      "transcript": "Ich habe ein Problem bei der Baustelle Huber in der Gordenstraße 12. Der FI im Badezimmer fliegt immer wieder außer, wenn ich das Steckdose links neben den Spiegel einschalte. Ich glaube, die Isolationsfäller in der Zuleitung ist der Grund. Kannst du morgen kurz vorbeikommen mit einem Isolationsmessgerät? Ich traue mir das nicht allein freigeben.",
+      "results": [
+        {
+          "promptVariant": "minimal",
+          "rawContent": "{\n  \"status\": \"Problem\",\n  \"material\": [\"Isolationsmessgerät\"],\n  \"nextSteps\": \"Vorbeikommen und FI prüfen\",\n  \"problems\": \"FI fliegt bei Einschalten der Steckdose\",\n  \"project\": \"Baustelle Huber, Gordenstraße 12\"\n}",
+          "parsedJson": {
+            "status": "Problem",
+            "material": [
+              "Isolationsmessgerät"
+            ],
+            "nextSteps": "Vorbeikommen und FI prüfen",
+            "problems": "FI fliegt bei Einschalten der Steckdose",
+            "project": "Baustelle Huber, Gordenstraße 12"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Problem",
+              "material": [
+                "Isolationsmessgerät"
+              ],
+              "nextSteps": "Vorbeikommen und FI prüfen",
+              "problems": "FI fliegt bei Einschalten der Steckdose",
+              "project": "Baustelle Huber, Gordenstraße 12"
+            },
+            "errors": []
+          },
+          "latencyMs": 905,
+          "inputTokens": 152,
+          "outputTokens": 74
+        },
+        {
+          "promptVariant": "detailed",
+          "rawContent": "{\n  \"status\": \"FI-Schalter im Badezimmer fliegt bei Nutzung der Steckdose neben dem Spiegel aus.\",\n  \"material\": [\"Isolationsmessgerät\"],\n  \"nextSteps\": \"Warten auf Unterstützung mit Isolationsmessgerät für weitere Diagnose.\",\n  \"problems\": \"FI-Schalter fliegt aus, mögliche Isolationsfehler in der Zuleitung.\",\n  \"project\": \"Huber, Gordenstraße 12\"\n}",
+          "parsedJson": {
+            "status": "FI-Schalter im Badezimmer fliegt bei Nutzung der Steckdose neben dem Spiegel aus.",
+            "material": [
+              "Isolationsmessgerät"
+            ],
+            "nextSteps": "Warten auf Unterstützung mit Isolationsmessgerät für weitere Diagnose.",
+            "problems": "FI-Schalter fliegt aus, mögliche Isolationsfehler in der Zuleitung.",
+            "project": "Huber, Gordenstraße 12"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "FI-Schalter im Badezimmer fliegt bei Nutzung der Steckdose neben dem Spiegel aus.",
+              "material": [
+                "Isolationsmessgerät"
+              ],
+              "nextSteps": "Warten auf Unterstützung mit Isolationsmessgerät für weitere Diagnose.",
+              "problems": "FI-Schalter fliegt aus, mögliche Isolationsfehler in der Zuleitung.",
+              "project": "Huber, Gordenstraße 12"
+            },
+            "errors": []
+          },
+          "latencyMs": 2391,
+          "inputTokens": 359,
+          "outputTokens": 104
+        },
+        {
+          "promptVariant": "fewShot",
+          "rawContent": "{\n  \"status\": \"FI im Badezimmer fliegt bei Nutzung der Steckdose neben dem Spiegel.\",\n  \"material\": [\"Isolationsmessgerät\"],\n  \"nextSteps\": \"Vorbeikommen und FI prüfen.\",\n  \"problems\": \"FI fliegt bei Nutzung der Steckdose, mögliche Isolationsfehler in der Zuleitung.\",\n  \"project\": \"Huber\"\n}",
+          "parsedJson": {
+            "status": "FI im Badezimmer fliegt bei Nutzung der Steckdose neben dem Spiegel.",
+            "material": [
+              "Isolationsmessgerät"
+            ],
+            "nextSteps": "Vorbeikommen und FI prüfen.",
+            "problems": "FI fliegt bei Nutzung der Steckdose, mögliche Isolationsfehler in der Zuleitung.",
+            "project": "Huber"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "FI im Badezimmer fliegt bei Nutzung der Steckdose neben dem Spiegel.",
+              "material": [
+                "Isolationsmessgerät"
+              ],
+              "nextSteps": "Vorbeikommen und FI prüfen.",
+              "problems": "FI fliegt bei Nutzung der Steckdose, mögliche Isolationsfehler in der Zuleitung.",
+              "project": "Huber"
+            },
+            "errors": []
+          },
+          "latencyMs": 975,
+          "inputTokens": 307,
+          "outputTokens": 92
+        }
+      ]
+    },
+    {
+      "recordingFile": "text-07.ogg",
+      "textNum": 4,
+      "variant": "Schnell/beiläufig",
+      "background": "Autofahrt",
+      "transcript": "Bin fertig bei Gruber Baustell, alles erledigt, Zollerkosten montiert, Abnahme gemacht. Fahre jetzt weiter zum nächsten Kunden in die Linzer Straße, bin in ca. 20 Minuten dort.",
+      "results": [
+        {
+          "promptVariant": "minimal",
+          "rawContent": "{\n  \"status\": \"erledigt\",\n  \"material\": [\"Zollerkosten\"],\n  \"nextSteps\": \"Fahrt zum nächsten Kunden in die Linzer Straße\",\n  \"problems\": null,\n  \"project\": \"Gruber Baustelle\"\n}",
+          "parsedJson": {
+            "status": "erledigt",
+            "material": [
+              "Zollerkosten"
+            ],
+            "nextSteps": "Fahrt zum nächsten Kunden in die Linzer Straße",
+            "problems": null,
+            "project": "Gruber Baustelle"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "erledigt",
+              "material": [
+                "Zollerkosten"
+              ],
+              "nextSteps": "Fahrt zum nächsten Kunden in die Linzer Straße",
+              "problems": null,
+              "project": "Gruber Baustelle"
+            },
+            "errors": []
+          },
+          "latencyMs": 879,
+          "inputTokens": 108,
+          "outputTokens": 57
+        },
+        {
+          "promptVariant": "detailed",
+          "rawContent": "{\n  \"status\": \"Arbeiten bei Gruber Baustelle abgeschlossen, Zollerkosten montiert und Abnahme durchgeführt.\",\n  \"material\": [\"Zollerkosten\"],\n  \"nextSteps\": \"Fahrt zum nächsten Kunden in die Linzer Straße, Ankunft in ca. 20 Minuten.\",\n  \"problems\": null,\n  \"project\": \"Gruber Baustelle\"\n}",
+          "parsedJson": {
+            "status": "Arbeiten bei Gruber Baustelle abgeschlossen, Zollerkosten montiert und Abnahme durchgeführt.",
+            "material": [
+              "Zollerkosten"
+            ],
+            "nextSteps": "Fahrt zum nächsten Kunden in die Linzer Straße, Ankunft in ca. 20 Minuten.",
+            "problems": null,
+            "project": "Gruber Baustelle"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Arbeiten bei Gruber Baustelle abgeschlossen, Zollerkosten montiert und Abnahme durchgeführt.",
+              "material": [
+                "Zollerkosten"
+              ],
+              "nextSteps": "Fahrt zum nächsten Kunden in die Linzer Straße, Ankunft in ca. 20 Minuten.",
+              "problems": null,
+              "project": "Gruber Baustelle"
+            },
+            "errors": []
+          },
+          "latencyMs": 1030,
+          "inputTokens": 315,
+          "outputTokens": 85
+        },
+        {
+          "promptVariant": "fewShot",
+          "rawContent": "{\n  \"status\": \"Zollerkosten montiert und Abnahme erledigt.\",\n  \"material\": [\"Zollerkosten\"],\n  \"nextSteps\": \"Weiterfahrt zum nächsten Kunden in die Linzer Straße in ca. 20 Minuten.\",\n  \"problems\": null,\n  \"project\": \"Gruber\"\n}",
+          "parsedJson": {
+            "status": "Zollerkosten montiert und Abnahme erledigt.",
+            "material": [
+              "Zollerkosten"
+            ],
+            "nextSteps": "Weiterfahrt zum nächsten Kunden in die Linzer Straße in ca. 20 Minuten.",
+            "problems": null,
+            "project": "Gruber"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Zollerkosten montiert und Abnahme erledigt.",
+              "material": [
+                "Zollerkosten"
+              ],
+              "nextSteps": "Weiterfahrt zum nächsten Kunden in die Linzer Straße in ca. 20 Minuten.",
+              "problems": null,
+              "project": "Gruber"
+            },
+            "errors": []
+          },
+          "latencyMs": 735,
+          "inputTokens": 263,
+          "outputTokens": 71
+        }
+      ]
+    },
+    {
+      "recordingFile": "text-08.ogg",
+      "textNum": 5,
+      "variant": "Dialekt",
+      "background": "Stille",
+      "transcript": "Also, heute war ich zuerst beim Neubau in Schrems, Familie Nowak, Erdgeschoss komplett fertig. Alle Dosen gesetzt, Leerware eingezogen, im ersten Stock fehlen noch die Schaltersereien im Schlafzimmer und im Kinderzimmer. Dann bin ich umgefahren nach Heidenreichstein zum Altbau von der Frau Winkler. Die Sanierung wird aufwendiger werden, als ich gedacht habe. Die alten Leitungen sind teilweise Aluminium, die müssen raus. Das ist eine Chance. Braucht dafür mindestens noch zwei Tage. Und beim Zöllerkosten ist die Plombierung nur von 1987. Da muss der Netzbetreiber zuerst kommen. Ich habe schon bei der EVN angerufen. Der Termin ist nächsten Donnerstag.",
+      "results": [
+        {
+          "promptVariant": "minimal",
+          "rawContent": "{\n  \"status\": \"in progress\",\n  \"material\": [\"Aluminiumleitungen\", \"Plombierung\"],\n  \"nextSteps\": \"Netzbetreibertermin am nächsten Donnerstag\",\n  \"problems\": \"Aufwendigere Sanierung als gedacht\",\n  \"project\": \"Altbau Frau Winkler\"\n}",
+          "parsedJson": {
+            "status": "in progress",
+            "material": [
+              "Aluminiumleitungen",
+              "Plombierung"
+            ],
+            "nextSteps": "Netzbetreibertermin am nächsten Donnerstag",
+            "problems": "Aufwendigere Sanierung als gedacht",
+            "project": "Altbau Frau Winkler"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "in progress",
+              "material": [
+                "Aluminiumleitungen",
+                "Plombierung"
+              ],
+              "nextSteps": "Netzbetreibertermin am nächsten Donnerstag",
+              "problems": "Aufwendigere Sanierung als gedacht",
+              "project": "Altbau Frau Winkler"
+            },
+            "errors": []
+          },
+          "latencyMs": 3859,
+          "inputTokens": 217,
+          "outputTokens": 69
+        },
+        {
+          "promptVariant": "detailed",
+          "rawContent": "{\n  \"status\": \"Erdgeschoss bei Familie Nowak fertiggestellt. Sanierung bei Frau Winkler wird aufwendiger als geplant.\",\n  \"material\": [\"Aluminiumleitungen\"],\n  \"nextSteps\": \"Schaltersereien im ersten Stock bei Familie Nowak fertigstellen. Sanierung bei Frau Winkler in zwei Tagen fortsetzen. Termin mit Netzbetreiber für Zöllerkosten vereinbart.\",\n  \"problems\": \"Alte Aluminiumleitungen bei Frau Winkler müssen ersetzt werden. Plombierung beim Zöllerkosten veraltet.\",\n  \"project\": \"Familie Nowak, Frau Winkler, Zöllerkosten\"\n}",
+          "parsedJson": {
+            "status": "Erdgeschoss bei Familie Nowak fertiggestellt. Sanierung bei Frau Winkler wird aufwendiger als geplant.",
+            "material": [
+              "Aluminiumleitungen"
+            ],
+            "nextSteps": "Schaltersereien im ersten Stock bei Familie Nowak fertigstellen. Sanierung bei Frau Winkler in zwei Tagen fortsetzen. Termin mit Netzbetreiber für Zöllerkosten vereinbart.",
+            "problems": "Alte Aluminiumleitungen bei Frau Winkler müssen ersetzt werden. Plombierung beim Zöllerkosten veraltet.",
+            "project": "Familie Nowak, Frau Winkler, Zöllerkosten"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Erdgeschoss bei Familie Nowak fertiggestellt. Sanierung bei Frau Winkler wird aufwendiger als geplant.",
+              "material": [
+                "Aluminiumleitungen"
+              ],
+              "nextSteps": "Schaltersereien im ersten Stock bei Familie Nowak fertigstellen. Sanierung bei Frau Winkler in zwei Tagen fortsetzen. Termin mit Netzbetreiber für Zöllerkosten vereinbart.",
+              "problems": "Alte Aluminiumleitungen bei Frau Winkler müssen ersetzt werden. Plombierung beim Zöllerkosten veraltet.",
+              "project": "Familie Nowak, Frau Winkler, Zöllerkosten"
+            },
+            "errors": []
+          },
+          "latencyMs": 1560,
+          "inputTokens": 424,
+          "outputTokens": 137
+        },
+        {
+          "promptVariant": "fewShot",
+          "rawContent": "{\n  \"status\": \"Erdgeschoss bei Familie Nowak fertiggestellt. Sanierung bei Frau Winkler wird aufwendiger als geplant.\",\n  \"material\": [\"Aluminiumleitungen\"],\n  \"nextSteps\": \"Schaltersereien bei Familie Nowak fertigstellen. Sanierung bei Frau Winkler in zwei Tagen fortsetzen. Termin mit Netzbetreiber für Zöllerkosten am nächsten Donnerstag.\",\n  \"problems\": {\n    \"problems\": \"Alte Aluminiumleitungen bei Frau Winkler müssen ersetzt werden. Plombierung bei Zöllerkosten von 1987, Netzbetreiber muss zuerst kommen.\"\n  },\n  \"project\": \"Familie Nowak, Frau Winkler, Zöllerkosten\"\n}",
+          "parsedJson": {
+            "status": "Erdgeschoss bei Familie Nowak fertiggestellt. Sanierung bei Frau Winkler wird aufwendiger als geplant.",
+            "material": [
+              "Aluminiumleitungen"
+            ],
+            "nextSteps": "Schaltersereien bei Familie Nowak fertigstellen. Sanierung bei Frau Winkler in zwei Tagen fortsetzen. Termin mit Netzbetreiber für Zöllerkosten am nächsten Donnerstag.",
+            "problems": {
+              "problems": "Alte Aluminiumleitungen bei Frau Winkler müssen ersetzt werden. Plombierung bei Zöllerkosten von 1987, Netzbetreiber muss zuerst kommen."
+            },
+            "project": "Familie Nowak, Frau Winkler, Zöllerkosten"
+          },
+          "validation": {
+            "valid": false,
+            "summary": null,
+            "errors": [
+              "problems: not string or null"
+            ]
+          },
+          "latencyMs": 1866,
+          "inputTokens": 372,
+          "outputTokens": 156
+        }
+      ]
+    },
+    {
+      "recordingFile": "text-10.ogg",
+      "textNum": 7,
+      "variant": "Dialekt",
+      "background": "Baustelle",
+      "transcript": "Chef, ganz dringend, du musst unbedingt herkommen zu der Hure. Ich habe bei der Thementaste von der Teilerkosten eine lange Phase im Bild. Und die ist mir da gesichert. Die gesamte Küche hängt auf einem PC-Automaten ohne FI. Das ist lästig. Ich habe den Hauptsäuter rausgenommen und alles abgetreten. Aber du musst heute nicht kommen. Die Familie hat kleine Kinder.",
+      "results": [
+        {
+          "promptVariant": "minimal",
+          "rawContent": "{\n  \"status\": \"Problem\",\n  \"material\": [\"PC-Automaten\", \"Hauptsäuter\"],\n  \"nextSteps\": \"Chef anrufen\",\n  \"problems\": \"Lange Phase im Bild, Küche hängt am PC-Automaten ohne FI\",\n  \"project\": \"Küchenreparatur\"\n}",
+          "parsedJson": {
+            "status": "Problem",
+            "material": [
+              "PC-Automaten",
+              "Hauptsäuter"
+            ],
+            "nextSteps": "Chef anrufen",
+            "problems": "Lange Phase im Bild, Küche hängt am PC-Automaten ohne FI",
+            "project": "Küchenreparatur"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Problem",
+              "material": [
+                "PC-Automaten",
+                "Hauptsäuter"
+              ],
+              "nextSteps": "Chef anrufen",
+              "problems": "Lange Phase im Bild, Küche hängt am PC-Automaten ohne FI",
+              "project": "Küchenreparatur"
+            },
+            "errors": []
+          },
+          "latencyMs": 3628,
+          "inputTokens": 156,
+          "outputTokens": 72
+        },
+        {
+          "promptVariant": "detailed",
+          "rawContent": "{\n  \"status\": \"Es gibt ein Problem mit der Phase im Bild der Teilerkosten, die gesamte Küche hängt an einem PC-Automaten ohne FI.\",\n  \"material\": [\"PC-Automaten\", \"FI-Schalter\"],\n  \"nextSteps\": \"Keine nächsten Schritte geplant, da der Chef nicht kommen muss.\",\n  \"problems\": \"Lange Phase im Bild der Teilerkosten, Küche hängt an einem PC-Automaten ohne FI.\",\n  \"project\": \"Unbekannt\"\n}",
+          "parsedJson": {
+            "status": "Es gibt ein Problem mit der Phase im Bild der Teilerkosten, die gesamte Küche hängt an einem PC-Automaten ohne FI.",
+            "material": [
+              "PC-Automaten",
+              "FI-Schalter"
+            ],
+            "nextSteps": "Keine nächsten Schritte geplant, da der Chef nicht kommen muss.",
+            "problems": "Lange Phase im Bild der Teilerkosten, Küche hängt an einem PC-Automaten ohne FI.",
+            "project": "Unbekannt"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Es gibt ein Problem mit der Phase im Bild der Teilerkosten, die gesamte Küche hängt an einem PC-Automaten ohne FI.",
+              "material": [
+                "PC-Automaten",
+                "FI-Schalter"
+              ],
+              "nextSteps": "Keine nächsten Schritte geplant, da der Chef nicht kommen muss.",
+              "problems": "Lange Phase im Bild der Teilerkosten, Küche hängt an einem PC-Automaten ohne FI.",
+              "project": "Unbekannt"
+            },
+            "errors": []
+          },
+          "latencyMs": 1306,
+          "inputTokens": 363,
+          "outputTokens": 107
+        },
+        {
+          "promptVariant": "fewShot",
+          "rawContent": "{\n  \"status\": \"Störung an der Thementaste der Teilerkosten, lange Phase im Bild. Küche hängt am PC-Automaten ohne FI.\",\n  \"material\": [],\n  \"nextSteps\": \"Chef informieren und ggf. vor Ort kommen.\",\n  \"problems\": \"Störung an der Thementaste, PC-Automaten ohne FI, Hauptsäuter entfernt.\",\n  \"project\": \"Hure\"\n}",
+          "parsedJson": {
+            "status": "Störung an der Thementaste der Teilerkosten, lange Phase im Bild. Küche hängt am PC-Automaten ohne FI.",
+            "material": [],
+            "nextSteps": "Chef informieren und ggf. vor Ort kommen.",
+            "problems": "Störung an der Thementaste, PC-Automaten ohne FI, Hauptsäuter entfernt.",
+            "project": "Hure"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Störung an der Thementaste der Teilerkosten, lange Phase im Bild. Küche hängt am PC-Automaten ohne FI.",
+              "material": [],
+              "nextSteps": "Chef informieren und ggf. vor Ort kommen.",
+              "problems": "Störung an der Thementaste, PC-Automaten ohne FI, Hauptsäuter entfernt.",
+              "project": "Hure"
+            },
+            "errors": []
+          },
+          "latencyMs": 1432,
+          "inputTokens": 311,
+          "outputTokens": 94
+        }
+      ]
+    },
+    {
+      "recordingFile": "text-11.ogg",
+      "textNum": 8,
+      "variant": "Normal",
+      "background": "Stille",
+      "transcript": "Die BV-Anlage bei den Schuster wird teurer als angeboten. Wir brauchen zusätzlich einen Überspannungsschutz Typ 1 und Typ 2 für den Zählerkasten. Das war im Angebot nicht so drin. Außerdem ist die Dachneigung steiler als geplant. Wir brauchen andere Montageschienen. Ich schätze so 800 bis 1000 Euro Mehrkosten. Soll ich das direkt mit den Kunden besprechen oder magst du das?",
+      "results": [
+        {
+          "promptVariant": "minimal",
+          "rawContent": "{\n  \"status\": \"Mehrkosten\",\n  \"material\": [\"Überspannungsschutz Typ 1\", \"Überspannungsschutz Typ 2\", \"Montageschienen\"],\n  \"nextSteps\": \"Kunden über Mehrkosten informieren\",\n  \"problems\": \"Dachneigung steiler als geplant\",\n  \"project\": \"BV-Anlage bei den Schuster\"\n}",
+          "parsedJson": {
+            "status": "Mehrkosten",
+            "material": [
+              "Überspannungsschutz Typ 1",
+              "Überspannungsschutz Typ 2",
+              "Montageschienen"
+            ],
+            "nextSteps": "Kunden über Mehrkosten informieren",
+            "problems": "Dachneigung steiler als geplant",
+            "project": "BV-Anlage bei den Schuster"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Mehrkosten",
+              "material": [
+                "Überspannungsschutz Typ 1",
+                "Überspannungsschutz Typ 2",
+                "Montageschienen"
+              ],
+              "nextSteps": "Kunden über Mehrkosten informieren",
+              "problems": "Dachneigung steiler als geplant",
+              "project": "BV-Anlage bei den Schuster"
+            },
+            "errors": []
+          },
+          "latencyMs": 857,
+          "inputTokens": 161,
+          "outputTokens": 89
+        },
+        {
+          "promptVariant": "detailed",
+          "rawContent": "{\n  \"status\": \"Die BV-Anlage bei den Schusters erfordert zusätzliche Maßnahmen, die nicht im Angebot enthalten waren.\",\n  \"material\": [\"Überspannungsschutz Typ 1\", \"Überspannungsschutz Typ 2\", \"Montageschienen\"],\n  \"nextSteps\": \"Die Mehrkosten müssen mit dem Kunden besprochen werden.\",\n  \"problems\": \"Die Dachneigung ist steiler als geplant, was zusätzliche Kosten verursacht.\",\n  \"project\": \"Schuster\"\n}",
+          "parsedJson": {
+            "status": "Die BV-Anlage bei den Schusters erfordert zusätzliche Maßnahmen, die nicht im Angebot enthalten waren.",
+            "material": [
+              "Überspannungsschutz Typ 1",
+              "Überspannungsschutz Typ 2",
+              "Montageschienen"
+            ],
+            "nextSteps": "Die Mehrkosten müssen mit dem Kunden besprochen werden.",
+            "problems": "Die Dachneigung ist steiler als geplant, was zusätzliche Kosten verursacht.",
+            "project": "Schuster"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "Die BV-Anlage bei den Schusters erfordert zusätzliche Maßnahmen, die nicht im Angebot enthalten waren.",
+              "material": [
+                "Überspannungsschutz Typ 1",
+                "Überspannungsschutz Typ 2",
+                "Montageschienen"
+              ],
+              "nextSteps": "Die Mehrkosten müssen mit dem Kunden besprochen werden.",
+              "problems": "Die Dachneigung ist steiler als geplant, was zusätzliche Kosten verursacht.",
+              "project": "Schuster"
+            },
+            "errors": []
+          },
+          "latencyMs": 3066,
+          "inputTokens": 368,
+          "outputTokens": 110
+        },
+        {
+          "promptVariant": "fewShot",
+          "rawContent": "{\n  \"status\": \"BV-Anlage bei den Schuster wird teurer als angeboten.\",\n  \"material\": [\"Überspannungsschutz Typ 1\", \"Überspannungsschutz Typ 2\", \"Montageschienen\"],\n  \"nextSteps\": \"Kosten mit dem Kunden besprechen.\",\n  \"problems\": \"Dachneigung steiler als geplant, zusätzliche Kosten für Überspannungsschutz und Montageschienen.\",\n  \"project\": \"Schuster\"\n}",
+          "parsedJson": {
+            "status": "BV-Anlage bei den Schuster wird teurer als angeboten.",
+            "material": [
+              "Überspannungsschutz Typ 1",
+              "Überspannungsschutz Typ 2",
+              "Montageschienen"
+            ],
+            "nextSteps": "Kosten mit dem Kunden besprechen.",
+            "problems": "Dachneigung steiler als geplant, zusätzliche Kosten für Überspannungsschutz und Montageschienen.",
+            "project": "Schuster"
+          },
+          "validation": {
+            "valid": true,
+            "summary": {
+              "status": "BV-Anlage bei den Schuster wird teurer als angeboten.",
+              "material": [
+                "Überspannungsschutz Typ 1",
+                "Überspannungsschutz Typ 2",
+                "Montageschienen"
+              ],
+              "nextSteps": "Kosten mit dem Kunden besprechen.",
+              "problems": "Dachneigung steiler als geplant, zusätzliche Kosten für Überspannungsschutz und Montageschienen.",
+              "project": "Schuster"
+            },
+            "errors": []
+          },
+          "latencyMs": 907,
+          "inputTokens": 316,
+          "outputTokens": 106
+        }
+      ]
+    }
+  ]
+}

@@ -84,13 +84,13 @@ development_status:
   epic-5-retrospective: optional
 
   # Epic 6: Voice Capture & AI Pipeline
-  epic-6: in-progress
+  epic-6: done
   6-1-voice-recording-and-upload: done
   6-2-mistral-voxtral-stt-integration-and-evaluation: done
-  6-3-mistral-llm-summarization: backlog
+  6-3-mistral-llm-summarization: done
   epic-6-retrospective: optional
 
   # Epic 7: Dashboard & Research Documentation
-  epic-7: backlog
-  7-1-voice-message-dashboard: backlog
+  epic-7: done
+  7-1-voice-message-dashboard: done
   epic-7-retrospective: optional
