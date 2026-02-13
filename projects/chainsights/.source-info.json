@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-12T21:13:52Z",
-  "commit_sha": "63a37d0cdbce07205de842dc9c3c91fc6df93859",
-  "commit_message": "docs: update party mode notes with session 2 (methodology v1.3)\n"
+  "synced_at": "2026-02-13T08:34:34Z",
+  "commit_sha": "ac30ed6833228379f92c8a3a221ad3326d9bdcac",
+  "commit_message": "feat: add voter transparency note to DVQ table in Governance Audit PDF\n"
 }
