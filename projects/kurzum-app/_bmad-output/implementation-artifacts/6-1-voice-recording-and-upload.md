@@ -1,6 +1,6 @@
 # Story 6.1: Voice Recording & Upload
 
-Status: review
+Status: done
 
 ## Story
 
@@ -530,6 +530,24 @@ Claude Opus 4.6
 - package.json — Added @vercel/blob dependency
 - pnpm-lock.yaml — Updated lockfile
 
+### Code Review Fixes (Adversarial Review)
+
+**HIGH fixes:**
+- H1: Canvas `var()` unsupported — fixed with `getComputedStyle()` to resolve CSS variable values
+- H2: Dead Zod schema `voiceUploadSchema` — removed, kept only exported constants
+- H3: Server-side duration not validated — added `Number.isFinite()`, `>0`, `<=MAX_DURATION_SECONDS` checks
+- H4: Hardcoded `.webm` extension — added `MIME_TO_EXT` map for dynamic extension based on content type
+
+**MEDIUM fixes:**
+- M1: Double AudioContext in RecordingPreview — single decode, pass AudioBuffer to `generateWaveformData()`
+- M2: Dead `"recording"` state in PageState — removed from union, simplified conditional
+- M3: `setTimeout` without cleanup — added `redirectTimerRef` with cleanup on unmount
+
+**LOW (not fixed — cosmetic):**
+- L1: No background tint during recording — cosmetic, VoiceRecorder manages its own recording UI
+- L2: `handleDiscard`/`handleRerecord` identical — kept separate for semantic clarity + future divergence
+
 ### Change Log
 
 - 2026-02-12: Implemented voice recording and upload (Story 6.1) — MediaRecorder API with WebM/Opus, Canvas waveform preview, Web Audio API playback, Vercel Blob upload, API route with validation
+- 2026-02-13: Code review fixes — resolved 4 HIGH + 3 MEDIUM issues (Canvas colors, dead code, server validation, MIME handling, single AudioContext, timeout cleanup)

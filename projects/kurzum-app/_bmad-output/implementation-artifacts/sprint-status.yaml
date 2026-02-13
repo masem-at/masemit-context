@@ -85,7 +85,7 @@ development_status:
 
   # Epic 6: Voice Capture & AI Pipeline
   epic-6: in-progress
-  6-1-voice-recording-and-upload: review
+  6-1-voice-recording-and-upload: done
   6-2-mistral-voxtral-stt-integration-and-evaluation: backlog
   6-3-mistral-llm-summarization: backlog
   epic-6-retrospective: optional

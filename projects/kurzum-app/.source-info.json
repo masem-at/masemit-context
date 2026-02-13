@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-12T21:39:28Z",
-  "commit_sha": "fdf389e93d9810ce5875ed5665d0e6dc63596cc5",
-  "commit_message": "Implement voice recording with MediaRecorder API and Vercel Blob upload (Story 6.1)\n"
+  "synced_at": "2026-02-13T05:15:23Z",
+  "commit_sha": "3503fbe0f49e52fee7784d2ee87e7a41feec9133",
+  "commit_message": "Fix code review findings: Canvas colors, server validation, MIME handling, dead code\n"
 }
