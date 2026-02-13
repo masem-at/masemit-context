@@ -1,0 +1,522 @@
+{
+  "meta": {
+    "date": "2026-02-13T10:40:51.649Z",
+    "project": "kurzum.app",
+    "ffgAntragsnr": "69168884",
+    "forschungsfrage": "Domänenspezifische Spracherkennung bei Baustellenlärm und Dialekten",
+    "voxtralModel": "voxtral-mini-latest (with contextBias)",
+    "whisperModel": "whisper-1",
+    "contextBias": [
+      "FI-Schalter",
+      "Sicherungsautomat",
+      "Zählerkasten",
+      "Leitungsschutzschalter",
+      "Drehstrom",
+      "Unterverteilung",
+      "Zählerplatz",
+      "NYM",
+      "Erdungskabel",
+      "Potentialausgleich",
+      "Installationszone",
+      "UP-Dose",
+      "Aufputz",
+      "Unterputz",
+      "Ringschraube",
+      "Klemme",
+      "Phasenprüfer",
+      "FI-Schutzschalter",
+      "Überspannungsschutz",
+      "Isolationsmessgerät",
+      "PE-Schiene",
+      "Wago-Klemmen",
+      "Schlitzfräse",
+      "Estrich",
+      "Verteilerkasten",
+      "Montageschienen",
+      "PV-Anlage"
+    ],
+    "note": "WER computed against scripted reference texts. Speakers were instructed to speak freely (not read). WER values are approximate."
+  },
+  "results": [
+    {
+      "recording": {
+        "file": "text-01.ogg",
+        "textNum": 1,
+        "variant": "Hochdeutsch",
+        "background": "Stille",
+        "description": "Standard-Baustellenbericht, klar"
+      },
+      "referenceText": "Müller Hauptstraße 5, drittes Obergeschoss links. Unterverteilung ist fertig verdrahtet. 24 Sicherungsautomaten eingebaut, alles nach Plan. Der FI-Schutzschalter muss noch vom Meister abgenommen werden. Material reicht noch für die rechte Wohnung morgen.",
+      "voxtral": {
+        "transcript": "Müller, Hauptstraße 5, drittes Obergeschoss links. Unterverteilung ist fertig verdrahtet. 24 Sicherungsautomaten eingebaut. Alles nach Plan. Der FI-Schutzschalter muss noch vom Meister abgenommen werden. Material reicht noch für die rechte Wohnung morgen.",
+        "language": "de",
+        "model": "voxtral-mini-latest",
+        "latencyMs": 755,
+        "audioSeconds": 21,
+        "wer": {
+          "wer": 0,
+          "substitutions": 0,
+          "deletions": 0,
+          "insertions": 0,
+          "refWordCount": 33,
+          "hypWordCount": 33
+        }
+      },
+      "whisper": {
+        "transcript": "Müller, Hauptstraße 5, drittes Obergeschoss links, Unterverteilung ist fertig verdrahtet, 24 Sicherungsautomaten eingebaut, alles nach Plan, der F1-Schutzschalter muss noch vom Meister abgenommen werden, Material reicht noch für die rechte Wohnung morgen.",
+        "language": "german",
+        "model": "whisper-1",
+        "latencyMs": 2728,
+        "audioSeconds": 21.950000762939453,
+        "wer": {
+          "wer": 3,
+          "substitutions": 1,
+          "deletions": 0,
+          "insertions": 0,
+          "refWordCount": 33,
+          "hypWordCount": 33
+        }
+      }
+    },
+    {
+      "recording": {
+        "file": "text-02.ogg",
+        "textNum": 1,
+        "variant": "Waldviertlerisch",
+        "background": "Stille",
+        "description": "Standard-Baustellenbericht, Dialekt"
+      },
+      "referenceText": "Müller Hauptstraße 5, drittes Obergeschoss links. Unterverteilung ist fertig verdrahtet. 24 Sicherungsautomaten eingebaut, alles nach Plan. Der FI-Schutzschalter muss noch vom Meister abgenommen werden. Material reicht noch für die rechte Wohnung morgen.",
+      "voxtral": {
+        "transcript": "Müller Hauptstraße 5, 3. Obergeschoss links. Der Unterverteiler ist fertig. 24 Sicherungsautomaten eingebaut. Alles nach Plan. Der FI-Schutzschalter muss noch vom Meister abgenommen werden. Material reicht noch für die rechte Wohnung aus.",
+        "language": "de",
+        "model": "voxtral-mini-latest",
+        "latencyMs": 587,
+        "audioSeconds": 21,
+        "wer": {
+          "wer": 15.2,
+          "substitutions": 3,
+          "deletions": 1,
+          "insertions": 1,
+          "refWordCount": 33,
+          "hypWordCount": 33
+        }
+      },
+      "whisper": {
+        "transcript": "Müller Hauptstraßen 5, drittes Obergeschoss links. Der Unterverteiler ist fertig, 24 Sicherungsautomaten eingebaut. Alles nach Plan. Der FV-Schutzschalter muss noch vom Meister angenommen werden. Material reicht noch für die rechte Wohnung aus.",
+        "language": "german",
+        "model": "whisper-1",
+        "latencyMs": 2785,
+        "audioSeconds": 21.780000686645508,
+        "wer": {
+          "wer": 21.2,
+          "substitutions": 5,
+          "deletions": 1,
+          "insertions": 1,
+          "refWordCount": 33,
+          "hypWordCount": 33
+        }
+      }
+    },
+    {
+      "recording": {
+        "file": "text-03.ogg",
+        "textNum": 1,
+        "variant": "Ausländischer Akzent",
+        "background": "Stille",
+        "description": "Standard-Baustellenbericht, Akzent"
+      },
+      "referenceText": "Müller Hauptstraße 5, drittes Obergeschoss links. Unterverteilung ist fertig verdrahtet. 24 Sicherungsautomaten eingebaut, alles nach Plan. Der FI-Schutzschalter muss noch vom Meister abgenommen werden. Material reicht noch für die rechte Wohnung morgen.",
+      "voxtral": {
+        "transcript": "Müller, Hauptstraße 5, drittes Geschoss, links. Unterverteilung verdrahtet, fertig. 24 Sicherungsautomaten eingebaut. Plan alles. Schutzschalter vom Meister abzunehmen. Material genug für Wohnung rechts.",
+        "language": "de",
+        "model": "voxtral-mini-latest",
+        "latencyMs": 480,
+        "audioSeconds": 25,
+        "wer": {
+          "wer": 48.5,
+          "substitutions": 6,
+          "deletions": 10,
+          "insertions": 0,
+          "refWordCount": 33,
+          "hypWordCount": 23
+        }
+      },
+      "whisper": {
+        "transcript": "Müller, Hauptstraße 5, drittes Geschoss links, unter Verteilung verdreht, fertig, 24 Sicherungsautomaten eingebaut, Plan alles, Schutzschalter vom Meister abzunehmen, Material genug für Wohnung rechts. Müller, Hauptstraße 5, drittes Geschoss links, unter Verteilung verdreht, fertig, 24 Sicherungsautomaten",
+        "language": "german",
+        "model": "whisper-1",
+        "latencyMs": 1789,
+        "audioSeconds": 25.56999969482422,
+        "wer": {
+          "wer": 81.8,
+          "substitutions": 24,
+          "deletions": 0,
+          "insertions": 3,
+          "refWordCount": 33,
+          "hypWordCount": 36
+        }
+      }
+    },
+    {
+      "recording": {
+        "file": "text-04.ogg",
+        "textNum": 2,
+        "variant": "Hochdeutsch",
+        "background": "Stille",
+        "description": "Material-Bestellung, klar"
+      },
+      "referenceText": "Für morgen brauch ich bitte folgendes Material: drei Stück Sicherungsautomaten B16, einen FI-Schutzschalter 40 Ampere null Komma null drei, 50 Meter NYM-J drei mal eins Komma fünf, eine PE-Schiene für den Zählerkasten, und ein paar Wago-Klemmen. Liegt im Lager oder muss das bestellt werden?",
+      "voxtral": {
+        "transcript": "Für morgen brauche ich bitte folgendes Material. Drei Stück Sicherungsautomaten B16, einen FI-Schutzschalter 40 Ampere 0,03, 50 Meter NYMJ 3x1,5, eine PE-Schiene für den Zählerkasten und ein paar Wago-Klemmen. Liegt im Lager oder muss das bestellt werden?",
+        "language": "de",
+        "model": "voxtral-mini-latest",
+        "latencyMs": 595,
+        "audioSeconds": 28,
+        "wer": {
+          "wer": 25,
+          "substitutions": 6,
+          "deletions": 6,
+          "insertions": 0,
+          "refWordCount": 48,
+          "hypWordCount": 42
+        }
+      },
+      "whisper": {
+        "transcript": "Für morgen brauche ich bitte folgendes Material, 3 Stück Sicherungsautomaten B16, einen EFI-Schutzschalter 40A 0,03, 50 Meter NYMJ 3x1,5, eine PE-Schiene für den Zählerkasten und ein paar WAGO-Klemmen. Liegt im Lager oder muss das bestellt werden?",
+        "language": "german",
+        "model": "whisper-1",
+        "latencyMs": 1275,
+        "audioSeconds": 28.469999313354492,
+        "wer": {
+          "wer": 33.3,
+          "substitutions": 9,
+          "deletions": 7,
+          "insertions": 0,
+          "refWordCount": 48,
+          "hypWordCount": 41
+        }
+      }
+    },
+    {
+      "recording": {
+        "file": "text-05.ogg",
+        "textNum": 2,
+        "variant": "Waldviertlerisch",
+        "background": "Stille",
+        "description": "Material-Bestellung, Dialekt"
+      },
+      "referenceText": "Für morgen brauch ich bitte folgendes Material: drei Stück Sicherungsautomaten B16, einen FI-Schutzschalter 40 Ampere null Komma null drei, 50 Meter NYM-J drei mal eins Komma fünf, eine PE-Schiene für den Zählerkasten, und ein paar Wago-Klemmen. Liegt im Lager oder muss das bestellt werden?",
+      "voxtral": {
+        "transcript": "Ich brauche für morgen folgendes Material. Drei Stapel Sicherungsautomaten bei 16, eine FI-Schutzschalter 40 Ampere mit 0,03, 50 Meter in YM, 3x1,5, eine PE-Schiene für den Zählerkasten und ein paar Wago-Klemmen. Liegt das im Lager oder muss das bestellt werden?",
+        "language": "de",
+        "model": "voxtral-mini-latest",
+        "latencyMs": 1526,
+        "audioSeconds": 24,
+        "wer": {
+          "wer": 43.8,
+          "substitutions": 14,
+          "deletions": 5,
+          "insertions": 2,
+          "refWordCount": 48,
+          "hypWordCount": 45
+        }
+      },
+      "whisper": {
+        "transcript": "Ich brauche für morgen folgendes Material, drei Stickel, Sicherungsautomaten B16, eine FI-Schutzschalter 40 Ampere mit 0,3, 50 Meter in YM, 3x1,5, eine PE-Schiene für den Zählerkosten und ein paar Vago-Klemmen. Liegt das im Lager oder muss das bestellt werden?",
+        "language": "german",
+        "model": "whisper-1",
+        "latencyMs": 1531,
+        "audioSeconds": 24.610000610351562,
+        "wer": {
+          "wer": 43.8,
+          "substitutions": 15,
+          "deletions": 5,
+          "insertions": 1,
+          "refWordCount": 48,
+          "hypWordCount": 44
+        }
+      }
+    },
+    {
+      "recording": {
+        "file": "text-06.ogg",
+        "textNum": 3,
+        "variant": "Dialekt",
+        "background": "Stille",
+        "description": "Problem melden, besorgt"
+      },
+      "referenceText": "Hab ein Problem bei der Baustelle Huber in der Gartenstraße 12. Der FI im Badezimmer fliegt immer wieder raus wenn ich die Steckdose links neben dem Spiegel einschalte. Ich vermute einen Isolationsfehler in der Zuleitung. Kannst du morgen Früh kurz vorbeikommen mit dem Isolationsmessgerät? Ich trau mich das nicht alleine freizugeben.",
+      "voxtral": {
+        "transcript": "Ich habe ein Problem bei der Baustelle Huber in der Gordenstraße 12. Der FI im Badezimmer fliegt immer wieder außer, wenn ich das Steckdose links neben den Spiegel einschalte. Ich glaube, die Isolationsfäller in der Zuleitung ist der Grund. Kannst du morgen kurz vorbeikommen mit einem Isolationsmessgerät? Ich traue mir das nicht allein freigeben.",
+        "language": "de",
+        "model": "voxtral-mini-latest",
+        "latencyMs": 587,
+        "audioSeconds": 25,
+        "wer": {
+          "wer": 35.3,
+          "substitutions": 13,
+          "deletions": 1,
+          "insertions": 4,
+          "refWordCount": 51,
+          "hypWordCount": 54
+        }
+      },
+      "whisper": {
+        "transcript": "Ich hab ein Problem bei der Baustelle Huber in der Gartenstraße 12, der EFV im Badezimmer fliegt immer wieder raus, wenn ich die Steckdosen links neben den Spiegel einschalte. Ich glaub die Isolationsfäller in der Zuleitung ist der Grund, kannst morgen kurz vorbeikommen mit einem Isolationsmessgerät, ich trau mich das nicht allein freigeben.",
+        "language": "german",
+        "model": "whisper-1",
+        "latencyMs": 1333,
+        "audioSeconds": 25.06999969482422,
+        "wer": {
+          "wer": 29.4,
+          "substitutions": 13,
+          "deletions": 0,
+          "insertions": 2,
+          "refWordCount": 51,
+          "hypWordCount": 53
+        }
+      }
+    },
+    {
+      "recording": {
+        "file": "text-07.ogg",
+        "textNum": 4,
+        "variant": "Schnell/beiläufig",
+        "background": "Autofahrt",
+        "description": "Kurzer Status-Update, Auto"
+      },
+      "referenceText": "Bin fertig bei Gruber. Alles erledigt, Zählerkasten montiert, Abnahme gemacht. Fahr jetzt weiter zum nächsten Kunden in der Linzer Straße. Bin in circa zwanzig Minuten dort.",
+      "voxtral": {
+        "transcript": "Bin fertig bei Gruber Baustell, alles erledigt, Zollerkosten montiert, Abnahme gemacht. Fahre jetzt weiter zum nächsten Kunden in die Linzer Straße, bin in ca. 20 Minuten dort.",
+        "language": "de",
+        "model": "voxtral-mini-latest",
+        "latencyMs": 434,
+        "audioSeconds": 12,
+        "wer": {
+          "wer": 23.1,
+          "substitutions": 5,
+          "deletions": 0,
+          "insertions": 1,
+          "refWordCount": 26,
+          "hypWordCount": 27
+        }
+      },
+      "whisper": {
+        "transcript": "Ich bin fertig bei Gruber Baustuhl, alles erledigt, Zollerpost montiert, Abnahme gemacht. Ich fahre jetzt weiter zum nächsten Kunden in die Linzer Straße, bin in ca. 20 Minuten dort.",
+        "language": "german",
+        "model": "whisper-1",
+        "latencyMs": 2130,
+        "audioSeconds": 12.25,
+        "wer": {
+          "wer": 30.8,
+          "substitutions": 5,
+          "deletions": 0,
+          "insertions": 3,
+          "refWordCount": 26,
+          "hypWordCount": 29
+        }
+      }
+    },
+    {
+      "recording": {
+        "file": "text-08.ogg",
+        "textNum": 5,
+        "variant": "Dialekt",
+        "background": "Stille",
+        "description": "Tagesbericht, müde (Feierabend)"
+      },
+      "referenceText": "Also heute war ich zuerst beim Neubau in Schrems, Familie Novak. Erdgeschoss komplett fertig, alle Dosen gesetzt, Leerrohre eingezogen. Im ersten Stock fehlen noch die Schalterserien im Schlafzimmer und im Kinderzimmer. Dann bin ich rübergefahren nach Heidenreichstein zum Altbau von der Frau Winkler. Die Sanierung wird aufwendiger als gedacht, die alten Leitungen sind teilweise Aluminium, die müssen alle raus. Brauch dafür mindestens noch zwei Tage. Und beim Zählerkasten ist die Plombierung noch von 1987, da muss der Netzbetreiber zuerst kommen. Hab schon bei der EVN angerufen, Termin ist nächsten Donnerstag.",
+      "voxtral": {
+        "transcript": "Also, heute war ich zuerst beim Neubau in Schrems, Familie Nowak, Erdgeschoss komplett fertig. Alle Dosen gesetzt, Leerware eingezogen, im ersten Stock fehlen noch die Schaltersereien im Schlafzimmer und im Kinderzimmer. Dann bin ich umgefahren nach Heidenreichstein zum Altbau von der Frau Winkler. Die Sanierung wird aufwendiger werden, als ich gedacht habe. Die alten Leitungen sind teilweise Aluminium, die müssen raus. Das ist eine Chance. Braucht dafür mindestens noch zwei Tage. Und beim Zöllerkosten ist die Plombierung nur von 1987. Da muss der Netzbetreiber zuerst kommen. Ich habe schon bei der EVN angerufen. Der Termin ist nächsten Donnerstag.",
+        "language": "de",
+        "model": "voxtral-mini-latest",
+        "latencyMs": 882,
+        "audioSeconds": 50,
+        "wer": {
+          "wer": 20,
+          "substitutions": 10,
+          "deletions": 0,
+          "insertions": 8,
+          "refWordCount": 90,
+          "hypWordCount": 98
+        }
+      },
+      "whisper": {
+        "transcript": "Heute war ich zuerst beim Neubraunschrems, Familie Nowak, Erdgeschoss komplett fertig. Alle Tosen gesetzt, Leerwaren eingezogen, im ersten Stock füllen noch die Schalterserien im Schlafzimmer und im Kinderzimmer. Dann bin ich umgefahren nach Heidenrechstein zum Altbau von der Frau Winkler. Die Sanierung wird aufwendiger werden, als ich gedacht habe. Die alten Leitungen sind teilweise Aluminium, die müssen raus sein. Braucht dafür mindestens noch zwei Tage und beim Zöllerkosten ist die Plampierung nur von 1987. Da muss der Netzbetreiber zuerst kommen. Hab schon bei der EVN angerufen, Termin ist nächsten Donnerstag.",
+        "language": "german",
+        "model": "whisper-1",
+        "latencyMs": 2318,
+        "audioSeconds": 50.11000061035156,
+        "wer": {
+          "wer": 21.1,
+          "substitutions": 13,
+          "deletions": 3,
+          "insertions": 3,
+          "refWordCount": 90,
+          "hypWordCount": 90
+        }
+      }
+    },
+    {
+      "recording": {
+        "file": "text-09.ogg",
+        "textNum": 6,
+        "variant": "Normal",
+        "background": "Werkstatt/Lager",
+        "description": "Übergabe an Kollegen"
+      },
+      "referenceText": "Thomas, kurze Info für dich für morgen Früh: Bei der Baustelle Pichler in Waidhofen sind die Schlitze schon gefräst, du kannst direkt mit dem Leitungen einziehen anfangen. Der Bauherr hat gesagt er ist ab acht Uhr da und sperrt dir auf. Werkzeug liegt alles im Keller, ich hab die Bohrmaschine und die Schlitzfräse dort gelassen. Achtung: im Wohnzimmer ist der Estrich noch frisch, da nicht draufsteigen!",
+      "voxtral": {
+        "transcript": "Thomas, gute Info. So wie wir waren früher, der Bauherr hat gesagt, die Schicht, die passt direkt mit der Leitung im Netz in den Anfang. Der Bauherr hat gesagt, er ist ab 8 Uhr da und sperrt da auf. Werktag mit 4 Uhr im Teller. Ich habe die Fahrmaschine und die Schichtschreie dort gelassen.",
+        "language": "de",
+        "model": "voxtral-mini-latest",
+        "latencyMs": 649,
+        "audioSeconds": 25,
+        "wer": {
+          "wer": 66.7,
+          "substitutions": 30,
+          "deletions": 13,
+          "insertions": 1,
+          "refWordCount": 66,
+          "hypWordCount": 54
+        }
+      },
+      "whisper": {
+        "transcript": "Da haben wir es gut sehen können. Zu viel war im Trieb bei der Baustelle. Siehst du an der Tafel, sind die Schlitzschrauben gegräbt. Das passiert, wenn die Leitungen nicht ziemlich anfangen. Der Bauherr hat gesagt, er ist ab 8 Uhr da und sperrt da auf. Werkzeug liegt alles im Teller. Ich habe die Bohrmaschine und die Schlitzschrauben dort gelassen.",
+        "language": "german",
+        "model": "whisper-1",
+        "latencyMs": 1965,
+        "audioSeconds": 25.3700008392334,
+        "wer": {
+          "wer": 65.2,
+          "substitutions": 25,
+          "deletions": 12,
+          "insertions": 6,
+          "refWordCount": 66,
+          "hypWordCount": 60
+        }
+      }
+    },
+    {
+      "recording": {
+        "file": "text-10.ogg",
+        "textNum": 7,
+        "variant": "Dialekt",
+        "background": "Baustelle",
+        "description": "Notfall, aufgeregt + Lärm"
+      },
+      "referenceText": "Chef, du musst kurz herkommen oder den Huber schicken. Ich hab bei der Demontage vom alten Verteilerkasten eine blanke Phase entdeckt die nicht abgesichert war. Die gesamte Küche hängt auf einem einzigen B10 Automaten ohne FI. Das ist lebensgefährlich. Ich hab den Hauptschalter rausgenommen und alles abgeklebt. Aber da muss heute noch jemand ran, die Familie hat kleine Kinder.",
+      "voxtral": {
+        "transcript": "Chef, ganz dringend, du musst unbedingt herkommen zu der Hure. Ich habe bei der Thementaste von der Teilerkosten eine lange Phase im Bild. Und die ist mir da gesichert. Die gesamte Küche hängt auf einem PC-Automaten ohne FI. Das ist lästig. Ich habe den Hauptsäuter rausgenommen und alles abgetreten. Aber du musst heute nicht kommen. Die Familie hat kleine Kinder.",
+        "language": "de",
+        "model": "voxtral-mini-latest",
+        "latencyMs": 616,
+        "audioSeconds": 24,
+        "wer": {
+          "wer": 52.5,
+          "substitutions": 23,
+          "deletions": 3,
+          "insertions": 5,
+          "refWordCount": 59,
+          "hypWordCount": 61
+        }
+      },
+      "whisper": {
+        "transcript": "Ich schrei ganz dringend, du musst unbedingt herkommen zu den Huren. Ich hab bei der Dämonentastung von Deutschland eine blanke Faser eingekriegt und die ist nicht abgesichert. Die gesamte Küche hängt auf dem WC-Automaten, das ist lebensgefährlich. Ich hab den Hauptschalter rausgenommen und alles angeklebt, aber du musst herkommen, die Familie hat kleine Kinder.",
+        "language": "german",
+        "model": "whisper-1",
+        "latencyMs": 1517,
+        "audioSeconds": 24.450000762939453,
+        "wer": {
+          "wer": 49.2,
+          "substitutions": 15,
+          "deletions": 9,
+          "insertions": 5,
+          "refWordCount": 59,
+          "hypWordCount": 55
+        }
+      }
+    },
+    {
+      "recording": {
+        "file": "text-11.ogg",
+        "textNum": 8,
+        "variant": "Normal",
+        "background": "Stille",
+        "description": "Angebot/Nachkalkulation"
+      },
+      "referenceText": "Die PV-Anlage beim Schuster wird teurer als angeboten. Wir brauchen zusätzlich einen Überspannungsschutz Typ 1 und Typ 2 für den Zählerkasten, das war im Angebot nicht drin. Außerdem ist die Dachneigung steiler als geplant, wir brauchen andere Montageschienen. Ich schätz so 800 bis 1000 Euro Mehrkosten. Soll ich das direkt mit dem Kunden besprechen oder machst du das?",
+      "voxtral": {
+        "transcript": "Die BV-Anlage bei den Schuster wird teurer als angeboten. Wir brauchen zusätzlich einen Überspannungsschutz Typ 1 und Typ 2 für den Zählerkasten. Das war im Angebot nicht so drin. Außerdem ist die Dachneigung steiler als geplant. Wir brauchen andere Montageschienen. Ich schätze so 800 bis 1000 Euro Mehrkosten. Soll ich das direkt mit den Kunden besprechen oder magst du das?",
+        "language": "de",
+        "model": "voxtral-mini-latest",
+        "latencyMs": 643,
+        "audioSeconds": 26,
+        "wer": {
+          "wer": 11.9,
+          "substitutions": 5,
+          "deletions": 0,
+          "insertions": 2,
+          "refWordCount": 59,
+          "hypWordCount": 61
+        }
+      },
+      "whisper": {
+        "transcript": "Die BV-Anlage bei der Schuster wird teurer als angeboten. Wir brauchen zusätzlich einen Überspannungsschutz Typ 1 und Typ 2 für den Zählerkasten. Das war im Angebot nicht so dringend. Außerdem ist die Dachneigung steiler als geplant. Wir brauchen andere Montageschienen. Ich schätze 800 bis 1000 Euro mehr kosten. Soll ich das direkt mit dem Kunden besprechen oder magst du das? Vielen Dank. Bis zum nächsten Mal. ",
+        "language": "german",
+        "model": "whisper-1",
+        "latencyMs": 1745,
+        "audioSeconds": 26.729999542236328,
+        "wer": {
+          "wer": 27.1,
+          "substitutions": 6,
+          "deletions": 1,
+          "insertions": 9,
+          "refWordCount": 59,
+          "hypWordCount": 67
+        }
+      }
+    },
+    {
+      "recording": {
+        "file": "text-12.ogg",
+        "textNum": 2,
+        "variant": "Ausländischer Akzent",
+        "background": "Radio",
+        "description": "Material-Bestellung, Akzent + Radio"
+      },
+      "referenceText": "Für morgen brauch ich bitte folgendes Material: drei Stück Sicherungsautomaten B16, einen FI-Schutzschalter 40 Ampere null Komma null drei, 50 Meter NYM-J drei mal eins Komma fünf, eine PE-Schiene für den Zählerkasten, und ein paar Wago-Klemmen. Liegt im Lager oder muss das bestellt werden?",
+      "voxtral": {
+        "transcript": "Guten Morgen, ich brauche Material. Sicherungsautomaten B16, 3 Stück. Eine Schuttschalter 40 Ampere, 0,03. 50 3x1,5, 50 Meter Trag. Brauchen die Schiene, Zählerkasten, Wago-Klemmen. Ist im Lager oder bestellen?",
+        "language": "de",
+        "model": "voxtral-mini-latest",
+        "latencyMs": 614,
+        "audioSeconds": 33,
+        "wer": {
+          "wer": 70.8,
+          "substitutions": 16,
+          "deletions": 17,
+          "insertions": 1,
+          "refWordCount": 48,
+          "hypWordCount": 32
+        }
+      },
+      "whisper": {
+        "transcript": "Guten Morgen, ich brauche Material. Sicherungsautomaten B16, drei Stück, eine Zugschalter 40 Ampere, Komma 0,3, 50 3x1,5, 50 Meter Trag. Ich brauche die Drehschiene, Zellerkasten, Wartepumpe. Ist im Lager oder bestellen.",
+        "language": "german",
+        "model": "whisper-1",
+        "latencyMs": 1539,
+        "audioSeconds": 33.56999969482422,
+        "wer": {
+          "wer": 77.1,
+          "substitutions": 20,
+          "deletions": 16,
+          "insertions": 1,
+          "refWordCount": 48,
+          "hypWordCount": 33
+        }
+      }
+    }
+  ]
+}

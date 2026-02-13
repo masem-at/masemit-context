@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-13T05:15:23Z",
-  "commit_sha": "3503fbe0f49e52fee7784d2ee87e7a41feec9133",
-  "commit_message": "Fix code review findings: Canvas colors, server validation, MIME handling, dead code\n"
+  "synced_at": "2026-02-13T10:46:40Z",
+  "commit_sha": "f51034a3667a85255a23c0f28b0de9f33504fb08",
+  "commit_message": "Mark Story 6.2 done: STT integration and evaluation complete\n"
 }

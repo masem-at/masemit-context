@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-13 05:15:23 UTC | Commit: `3503fbe0f49e52fee7784d2ee87e7a41feec9133`
+> Last sync: 2026-02-13 10:46:40 UTC | Commit: `f51034a3667a85255a23c0f28b0de9f33504fb08`
 
 ---
 
@@ -26,6 +26,7 @@
 - [`5-1-database-schema-extension-and-app-shell.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/5-1-database-schema-extension-and-app-shell.md)
 - [`5-2-magic-link-authentication.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/5-2-magic-link-authentication.md)
 - [`6-1-voice-recording-and-upload.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/6-1-voice-recording-and-upload.md)
+- [`6-2-mistral-voxtral-stt-integration-and-evaluation.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/6-2-mistral-voxtral-stt-integration-and-evaluation.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
@@ -46,6 +47,10 @@
 ## _bmad-output/planning-artifacts
 
 - [`ux-design-specification.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/planning-artifacts/ux-design-specification.md)
+
+## docs/_masemIT/audios
+
+- [`stt-test-skripte.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/_masemIT/audios/stt-test-skripte.md)
 
 ## docs/_masemIT
 
@@ -68,6 +73,16 @@
 - [`architecture-sprint0-supplement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/architecture-sprint0-supplement.md)
 - [`company-info.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/company-info.md)
 - [`decisions.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions.md)
+
+## docs/decisions
+
+- [`ADR-001 - Mistral AI Scale Plan statt Experiment.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-001 - Mistral AI Scale Plan statt Experiment.md)
+- [`ADR-002 - Kein Cookie Consent Banner.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-002 - Kein Cookie Consent Banner.md)
+- [`ADR-003 - Mistral SDK statt REST fetch.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-003 - Mistral SDK statt REST fetch.md)
+- [`ADR-004 - STT Provider Evaluation Voxtral vs Whisper.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-004 - STT Provider Evaluation Voxtral vs Whisper.md)
+
+## docs
+
 - [`project-context.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/project-context.md)
 
 ## docs/research
@@ -75,6 +90,8 @@
 - [`pilot-akquise-elektrotechnik-2026-02.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/pilot-akquise-elektrotechnik-2026-02.md)
 - [`pilot-mail-vorlage.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/pilot-mail-vorlage.md)
 - [`pilot-mails-komplett.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/pilot-mails-komplett.md)
+- [`stt-evaluation-raw-results.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/stt-evaluation-raw-results.json)
+- [`stt-evaluation-voxtral-2026-02.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/stt-evaluation-voxtral-2026-02.md)
 
 ## docs
 
