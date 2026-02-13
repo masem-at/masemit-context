@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-13T08:34:34Z",
-  "commit_sha": "ac30ed6833228379f92c8a3a221ad3326d9bdcac",
-  "commit_message": "feat: add voter transparency note to DVQ table in Governance Audit PDF\n"
+  "synced_at": "2026-02-13T11:07:42Z",
+  "commit_sha": "8c145e98af87b9718da28ec9d705cf4e1d65966e",
+  "commit_message": "docs: update project_context.md with session decisions\n"
 }

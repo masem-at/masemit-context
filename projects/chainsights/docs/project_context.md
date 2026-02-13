@@ -215,6 +215,9 @@ Must reflect current tiers:
 | 2026-02-13 | VQS Neon timestamp fix | **Production bug:** `TypeError: e.toISOString is not a function` in VQS API + PDF generator. Neon serverless returns strings for `max(timestamp)`, drizzle's `mapToDriverValue` calls `.toISOString()` on it. Fix: raw SQL template `sql\`col = \${isoString}\`` bypasses mapToDriverValue. Commit `28722ae`. |
 | 2026-02-13 | PDF voter transparency note | DVQ table in Governance Audit PDF now shows "Showing X voters with ≥3 analyzed votes out of Y total active voters." Prevents confusion when report shows 21 voters vs 94 on website (filtering threshold). |
 | 2026-02-13 | HPR Percentile → Backlog | "How You Compare" HPR percentile display (e.g. "Top 48%" for 9.8 HPR) is misleading — higher % should be better. Winston's Option B: replace with "Rank 23 of 47" or flip to "Top N%". Not a blocker, deferred to backlog. |
+| 2026-02-13 | VQS Subquery Fix (Timestamp Round-Trip) | **Production bug:** Neon driver returns `max(timestamp)` as string → passing back as query parameter caused format mismatch → API returned stale snapshot data (old VQS scores). **Fix:** PostgreSQL subquery `WHERE snapshot_date = (SELECT max(...))` keeps comparison entirely in DB. Applied to both VQS API and PDF generator. Commit `875199f`. |
+| 2026-02-13 | VQS Distribution Updated (Equal-Weight) | **Global benchmark post-fix:** 4,279 voters, 24 DAOs. Median 3.9 (was 3.7), Mean 4.3, P25=3.4, P75=4.9. Buckets: Red 3.5%, Orange 73.5%, Yellow 18.5%, Green 4.4%. Archetypes: Pluralistic (CVX 7.8, Aavegotchi 7.1, Frax 6.7), Mixed (Arbitrum 4.2, Balancer 4.4), Consensus (ENS 3.2, Uniswap 3.6, Lido 1.8). Methodology page benchmarks updated to match. |
+| 2026-02-13 | Engagement Hub Phase 3 + X Recovery — BLOCKED | All 3 X accounts suspended. Signal Scanner requires X API. Outreach handled manually via claude.ai. Unblocked when accounts recovered. |
 
 ## Follow-Up: Score Card Compliance (P0/P1)
 
