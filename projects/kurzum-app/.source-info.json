@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-13T15:31:23Z",
-  "commit_sha": "0b2dcc05b275990797fb24afc47adb7f3f711355",
-  "commit_message": "Implement voice message dashboard with AI summary cards (Story 7.1)\n"
+  "synced_at": "2026-02-13T16:00:22Z",
+  "commit_sha": "fbcd1f23649d14c0bf45caa4102eeb4c13448a2d",
+  "commit_message": "Implement audio file upload for research pipeline testing (Story 7.2)\n"
 }

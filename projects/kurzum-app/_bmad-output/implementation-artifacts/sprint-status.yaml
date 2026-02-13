@@ -91,6 +91,7 @@ development_status:
   epic-6-retrospective: optional
 
   # Epic 7: Dashboard & Research Documentation
-  epic-7: done
+  epic-7: in-progress
   7-1-voice-message-dashboard: done
+  7-2-audio-file-upload-for-testing: done
   epic-7-retrospective: optional

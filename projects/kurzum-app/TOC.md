@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-13 15:31:23 UTC | Commit: `0b2dcc05b275990797fb24afc47adb7f3f711355`
+> Last sync: 2026-02-13 16:00:22 UTC | Commit: `fbcd1f23649d14c0bf45caa4102eeb4c13448a2d`
 
 ---
 
@@ -29,6 +29,7 @@
 - [`6-2-mistral-voxtral-stt-integration-and-evaluation.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/6-2-mistral-voxtral-stt-integration-and-evaluation.md)
 - [`6-3-mistral-llm-summarization.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/6-3-mistral-llm-summarization.md)
 - [`7-1-voice-message-dashboard.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/7-1-voice-message-dashboard.md)
+- [`7-2-audio-file-upload-for-testing.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/7-2-audio-file-upload-for-testing.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
