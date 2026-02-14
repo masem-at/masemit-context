@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-13 16:00:22 UTC | Commit: `fbcd1f23649d14c0bf45caa4102eeb4c13448a2d`
+> Last sync: 2026-02-14 11:43:02 UTC | Commit: `0c721ec7cce4557fcc5033d3cc1e96253618c7d0`
 
 ---
 
@@ -30,13 +30,18 @@
 - [`6-3-mistral-llm-summarization.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/6-3-mistral-llm-summarization.md)
 - [`7-1-voice-message-dashboard.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/7-1-voice-message-dashboard.md)
 - [`7-2-audio-file-upload-for-testing.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/7-2-audio-file-upload-for-testing.md)
+- [`8-1-multi-tenant-data-model-and-auth-context.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/8-1-multi-tenant-data-model-and-auth-context.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
 
+- [`architecture-sprint1.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/planning-artifacts/architecture-sprint1.md)
 - [`architecture.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/planning-artifacts/architecture.md)
 - [`epics.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/planning-artifacts/epics.md)
 - [`implementation-readiness-report-2026-02-10.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/planning-artifacts/implementation-readiness-report-2026-02-10.md)
+- [`implementation-readiness-report-2026-02-13.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/planning-artifacts/implementation-readiness-report-2026-02-13.md)
+- [`implementation-readiness-report-2026-02-14.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/planning-artifacts/implementation-readiness-report-2026-02-14.md)
+- [`prd-sprint1.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/planning-artifacts/prd-sprint1.md)
 - [`prd-validation-report.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/planning-artifacts/prd-validation-report.md)
 - [`prd.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/planning-artifacts/prd.md)
 - [`product-brief-kurzum-app-2026-02-08.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/planning-artifacts/product-brief-kurzum-app-2026-02-08.md)
@@ -58,6 +63,7 @@
 ## docs/_masemIT
 
 - [`bmad-briefing-kurzum-sprint0.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/_masemIT/bmad-briefing-kurzum-sprint0.md)
+- [`bmad-briefing-kurzum-sprint1.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/_masemIT/bmad-briefing-kurzum-sprint1.md)
 
 ## docs/_masemIT/foerderungen
 
@@ -66,6 +72,7 @@
 ## docs/_masemIT
 
 - [`kurzum-bmad-do-dont-liste.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/_masemIT/kurzum-bmad-do-dont-liste.md)
+- [`kurzum-erklaervideo-skript.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/_masemIT/kurzum-erklaervideo-skript.md)
 
 ## docs/_masemIT/requirements
 

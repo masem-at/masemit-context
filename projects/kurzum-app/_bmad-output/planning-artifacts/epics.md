@@ -2,12 +2,24 @@
 stepsCompleted: [1, 2, 3, 4]
 status: 'complete'
 completedAt: '2026-02-10'
+lastEdited: '2026-02-13'
 inputDocuments:
   - 'prd.md'
   - 'architecture.md'
   - 'ux-design-specification.md'
   - 'docs/project-context.md'
   - 'docs/_masemIT/requirements/requirement-kurzum-landing-page-2026-02-10.md'
+sprint1:
+  stepsCompleted: ['step-01-validate-prerequisites', 'step-02-design-epics', 'step-03-create-stories', 'step-04-final-validation']
+  status: 'complete'
+  completedAt: '2026-02-13'
+  inputDocuments:
+    - '_bmad-output/planning-artifacts/prd-sprint1.md'
+    - '_bmad-output/planning-artifacts/architecture-sprint1.md'
+    - 'docs/ux-sprint0-app-specs.md'
+  epics: [8, 9, 10, 11]
+  stories: 10
+  frs_covered: 22
 scopeConstraint: 'ONLY Recruiting Landing Page — FFG funding constraint, no app development before grant approval (expected May/June 2026)'
 ---
 
@@ -1058,3 +1070,474 @@ So that I have a morning overview of all field reports without making a single p
 **When** rendered
 **Then** content is centered with max-width 720px
 **And** cards have comfortable spacing
+
+---
+
+# Sprint 1: Project Assignment & Inbox (KW 13+)
+
+**Scope:** AI Project Assignment, Inbox, Project CRUD, Dashboard Rebuild, Tenant Isolation Prep
+**PRD:** `_bmad-output/planning-artifacts/prd-sprint1.md`
+**Architecture:** `_bmad-output/planning-artifacts/architecture-sprint1.md`
+**UX:** `docs/ux-sprint0-app-specs.md` (Sprint 0 baseline sufficient)
+
+### Sprint 1 Requirements Inventory
+
+**Functional Requirements (22 new — S1-FR1–5 carried from Sprint 0, S1-FR25–26 done via Story 7.2):**
+
+S1-FR6: System automatically assigns a voice message to the most likely project based on transcript content, active project list, and speaker's recent message history
+S1-FR7: System produces a confidence score (0.0–1.0) for each assignment decision
+S1-FR8: System auto-assigns messages with confidence >=0.7 and routes messages with confidence <0.7 to the Inbox
+S1-FR9: User can see which project a message was assigned to and the confidence level after processing
+S1-FR10: User can correct an AI assignment by reassigning a message to a different project
+S1-FR11: Meister can create a new project with name, customer name, address, and description
+S1-FR12: Meister can edit project details
+S1-FR13: Meister can view a project's detail page with chronological timeline of all assigned messages
+S1-FR14: Meister can change a project's status (active, paused, completed)
+S1-FR15: Meister can view a list of all projects with last activity and message count
+S1-FR16: Meister can access an Inbox showing all voice messages without project assignment
+S1-FR17: Meister can manually assign an unassigned message to an existing project from the Inbox
+S1-FR18: Meister can create a new project from the Inbox with fields pre-filled by AI from the message summary
+S1-FR19: System displays an Inbox badge/counter in the navigation showing unassigned message count
+S1-FR20: Assigned messages disappear from Inbox and appear in the project timeline
+S1-FR21: Meister can view a project-based dashboard showing all active projects with latest activity and daily message count
+S1-FR22: Meister can navigate from a dashboard project card to the project detail timeline
+S1-FR23: System stores prompt version identifier with each voice message's AI results
+S1-FR24: System stores assignment metadata per message: assignedBy (ai/user), confidence score, AI-suggested project ID, reasoning
+S1-FR27: All new database tables include companyId as required foreign key
+S1-FR28: User model includes role field (monteur/meister/buero) populated at account level
+S1-FR29: Session context includes userId, companyId, and role for all authenticated requests
+
+**Non-Functional Requirements:**
+
+S1-NFR1: Extended pipeline latency (STT + Summary + Assignment) <45 seconds
+S1-NFR2: Dashboard load with project cards <2 seconds
+S1-NFR3: Inbox page load <2 seconds
+S1-NFR4: Project timeline load <3 seconds
+S1-NFR5: Data residency 100% EU for all new data (projects, assignments)
+S1-NFR6: Company data isolation — every DB query on new tables filtered by companyId
+S1-NFR7: AI API keys server-side only, never exposed to client
+S1-NFR8: Prompt content security — no user PII in prompt logs or error messages
+S1-NFR9: Pipeline regression — 0 new failure modes vs. Sprint 0
+S1-NFR10: Graceful degradation — assignment failure -> message saved with projectId=null (Inbox)
+S1-NFR11: JSON parse reliability >95% valid JSON from assignment LLM response
+S1-NFR12: Touch targets >=48px for all new interactive elements
+S1-NFR13: Contrast ratio WCAG AA (4.5:1) for all new UI
+
+**Additional Requirements from Architecture:**
+
+- Schema Migration: 7-step Drizzle migration sequence (companies → users extension → seed → NOT NULL → projects → project_members → voice_messages extension)
+- getAuthContext() helper replaces middleware header injection — returns { userId, companyId, role }
+- Separate LLM Calls: Summary (LLM #1) + Assignment (LLM #2) sequential, NOT combined
+- Server Actions for all CRUD mutations; Route Handler only for POST /api/voice (multipart)
+- companyId filtering: every DB query on tenant-scoped tables MUST filter by companyId
+- Confidence routing: >=0.7 auto-assign, <0.7 → Inbox (projectId=null)
+- Assignment failure MUST NOT change voice message status — "done" stays "done"
+- Prompt versioning: constants in lib/ai/prompts.ts, stored in llmPromptVersion DB field
+- Implementation sequence: Schema → Auth Helper → Middleware → Projects CRUD → Assignment Prompt → Pipeline Extension → Inbox → Dashboard
+
+### Sprint 1 FR Coverage Map
+
+| FR | Epic | Description |
+|---|---|---|
+| S1-FR6 | Epic 9 | AI auto-assigns voice message to project |
+| S1-FR7 | Epic 9 | Confidence score (0.0–1.0) |
+| S1-FR8 | Epic 9 | Confidence routing (>=0.7 auto, <0.7 Inbox) |
+| S1-FR9 | Epic 9 | Display assignment + confidence after processing |
+| S1-FR10 | Epic 10 | Correct AI assignment (reassign) |
+| S1-FR11 | Epic 8 | Create project (name, customer, address, description) |
+| S1-FR12 | Epic 8 | Edit project details |
+| S1-FR13 | Epic 8 | Project detail page with timeline |
+| S1-FR14 | Epic 8 | Change project status (active/paused/completed) |
+| S1-FR15 | Epic 8 | Project list with activity + message count |
+| S1-FR16 | Epic 10 | Inbox page (unassigned messages) |
+| S1-FR17 | Epic 10 | Manual assignment from Inbox |
+| S1-FR18 | Epic 10 | AI-prefilled new project from Inbox |
+| S1-FR19 | Epic 10 | Inbox badge/counter in navigation |
+| S1-FR20 | Epic 10 | Assigned messages leave Inbox → timeline |
+| S1-FR21 | Epic 11 | Project-based dashboard with activity cards |
+| S1-FR22 | Epic 11 | Dashboard → project timeline navigation |
+| S1-FR23 | Epic 9 | Prompt version tracking in DB |
+| S1-FR24 | Epic 9 | Assignment metadata (assignedBy, confidence, reasoning) |
+| S1-FR27 | Epic 8 | companyId on all new tables |
+| S1-FR28 | Epic 8 | User role field (monteur/meister/buero) |
+| S1-FR29 | Epic 8 | Session context with userId, companyId, role |
+
+## Sprint 1 Epic List
+
+### Epic 8: Project Management & Tenant Foundation
+After this epic, the Meister can create, edit, and view construction projects with chronological timelines. The multi-tenant data model (companies, companyId) is in place — all queries are tenant-isolated via getAuthContext() and companyId filtering.
+**FRs covered:** S1-FR11, S1-FR12, S1-FR13, S1-FR14, S1-FR15, S1-FR27, S1-FR28, S1-FR29
+**NFRs covered:** S1-NFR5, S1-NFR6, S1-NFR12, S1-NFR13
+
+### Epic 9: AI Project Assignment & R&D Evaluation
+After this epic, voice messages are automatically assigned to the correct construction project by AI. Confidence scores, prompt versions, and assignment reasoning are stored for FFG research documentation (Research Question #3).
+**FRs covered:** S1-FR6, S1-FR7, S1-FR8, S1-FR9, S1-FR23, S1-FR24
+**NFRs covered:** S1-NFR1, S1-NFR7, S1-NFR8, S1-NFR9, S1-NFR10, S1-NFR11
+
+### Epic 10: Assignment Inbox & Correction
+After this epic, the Meister can review unassigned voice messages in the Inbox, manually assign them to existing projects, and create new projects with AI-prefilled data. The inbox badge in navigation shows unassigned message count. Corrections are tracked (assignedBy: 'user') for accuracy measurement.
+**FRs covered:** S1-FR10, S1-FR16, S1-FR17, S1-FR18, S1-FR19, S1-FR20
+**NFRs covered:** S1-NFR3, S1-NFR12
+
+### Epic 11: Project-Based Dashboard
+After this epic, the Meister sees a project-based morning overview of all active construction sites with latest activity, message counts, and direct navigation to project timelines — replacing the flat voice message list from Sprint 0.
+**FRs covered:** S1-FR21, S1-FR22
+**NFRs covered:** S1-NFR2, S1-NFR4
+
+---
+
+## Epic 8: Project Management & Tenant Foundation
+
+After this epic, the Meister can create, edit, and view construction projects with chronological timelines. The multi-tenant data model (companies, companyId) is in place — all queries are tenant-isolated via getAuthContext() and companyId filtering.
+
+### Story 8.1: Multi-Tenant Data Model & Auth Context
+
+As a Meister,
+I want my data to be isolated per company,
+So that each construction business sees only its own projects and messages.
+
+**Acceptance Criteria:**
+
+**Given** the database has existing Sprint 0 tables (users, sessions, magic_links, voice_messages)
+**When** the migration runs
+**Then** a `companies` table exists with id, name, createdAt columns
+**And** the `users` table has a non-nullable `companyId` foreign key referencing companies
+**And** the `users` table has a non-nullable `role` column with default "monteur" and allowed values "monteur", "meister", "buero"
+**And** a seed company "masemIT Testbetrieb" exists and Mario's user is linked to it with role "meister"
+**And** the `projects` table exists with id, companyId, name, customerName, address, description, status, createdAt, updatedAt
+**And** the `project_members` table exists with projectId, userId
+**And** the `voice_messages` table has new nullable columns: projectId, companyId, aiConfidence, assignedBy, aiReasoning, llmPromptVersion, assignedAt, aiSuggestedProjectId
+**And** existing voice_messages have companyId backfilled from their user's company
+
+**Given** a user with a valid session
+**When** calling `getAuthContext()`
+**Then** it returns `{ userId, companyId, role }` from the session + user record
+**And** it throws if no valid session exists
+
+**Given** the middleware is extended
+**When** a request hits `/app/*` or `/api/voice/*`
+**Then** the middleware validates that the user has a companyId
+**And** the `x-user-id` header injection from Sprint 0 is removed (replaced by getAuthContext)
+
+**FRs:** S1-FR27, S1-FR28, S1-FR29 | **NFRs:** S1-NFR5, S1-NFR6
+
+### Story 8.2: Create & Edit Projects
+
+As a Meister,
+I want to create and edit construction projects with name, customer, address, and description,
+So that I can organize my construction sites in the system.
+
+**Acceptance Criteria:**
+
+**Given** a logged-in Meister on `/app/projects/new`
+**When** filling out name (required), customer name, address, description and submitting
+**Then** a new project is created with status "active" and the Meister's companyId
+**And** the Meister is redirected to the project detail page
+
+**Given** a logged-in Meister on a project's detail page
+**When** clicking "Bearbeiten" and updating project fields
+**Then** the project details are saved
+**And** the page shows the updated values
+
+**Given** a logged-in Meister viewing a project
+**When** changing the project status via a dropdown (active, paused, completed)
+**Then** the status is updated immediately
+**And** the change is reflected on the project list and detail pages
+
+**Given** a Server Action for project mutations
+**When** creating or updating a project
+**Then** `getAuthContext()` is called to get the companyId
+**And** Zod validates the input
+**And** the companyId is injected from AuthContext, never from client input
+**And** `revalidatePath` is called after mutation
+
+**FRs:** S1-FR11, S1-FR12, S1-FR14 | **NFRs:** S1-NFR12, S1-NFR13
+
+### Story 8.3: Project List & Detail Timeline
+
+As a Meister,
+I want to see all my projects with last activity and message count, and view a project's chronological timeline,
+So that I can quickly find and monitor my construction sites.
+
+**Acceptance Criteria:**
+
+**Given** a logged-in Meister on `/app/projects`
+**When** the page loads
+**Then** all projects for the Meister's company are listed
+**And** each project shows: name, customer name, status, last activity timestamp, and count of assigned voice messages
+**And** projects are sorted by last activity (most recent first)
+**And** only projects with the Meister's companyId are shown (tenant isolation)
+
+**Given** a logged-in Meister clicking on a project in the list
+**When** navigating to `/app/projects/[id]`
+**Then** the project detail page shows the project name, customer, address, description, and status
+**And** a chronological timeline of all voice messages assigned to this project is displayed
+**And** each timeline entry shows the voice message summary, timestamp, and assignment info
+**And** the timeline is empty for new projects (no assigned messages yet)
+**And** only messages with the Meister's companyId are shown
+
+**Given** the project list and timeline pages
+**When** rendered
+**Then** all touch targets are >=48px (S1-NFR12)
+**And** contrast ratios meet WCAG AA (S1-NFR13)
+**And** project list loads within 2s (S1-NFR2)
+**And** project timeline loads within 3s (S1-NFR4)
+
+**FRs:** S1-FR13, S1-FR15 | **NFRs:** S1-NFR2, S1-NFR4, S1-NFR12, S1-NFR13
+
+---
+
+## Epic 9: AI Project Assignment & R&D Evaluation
+
+After this epic, voice messages are automatically assigned to the correct construction project by AI. Confidence scores, prompt versions, and assignment reasoning are stored for FFG research documentation (Research Question #3).
+
+### Story 9.1: Assignment Prompt & AI Module
+
+As a Meister,
+I want the system to analyze each voice message and determine which project it belongs to,
+So that messages are automatically organized without manual effort.
+
+**Acceptance Criteria:**
+
+**Given** a transcript, a list of active projects (name, customer, address), and the speaker's last 3 messages with their project assignments
+**When** calling `assignToProject(transcript, userId, companyId)`
+**Then** the function sends the context to Mistral LLM with `ASSIGNMENT_SYSTEM_PROMPT`
+**And** returns `{ projectId: string | null, confidence: number, reasoning: string }`
+**And** confidence is a float between 0.0 and 1.0
+
+**Given** the assignment LLM call
+**When** the response is received
+**Then** valid JSON is parsed successfully in >95% of cases (S1-NFR11)
+**And** the prompt version constant `ASSIGNMENT_PROMPT_VERSION` is defined in `lib/ai/prompts.ts`
+
+**Given** no active projects exist for the company
+**When** assignment is attempted
+**Then** the function returns `{ projectId: null, confidence: 0.0, reasoning: "No active projects" }`
+
+**Given** the assignment function
+**When** it executes
+**Then** AI API keys are never exposed to the client (S1-NFR7)
+**And** no user PII appears in prompt logs or error messages (S1-NFR8)
+
+**FRs:** S1-FR6, S1-FR7 | **NFRs:** S1-NFR7, S1-NFR8, S1-NFR11
+
+### Story 9.2: Voice Pipeline Extension with Assignment Step
+
+As a Meister,
+I want voice messages to be automatically assigned to projects after transcription and summary,
+So that most messages land directly in the correct project timeline.
+
+**Acceptance Criteria:**
+
+**Given** a voice message has been successfully transcribed and summarized (status="done")
+**When** the assignment step runs in the pipeline
+**Then** `assignToProject()` is called with transcript, userId, companyId
+**And** the result (confidence, reasoning, suggestedProjectId) is stored in the voice_messages record
+**And** the `llmPromptVersion` field stores the combined version string (e.g., "summary:SUMMARY_V1,assignment:ASSIGNMENT_V1")
+
+**Given** the assignment returns confidence >= 0.7
+**When** the pipeline completes
+**Then** the voice message's `projectId` is set to the suggested project
+**And** `assignedBy` is set to "ai"
+**And** `assignedAt` is set to the current timestamp
+
+**Given** the assignment returns confidence < 0.7
+**When** the pipeline completes
+**Then** the voice message's `projectId` remains null (appears in Inbox)
+**And** `aiSuggestedProjectId` still stores the AI's best guess
+**And** `assignedBy` remains null
+
+**Given** the assignment step fails (LLM error, timeout, JSON parse failure)
+**When** the pipeline handles the error
+**Then** the voice message status remains "done" (NOT changed to "error")
+**And** `projectId` remains null (message appears in Inbox)
+**And** the existing STT + Summary results are preserved (S1-NFR9)
+**And** the error is logged server-side but does not surface to the user
+
+**Given** the extended pipeline
+**When** measuring total latency (STT + Summary + Assignment)
+**Then** total pipeline time is <45 seconds (S1-NFR1)
+
+**Given** the voice route handler `POST /api/voice`
+**When** processing a voice message
+**Then** it uses `getAuthContext()` instead of the removed `x-user-id` header
+**And** `companyId` is stored on the voice message record
+
+**FRs:** S1-FR8, S1-FR23, S1-FR24 | **NFRs:** S1-NFR1, S1-NFR9, S1-NFR10
+
+### Story 9.3: Assignment Display on Voice Message Cards
+
+As a Meister,
+I want to see which project a voice message was assigned to and the confidence level,
+So that I can verify the AI's decisions and trust the system.
+
+**Acceptance Criteria:**
+
+**Given** a voice message that was auto-assigned by AI (confidence >= 0.7)
+**When** displayed on the dashboard or project timeline
+**Then** the assigned project name is shown
+**And** a confidence indicator is visible (e.g., "Sicher" for >=0.9, "Wahrscheinlich" for >=0.7)
+**And** `assignedBy: "ai"` is indicated visually
+
+**Given** a voice message that was manually assigned by a user
+**When** displayed on the dashboard or project timeline
+**Then** the assigned project name is shown
+**And** `assignedBy: "user"` is indicated visually (e.g., "Manuell zugeordnet")
+
+**Given** a voice message in the Inbox (unassigned, confidence < 0.7)
+**When** displayed in the Inbox
+**Then** the AI's best guess project is shown as a suggestion (from `aiSuggestedProjectId`)
+**And** the low confidence is indicated
+**And** the reasoning summary is accessible
+
+**FRs:** S1-FR9 | **NFRs:** S1-NFR12, S1-NFR13
+
+---
+
+## Epic 10: Assignment Inbox & Correction
+
+After this epic, the Meister can review unassigned voice messages in the Inbox, manually assign them to existing projects, and create new projects with AI-prefilled data. The inbox badge in navigation shows unassigned message count. Corrections are tracked (assignedBy: 'user') for accuracy measurement.
+
+### Story 10.1: Inbox Page & Unassigned Messages
+
+As a Meister,
+I want to access an Inbox showing all voice messages without project assignment,
+So that I can review messages the AI was unsure about and assign them manually.
+
+**Acceptance Criteria:**
+
+**Given** a logged-in Meister navigating to `/app/inbox`
+**When** the page loads
+**Then** all voice messages with `projectId = null` and `status = "done"` for the Meister's company are listed
+**And** each message shows: summary, timestamp, and AI suggestion (project name from `aiSuggestedProjectId` if available)
+**And** messages are sorted by creation date (newest first)
+**And** only messages with the Meister's companyId are shown (tenant isolation)
+**And** the page loads within 2 seconds (S1-NFR3)
+
+**Given** no unassigned messages exist
+**When** the Inbox page loads
+**Then** an empty state is displayed (e.g., "Keine unzugeordneten Nachrichten")
+
+**Given** the Inbox page
+**When** rendered
+**Then** all touch targets are >=48px (S1-NFR12)
+**And** contrast ratios meet WCAG AA
+
+**FRs:** S1-FR16 | **NFRs:** S1-NFR3, S1-NFR12
+
+### Story 10.2: Manual Assignment & Inbox Badge
+
+As a Meister,
+I want to assign an unassigned message to an existing project from the Inbox, and see a badge showing unassigned message count,
+So that I can quickly organize messages and know when action is needed.
+
+**Acceptance Criteria:**
+
+**Given** a Meister viewing an unassigned message in the Inbox
+**When** clicking the "Zuordnen" button
+**Then** a dropdown shows all active projects for the Meister's company
+**And** selecting a project assigns the message to that project
+**And** `assignedBy` is set to "user"
+**And** `assignedAt` is set to the current timestamp
+**And** the message disappears from the Inbox
+**And** the message appears in the project's timeline
+
+**Given** a Meister viewing a message that was previously auto-assigned by AI
+**When** clicking "Neu zuordnen" on the project detail or dashboard
+**Then** a dropdown shows all active projects
+**And** selecting a different project reassigns the message
+**And** `assignedBy` is updated to "user"
+**And** the original AI suggestion remains stored in `aiSuggestedProjectId`
+
+**Given** the app layout navigation
+**When** any page loads
+**Then** the Inbox nav item shows a badge with the count of unassigned messages (projectId = null, status = "done")
+**And** the badge updates when messages are assigned or new messages arrive
+**And** the badge is hidden when the count is 0
+
+**Given** a message is assigned from the Inbox
+**When** the Server Action completes
+**Then** `revalidatePath("/app/inbox")` and `revalidatePath("/app")` are called
+**And** the Inbox badge count is refreshed
+
+**FRs:** S1-FR10, S1-FR17, S1-FR19, S1-FR20 | **NFRs:** S1-NFR12
+
+### Story 10.3: Create Project from Inbox with AI Pre-fill
+
+As a Meister,
+I want to create a new project directly from the Inbox with fields pre-filled from the AI summary,
+So that I can quickly set up a new construction site when a message doesn't match any existing project.
+
+**Acceptance Criteria:**
+
+**Given** a Meister viewing an unassigned message in the Inbox
+**When** clicking "Neues Projekt erstellen"
+**Then** the project creation form opens with fields pre-filled from the voice message summary
+**And** the AI extracts: possible project name, customer name, and address from the summary/transcript
+**And** the Meister can review and edit all pre-filled values before submitting
+
+**Given** the Meister submits the pre-filled project form
+**When** the project is created
+**Then** the new project is saved with the Meister's companyId
+**And** the voice message is automatically assigned to the new project
+**And** `assignedBy` is set to "user"
+**And** the Meister is redirected to the new project's detail page
+**And** the message disappears from the Inbox
+
+**Given** the AI cannot extract meaningful data from the summary
+**When** the "Neues Projekt erstellen" form opens
+**Then** the form fields are empty (not pre-filled with garbage)
+**And** the Meister can fill in all fields manually
+
+**FRs:** S1-FR18 | **NFRs:** S1-NFR12
+
+---
+
+## Epic 11: Project-Based Dashboard
+
+After this epic, the Meister sees a project-based morning overview of all active construction sites with latest activity, message counts, and direct navigation to project timelines — replacing the flat voice message list from Sprint 0.
+
+### Story 11.1: Project-Based Dashboard Rebuild
+
+As a Meister,
+I want to see a project-based dashboard showing all active construction sites with latest activity and daily message count,
+So that I get a quick morning overview of what's happening across all my projects.
+
+**Acceptance Criteria:**
+
+**Given** a logged-in Meister on `/app` (dashboard)
+**When** the page loads
+**Then** the dashboard shows project cards instead of the flat voice message list from Sprint 0
+**And** each card shows: project name, customer name, status, last activity timestamp, and count of today's voice messages
+**And** only active projects for the Meister's company are shown (tenant isolation)
+**And** cards are sorted by last activity (most recent first)
+**And** the dashboard loads within 2 seconds (S1-NFR2)
+
+**Given** a Meister viewing a project card on the dashboard
+**When** clicking on the card
+**Then** the Meister navigates to `/app/projects/[id]` (project detail timeline)
+**And** the timeline loads within 3 seconds (S1-NFR4)
+
+**Given** a Meister with no active projects
+**When** the dashboard loads
+**Then** an empty state is shown with a call-to-action to create a first project
+
+**Given** the dashboard
+**When** rendered
+**Then** all touch targets are >=48px (S1-NFR12)
+**And** contrast ratios meet WCAG AA (S1-NFR13)
+**And** project cards have comfortable spacing for mobile use
+
+**FRs:** S1-FR21, S1-FR22 | **NFRs:** S1-NFR2, S1-NFR4, S1-NFR12, S1-NFR13
+
+---
+
+### Sprint 1 Story Summary
+
+| Epic | Stories | FRs Covered |
+|------|---------|-------------|
+| Epic 8: Project Management & Tenant Foundation | 8.1, 8.2, 8.3 | FR11-15, FR27-29 |
+| Epic 9: AI Project Assignment & R&D Evaluation | 9.1, 9.2, 9.3 | FR6-9, FR23-24 |
+| Epic 10: Assignment Inbox & Correction | 10.1, 10.2, 10.3 | FR10, FR16-20 |
+| Epic 11: Project-Based Dashboard | 11.1 | FR21-22 |
+| **Total** | **10 Stories** | **22/22 new FRs** |

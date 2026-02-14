@@ -1,4 +1,4 @@
-# generated: 2026-02-10
+# generated: 2026-02-13
 # project: kurzum-app
 # project_key: NOKEY
 # tracking_system: file-system
@@ -33,13 +33,17 @@
 # - SM typically creates next story after previous one is 'done' to incorporate learnings
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 
-generated: 2026-02-10
+generated: 2026-02-13
 project: kurzum-app
 project_key: NOKEY
 tracking_system: file-system
 story_location: _bmad-output/implementation-artifacts
 
 development_status:
+  # ═══════════════════════════════════════════════════
+  # Landing Page (KW 6-7)
+  # ═══════════════════════════════════════════════════
+
   # Epic 1: Project Foundation & Brand Identity
   epic-1: done
   1-1-initialize-nextjs-project-with-design-system: done
@@ -91,7 +95,40 @@ development_status:
   epic-6-retrospective: optional
 
   # Epic 7: Dashboard & Research Documentation
-  epic-7: in-progress
+  epic-7: done
   7-1-voice-message-dashboard: done
   7-2-audio-file-upload-for-testing: done
   epic-7-retrospective: optional
+
+  # ═══════════════════════════════════════════════════
+  # Sprint 1: Project Assignment & Inbox (KW 13+)
+  # PRD: _bmad-output/planning-artifacts/prd-sprint1.md
+  # Architecture: _bmad-output/planning-artifacts/architecture-sprint1.md
+  # UX: docs/ux-sprint0-app-specs.md (Sprint 0 baseline)
+  # ═══════════════════════════════════════════════════
+
+  # Epic 8: Project Management & Tenant Foundation
+  epic-8: in-progress
+  8-1-multi-tenant-data-model-and-auth-context: done
+  8-2-create-and-edit-projects: backlog
+  8-3-project-list-and-detail-timeline: backlog
+  epic-8-retrospective: optional
+
+  # Epic 9: AI Project Assignment & R&D Evaluation
+  epic-9: backlog
+  9-1-assignment-prompt-and-ai-module: backlog
+  9-2-voice-pipeline-extension-with-assignment-step: backlog
+  9-3-assignment-display-on-voice-message-cards: backlog
+  epic-9-retrospective: optional
+
+  # Epic 10: Assignment Inbox & Correction
+  epic-10: backlog
+  10-1-inbox-page-and-unassigned-messages: backlog
+  10-2-manual-assignment-and-inbox-badge: backlog
+  10-3-create-project-from-inbox-with-ai-pre-fill: backlog
+  epic-10-retrospective: optional
+
+  # Epic 11: Project-Based Dashboard
+  epic-11: backlog
+  11-1-project-based-dashboard-rebuild: backlog
+  epic-11-retrospective: optional
