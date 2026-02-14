@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-14T15:59:12Z",
-  "commit_sha": "8adf3a98ab19f28bc54ec7efec285b69883cca76",
-  "commit_message": "Implement inbox page for unassigned voice messages (Story 10.1)\n"
+  "synced_at": "2026-02-14T16:36:33Z",
+  "commit_sha": "0b58cb6da245cf02e6b96d617901ef2c0e0eb72d",
+  "commit_message": "Add manual assignment dropdown and inbox badge (Story 10.2)\n"
 }

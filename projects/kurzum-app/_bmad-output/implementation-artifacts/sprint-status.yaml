@@ -124,7 +124,7 @@ development_status:
   # Epic 10: Assignment Inbox & Correction
   epic-10: in-progress
   10-1-inbox-page-and-unassigned-messages: done
-  10-2-manual-assignment-and-inbox-badge: backlog
+  10-2-manual-assignment-and-inbox-badge: done
   10-3-create-project-from-inbox-with-ai-pre-fill: backlog
   epic-10-retrospective: optional
 
