@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all projects in this context repository.
-> Last updated: 2026-02-14 14:16:55 UTC
+> Last updated: 2026-02-14 14:44:24 UTC
 
 ## How to use
 
@@ -55,8 +55,8 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 ### kurzum-app
 
 - Source: `masem-at/kurzum-app`
-- Last sync: 2026-02-14T14:16:54Z
-- Files: 64
+- Last sync: 2026-02-14T14:44:23Z
+- Files: 65
 - **[📋 Project TOC](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/TOC.md)**
 
 ### masem-analytics

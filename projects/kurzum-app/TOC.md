@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-14 14:16:54 UTC | Commit: `33f6e15250ae530c03d391e1d960e3cf9904e26c`
+> Last sync: 2026-02-14 14:44:23 UTC | Commit: `342c47d56767d3f53e1a360e46e100c86aa4e9a4`
 
 ---
 
@@ -34,6 +34,7 @@
 - [`8-2-create-and-edit-projects.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/8-2-create-and-edit-projects.md)
 - [`8-3-project-list-and-detail-timeline.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/8-3-project-list-and-detail-timeline.md)
 - [`9-1-assignment-prompt-and-ai-module.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/9-1-assignment-prompt-and-ai-module.md)
+- [`9-2-voice-pipeline-extension-with-assignment-step.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/9-2-voice-pipeline-extension-with-assignment-step.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts

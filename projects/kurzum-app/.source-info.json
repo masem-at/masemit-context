@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-14T14:16:54Z",
-  "commit_sha": "33f6e15250ae530c03d391e1d960e3cf9904e26c",
-  "commit_message": "Implement AI project assignment prompt and module (Story 9.1)\n"
+  "synced_at": "2026-02-14T14:44:23Z",
+  "commit_sha": "342c47d56767d3f53e1a360e46e100c86aa4e9a4",
+  "commit_message": "Extend voice pipeline with AI project assignment step (Story 9.2)\n"
 }

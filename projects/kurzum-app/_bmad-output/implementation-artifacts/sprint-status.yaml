@@ -108,7 +108,7 @@ development_status:
   # ═══════════════════════════════════════════════════
 
   # Epic 8: Project Management & Tenant Foundation
-  epic-8: in-progress
+  epic-8: done
   8-1-multi-tenant-data-model-and-auth-context: done
   8-2-create-and-edit-projects: done
   8-3-project-list-and-detail-timeline: done
@@ -117,7 +117,7 @@ development_status:
   # Epic 9: AI Project Assignment & R&D Evaluation
   epic-9: in-progress
   9-1-assignment-prompt-and-ai-module: done
-  9-2-voice-pipeline-extension-with-assignment-step: backlog
+  9-2-voice-pipeline-extension-with-assignment-step: done
   9-3-assignment-display-on-voice-message-cards: backlog
   epic-9-retrospective: optional
 
