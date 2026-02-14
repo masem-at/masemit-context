@@ -115,10 +115,10 @@ development_status:
   epic-8-retrospective: optional
 
   # Epic 9: AI Project Assignment & R&D Evaluation
-  epic-9: in-progress
+  epic-9: done
   9-1-assignment-prompt-and-ai-module: done
   9-2-voice-pipeline-extension-with-assignment-step: done
-  9-3-assignment-display-on-voice-message-cards: backlog
+  9-3-assignment-display-on-voice-message-cards: done
   epic-9-retrospective: optional
 
   # Epic 10: Assignment Inbox & Correction

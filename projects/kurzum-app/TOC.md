@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-14 14:44:23 UTC | Commit: `342c47d56767d3f53e1a360e46e100c86aa4e9a4`
+> Last sync: 2026-02-14 15:22:38 UTC | Commit: `50f1fbd2a8f05601353e1c1f0e06f1b48604075f`
 
 ---
 
@@ -35,6 +35,7 @@
 - [`8-3-project-list-and-detail-timeline.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/8-3-project-list-and-detail-timeline.md)
 - [`9-1-assignment-prompt-and-ai-module.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/9-1-assignment-prompt-and-ai-module.md)
 - [`9-2-voice-pipeline-extension-with-assignment-step.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/9-2-voice-pipeline-extension-with-assignment-step.md)
+- [`9-3-assignment-display-on-voice-message-cards.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/9-3-assignment-display-on-voice-message-cards.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
