@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-14T12:29:15Z",
-  "commit_sha": "c5f8c0fe377238a493505f63effebf52c6736e49",
-  "commit_message": "Implement project CRUD with Server Actions and form components (Story 8.2)\n"
+  "synced_at": "2026-02-14T13:40:11Z",
+  "commit_sha": "c45274806bf79ed2a8eb13e520b2e518f84b15e0",
+  "commit_message": "Implement project list with activity stats and detail timeline (Story 8.3)\n"
 }

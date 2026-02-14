@@ -111,7 +111,7 @@ development_status:
   epic-8: in-progress
   8-1-multi-tenant-data-model-and-auth-context: done
   8-2-create-and-edit-projects: done
-  8-3-project-list-and-detail-timeline: backlog
+  8-3-project-list-and-detail-timeline: done
   epic-8-retrospective: optional
 
   # Epic 9: AI Project Assignment & R&D Evaluation
