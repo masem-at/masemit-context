@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-14 11:43:02 UTC | Commit: `0c721ec7cce4557fcc5033d3cc1e96253618c7d0`
+> Last sync: 2026-02-14 12:29:15 UTC | Commit: `c5f8c0fe377238a493505f63effebf52c6736e49`
 
 ---
 
@@ -31,6 +31,7 @@
 - [`7-1-voice-message-dashboard.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/7-1-voice-message-dashboard.md)
 - [`7-2-audio-file-upload-for-testing.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/7-2-audio-file-upload-for-testing.md)
 - [`8-1-multi-tenant-data-model-and-auth-context.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/8-1-multi-tenant-data-model-and-auth-context.md)
+- [`8-2-create-and-edit-projects.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/8-2-create-and-edit-projects.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts

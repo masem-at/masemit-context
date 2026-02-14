@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-14T11:43:02Z",
-  "commit_sha": "0c721ec7cce4557fcc5033d3cc1e96253618c7d0",
-  "commit_message": "Implement multi-tenant data model and auth context helper (Story 8.1)\n"
+  "synced_at": "2026-02-14T12:29:15Z",
+  "commit_sha": "c5f8c0fe377238a493505f63effebf52c6736e49",
+  "commit_message": "Implement project CRUD with Server Actions and form components (Story 8.2)\n"
 }
