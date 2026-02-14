@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-14 13:40:11 UTC | Commit: `c45274806bf79ed2a8eb13e520b2e518f84b15e0`
+> Last sync: 2026-02-14 14:16:54 UTC | Commit: `33f6e15250ae530c03d391e1d960e3cf9904e26c`
 
 ---
 
@@ -33,6 +33,7 @@
 - [`8-1-multi-tenant-data-model-and-auth-context.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/8-1-multi-tenant-data-model-and-auth-context.md)
 - [`8-2-create-and-edit-projects.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/8-2-create-and-edit-projects.md)
 - [`8-3-project-list-and-detail-timeline.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/8-3-project-list-and-detail-timeline.md)
+- [`9-1-assignment-prompt-and-ai-module.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/9-1-assignment-prompt-and-ai-module.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts

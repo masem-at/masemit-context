@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-14T13:40:11Z",
-  "commit_sha": "c45274806bf79ed2a8eb13e520b2e518f84b15e0",
-  "commit_message": "Implement project list with activity stats and detail timeline (Story 8.3)\n"
+  "synced_at": "2026-02-14T14:16:54Z",
+  "commit_sha": "33f6e15250ae530c03d391e1d960e3cf9904e26c",
+  "commit_message": "Implement AI project assignment prompt and module (Story 9.1)\n"
 }
