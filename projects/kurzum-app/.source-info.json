@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-15T13:41:11Z",
-  "commit_sha": "e5f83ecc7a7ec2d2021dc8fca3d6b8cae8c1f98b",
-  "commit_message": "Document FFG research findings and missing architecture decisions (ADR-007–009)\n"
+  "synced_at": "2026-02-15T14:23:38Z",
+  "commit_sha": "35f118abbd4db22820d9f91c935f0c559ebd1469",
+  "commit_message": "Plan Sprint 2: Team/RBAC, Foto-Capture, Assignment V2, Dashboard extension (4 epics, 10 stories)\n"
 }

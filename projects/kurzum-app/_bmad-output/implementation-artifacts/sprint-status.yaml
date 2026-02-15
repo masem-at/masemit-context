@@ -132,3 +132,36 @@ development_status:
   epic-11: done
   11-1-project-based-dashboard-rebuild: done
   epic-11-retrospective: optional
+
+  # ═══════════════════════════════════════════════════
+  # Sprint 2: Foto-Capture, Team & RBAC, Assignment V2
+  # Briefing: docs/_masemIT/bmad-briefing-kurzum-sprint2.md
+  # Input: ADR-006, docs/tech-debt-sprint1-audit.md
+  # ═══════════════════════════════════════════════════
+
+  # Epic 12: Team-Einladung & RBAC
+  epic-12: backlog
+  12-1-pgenum-role-migration-and-rbac-permission-module: backlog
+  12-2-invitation-system-create-send-redeem: backlog
+  12-3-team-management-ui: backlog
+  12-4-route-protection-and-monteur-data-filtering: backlog
+  epic-12-retrospective: optional
+
+  # Epic 13: Foto-Capture
+  epic-13: backlog
+  13-1-photo-schema-upload-api-and-exif-stripping: backlog
+  13-2-photo-attachment-to-voice-messages: backlog
+  13-3-standalone-photo-upload-to-projects: backlog
+  epic-13-retrospective: optional
+
+  # Epic 14: Assignment V2 & R&D Iteration
+  epic-14: backlog
+  14-1-assignment-v2-prompt-and-continuity-signal: backlog
+  14-2-assignment-v2-evaluation-and-adr-010: backlog
+  epic-14-retrospective: optional
+
+  # Epic 15: Dashboard & Timeline Extension
+  epic-15: backlog
+  15-1-photos-in-project-timeline-and-lightbox: backlog
+  15-2-rbac-filtered-dashboard-and-team-activity: backlog
+  epic-15-retrospective: optional

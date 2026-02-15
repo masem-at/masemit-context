@@ -2,7 +2,7 @@
 stepsCompleted: [1, 2, 3, 4]
 status: 'complete'
 completedAt: '2026-02-10'
-lastEdited: '2026-02-13'
+lastEdited: '2026-02-15'
 inputDocuments:
   - 'prd.md'
   - 'architecture.md'
@@ -20,6 +20,17 @@ sprint1:
   epics: [8, 9, 10, 11]
   stories: 10
   frs_covered: 22
+sprint2:
+  stepsCompleted: ['step-01-validate-prerequisites', 'step-02-design-epics', 'step-03-create-stories']
+  status: 'in-progress'
+  startedAt: '2026-02-15'
+  inputDocuments:
+    - 'docs/_masemIT/bmad-briefing-kurzum-sprint2.md'
+    - 'docs/decisions/ADR-006 - Projekt-Zuordnungs-Evaluierung Assignment Pipeline.md'
+    - 'docs/tech-debt-sprint1-audit.md'
+  epics: [12, 13, 14, 15]
+  stories: 10
+  frs_covered: 18
 scopeConstraint: 'ONLY Recruiting Landing Page — FFG funding constraint, no app development before grant approval (expected May/June 2026)'
 ---
 
@@ -1541,3 +1552,485 @@ So that I get a quick morning overview of what's happening across all my project
 | Epic 10: Assignment Inbox & Correction | 10.1, 10.2, 10.3 | FR10, FR16-20 |
 | Epic 11: Project-Based Dashboard | 11.1 | FR21-22 |
 | **Total** | **10 Stories** | **22/22 new FRs** |
+
+---
+
+# Sprint 2: Foto-Capture, Team & RBAC, Assignment V2
+
+**Scope:** Foto-Capture, Team-Einladung & RBAC, Assignment-Verbesserungen, Dashboard-Erweiterung
+**Briefing:** `docs/_masemIT/bmad-briefing-kurzum-sprint2.md`
+**Input:** ADR-006 (Assignment Baseline 75%), Tech Debt Audit Sprint 1
+**FFG-Relevanz:** AP2 (MVP Development), AP4 (KI-Forschung Projekt-Zuordnung), AP7 (Projektmanagement)
+**Ziel:** Nach Sprint 2 kann ein Pilotbetrieb kurzum.app tatsächlich nutzen — Meister lädt Monteure ein, Monteure sprechen + fotografieren, KI ordnet zu, Rollen werden durchgesetzt.
+
+### Sprint 2 Requirements Inventory
+
+**Functional Requirements (18 new):**
+
+S2-FR1: Meister/Büro can invite team members via email with a role assignment (Monteur/Meister/Büro)
+S2-FR2: Invitation generates a time-limited token (7 days), sends email with join link via Resend
+S2-FR3: Clicking the invitation link triggers Magic Link login/registration and auto-assigns the user to the inviting company with the specified role
+S2-FR4: Meister/Büro can view, change roles, and deactivate team members on /app/team
+S2-FR5: RBAC middleware enforces permissions: Monteur can only view assigned projects, Inbox + Team pages restricted to Meister/Büro
+S2-FR6: Role is stored as pgEnum ('monteur', 'meister', 'buero') with DB-level constraint
+S2-FR7: User can attach 1-3 photos to a voice message during/after recording
+S2-FR8: User can post standalone photos directly into a project with optional text caption
+S2-FR9: Photos are uploaded to Vercel Blob (EU region) with server-side EXIF stripping (no GPS data stored)
+S2-FR10: Client-side image compression for files >5MB before upload
+S2-FR11: Photos appear in the project timeline as thumbnails with click-to-expand lightbox
+S2-FR12: ASSIGNMENT_V2 prompt explicitly distinguishes trade terms (Zählerkasten, FI-Schalter) from project names
+S2-FR13: Continuity signal: speaker's last 3 messages with project assignment are included as context in the assignment prompt
+S2-FR14: Confidence threshold for auto-assignment raised to 0.75 (from 0.70, based on ADR-006 TC-03)
+S2-FR15: Evaluation V2 documents V1→V2 comparison with same 8 transcripts + 2 new edge cases in ADR-010
+S2-FR16: Dashboard shows team activity (who sent the last message per project)
+S2-FR17: Monteur dashboard shows only assigned projects (RBAC-filtered)
+S2-FR18: Inbox badge visible only to Meister/Büro roles
+
+**Non-Functional Requirements:**
+
+S2-NFR1: Photo upload < 3 seconds including EXIF strip and thumbnail generation
+S2-NFR2: Tenant isolation on all new endpoints (companyId filter)
+S2-NFR3: RBAC middleware on all protected routes with role-based permission checks
+S2-NFR4: Prompt version (V2) logged in DB for every assignment
+S2-NFR5: Assignment accuracy ≥ 80% (improvement from 75% baseline)
+S2-NFR6: Invitation flow completion < 30 seconds from email click to dashboard
+S2-NFR7: All new UI elements with ≥48px touch targets and WCAG AA contrast
+
+**Tech Debt resolved in Sprint 2:**
+- #7: pgEnum for role (was free text) → S2-FR6
+- #14 (S2-FR14): Confidence threshold 0.75 already fixed in tech debt cleanup
+- #5: Rate limiting on voice endpoint (Sprint 2 mitlaufen)
+- #6: Timeouts on Mistral API calls (Sprint 2 mitlaufen)
+
+### Sprint 2 FR Coverage Map
+
+| FR | Epic | Description |
+|---|---|---|
+| S2-FR1 | Epic 12 | Team invitation with role assignment |
+| S2-FR2 | Epic 12 | Invitation token + email via Resend |
+| S2-FR3 | Epic 12 | Invitation redemption + auto-join company |
+| S2-FR4 | Epic 12 | Team management UI (view, edit roles, deactivate) |
+| S2-FR5 | Epic 12 | RBAC middleware + route protection |
+| S2-FR6 | Epic 12 | pgEnum for role with DB-level constraint |
+| S2-FR7 | Epic 13 | Attach photos to voice messages |
+| S2-FR8 | Epic 13 | Standalone photo upload to projects |
+| S2-FR9 | Epic 13 | Photo upload + EXIF stripping |
+| S2-FR10 | Epic 13 | Client-side image compression |
+| S2-FR11 | Epic 15 | Photos in timeline with lightbox |
+| S2-FR12 | Epic 14 | ASSIGNMENT_V2 prompt (Fachbegriff distinction) |
+| S2-FR13 | Epic 14 | Continuity signal (last 3 messages) |
+| S2-FR14 | Epic 14 | Confidence threshold 0.75 (already done) |
+| S2-FR15 | Epic 14 | Evaluation V2 + ADR-010 |
+| S2-FR16 | Epic 15 | Team activity in dashboard |
+| S2-FR17 | Epic 15 | Monteur dashboard (RBAC-filtered) |
+| S2-FR18 | Epic 15 | Inbox badge restricted to Meister/Büro |
+
+## Sprint 2 Epic List
+
+### Epic 12: Team-Einladung & RBAC
+After this epic, the Meister can invite team members via email, assign roles (Monteur/Meister/Büro), and manage the team. RBAC is enforced across all routes — Monteure see only assigned projects, Inbox and Team pages are restricted to Meister/Büro. The DEFAULT_COMPANY_ID hack is replaced by proper company assignment via invitation.
+**FRs covered:** S2-FR1, S2-FR2, S2-FR3, S2-FR4, S2-FR5, S2-FR6
+**NFRs covered:** S2-NFR2, S2-NFR3, S2-NFR6, S2-NFR7
+
+### Epic 13: Foto-Capture
+After this epic, users can attach photos to voice messages and post standalone photos directly into projects. All photos are uploaded to Vercel Blob (EU), EXIF-stripped server-side, and compressed client-side when needed. Photo upload is a separate flow from the voice pipeline (clean separation).
+**FRs covered:** S2-FR7, S2-FR8, S2-FR9, S2-FR10
+**NFRs covered:** S2-NFR1, S2-NFR2, S2-NFR7
+
+### Epic 14: Assignment V2 & R&D Iteration
+After this epic, the assignment prompt is improved based on ADR-006 findings: trade terms are explicitly distinguished from project names, continuity signal (speaker's last 3 messages) is active, and evaluation V2 documents the improvement. Target: ≥80% accuracy (up from 75% baseline).
+**FRs covered:** S2-FR12, S2-FR13, S2-FR14, S2-FR15
+**NFRs covered:** S2-NFR4, S2-NFR5
+
+### Epic 15: Dashboard & Timeline Extension
+After this epic, photos appear in project timelines with thumbnails and lightbox, the dashboard shows team activity, Monteure see only their assigned projects, and the Inbox badge is restricted to Meister/Büro.
+**FRs covered:** S2-FR11, S2-FR16, S2-FR17, S2-FR18
+**NFRs covered:** S2-NFR7
+
+---
+
+## Epic 12: Team-Einladung & RBAC
+
+After this epic, the Meister can invite team members via email, assign roles, and manage the team. RBAC is enforced across all routes. The DEFAULT_COMPANY_ID hack is replaced by proper company assignment via invitation.
+
+### Story 12.1: pgEnum Role Migration & RBAC Permission Module
+
+As a **developer**,
+I want the role column migrated to a pgEnum and a reusable RBAC permission module in place,
+So that all subsequent stories can enforce role-based access at the DB and application level.
+
+**Acceptance Criteria:**
+
+**Given** the existing `users.role` column stores free text ("monteur", "meister", "buero")
+**When** a Drizzle migration runs
+**Then** a `pgEnum('user_role', ['monteur', 'meister', 'buero'])` is created
+**And** the `users.role` column is converted to use this enum
+**And** existing role values are preserved
+**And** the `invitations` table is created with: id, companyId, email, role (using the same pgEnum), token (unique), invitedBy, expiresAt, usedAt, createdAt
+**And** `voiceMessages.status` and `projects.status` are also converted to pgEnum (Tech Debt #7)
+
+**Given** the migration is complete
+**When** `lib/auth/rbac.ts` is created
+**Then** it exports a `Role` type: `'monteur' | 'meister' | 'buero'`
+**And** it exports a `PERMISSIONS` map defining which roles can perform which actions (project:create, project:edit, project:view_all, project:view_assigned, inbox:view, inbox:assign, team:invite, team:manage, voice:record, photo:upload)
+**And** it exports `hasPermission(role: Role, permission: Permission): boolean`
+**And** it exports `requirePermission(role: Role, permission: Permission): void` that throws on denied access
+
+**Given** the RBAC module exists
+**When** `getAuthContext()` returns user data
+**Then** the `role` field is typed as `Role` (not `string`)
+
+**FRs:** S2-FR5, S2-FR6 | **NFRs:** S2-NFR3
+
+### Story 12.2: Invitation System — Create, Send & Redeem
+
+As a **Meister**,
+I want to invite team members by entering their email and role, so they receive an invitation email and can join my company with one click.
+
+**Acceptance Criteria:**
+
+**Given** a Meister/Büro on `/app/team`
+**When** clicking "Mitarbeiter einladen" and entering email + role (Monteur/Meister/Büro)
+**Then** a Server Action creates an invitation record with a UUID token and 7-day expiry
+**And** an invitation email is sent via Resend with a prominent "Team beitreten" button linking to `/invite/[token]`
+**And** the email uses kurzum branding (same style as magic link email)
+**And** the email subject is "kurzum. — Du wurdest eingeladen"
+**And** `hasPermission(role, 'team:invite')` is checked before creating the invitation
+
+**Given** an invited user clicks the invitation link
+**When** they visit `/invite/[token]`
+**Then** the token is validated (exists, not expired, not used)
+**And** the page shows: company name, invited role, and a "Jetzt beitreten" button
+**And** clicking the button triggers the Magic Link login flow
+**And** after successful login/registration, the user is automatically assigned to the inviting company with the specified role
+**And** the invitation is marked as used (`usedAt = now()`)
+**And** `findOrCreateUser()` uses the invitation's companyId instead of DEFAULT_COMPANY_ID
+**And** the user is redirected to `/app`
+
+**Given** an expired or already-used invitation token
+**When** the user visits the invite link
+**Then** a friendly German message explains the issue ("Einladung abgelaufen" / "Einladung bereits verwendet")
+**And** a hint to contact the team admin is shown
+
+**Given** the invitation flow
+**When** measured end-to-end (email click → dashboard)
+**Then** completion takes < 30 seconds (S2-NFR6)
+
+**FRs:** S2-FR1, S2-FR2, S2-FR3 | **NFRs:** S2-NFR2, S2-NFR6
+
+### Story 12.3: Team Management UI
+
+As a **Meister**,
+I want to see all team members, change their roles, and deactivate members,
+So that I can manage who has access to my company's data.
+
+**Acceptance Criteria:**
+
+**Given** a Meister/Büro on `/app/team`
+**When** the page loads
+**Then** all team members for the company are listed: name, email, role, joined date
+**And** pending invitations are shown separately with: email, role, invited by, expires at
+**And** the page is only accessible with `team:manage` permission (Meister/Büro)
+
+**Given** a Meister viewing a team member
+**When** clicking the role dropdown
+**Then** the role can be changed to Monteur/Meister/Büro
+**And** a confirmation prompt appears for role changes
+**And** the change is saved immediately via Server Action
+
+**Given** a Meister viewing a team member
+**When** clicking "Entfernen"
+**Then** the user is soft-deactivated (not deleted from DB)
+**And** their sessions are invalidated
+**And** they can no longer log in
+**And** a confirmation dialog warns about the consequences
+
+**Given** a pending invitation
+**When** a Meister clicks "Zurückziehen"
+**Then** the invitation is deleted and can no longer be redeemed
+
+**FRs:** S2-FR4 | **NFRs:** S2-NFR7
+
+### Story 12.4: Route Protection & Monteur Data Filtering
+
+As a **Monteur**,
+I want to see only the projects I'm assigned to,
+So that I'm not overwhelmed by projects that don't concern me.
+
+As a **system**,
+I want RBAC enforced on all routes,
+So that unauthorized access is prevented at every level.
+
+**Acceptance Criteria:**
+
+**Given** a user with role "monteur" on `/app`
+**When** the dashboard loads
+**Then** only projects where the user is a member (via `project_members`) are shown
+**And** the Inbox nav item is hidden
+**And** the Team nav item is hidden
+
+**Given** a user with role "monteur"
+**When** trying to access `/app/inbox` or `/app/team` directly
+**Then** they are redirected to `/app` with a brief toast "Kein Zugriff"
+
+**Given** a user with role "meister" or "buero"
+**When** accessing any page
+**Then** all navigation items are visible (Dashboard, Projekte, Inbox, Team)
+**And** all projects for the company are shown (not filtered by membership)
+
+**Given** the RBAC middleware
+**When** any Server Action is called
+**Then** `getAuthContext()` returns the role
+**And** the action checks `hasPermission()` before executing mutations
+**And** list queries are filtered: Monteur → own projects only, Meister/Büro → all company projects
+
+**Given** a Monteur assigned to specific projects
+**When** viewing a project they're assigned to
+**Then** the full project timeline with all messages is visible
+**When** trying to access a project they're NOT assigned to
+**Then** a 404 page is shown
+
+**FRs:** S2-FR5, S2-FR17, S2-FR18 | **NFRs:** S2-NFR2, S2-NFR3
+
+---
+
+## Epic 13: Foto-Capture
+
+After this epic, users can attach photos to voice messages and post standalone photos directly into projects. All photos are EXIF-stripped and compressed. Photo upload is separate from the voice pipeline.
+
+### Story 13.1: Photo Schema, Upload API & EXIF Stripping
+
+As a **developer**,
+I want the photo infrastructure in place (schema, upload endpoint, EXIF removal),
+So that photo features can be built on a solid foundation.
+
+**Acceptance Criteria:**
+
+**Given** no photo table exists
+**When** a Drizzle migration runs
+**Then** a `photos` table is created with: id (uuid), userId, companyId, voiceMessageId (nullable FK), projectId (nullable FK), imageUrl, thumbnailUrl, caption (nullable), createdAt
+**And** indexes are created on companyId, projectId, voiceMessageId
+
+**Given** the schema exists
+**When** `POST /api/photos` receives a multipart request with an image file
+**Then** the image is validated: max 10MB, accepted types (image/jpeg, image/png, image/webp, image/heic)
+**And** EXIF data is stripped server-side (GPS coordinates, camera info, timestamps removed)
+**And** the stripped image is uploaded to Vercel Blob (EU region)
+**And** a `photos` DB record is created with the Blob URL
+**And** `getAuthContext()` provides userId and companyId
+**And** the response returns `{ id, imageUrl }`
+
+**Given** EXIF stripping
+**When** testing with an image containing GPS coordinates
+**Then** the stored image contains NO EXIF GPS data
+**And** stripping uses a Vercel-compatible library (evaluate sharp vs. client-side stripping if sharp is unavailable)
+
+**Given** the upload API
+**When** measured end-to-end
+**Then** photo upload completes in < 3 seconds (S2-NFR1)
+
+**FRs:** S2-FR9 | **NFRs:** S2-NFR1, S2-NFR2
+
+### Story 13.2: Photo Attachment to Voice Messages
+
+As a **Monteur**,
+I want to attach 1-3 photos to my voice message,
+So that I can visually document what I'm describing (e.g., damage, wiring, meter readings).
+
+**Acceptance Criteria:**
+
+**Given** a user on the voice recording page
+**When** recording is complete (preview screen)
+**Then** a "📷 Foto anhängen" button is visible below the audio preview
+**And** tapping it opens the device camera/gallery via `<input type="file" accept="image/*" capture="environment">`
+**And** up to 3 photos can be selected/captured
+**And** each photo shows as a small thumbnail preview with an "×" remove button
+
+**Given** photos are selected and the user taps "Senden"
+**When** the upload starts
+**Then** the audio is uploaded via `POST /api/voice` (existing flow)
+**And** photos are uploaded separately via `POST /api/photos` with the resulting voiceMessageId
+**And** client-side compression runs for images > 5MB (canvas.toBlob with reduced quality/dimensions)
+**And** the processing indicator shows photo upload progress
+
+**Given** a voice message with attached photos
+**When** displayed in the project timeline
+**Then** photo thumbnails appear below the voice message summary
+**And** the thumbnail count badge shows "📷 2" etc.
+
+**FRs:** S2-FR7, S2-FR10 | **NFRs:** S2-NFR1, S2-NFR7
+
+### Story 13.3: Standalone Photo Upload to Projects
+
+As a **Monteur**,
+I want to post a photo directly into a project without recording a voice message,
+So that I can quickly document visual information (before/after, type plates, damage).
+
+**Acceptance Criteria:**
+
+**Given** a user on a project detail page (`/app/projects/[id]`)
+**When** tapping the "📷 Foto" button
+**Then** the device camera/gallery opens
+**And** after capture/selection, a preview with optional text caption input is shown
+**And** a "Hochladen" button sends the photo via `POST /api/photos` with the projectId
+
+**Given** a standalone photo is uploaded
+**When** the upload completes
+**Then** the photo appears in the project timeline as a standalone entry (not attached to a voice message)
+**And** the entry shows: photo thumbnail, caption (if provided), uploader name, timestamp
+**And** the project's last activity is updated
+
+**Given** a user with `photo:upload` permission (all roles)
+**When** uploading a photo
+**Then** the photo is tenant-isolated (companyId from getAuthContext)
+**And** the projectId is validated (belongs to user's company)
+
+**FRs:** S2-FR8 | **NFRs:** S2-NFR2, S2-NFR7
+
+---
+
+## Epic 14: Assignment V2 & R&D Iteration
+
+After this epic, the assignment prompt is improved based on ADR-006 findings, continuity signal is active, and a comparative evaluation documents the improvement for FFG.
+
+### Story 14.1: ASSIGNMENT_V2 Prompt & Continuity Signal
+
+As a **researcher/developer**,
+I want the assignment prompt improved to address known weaknesses from ADR-006,
+So that assignment accuracy improves from 75% toward the FFG target of ≥80%.
+
+**Acceptance Criteria:**
+
+**Given** ADR-006 identified TC-03 (Fachbegriff "Zählerkasten" confused with project name) and TC-05 (no continuity signal)
+**When** `ASSIGNMENT_SYSTEM_PROMPT_V2` is created in `lib/ai/prompts.ts`
+**Then** an explicit instruction is added: "Fachbegriffe wie Zählerkasten, FI-Schalter, Unterverteilung sind KEINE Projektnamen. Sie beschreiben Arbeiten, nicht Baustellen. Ordne nur zu wenn Kundenname, Adresse oder expliziter Projektbezug im Transkript vorkommt."
+**And** the prompt version constant `ASSIGNMENT_PROMPT_VERSION_V2 = "ASSIGNMENT_V2"` is exported
+**And** `AI_AUTO_ASSIGN_CONFIDENCE_THRESHOLD` remains at 0.75 (already set)
+
+**Given** the continuity signal was missing in V1 evaluation
+**When** `assignToProject()` is called
+**Then** the speaker's last 3 messages with their project assignments are fetched from DB
+**And** these are included in the user message as context: "Letzte Nachrichten des Monteurs: [project name] (vor X Stunden): [summary excerpt]"
+**And** the prompt instructs: "Wenn der Sprecher zuletzt auf einem bestimmten Projekt gearbeitet hat, ist das ein starkes Kontinuitäts-Signal"
+
+**Given** the V2 prompt is deployed
+**When** voice messages are processed
+**Then** `llmPromptVersion` stores `"summary:SUMMARY_V1,assignment:ASSIGNMENT_V2"`
+**And** the voice pipeline uses the V2 prompt for all new messages
+
+**FRs:** S2-FR12, S2-FR13, S2-FR14 | **NFRs:** S2-NFR4
+
+### Story 14.2: Assignment V2 Evaluation & ADR-010
+
+As a **researcher**,
+I want a documented comparison of V1 vs V2 assignment accuracy,
+So that FFG Forschungsfrage #3 shows measurable improvement.
+
+**Acceptance Criteria:**
+
+**Given** ASSIGNMENT_V2 prompt is implemented (Story 14.1)
+**When** the evaluation script runs
+**Then** the same 8 transcripts from ADR-006 are tested with V2
+**And** 2 new edge cases are added: multi-project scenario (both projects in list), Fachbegriff-only transcript
+**And** continuity signal is simulated (previous messages with project assignments)
+**And** results are compared V1 vs V2 in a side-by-side matrix
+
+**Given** the evaluation completes
+**When** ADR-010 is written
+**Then** it documents: V1 baseline (75%), V2 result, per-test-case comparison
+**And** specifically tracks: TC-03 (should now be Inbox, not false positive), TC-05 (should now be Gruber with continuity)
+**And** the ADR follows the format of ADR-004/005/006
+**And** raw results are stored in `docs/research/assignment-evaluation-v2-raw-results.json`
+**And** a narrative research report is created at `docs/research/assignment-evaluation-v2-2026-02.md`
+
+**Given** the evaluation
+**When** measuring accuracy
+**Then** target is ≥ 80% overall accuracy (S2-NFR5)
+**And** high-confidence band (≥ 0.8) should remain at 100% accuracy
+
+**FRs:** S2-FR15 | **NFRs:** S2-NFR5
+
+---
+
+## Epic 15: Dashboard & Timeline Extension
+
+After this epic, photos appear in project timelines, the dashboard shows team activity, and RBAC filtering is applied to all views.
+
+### Story 15.1: Photos in Project Timeline & Lightbox
+
+As a **Meister**,
+I want to see photos embedded in the project timeline alongside voice message summaries,
+So that I get a complete visual + audio picture of what's happening on each construction site.
+
+**Acceptance Criteria:**
+
+**Given** a project with voice messages and photos
+**When** the project timeline at `/app/projects/[id]` loads
+**Then** voice messages with attached photos show thumbnails (max 200px width) below the summary
+**And** standalone photos appear as separate timeline entries with caption and timestamp
+**And** all timeline entries are sorted chronologically (newest first)
+**And** the timeline distinguishes: 🎙️ Voice + 📷 Photo vs. 📷 Standalone Photo
+
+**Given** a photo thumbnail in the timeline
+**When** the user taps it
+**Then** a lightbox overlay opens showing the full-resolution image
+**And** the lightbox has a close button (× or tap outside)
+**And** if multiple photos are attached to one message, left/right navigation is available
+
+**Given** the timeline with photos
+**When** rendered on mobile
+**Then** thumbnails are responsive (full width on small screens)
+**And** all touch targets are ≥48px
+
+**FRs:** S2-FR11 | **NFRs:** S2-NFR7
+
+### Story 15.2: RBAC-Filtered Dashboard & Team Activity
+
+As a **Meister**,
+I want the dashboard to show team activity and as a Monteur I want to see only my assigned projects,
+So that each role sees exactly what's relevant to them.
+
+**Acceptance Criteria:**
+
+**Given** a Meister/Büro on `/app`
+**When** the dashboard loads
+**Then** each project card shows who sent the last message (user name + timestamp)
+**And** the Inbox badge in navigation shows the unassigned message count
+**And** all company projects are visible
+
+**Given** a Monteur on `/app`
+**When** the dashboard loads
+**Then** only projects the Monteur is a member of (via `project_members`) are shown
+**And** the Inbox nav item is hidden
+**And** the Team nav item is hidden
+**And** the voice recording button is prominently displayed
+
+**Given** any user on the dashboard
+**When** project cards show today's message count
+**Then** the count includes messages from all team members assigned to that project (not just the current user)
+
+**FRs:** S2-FR16, S2-FR17, S2-FR18 | **NFRs:** S2-NFR7
+
+---
+
+### Sprint 2 Story Summary
+
+| Epic | Stories | FRs Covered |
+|------|---------|-------------|
+| Epic 12: Team-Einladung & RBAC | 12.1, 12.2, 12.3, 12.4 | S2-FR1–6, S2-FR17, S2-FR18 |
+| Epic 13: Foto-Capture | 13.1, 13.2, 13.3 | S2-FR7–10 |
+| Epic 14: Assignment V2 & R&D Iteration | 14.1, 14.2 | S2-FR12–15 |
+| Epic 15: Dashboard & Timeline Extension | 15.1, 15.2 | S2-FR11, S2-FR16–18 |
+| **Total** | **10 Stories** | **18/18 new FRs** |
+
+### Sprint 2 Implementation Order
+
+```
+Epic 12 (RBAC) → Epic 13 (Fotos) → Epic 14 (Assignment V2) → Epic 15 (Dashboard)
+     ↓                  ↓                    ↓                       ↓
+  12.1 → 12.2 →    13.1 → 13.2 →       14.1 → 14.2           15.1 → 15.2
+         12.3 →           13.3
+         12.4
+```
+
+**Rationale:** RBAC must be in place before photos and dashboard, because both depend on role-based visibility. Assignment V2 is independent and can run in parallel with Foto-Capture. Dashboard extension comes last as it integrates photos + RBAC filtering.
