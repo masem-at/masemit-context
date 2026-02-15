@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-14T16:36:33Z",
-  "commit_sha": "0b58cb6da245cf02e6b96d617901ef2c0e0eb72d",
-  "commit_message": "Add manual assignment dropdown and inbox badge (Story 10.2)\n"
+  "synced_at": "2026-02-15T09:23:14Z",
+  "commit_sha": "270135b91198b7d090224751358d6d2c6d2b3e40",
+  "commit_message": "Implement AI-prefilled project creation from inbox (Story 10.3)\n"
 }
