@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-15 13:22:12 UTC | Commit: `0d3122ae8e1e14930921b7cddbc22eb23dbca985`
+> Last sync: 2026-02-15 13:41:11 UTC | Commit: `e5f83ecc7a7ec2d2021dc8fca3d6b8cae8c1f98b`
 
 ---
 
@@ -101,6 +101,9 @@
 - [`ADR-004 - STT Provider Evaluation Voxtral vs Whisper.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-004 - STT Provider Evaluation Voxtral vs Whisper.md)
 - [`ADR-005 - Prompt Engineering for Handwerker LLM Summarization.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-005 - Prompt Engineering for Handwerker LLM Summarization.md)
 - [`ADR-006 - Projekt-Zuordnungs-Evaluierung Assignment Pipeline.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-006 - Projekt-Zuordnungs-Evaluierung Assignment Pipeline.md)
+- [`ADR-007 - Magic Link Authentication statt Passwort.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-007 - Magic Link Authentication statt Passwort.md)
+- [`ADR-008 - Synchrone Voice Pipeline statt Queue.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-008 - Synchrone Voice Pipeline statt Queue.md)
+- [`ADR-009 - Audio Retention 90 Tage DSGVO.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-009 - Audio Retention 90 Tage DSGVO.md)
 
 ## docs
 
@@ -108,6 +111,7 @@
 
 ## docs/research
 
+- [`assignment-evaluation-2026-02.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/assignment-evaluation-2026-02.md)
 - [`assignment-evaluation-raw-results.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/assignment-evaluation-raw-results.json)
 - [`llm-evaluation-raw-results.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/llm-evaluation-raw-results.json)
 - [`llm-summarization-evaluation-2026-02.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/llm-summarization-evaluation-2026-02.md)
