@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-15T11:39:11Z",
-  "commit_sha": "fa1a345e7c72d189c9bc470dc0b414e67b8abbc2",
-  "commit_message": "Rebuild dashboard with project-based overview cards (Story 11.1)\n"
+  "synced_at": "2026-02-15T13:22:12Z",
+  "commit_sha": "0d3122ae8e1e14930921b7cddbc22eb23dbca985",
+  "commit_message": "Evaluate assignment pipeline accuracy and document Sprint 1 tech debt (ADR-006)\n"
 }

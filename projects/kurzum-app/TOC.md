@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-15 11:39:11 UTC | Commit: `fa1a345e7c72d189c9bc470dc0b414e67b8abbc2`
+> Last sync: 2026-02-15 13:22:12 UTC | Commit: `0d3122ae8e1e14930921b7cddbc22eb23dbca985`
 
 ---
 
@@ -100,6 +100,7 @@
 - [`ADR-003 - Mistral SDK statt REST fetch.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-003 - Mistral SDK statt REST fetch.md)
 - [`ADR-004 - STT Provider Evaluation Voxtral vs Whisper.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-004 - STT Provider Evaluation Voxtral vs Whisper.md)
 - [`ADR-005 - Prompt Engineering for Handwerker LLM Summarization.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-005 - Prompt Engineering for Handwerker LLM Summarization.md)
+- [`ADR-006 - Projekt-Zuordnungs-Evaluierung Assignment Pipeline.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-006 - Projekt-Zuordnungs-Evaluierung Assignment Pipeline.md)
 
 ## docs
 
@@ -107,6 +108,7 @@
 
 ## docs/research
 
+- [`assignment-evaluation-raw-results.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/assignment-evaluation-raw-results.json)
 - [`llm-evaluation-raw-results.json`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/llm-evaluation-raw-results.json)
 - [`llm-summarization-evaluation-2026-02.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/llm-summarization-evaluation-2026-02.md)
 - [`pilot-akquise-elektrotechnik-2026-02.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/research/pilot-akquise-elektrotechnik-2026-02.md)
@@ -117,5 +119,6 @@
 
 ## docs
 
+- [`tech-debt-sprint1-audit.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/tech-debt-sprint1-audit.md)
 - [`ux-sprint0-app-specs.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/ux-sprint0-app-specs.md)
 
