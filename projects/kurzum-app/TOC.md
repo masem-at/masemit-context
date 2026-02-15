@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-15 09:23:14 UTC | Commit: `270135b91198b7d090224751358d6d2c6d2b3e40`
+> Last sync: 2026-02-15 11:39:11 UTC | Commit: `fa1a345e7c72d189c9bc470dc0b414e67b8abbc2`
 
 ---
 
@@ -14,6 +14,7 @@
 - [`10-1-inbox-page-and-unassigned-messages.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/10-1-inbox-page-and-unassigned-messages.md)
 - [`10-2-manual-assignment-and-inbox-badge.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/10-2-manual-assignment-and-inbox-badge.md)
 - [`10-3-create-project-from-inbox-with-ai-pre-fill.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/10-3-create-project-from-inbox-with-ai-pre-fill.md)
+- [`11-1-project-based-dashboard-rebuild.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/11-1-project-based-dashboard-rebuild.md)
 - [`2-1-section-layout-system-and-hero-section.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-1-section-layout-system-and-hero-section.md)
 - [`2-2-problem-section-with-animated-pain-points.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-2-problem-section-with-animated-pain-points.md)
 - [`2-3-concrete-example-chat-mockup.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-3-concrete-example-chat-mockup.md)
