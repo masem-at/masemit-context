@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-15T14:23:38Z",
-  "commit_sha": "35f118abbd4db22820d9f91c935f0c559ebd1469",
-  "commit_message": "Plan Sprint 2: Team/RBAC, Foto-Capture, Assignment V2, Dashboard extension (4 epics, 10 stories)\n"
+  "synced_at": "2026-02-15T17:05:45Z",
+  "commit_sha": "90fd25be6bb8dced79ced2685876621d6dbf8032",
+  "commit_message": "Add pgEnum for roles/status columns, RBAC permission module, and invitations schema (Story 12.1)\n"
 }

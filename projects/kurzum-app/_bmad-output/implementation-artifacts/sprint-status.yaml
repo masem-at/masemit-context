@@ -140,8 +140,8 @@ development_status:
   # ═══════════════════════════════════════════════════
 
   # Epic 12: Team-Einladung & RBAC
-  epic-12: backlog
-  12-1-pgenum-role-migration-and-rbac-permission-module: backlog
+  epic-12: in-progress
+  12-1-pgenum-role-migration-and-rbac-permission-module: done
   12-2-invitation-system-create-send-redeem: backlog
   12-3-team-management-ui: backlog
   12-4-route-protection-and-monteur-data-filtering: backlog

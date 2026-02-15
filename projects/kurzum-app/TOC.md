@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-15 14:23:38 UTC | Commit: `35f118abbd4db22820d9f91c935f0c559ebd1469`
+> Last sync: 2026-02-15 17:05:45 UTC | Commit: `90fd25be6bb8dced79ced2685876621d6dbf8032`
 
 ---
 
@@ -15,6 +15,7 @@
 - [`10-2-manual-assignment-and-inbox-badge.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/10-2-manual-assignment-and-inbox-badge.md)
 - [`10-3-create-project-from-inbox-with-ai-pre-fill.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/10-3-create-project-from-inbox-with-ai-pre-fill.md)
 - [`11-1-project-based-dashboard-rebuild.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/11-1-project-based-dashboard-rebuild.md)
+- [`12-1-pgenum-role-migration-and-rbac-permission-module.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/12-1-pgenum-role-migration-and-rbac-permission-module.md)
 - [`2-1-section-layout-system-and-hero-section.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-1-section-layout-system-and-hero-section.md)
 - [`2-2-problem-section-with-animated-pain-points.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-2-problem-section-with-animated-pain-points.md)
 - [`2-3-concrete-example-chat-mockup.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-3-concrete-example-chat-mockup.md)
@@ -73,6 +74,7 @@
 
 - [`bmad-briefing-kurzum-sprint0.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/_masemIT/bmad-briefing-kurzum-sprint0.md)
 - [`bmad-briefing-kurzum-sprint1.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/_masemIT/bmad-briefing-kurzum-sprint1.md)
+- [`bmad-briefing-kurzum-sprint2.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/_masemIT/bmad-briefing-kurzum-sprint2.md)
 
 ## docs/_masemIT/foerderungen
 
