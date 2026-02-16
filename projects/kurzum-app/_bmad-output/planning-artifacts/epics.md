@@ -1907,6 +1907,17 @@ So that assignment accuracy improves from 75% toward the FFG target of ≥80%.
 **And** the prompt version constant `ASSIGNMENT_PROMPT_VERSION_V2 = "ASSIGNMENT_V2"` is exported
 **And** `AI_AUTO_ASSIGN_CONFIDENCE_THRESHOLD` remains at 0.75 (already set)
 
+**Given** ADR-010 identified that the summary corrects STT errors (e.g. "Zollerkosten" → "Zählerkasten", "Gruber Baustell" → "Kunden Gruber")
+**When** `assignToProject()` is called
+**Then** it accepts an additional `summary: VoiceSummary | null` parameter
+**And** `buildUserMessage()` includes summary fields (status, project, material, customerName) before the raw transcript
+**And** the prompt defines signal hierarchy: Summary fields > transcript references > continuity > Fachbegriffe
+**And** the voice pipeline passes the summary object from the summarization step to `assignToProject()`
+
+**Given** ADR-010 identified that the LLM hallucinates project completion status from message content ("alles erledigt" → "Projekt abgeschlossen")
+**When** `ASSIGNMENT_SYSTEM_PROMPT_V2` is created
+**Then** an explicit anti-hallucination rule is added: "Leite den Projektstatus NICHT aus dem Nachrichteninhalt ab. 'Alles erledigt' oder 'Bin fertig' bedeuten, dass HEUTE die Arbeit abgeschlossen ist — NICHT dass das Projekt beendet ist. Die Projektliste enthält nur AKTIVE Projekte."
+
 **Given** the continuity signal was missing in V1 evaluation
 **When** `assignToProject()` is called
 **Then** the speaker's last 3 messages with their project assignments are fetched from DB
@@ -1936,7 +1947,7 @@ So that FFG Forschungsfrage #3 shows measurable improvement.
 **And** results are compared V1 vs V2 in a side-by-side matrix
 
 **Given** the evaluation completes
-**When** ADR-010 is written
+**When** ADR-011 is written
 **Then** it documents: V1 baseline (75%), V2 result, per-test-case comparison
 **And** specifically tracks: TC-03 (should now be Inbox, not false positive), TC-05 (should now be Gruber with continuity)
 **And** the ADR follows the format of ADR-004/005/006

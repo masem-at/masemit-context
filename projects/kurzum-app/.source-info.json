@@ -2,7 +2,7 @@
   "source_repo": "masem-at/kurzum-app",
   "project_name": "kurzum-app",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-15T17:05:45Z",
-  "commit_sha": "90fd25be6bb8dced79ced2685876621d6dbf8032",
-  "commit_message": "Add pgEnum for roles/status columns, RBAC permission module, and invitations schema (Story 12.1)\n"
+  "synced_at": "2026-02-16T15:55:38Z",
+  "commit_sha": "94ef47c82f9d0782bcc04a0e02600740ced2fb66",
+  "commit_message": "Implement team invitation, management UI, and RBAC route protection (Stories 12.2–12.4)\n"
 }

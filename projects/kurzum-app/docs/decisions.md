@@ -16,3 +16,4 @@ Eingeführt am 2026-02-11 (Party Mode: Mary, John, Winston, Sally, Paige) — Di
 | [ADR-007](decisions/ADR-007%20-%20Magic%20Link%20Authentication%20statt%20Passwort.md) | 2026-02-15 | Magic Link Authentication via Resend statt Passwort-basierter Auth | Entschieden |
 | [ADR-008](decisions/ADR-008%20-%20Synchrone%20Voice%20Pipeline%20statt%20Queue.md) | 2026-02-15 | Synchrone Voice Pipeline (Upload→STT→LLM→Assign in einem Request) statt Message Queue | Entschieden |
 | [ADR-009](decisions/ADR-009%20-%20Audio%20Retention%2090%20Tage%20DSGVO.md) | 2026-02-15 | Audio-Dateien 90 Tage Aufbewahrung, dann Auto-Löschung (DSGVO Speicherbegrenzung) | Entschieden |
+| [ADR-010](decisions/ADR-010%20-%20Summary-basierte%20Projekt-Zuordnung%20statt%20Rohes%20Transkript.md) | 2026-02-16 | Assignment V2 soll Summary + Transcript statt nur Transcript verwenden, Anti-Halluzinations-Regel | Vorgeschlagen |

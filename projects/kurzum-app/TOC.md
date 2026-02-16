@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for kurzum-app.
 > Source: `masem-at/kurzum-app`
-> Last sync: 2026-02-15 17:05:45 UTC | Commit: `90fd25be6bb8dced79ced2685876621d6dbf8032`
+> Last sync: 2026-02-16 15:55:38 UTC | Commit: `94ef47c82f9d0782bcc04a0e02600740ced2fb66`
 
 ---
 
@@ -16,6 +16,9 @@
 - [`10-3-create-project-from-inbox-with-ai-pre-fill.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/10-3-create-project-from-inbox-with-ai-pre-fill.md)
 - [`11-1-project-based-dashboard-rebuild.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/11-1-project-based-dashboard-rebuild.md)
 - [`12-1-pgenum-role-migration-and-rbac-permission-module.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/12-1-pgenum-role-migration-and-rbac-permission-module.md)
+- [`12-2-invitation-system-create-send-redeem.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/12-2-invitation-system-create-send-redeem.md)
+- [`12-3-team-management-ui.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/12-3-team-management-ui.md)
+- [`12-4-route-protection-and-monteur-data-filtering.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/12-4-route-protection-and-monteur-data-filtering.md)
 - [`2-1-section-layout-system-and-hero-section.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-1-section-layout-system-and-hero-section.md)
 - [`2-2-problem-section-with-animated-pain-points.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-2-problem-section-with-animated-pain-points.md)
 - [`2-3-concrete-example-chat-mockup.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/_bmad-output/implementation-artifacts/2-3-concrete-example-chat-mockup.md)
@@ -106,6 +109,7 @@
 - [`ADR-007 - Magic Link Authentication statt Passwort.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-007 - Magic Link Authentication statt Passwort.md)
 - [`ADR-008 - Synchrone Voice Pipeline statt Queue.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-008 - Synchrone Voice Pipeline statt Queue.md)
 - [`ADR-009 - Audio Retention 90 Tage DSGVO.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-009 - Audio Retention 90 Tage DSGVO.md)
+- [`ADR-010 - Summary-basierte Projekt-Zuordnung statt Rohes Transkript.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/kurzum-app/docs/decisions/ADR-010 - Summary-basierte Projekt-Zuordnung statt Rohes Transkript.md)
 
 ## docs
 
