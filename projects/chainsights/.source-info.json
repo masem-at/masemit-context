@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-19T20:55:56Z",
-  "commit_sha": "78485a0c38bec33e26a8af130bf8c658825554a5",
-  "commit_message": "feat: historical backfill — schema migration, referenceDate param, backfill script\n"
+  "synced_at": "2026-02-19T21:43:46Z",
+  "commit_sha": "d261d0607751225d01d5f1f79aa811d63e044a29",
+  "commit_message": "feat: Story B — daily job never reverts to defaults + code review fixes\n"
 }
