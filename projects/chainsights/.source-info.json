@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-13T20:31:41Z",
-  "commit_sha": "2b428ff17090756eb83e89e59936ff03d32760a0",
-  "commit_message": "feat: add DVQ blog article, dynamic OG images, and header nav links\n"
+  "synced_at": "2026-02-19T20:55:56Z",
+  "commit_sha": "78485a0c38bec33e26a8af130bf8c658825554a5",
+  "commit_message": "feat: historical backfill — schema migration, referenceDate param, backfill script\n"
 }
