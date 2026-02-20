@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for stake-track-ai.
 > Source: `masem-at/stake-track-ai`
-> Last sync: 2026-02-20 21:06:54 UTC | Commit: `f1e0f403e27f7625346c75fd6a3c7e0df1772fb8`
+> Last sync: 2026-02-20 22:03:18 UTC | Commit: `38e99e6ef25317bbb662c0830b4906956e737f60`
 
 ---
 
@@ -11,6 +11,7 @@
 
 - [`1-1-projekt-initialisierung-infrastruktur-setup.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-1-projekt-initialisierung-infrastruktur-setup.md)
 - [`1-2-eth-wallet-authentifizierung-siwe.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-2-eth-wallet-authentifizierung-siwe.md)
+- [`1-3-email-authentifizierung-via-mms.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-3-email-authentifizierung-via-mms.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
