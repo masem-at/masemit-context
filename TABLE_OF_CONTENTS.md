@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all projects in this context repository.
-> Last updated: 2026-02-20 19:52:26 UTC
+> Last updated: 2026-02-20 21:06:54 UTC
 
 ## How to use
 
@@ -76,14 +76,14 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 - Source: `masem-at/paywatcher`
 - Last sync: 2026-02-20T19:52:26Z
-- Files: 43
+- Files: 42
 - **[📋 Project TOC](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/TOC.md)**
 
 ### stake-track-ai
 
 - Source: `masem-at/stake-track-ai`
-- Last sync: 2026-02-20T16:35:11Z
-- Files: 13
+- Last sync: 2026-02-20T21:06:54Z
+- Files: 15
 - **[📋 Project TOC](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/TOC.md)**
 
 ### telling-cube
