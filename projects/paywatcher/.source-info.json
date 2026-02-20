@@ -2,7 +2,7 @@
   "source_repo": "masem-at/paywatcher",
   "project_name": "paywatcher",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-20T17:24:22Z",
-  "commit_sha": "c3124ad056486a0368c7b348abeb577ecc83284b",
-  "commit_message": "Add Webhook Event Reference & Multi-Language Code Examples with review fixes (Story 5.3)\n"
+  "synced_at": "2026-02-20T19:52:26Z",
+  "commit_sha": "5f593dd74295670a16bc2ee9cb535c72fdf8e78e",
+  "commit_message": "Update scope error message and add API key architecture docs\n"
 }

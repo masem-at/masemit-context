@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for paywatcher.
 > Source: `masem-at/paywatcher`
-> Last sync: 2026-02-20 17:24:22 UTC | Commit: `c3124ad056486a0368c7b348abeb577ecc83284b`
+> Last sync: 2026-02-20 19:52:26 UTC | Commit: `5f593dd74295670a16bc2ee9cb535c72fdf8e78e`
 
 ---
 
@@ -55,6 +55,7 @@
 
 ## docs/_masemIT
 
+- [`api-key-architecture.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/api-key-architecture.md)
 - [`brief-paywatcher-frontend-bmad-2026-02-18.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/brief-paywatcher-frontend-bmad-2026-02-18.md)
 - [`company-info.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/company-info.md)
 
