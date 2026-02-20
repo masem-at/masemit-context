@@ -2,7 +2,7 @@
   "source_repo": "masem-at/paywatcher",
   "project_name": "paywatcher",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-20T16:45:30Z",
-  "commit_sha": "54dbc7abf2ea3bc657af4786ecbad8565c013c8f",
-  "commit_message": "Add Quick Start Guide & Endpoint Reference with review fixes (Story 5.2)\n"
+  "synced_at": "2026-02-20T17:24:22Z",
+  "commit_sha": "c3124ad056486a0368c7b348abeb577ecc83284b",
+  "commit_message": "Add Webhook Event Reference & Multi-Language Code Examples with review fixes (Story 5.3)\n"
 }

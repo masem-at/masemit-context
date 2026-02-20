@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for paywatcher.
 > Source: `masem-at/paywatcher`
-> Last sync: 2026-02-20 16:45:30 UTC | Commit: `54dbc7abf2ea3bc657af4786ecbad8565c013c8f`
+> Last sync: 2026-02-20 17:24:22 UTC | Commit: `c3124ad056486a0368c7b348abeb577ecc83284b`
 
 ---
 
@@ -31,6 +31,7 @@
 - [`4-3-tenant-configuration-account-settings.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/4-3-tenant-configuration-account-settings.md)
 - [`5-1-mdx-infrastructure-docs-layout.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/5-1-mdx-infrastructure-docs-layout.md)
 - [`5-2-quick-start-guide-endpoint-reference.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/5-2-quick-start-guide-endpoint-reference.md)
+- [`5-3-webhook-event-reference-multi-language-code-examples.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/5-3-webhook-event-reference-multi-language-code-examples.md)
 
 ## _bmad-output/implementation-artifacts/_obsolete
 

@@ -78,8 +78,8 @@ development_status:
   epic-4-retrospective: optional
 
   # Epic 5: Developer Documentation (Docs-Lite)
-  epic-5: in-progress
+  epic-5: done  # Alle Stories abgeschlossen
   5-1-mdx-infrastructure-docs-layout: done  # Code Review bestanden (7 Fixes applied)
   5-2-quick-start-guide-endpoint-reference: done  # Code Review bestanden (5 Fixes applied)
-  5-3-webhook-event-reference-multi-language-code-examples: backlog
+  5-3-webhook-event-reference-multi-language-code-examples: done  # Code Review bestanden (6 Fixes applied)
   epic-5-retrospective: optional
