@@ -15,6 +15,12 @@ Add a "Last Proposal" column to the Governance Index table, show last proposal d
 
 ## Subtasks
 
+- [x] C1: API Response — Add `lastProposal` and `scoreBasis`
+- [x] C2: "Last Proposal" Column in Governance Index Table
+- [x] C3: DAO Detail View — Last Proposal Section
+- [x] C4: Chart Marker for Backfill
+- [x] C5: Bug Fix — v1.1 Marker Tooltip Not Appearing
+
 ### C1: API Response — Add `lastProposal` and `scoreBasis`
 
 **File:** `src/lib/db/queries/leaderboard.ts`
@@ -99,16 +105,16 @@ Same visual style as the existing v1.1 marker (vertical dashed line).
 
 ## Acceptance Criteria
 
-- [ ] "Last Proposal" column visible in Governance Index table on desktop
-- [ ] Column is sortable (ascending/descending)
-- [ ] Relative time format: `2d ago` (green), `3w ago` (default), `3mo ago` (amber), `2y ago` (red), `—` (no data)
-- [ ] Column header has tooltip explaining the metric
-- [ ] Detail view shows full date + proposal title + relative time
-- [ ] Info note displayed for `score_basis: 'historical'` with appropriate wording
-- [ ] New backfill chart marker appears on MetricChart trend charts
-- [ ] **BUG FIX:** Both v1.1 and v1.2 marker tooltips appear on hover
-- [ ] Mobile: column hidden, data accessible in expandable card view
-- [ ] API response includes `lastProposalDate`, `lastProposalTitle`, `scoreBasis`
+- [x] "Last Proposal" column visible in Governance Index table on desktop
+- [x] Column is sortable (ascending/descending)
+- [x] Relative time format: `2d ago` (green), `3w ago` (default), `3mo ago` (amber), `2y ago` (red), `—` (no data)
+- [x] Column header has tooltip explaining the metric
+- [x] Detail view shows full date + proposal title + relative time
+- [x] Info note displayed for `score_basis: 'historical'` with appropriate wording
+- [x] New backfill chart marker appears on MetricChart trend charts
+- [x] **BUG FIX:** Both v1.1 and v1.2 marker tooltips appear on hover
+- [x] Mobile: column hidden, data accessible in expandable card view
+- [x] API response includes `lastProposalDate`, `lastProposalTitle`, `scoreBasis`
 
 ---
 
@@ -117,8 +123,55 @@ Same visual style as the existing v1.1 marker (vertical dashed line).
 | File | Change |
 |------|--------|
 | `src/lib/db/queries/leaderboard.ts` | Add `lastProposalDate`, `lastProposalTitle`, `scoreBasis` to query + interface |
-| `src/app/api/matrix/route.ts` | Pass new fields through |
-| `src/lib/utils/relative-time.ts` | New utility: `formatLastProposal()` |
-| Rankings table component | Add "Last Proposal" column with sorting |
-| DAO detail view component | Add last proposal section + info note |
-| `src/components/MetricChart.tsx` | Add v1.2 marker, fix tooltip bug for v1.1 |
+| `src/app/api/matrix/route.ts` | Pass new fields through (sort type updated) |
+| `src/lib/utils/relative-time.ts` | New utility: `formatLastProposal()`, `formatFullDate()` |
+| `src/components/RankingsTable.tsx` | Add "Last Proposal" column header with tooltip |
+| `src/components/ExpandableDAORow.tsx` | Add "Last Proposal" cell + import utility |
+| `src/components/MobileDAOCard.tsx` | Add last proposal in expanded section |
+| `src/components/matrix-detail/DaoHeader.tsx` | Add last proposal section + historical info note |
+| `src/components/matrix-detail/MetricChart.tsx` | Add v1.2 marker, fix tooltip bug with custom SVG label |
+| `src/app/matrix/[slug]/page.tsx` | Pass lastProposalDate, lastProposalTitle, scoreBasis through |
+| `src/app/matrix/[slug]/matrix-detail-client.tsx` | Update dao prop type |
+| `src/app/rankings/page.tsx` | Update sortBy type union + validSortBy whitelist |
+| `tests/unit/lib/utils/relative-time.test.ts` | New: 7 unit tests for formatLastProposal, formatFullDate |
+| `tests/unit/components/expandable-dao-row.test.tsx` | Fix stale labels + add Story C Last Proposal tests |
+| `tests/unit/components/mobile-dao-card.test.tsx` | Fix stale labels + add Story C Last Proposal tests |
+
+---
+
+## Dev Agent Record
+
+### Implementation Plan
+
+- C1: Extended `LeaderboardRanking` with 3 new fields, sourced from `dao.lastProposalDate/lastProposalTitle` and `snapshot.scoreBasis`. Added `lastProposal` sort option.
+- C2: Created `relative-time.ts` utility. Added column to `RankingsTable` (header with (i) tooltip), `ExpandableDAORow` (desktop cell), `MobileDAOCard` (expanded section).
+- C3: Extended `DaoHeader` props with lastProposal/scoreBasis. Added full date + title display and blue info banner for `score_basis: 'historical'`.
+- C4: Added v1.2 entry to `METHODOLOGY_VERSIONS` array with date `2026-02-20`.
+- C5: Root cause: Recharts `ReferenceLine` label is plain SVG text — no hover interaction. Fix: Custom `MethodologyLabel` component with SVG `<title>` for native browser tooltips + styled pill background for visual clarity.
+
+### Debug Log
+
+- No issues encountered during implementation.
+- Pre-existing test failures in `expandable-dao-row.test.tsx` and `mobile-dao-card.test.tsx` — tests reference old component labels ("Human Participation Rate" vs current "Sybil Resistance Score"). Not caused by Story C changes.
+
+### Completion Notes
+
+- All 5 subtasks implemented and verified via TypeScript compilation (0 source errors).
+- New unit tests: 7 tests for `formatLastProposal` and `formatFullDate` — all passing.
+- Column placement: After Health Status, before Category (desktop). In expanded section (mobile).
+- Info note wording follows story guidance: focuses on data source limitation, doesn't imply DAO inactivity.
+
+---
+
+## Change Log
+
+| Date | Change |
+|------|--------|
+| 2026-02-20 | Story C implemented: Last Proposal column, detail view section, v1.2 chart marker, v1.1 tooltip bug fix |
+| 2026-02-20 | Code Review: Fixed 5 issues (2 HIGH, 3 MEDIUM). H1: Added lastProposal to validSortBy. H2: Fixed stale test labels. M1: Fixed info note grammar. M2: Added Story C UI tests. M3: Added test files to File List. |
+
+---
+
+## Status
+
+done

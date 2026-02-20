@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-19T21:43:46Z",
-  "commit_sha": "d261d0607751225d01d5f1f79aa811d63e044a29",
-  "commit_message": "feat: Story B — daily job never reverts to defaults + code review fixes\n"
+  "synced_at": "2026-02-20T12:33:53Z",
+  "commit_sha": "e60e6c461e268354e6e826fdca35f73154066dc8",
+  "commit_message": "feat: Story C — Last Proposal column, detail view, chart marker + code review fixes\n"
 }
