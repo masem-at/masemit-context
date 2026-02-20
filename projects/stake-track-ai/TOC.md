@@ -2,10 +2,15 @@
 
 > Auto-generated table of contents for stake-track-ai.
 > Source: `masem-at/stake-track-ai`
-> Last sync: 2026-02-20 11:40:37 UTC | Commit: `069a6a7386fe9aeca0b8f15829ed2454ba2e06a0`
+> Last sync: 2026-02-20 16:35:11 UTC | Commit: `2ea300816c9a6f580c47c040bd1616f42f080700`
 
 ---
 
+
+## _bmad-output/implementation-artifacts
+
+- [`1-1-projekt-initialisierung-infrastruktur-setup.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-1-projekt-initialisierung-infrastruktur-setup.md)
+- [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
 
