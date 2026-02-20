@@ -1,0 +1,70 @@
+# paywatcher - Context Files
+
+> Auto-generated table of contents for paywatcher.
+> Source: `masem-at/paywatcher`
+> Last sync: 2026-02-20 11:43:15 UTC | Commit: `661de6f6e5bc811391e12ad1a72212550043ba22`
+
+---
+
+
+## _bmad-output/implementation-artifacts
+
+- [`1-1-project-scaffold-vercel-deployment.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/1-1-project-scaffold-vercel-deployment.md)
+- [`1-2-theme-system-design-tokens.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/1-2-theme-system-design-tokens.md)
+- [`1-3-landing-page-layout-hero-section-problem-solution.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/1-3-landing-page-layout-hero-section-problem-solution.md)
+- [`1-4-how-it-works-interactive-code-examples.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/1-4-how-it-works-interactive-code-examples.md)
+- [`1-5-pricing-comparison-trust-signals.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/1-5-pricing-comparison-trust-signals.md)
+- [`1-6-seo-social-sharing-analytics-integration.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/1-6-seo-social-sharing-analytics-integration.md)
+- [`1-7-request-access-formular.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/1-7-request-access-formular.md)
+- [`2-1-dashboard-shell-route-protection.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/2-1-dashboard-shell-route-protection.md)
+- [`2-2-api-key-dashboard-login.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/2-2-api-key-dashboard-login.md)
+- [`2-2-magic-link-login-tenant-resolution.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/2-2-magic-link-login-tenant-resolution.md)
+- [`2-3-welcome-screen-onboarding.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/2-3-welcome-screen-onboarding.md)
+- [`2-4-api-key-anzeige-scopes.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/2-4-api-key-anzeige-scopes.md)
+- [`3-1-payments-data-layer-paymentstatusbadge.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/3-1-payments-data-layer-paymentstatusbadge.md)
+- [`3-2-overview-page-zustandsabhaengiger-first-screen.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/3-2-overview-page-zustandsabhaengiger-first-screen.md)
+- [`3-3-payments-list-page-datatable.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/3-3-payments-list-page-datatable.md)
+- [`3-4-payment-filters-sorting-pagination.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/3-4-payment-filters-sorting-pagination.md)
+- [`3-5-payment-detail-webhook-history.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/3-5-payment-detail-webhook-history.md)
+- [`4-1-settings-layout-webhook-url-configuration.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/4-1-settings-layout-webhook-url-configuration.md)
+
+## _bmad-output/implementation-artifacts/_obsolete
+
+- [`2-2-magic-link-signup-login.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/_obsolete/2-2-magic-link-signup-login.md)
+- [`2-3-automatische-api-key-erstellung-anzeige.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/_obsolete/2-3-automatische-api-key-erstellung-anzeige.md)
+- [`2-4-api-key-management-regenerate-scopes.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/_obsolete/2-4-api-key-management-regenerate-scopes.md)
+
+## _bmad-output/implementation-artifacts
+
+- [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/sprint-status.yaml)
+- [`tech-spec-brand-assets-integration.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/tech-spec-brand-assets-integration.md)
+
+## _bmad-output/planning-artifacts
+
+- [`architecture.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/planning-artifacts/architecture.md)
+- [`epics.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/planning-artifacts/epics.md)
+- [`implementation-readiness-report-2026-02-15.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/planning-artifacts/implementation-readiness-report-2026-02-15.md)
+- [`prd.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/planning-artifacts/prd.md)
+- [`product-brief-paywatcher-2026-02-15.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/planning-artifacts/product-brief-paywatcher-2026-02-15.md)
+- [`ux-design-specification.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/planning-artifacts/ux-design-specification.md)
+
+## docs/_masemIT
+
+- [`brief-paywatcher-frontend-bmad-2026-02-18.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/brief-paywatcher-frontend-bmad-2026-02-18.md)
+- [`company-info.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/company-info.md)
+
+## docs/_masemIT/launch
+
+- [`bip-post-01-paywatcher-2026-02-17.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/launch/bip-post-01-paywatcher-2026-02-17.md)
+- [`gtm-strategy-paywatcher-2026-02-17.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/launch/gtm-strategy-paywatcher-2026-02-17.md)
+
+## docs/_masemIT
+
+- [`paywatcher-developer-handbook-2026-02-15.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/paywatcher-developer-handbook-2026-02-15.md)
+- [`product-brief-paywatcher-phase1-frontend-2026-02-15.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/product-brief-paywatcher-phase1-frontend-2026-02-15.md)
+- [`product-brief-paywatcher-phase1-frontend-v2-2026-02-17.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/product-brief-paywatcher-phase1-frontend-v2-2026-02-17.md)
+
+## docs/_masemIT/requirements
+
+- [`cr-pw-001-managed-mvp-2026-02-16.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/requirements/cr-pw-001-managed-mvp-2026-02-16.md)
+

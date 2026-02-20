@@ -1,0 +1,85 @@
+# generated: 2026-02-15
+# project: paywatcher
+# project_key: NOKEY
+# tracking_system: file-system
+# story_location: _bmad-output/implementation-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically creates next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2026-02-15
+project: paywatcher
+project_key: NOKEY
+tracking_system: file-system
+story_location: _bmad-output/implementation-artifacts
+
+development_status:
+  # Epic 1: Project Foundation & Landing Page
+  epic-1: done  # Alle Stories abgeschlossen
+  1-1-project-scaffold-vercel-deployment: done
+  1-2-theme-system-design-tokens: done
+  1-3-landing-page-layout-hero-section-problem-solution: done
+  1-4-how-it-works-interactive-code-examples: done
+  1-5-pricing-comparison-trust-signals: done
+  1-6-seo-social-sharing-analytics-integration: done
+  1-7-request-access-formular: done  # Code Review bestanden (5 Fixes applied)
+  epic-1-retrospective: optional
+
+  # Epic 2: Authentication, Frontend DB & API Key Management (komplett neu: Magic Link + Parties + Neon DB)
+  epic-2: done
+  2-1-dashboard-shell-route-protection: done  # Shell + Proxy-Pattern bleibt, DB-Infrastruktur (Neon/Drizzle) muss nachgezogen werden
+  2-2-magic-link-login-tenant-resolution: done  # Code Review bestanden (9 Fixes applied)
+  2-3-welcome-screen-onboarding: done  # Code Review bestanden (5 Fixes applied, 1 Known Limitation M2)
+  2-4-api-key-anzeige-scopes: done  # Code Review bestanden (5 Fixes applied), unabhängig von Auth-Änderung
+  # Post-Epic-2 Polish (Quick Dev, kein Story-File): Login-Link in Landing Nav + Session-Redirect fuer eingeloggte User
+  # Post-Epic-2 Enhancement (Quick Dev): Lead-Erfassung bei Request Access (POST /v1/parties mit party_status "lead", fire-and-forget)
+  epic-2-retrospective: optional
+
+  # Epic 3: Payment Monitoring Dashboard
+  epic-3: done  # Alle Stories abgeschlossen
+  3-1-payments-data-layer-paymentstatusbadge: done
+  3-2-overview-page-zustandsabhaengiger-first-screen: done
+  3-3-payments-list-page-datatable: done
+  3-4-payment-filters-sorting-pagination: done
+  3-5-payment-detail-webhook-history: done  # Code Review bestanden (6 Fixes applied)
+  epic-3-retrospective: optional
+
+  # Epic 4: Webhook Configuration & Tenant Settings
+  epic-4: in-progress
+  4-1-settings-layout-webhook-url-configuration: done  # Code Review bestanden (5 Fixes applied)
+  4-2-test-webhook-delivery-log: backlog
+  4-3-tenant-configuration-account-settings: backlog  # Proxy via /api/config (nicht separater /api/tenant)
+  epic-4-retrospective: optional
+
+  # Epic 5: Developer Documentation (Docs-Lite)
+  epic-5: backlog
+  5-1-mdx-infrastructure-docs-layout: backlog
+  5-2-quick-start-guide-endpoint-reference: backlog
+  5-3-webhook-event-reference-multi-language-code-examples: backlog
+  epic-5-retrospective: optional
