@@ -2,7 +2,7 @@
   "source_repo": "masem-at/paywatcher",
   "project_name": "paywatcher",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-20T14:14:40Z",
-  "commit_sha": "58903721215edf503bbd475cee4e54415408772a",
-  "commit_message": "Add Test Webhook & Delivery Log with review fixes (Story 4.2)\n"
+  "synced_at": "2026-02-20T14:55:44Z",
+  "commit_sha": "9f4c183309bf31323beb4c3c1bad17f1c584371f",
+  "commit_message": "Add Tenant Configuration & Account Settings with review fixes (Story 4.3)\n"
 }

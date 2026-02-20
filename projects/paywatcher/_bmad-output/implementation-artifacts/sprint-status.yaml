@@ -71,10 +71,10 @@ development_status:
   epic-3-retrospective: optional
 
   # Epic 4: Webhook Configuration & Tenant Settings
-  epic-4: in-progress
+  epic-4: done  # Alle Stories abgeschlossen
   4-1-settings-layout-webhook-url-configuration: done  # Code Review bestanden (5 Fixes applied)
   4-2-test-webhook-delivery-log: done  # Code Review bestanden (5 Fixes applied)
-  4-3-tenant-configuration-account-settings: backlog  # Proxy via /api/config (nicht separater /api/tenant)
+  4-3-tenant-configuration-account-settings: done  # Code Review bestanden (3 Fixes applied)
   epic-4-retrospective: optional
 
   # Epic 5: Developer Documentation (Docs-Lite)
