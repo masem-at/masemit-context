@@ -2,7 +2,7 @@
   "source_repo": "masem-at/paywatcher",
   "project_name": "paywatcher",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-20T14:55:44Z",
-  "commit_sha": "9f4c183309bf31323beb4c3c1bad17f1c584371f",
-  "commit_message": "Add Tenant Configuration & Account Settings with review fixes (Story 4.3)\n"
+  "synced_at": "2026-02-20T15:59:36Z",
+  "commit_sha": "8a5ade8d06375733bba3f04282746a919361d75c",
+  "commit_message": "Add MDX Infrastructure & Docs Layout with review fixes (Story 5.1)\n"
 }
