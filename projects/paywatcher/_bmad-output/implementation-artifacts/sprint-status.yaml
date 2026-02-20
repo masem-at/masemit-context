@@ -73,7 +73,7 @@ development_status:
   # Epic 4: Webhook Configuration & Tenant Settings
   epic-4: in-progress
   4-1-settings-layout-webhook-url-configuration: done  # Code Review bestanden (5 Fixes applied)
-  4-2-test-webhook-delivery-log: backlog
+  4-2-test-webhook-delivery-log: done  # Code Review bestanden (5 Fixes applied)
   4-3-tenant-configuration-account-settings: backlog  # Proxy via /api/config (nicht separater /api/tenant)
   epic-4-retrospective: optional
 

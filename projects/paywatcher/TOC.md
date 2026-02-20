@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for paywatcher.
 > Source: `masem-at/paywatcher`
-> Last sync: 2026-02-20 11:43:15 UTC | Commit: `661de6f6e5bc811391e12ad1a72212550043ba22`
+> Last sync: 2026-02-20 14:14:40 UTC | Commit: `58903721215edf503bbd475cee4e54415408772a`
 
 ---
 
@@ -27,6 +27,7 @@
 - [`3-4-payment-filters-sorting-pagination.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/3-4-payment-filters-sorting-pagination.md)
 - [`3-5-payment-detail-webhook-history.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/3-5-payment-detail-webhook-history.md)
 - [`4-1-settings-layout-webhook-url-configuration.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/4-1-settings-layout-webhook-url-configuration.md)
+- [`4-2-test-webhook-delivery-log.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/4-2-test-webhook-delivery-log.md)
 
 ## _bmad-output/implementation-artifacts/_obsolete
 
