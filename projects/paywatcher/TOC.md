@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for paywatcher.
 > Source: `masem-at/paywatcher`
-> Last sync: 2026-02-20 15:59:36 UTC | Commit: `8a5ade8d06375733bba3f04282746a919361d75c`
+> Last sync: 2026-02-20 16:45:30 UTC | Commit: `54dbc7abf2ea3bc657af4786ecbad8565c013c8f`
 
 ---
 
@@ -30,6 +30,7 @@
 - [`4-2-test-webhook-delivery-log.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/4-2-test-webhook-delivery-log.md)
 - [`4-3-tenant-configuration-account-settings.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/4-3-tenant-configuration-account-settings.md)
 - [`5-1-mdx-infrastructure-docs-layout.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/5-1-mdx-infrastructure-docs-layout.md)
+- [`5-2-quick-start-guide-endpoint-reference.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/5-2-quick-start-guide-endpoint-reference.md)
 
 ## _bmad-output/implementation-artifacts/_obsolete
 
