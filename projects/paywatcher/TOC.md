@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for paywatcher.
 > Source: `masem-at/paywatcher`
-> Last sync: 2026-02-21 08:30:09 UTC | Commit: `71fbd19723b1ae8a737a5c0d7bd0daca3737dfa2`
+> Last sync: 2026-02-21 11:14:12 UTC | Commit: `6d7dca31560dc83c2da935f7f595efddde9747e1`
 
 ---
 
@@ -35,6 +35,7 @@
 - [`6-1-admin-shell-auth-route-protection.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/6-1-admin-shell-auth-route-protection.md)
 - [`6-2-system-health-overview.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/6-2-system-health-overview.md)
 - [`6-3-tenant-management.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/6-3-tenant-management.md)
+- [`6-4-global-payments.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/6-4-global-payments.md)
 - [`6-5-request-access-confirmation-email.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/6-5-request-access-confirmation-email.md)
 
 ## _bmad-output/implementation-artifacts/_obsolete
