@@ -2,7 +2,7 @@
   "source_repo": "masem-at/paywatcher",
   "project_name": "paywatcher",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-20T19:52:26Z",
-  "commit_sha": "5f593dd74295670a16bc2ee9cb535c72fdf8e78e",
-  "commit_message": "Update scope error message and add API key architecture docs\n"
+  "synced_at": "2026-02-21T08:30:09Z",
+  "commit_sha": "71fbd19723b1ae8a737a5c0d7bd0daca3737dfa2",
+  "commit_message": "Add admin dashboard with tenant management (Epic 6: Stories 6.1-6.3)\n"
 }

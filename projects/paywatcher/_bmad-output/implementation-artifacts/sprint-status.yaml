@@ -1,4 +1,4 @@
-# generated: 2026-02-15
+# generated: 2026-02-20
 # project: paywatcher
 # project_key: NOKEY
 # tracking_system: file-system
@@ -33,7 +33,7 @@
 # - SM typically creates next story after previous one is 'done' to incorporate learnings
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 
-generated: 2026-02-15
+generated: 2026-02-20
 project: paywatcher
 project_key: NOKEY
 tracking_system: file-system
@@ -83,3 +83,12 @@ development_status:
   5-2-quick-start-guide-endpoint-reference: done  # Code Review bestanden (5 Fixes applied)
   5-3-webhook-event-reference-multi-language-code-examples: done  # Code Review bestanden (6 Fixes applied)
   epic-5-retrospective: optional
+
+  # Epic 6: Admin Dashboard
+  epic-6: in-progress
+  6-1-admin-shell-auth-route-protection: done  # Code Review bestanden (5 Fixes applied: Error Handling, Slug Validation, Input Validation, File List, Arch Doc Note)
+  6-2-system-health-overview: done  # Code Review bestanden (7 Fixes + MMS Response verifiziert, Types komplett umgeschrieben)
+  6-3-tenant-management: done  # Code Review bestanden (6 Fixes applied: Fragment Key, Form Reset, Server Validation, PATCH Whitelist, TierBadge, Volume Monospace)
+  6-4-global-payments: backlog
+  6-5-request-access-confirmation-email: backlog
+  epic-6-retrospective: optional

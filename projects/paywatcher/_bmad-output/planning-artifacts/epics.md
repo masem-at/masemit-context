@@ -13,6 +13,7 @@ scopeDecisions:
   - "FR8 (Self-Service Registrierung) verschoben zu Phase 2 — Managed MVP: Request Access Formular statt Signup"
   - "FR11 (Automatischer API Key bei Signup) verschoben zu Phase 2 — Tenant wird von Mario manuell angelegt"
   - "FR13 (API Key regenerieren) entfällt — kein MMS-Endpoint vorhanden"
+  - "FR39–FR43 (Admin Dashboard) nachträglich ergänzt — im Product Brief v2 als Phase 1 definiert, im PRD als Phase 1b, FRs und Epic fehlten in der ursprünglichen Epic-Aufschlüsselung"
 ---
 
 # paywatcher - Epic Breakdown
@@ -86,6 +87,13 @@ Dieses Dokument enthält die vollständige Epic- und Story-Aufschlüsselung für
 **SEO & Discoverability:**
 - FR34: Landing Page ist SEO-optimiert (Meta Tags, Open Graph, strukturierte Daten, Sitemap)
 - FR35: Landing Page ist für Social Sharing optimiert (OG Images, Twitter Cards)
+
+**Admin Dashboard:**
+- FR39: Admin kann System Health einsehen (RPC, Redis, DB, Wallets, 24h Stats) via GET /v1/admin/paywatcher/health
+- FR40: Admin kann eine Liste aller Tenants mit Aggregationen einsehen via GET /v1/admin/paywatcher/tenants
+- FR41: Admin kann einen neuen Tenant anlegen (mit einmaliger API Key + Webhook Secret Anzeige) via POST /v1/admin/paywatcher/tenants
+- FR42: Admin kann einen Tenant aktivieren/deaktivieren via PATCH /v1/admin/paywatcher/tenants/:slug
+- FR43: Admin kann globale Payments über alle Tenants einsehen (mit tenant_slug Filter) via GET /v1/admin/paywatcher/payments
 
 **Phase 2 (verschoben):**
 - ~~FR8: Self-Service Registrierung~~
@@ -190,6 +198,11 @@ Dieses Dokument enthält die vollständige Epic- und Story-Aufschlüsselung für
 | FR33 | Epic 1 | Analytics an masemIT senden |
 | FR34 | Epic 1 | SEO-Optimierung |
 | FR35 | Epic 1 | Social Sharing |
+| FR39 | Epic 6 | System Health einsehen (Admin) |
+| FR40 | Epic 6 | Tenant-Liste mit Aggregationen (Admin) |
+| FR41 | Epic 6 | Tenant anlegen (Admin) |
+| FR42 | Epic 6 | Tenant aktivieren/deaktivieren (Admin) |
+| FR43 | Epic 6 | Globale Payments aller Tenants (Admin) |
 
 ## Epic-Liste
 
@@ -212,6 +225,10 @@ Ein Tenant kann seine Webhook-URL konfigurieren, testen, den Delivery Log einseh
 ### Epic 5: Developer Documentation (Docs-Lite)
 Ein Developer kann Quick Start Guide, Endpoint Reference, Webhook Events und Code-Beispiele lesen — alles was nötig ist um PayWatcher erfolgreich zu integrieren.
 **FRs covered:** FR28, FR29, FR30, FR31
+
+### Epic 6: Admin Dashboard
+Mario (Operator) kann den PayWatcher Service überwachen, Tenants managen, globale Payments einsehen und System Health prüfen — alles was für den operativen Betrieb nötig ist.
+**FRs covered:** FR39, FR40, FR41, FR42, FR43
 
 ## Epic 1: Project Foundation & Landing Page
 
@@ -1004,3 +1021,159 @@ So that ich Webhooks korrekt verarbeiten und PayWatcher in meiner bevorzugten Sp
 **When** eine Docs-Seite geladen wird
 **Then** ist sie via SSG pre-rendered und profitiert vom Vercel CDN
 **And** Code-Beispiele sind sofort sichtbar und kopierbar (kein Client-Side Rendering für Syntax Highlighting)
+
+## Epic 6: Admin Dashboard
+
+Mario (Operator) kann den PayWatcher Service überwachen, Tenants managen, globale Payments einsehen und System Health prüfen — alles was für den operativen Betrieb nötig ist.
+
+**Status:** BACKLOG
+
+**Referenzen:**
+- Product Brief v2, Abschnitt 3.3 (Admin Dashboard)
+- Architecture Doc: `app/(admin)/` Route Group, `isAdmin` Check via Email, `MMS_ADMIN_API_KEY` ENV Variable
+- User Journey 4 (Mario — Admin/Operator)
+- MMS Admin Endpoints: POST/GET/PATCH /v1/admin/paywatcher/tenants, GET /v1/admin/paywatcher/payments, GET /v1/admin/paywatcher/health
+
+### Story 6.1: Admin Shell, Auth & Route Protection
+
+As a Admin (Mario),
+I want ein Admin-Dashboard-Layout mit eigenem Auth-Check und geschützten Routen,
+So that nur ich als Admin auf die Admin-Seiten zugreifen kann.
+
+**Acceptance Criteria:**
+
+**Given** ich bin per Magic Link eingeloggt und meine Email ist als Admin konfiguriert (z.B. mario@masem.at)
+**When** ich `/admin` aufrufe
+**Then** sehe ich das Admin-Dashboard-Layout mit einer Sidebar mit den Items: Overview, Tenants, Payments
+**And** der Header zeigt "Admin" als Kennzeichnung
+
+**Given** ein eingeloggter User, dessen Email NICHT als Admin konfiguriert ist
+**When** er `/admin` aufruft
+**Then** wird er auf das User Dashboard redirected (oder sieht eine 403-Seite)
+
+**Given** ein nicht-authentifizierter User
+**When** er `/admin` aufruft
+**Then** wird er auf `/login` redirected
+
+**Given** das Admin-Layout implementiert wird
+**When** die Route Group erstellt wird
+**Then** existiert `app/(admin)/layout.tsx` mit `isAdmin` Check (Email-basiert, konfigurierbar via ENV `ADMIN_EMAILS`)
+**And** die Admin-Sidebar ist separat vom User-Dashboard-Sidebar
+
+**Given** Admin API Proxy Routes erstellt werden
+**When** ein Admin Route Handler aufgerufen wird
+**Then** nutzt er `process.env.MMS_ADMIN_API_KEY` für MMS-Calls (nicht die tenant_keys DB)
+**And** existieren: `app/api/admin/health/route.ts`, `app/api/admin/tenants/route.ts`, `app/api/admin/tenants/[slug]/route.ts`, `app/api/admin/payments/route.ts`
+**And** jeder Route Handler prüft `isAdmin` bevor er den Request weiterleitet
+
+- Admin ist Desktop-Only — kein Mobile-Layout nötig
+- `isAdmin` Check via Email-Whitelist in ENV Variable (z.B. `ADMIN_EMAILS=mario@masem.at`)
+- Admin API Key aus `MMS_ADMIN_API_KEY` ENV Variable
+
+### Story 6.2: System Health & Overview
+
+As a Admin (Mario),
+I want auf einen Blick sehen ob alle Systeme laufen und die wichtigsten Kennzahlen der letzten 24h kennen,
+So that ich in unter 2 Minuten weiß ob alles in Ordnung ist oder ob ich eingreifen muss.
+
+**Acceptance Criteria:**
+
+**Given** ich bin als Admin eingeloggt und öffne `/admin` (FR39)
+**When** die Overview-Seite lädt
+**Then** sehe ich System Health Status Cards für: RPC Status (connected/error + letzte Response Time), Redis Status (connected/error), Database Status (connected/error), Last Poll Timestamp (wann wurde zuletzt gepollt)
+**And** jede Card zeigt einen farbigen Indikator: grün (healthy), gelb (degraded), rot (error)
+**And** die Daten kommen von GET /v1/admin/paywatcher/health via Proxy
+
+**Given** die Health-Daten geladen sind
+**When** die 24h-Statistiken angezeigt werden
+**Then** sehe ich: Total Payments (24h), Confirmed Count, Expired Count, Failed Count, Webhook Success Rate (%)
+**And** die Zahlen kommen aus dem Health Endpoint (24h Stats Felder)
+
+**Given** die Health-Daten Wallet-Informationen enthalten
+**When** die Wallet-Section angezeigt wird
+**Then** sehe ich: Hot Wallet Balance (USDC + ETH), Cold Wallet Balance (falls im Health Endpoint vorhanden)
+**And** Balances werden in Geist Mono dargestellt
+
+**Given** die Admin Overview-Seite aktiv ist
+**When** die Seite geöffnet bleibt
+**Then** werden die Health-Daten alle 30 Sekunden automatisch refreshed (TanStack Query `refetchInterval: 30_000`)
+
+**Given** die Health-Daten laden
+**When** die API-Response noch aussteht
+**Then** sehe ich Skeleton-Placeholders für die Cards
+
+- Proxy Route: GET /api/admin/health → GET /v1/admin/paywatcher/health (mit MMS_ADMIN_API_KEY)
+- Health Endpoint returned immer HTTP 200 — Subsystem-Status in den Response-Feldern (Graceful Degradation)
+
+### Story 6.3: Tenant Management
+
+As a Admin (Mario),
+I want alle Tenants sehen, neue Tenants anlegen und bestehende Tenants aktivieren/deaktivieren können,
+So that ich den Managed MVP Onboarding-Flow vollständig über das Dashboard abwickeln kann.
+
+**Acceptance Criteria:**
+
+**Given** ich bin als Admin eingeloggt und öffne `/admin/tenants` (FR40)
+**When** die Tenants-Seite lädt
+**Then** sehe ich eine Tabelle aller Tenants mit: tenant_slug, tenant_name, Status (enabled/disabled als Badge), Tier (free/starter/pro/enterprise), Payment Count, Total Volume, Webhook Success Rate
+**And** die Daten kommen von GET /v1/admin/paywatcher/tenants (inkl. Aggregationen)
+
+**Given** ich klicke auf "New Tenant" (FR41)
+**When** das Erstell-Formular angezeigt wird
+**Then** sehe ich Felder für: tenant_name (required), tenant_slug (required, auto-generated aus Name, editierbar), contact_email (required), tier (Dropdown: free, starter, pro, enterprise), webhook_url (optional), confirmation_override (optional, 2-20)
+**And** React Hook Form + Zod Validierung
+
+**Given** ich fülle das Formular aus und klicke "Create Tenant"
+**When** der Tenant erfolgreich erstellt wird (POST /v1/admin/paywatcher/tenants)
+**Then** zeigt ein Modal einmalig: API Key im Klartext (mit Copy-Button), Webhook Secret im Klartext (mit Copy-Button)
+**And** eine Warnung: "This is the only time these credentials will be shown."
+**And** nach Schließen des Modals ist der neue Tenant in der Liste sichtbar
+
+**Given** ich klicke auf den Enable/Disable Toggle eines Tenants (FR42)
+**When** ich den Status ändere
+**Then** wird der Status via PATCH /v1/admin/paywatcher/tenants/:slug mit `{ enabled: true/false }` aktualisiert
+**And** bei Deaktivierung erscheint ein Confirmation Dialog: "Disable tenant [name]? They will lose API access."
+**And** der Status-Badge in der Tabelle aktualisiert sich sofort
+
+**Given** ich klicke auf einen Tenant in der Tabelle
+**When** die Detail-Ansicht angezeigt wird
+**Then** sehe ich: Config-Details (webhook_url, confirmation_override, deposit_address, tier), Created/Updated Timestamps
+**And** einen Link zu den Payments dieses Tenants (→ `/admin/payments?tenant=slug`)
+
+- Proxy Routes: GET/POST /api/admin/tenants, PATCH /api/admin/tenants/[slug]
+- Nach Tenant-Erstellung: Mario muss den Onboarding-Flow manuell fortführen (Parties API + tenant_keys DB) — das ist ein separater Prozess außerhalb dieses Epics (CLI Script oder manuell)
+
+### Story 6.4: Global Payments
+
+As a Admin (Mario),
+I want alle Payments über alle Tenants sehen und nach Tenant filtern können,
+So that ich das Gesamtvolumen überblicke und bei Problemen schnell den betroffenen Tenant identifizieren kann.
+
+**Acceptance Criteria:**
+
+**Given** ich bin als Admin eingeloggt und öffne `/admin/payments` (FR43)
+**When** die Payments-Seite lädt
+**Then** sehe ich eine Tabelle aller Payments über alle Tenants mit: Payment ID (monospace), Tenant (tenant_slug), Amount (monospace, USDC), Status (PaymentStatusBadge), txHash (monospace, truncated, Copy-Button), Created (Timestamp)
+**And** die Daten kommen von GET /v1/admin/paywatcher/payments via Proxy
+
+**Given** ich den Tenant-Filter verwende
+**When** ich einen Tenant aus dem Dropdown wähle
+**Then** werden nur Payments dieses Tenants angezeigt (Query-Param `tenant_slug`)
+**And** der Filter ist als URL Query-Param gespeichert (`?tenant=slug`)
+
+**Given** die Admin Payments-Tabelle angezeigt wird
+**When** ich die gleichen Filter wie im User Dashboard nutze
+**Then** kann ich nach Status filtern (6 States), nach Zeitraum filtern (7d/30d/90d/All), und nach Created At sortieren
+**And** Pagination funktioniert identisch zum User Dashboard
+
+**Given** ich auf ein Payment in der Tabelle klicke
+**When** die Detail-Ansicht angezeigt wird
+**Then** sehe ich die gleiche Payment-Detail-View wie im User Dashboard (Story 3.5) plus den Tenant-Slug als zusätzliches Feld
+
+**Given** die Payments-Daten laden
+**When** die API-Response noch aussteht
+**Then** sehe ich Skeleton-Zeilen als Loading-State
+
+- Proxy Route: GET /api/admin/payments → GET /v1/admin/paywatcher/payments (mit MMS_ADMIN_API_KEY)
+- Wiederverwendung von PaymentStatusBadge, DataTable und Filter-Komponenten aus Epic 3
+- Admin Payments Response enthält zusätzlich tenantSlug pro Payment

@@ -57,8 +57,8 @@ flowchart LR
 | **Gespeichert in** | `.env.local` (lokal) / Vercel Environment Variables (Produktion) |
 | **Verwendet von** | Auth.js `signIn` + `jwt` Callback (serverseitig) |
 | **Aufgabe** | Prüft beim Login ob eine Party mit PayWatcher-Tenant in MMS existiert |
-| **MMS Endpoint** | `POST /v1/auth/login` |
-| **Benötigte Scopes** | `parties:read` |
+| **MMS Endpoints** | `POST /v1/auth/login`, `/v1/admin/paywatcher/*` |
+| **Benötigte Scopes** | `parties:read` (Login), `admin:read` + `admin:write` (Tenant-Verwaltung) |
 | **Zuordnung in MMS** | Keiner Party/Tenant zugeordnet — ist ein Server-Level Key |
 
 ### 2. Tenant Key (`tenant_keys` DB) — lila im Diagramm
@@ -114,7 +114,7 @@ Es gibt drei logische Key-Typen, die sich durch `project`, `scopes` und `tenant_
 
 | Key-Typ | `project` | `tenant_slug` | `scopes` | Verwendung |
 |---|---|---|---|---|
-| **Admin Key** | `paywatcher` | `NULL` | `admin:read`, `admin:write` | PayWatcher Frontend: Login-Flow (`POST /v1/auth/login`), Tenant-Verwaltung |
+| **Admin Key** | `paywatcher` | `NULL` | `parties:read`, `admin:read`, `admin:write` | PayWatcher Frontend: Login-Flow (`POST /v1/auth/login` braucht `parties:read`), Tenant-Verwaltung (`/v1/admin/paywatcher/*` braucht `admin:*`) |
 | **Tenant Key** | `paywatcher` | z.B. `masemit` | `payments:read`, `payments:write` | PayWatcher Frontend: Dashboard-API-Calls pro Tenant |
 | **Andere Projekt-Keys** | z.B. `chainsights` | `NULL` | Projektspezifisch | Andere MMS-Konsumenten (nicht PayWatcher-relevant) |
 
