@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for stake-track-ai.
 > Source: `masem-at/stake-track-ai`
-> Last sync: 2026-02-21 11:18:58 UTC | Commit: `61502a0e793b2f0b5426c449e7add8dbc49d9f09`
+> Last sync: 2026-02-21 20:03:03 UTC | Commit: `e26e6992901c52a3745f69cca2b9f1133b5baacb`
 
 ---
 
@@ -13,6 +13,7 @@
 - [`1-2-eth-wallet-authentifizierung-siwe.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-2-eth-wallet-authentifizierung-siwe.md)
 - [`1-3-email-authentifizierung-via-mms.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-3-email-authentifizierung-via-mms.md)
 - [`1-4-multi-chain-wallet-linking-sol-atom.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-4-multi-chain-wallet-linking-sol-atom.md)
+- [`1-5-wallet-verwaltung-einstellungen.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-5-wallet-verwaltung-einstellungen.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
