@@ -44,7 +44,7 @@ development_status:
   1-1-projekt-initialisierung-infrastruktur-setup: done
   1-2-eth-wallet-authentifizierung-siwe: done
   1-3-email-authentifizierung-via-mms: done
-  1-4-multi-chain-wallet-linking-sol-atom: backlog
+  1-4-multi-chain-wallet-linking-sol-atom: done
   1-5-wallet-verwaltung-einstellungen: backlog
   1-6-account-loeschung-dsgvo: backlog
   epic-1-retrospective: optional

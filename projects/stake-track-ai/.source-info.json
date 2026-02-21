@@ -2,7 +2,7 @@
   "source_repo": "masem-at/stake-track-ai",
   "project_name": "stake-track-ai",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-20T22:03:18Z",
-  "commit_sha": "38e99e6ef25317bbb662c0830b4906956e737f60",
-  "commit_message": "feat: implement Story 1.3 — Email-Authentifizierung via Magic-Link\n"
+  "synced_at": "2026-02-21T11:18:57Z",
+  "commit_sha": "61502a0e793b2f0b5426c449e7add8dbc49d9f09",
+  "commit_message": "feat: implement Story 1.4 — Multi-Chain Wallet-Linking (SOL + ATOM)\n"
 }
