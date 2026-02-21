@@ -90,5 +90,5 @@ development_status:
   6-2-system-health-overview: done  # Code Review bestanden (7 Fixes + MMS Response verifiziert, Types komplett umgeschrieben)
   6-3-tenant-management: done  # Code Review bestanden (6 Fixes applied: Fragment Key, Form Reset, Server Validation, PATCH Whitelist, TierBadge, Volume Monospace)
   6-4-global-payments: done  # Code Review bestanden (6 Fixes applied: Path Traversal, Type Extends, Back-Nav, Clickable Rows, StatusBadge Extract, Filter Constants Extract)
-  6-5-request-access-confirmation-email: backlog
+  6-5-request-access-confirmation-email: done  # Code Review bestanden (3 Fixes applied: HTML-Escaping, Confirmation nach Error-Check, Kommentar korrigiert)
   epic-6-retrospective: optional

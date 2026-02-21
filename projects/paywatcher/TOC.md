@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for paywatcher.
 > Source: `masem-at/paywatcher`
-> Last sync: 2026-02-21 11:14:12 UTC | Commit: `6d7dca31560dc83c2da935f7f595efddde9747e1`
+> Last sync: 2026-02-21 12:11:24 UTC | Commit: `34150ed7c218b6cfa02635538837bba410526a2a`
 
 ---
 
