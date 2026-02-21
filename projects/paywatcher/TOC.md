@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for paywatcher.
 > Source: `masem-at/paywatcher`
-> Last sync: 2026-02-21 12:11:24 UTC | Commit: `34150ed7c218b6cfa02635538837bba410526a2a`
+> Last sync: 2026-02-21 16:31:43 UTC | Commit: `45a3b0d190c46adcdfe8db27badb7f7af3184ed8`
 
 ---
 
@@ -48,6 +48,7 @@
 
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/sprint-status.yaml)
 - [`tech-spec-brand-assets-integration.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/tech-spec-brand-assets-integration.md)
+- [`tech-spec-epic-7-legal-compliance.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/_bmad-output/implementation-artifacts/tech-spec-epic-7-legal-compliance.md)
 
 ## _bmad-output/planning-artifacts
 
@@ -78,4 +79,5 @@
 ## docs/_masemIT/requirements
 
 - [`cr-pw-001-managed-mvp-2026-02-16.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/requirements/cr-pw-001-managed-mvp-2026-02-16.md)
+- [`requirement-paywatcher-legal-compliance-2026-02-21.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/paywatcher/docs/_masemIT/requirements/requirement-paywatcher-legal-compliance-2026-02-21.md)
 
