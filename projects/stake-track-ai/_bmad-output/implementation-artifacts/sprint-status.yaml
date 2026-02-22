@@ -52,8 +52,8 @@ development_status:
   epic-2: in-progress
   2-1-chain-adapter-infrastructure-ethereum-adapter: done
   2-2-solana-chain-adapter: done
-  2-3-cosmos-chain-adapter: backlog
-  2-4-upstash-redis-cache-layer-api-security: backlog
+  2-3-cosmos-chain-adapter: done
+  2-4-upstash-redis-cache-layer-api-security: done
   2-5-staking-dashboard-ui-portfolio-aggregation: backlog
   2-6-daten-freshness-graceful-degradation-empty-states: backlog
   epic-2-retrospective: optional

@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for stake-track-ai.
 > Source: `masem-at/stake-track-ai`
-> Last sync: 2026-02-22 17:12:39 UTC | Commit: `315ae8bd5f73a1d35201df0f4ac2a53dd016d739`
+> Last sync: 2026-02-22 20:46:53 UTC | Commit: `355287d3ef4c022410a0bbbf52c27e3314056c7e`
 
 ---
 
@@ -17,6 +17,8 @@
 - [`1-6-account-loeschung-dsgvo.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-6-account-loeschung-dsgvo.md)
 - [`2-1-chain-adapter-infrastructure-ethereum-adapter.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/2-1-chain-adapter-infrastructure-ethereum-adapter.md)
 - [`2-2-solana-chain-adapter.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/2-2-solana-chain-adapter.md)
+- [`2-3-cosmos-chain-adapter.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/2-3-cosmos-chain-adapter.md)
+- [`2-4-upstash-redis-cache-layer-api-security.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/2-4-upstash-redis-cache-layer-api-security.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts

@@ -768,6 +768,19 @@ So that ich den Mehrwert sofort verstehe und motiviert werde den Calculator ausz
 
 **SEO:** Meta-Tags (Title, Description), Open Graph Image, strukturierte Daten für Suchmaschinen
 
+**Hero-Animation (genehmigtes Konzept): Gravity Grid**
+Kombiniert Konzept 6 (Gravitational Flow) + Konzept 7 (Pulse Grid). HTML5 Canvas-basierte Animation im Hero-Bereich:
+- Drei Chain-Source-Nodes (ETH/SOL/ATOM) schweben als farbige Labels im äußeren Bereich
+- Partikel in Chain-Farben (ETH: #6366F1, SOL: #14F195, ATOM: #A855F7) spiralen gravitativ zum zentralen AI-Core
+- Bei Absorption der Partikel pulsieren farbige Wellen durch ein subtiles Hex-Grid nach aussen
+- AI-Core im Zentrum mit Glow-Layern und Hex-Struktur
+- Narrative: "Daten fließen rein → AI verarbeitet → Insights breiten sich aus"
+- Subtile Gravity-Field-Lines als Spiralführung
+- Dark Background (#06060c) passend zum StakeTrack AI Design-System
+- Performance-optimiert: wenige Berechnungen, kein Heavy Rendering
+- Referenz-Prototyp: `staketrack-ai-temp/public/concept-final-gravity-grid.html`
+- Animation muss `prefers-reduced-motion` respektieren (statisches Fallback)
+
 ### Story 3.3b: Public Real-Yield-Rechner (/calculator)
 
 As a nicht-authentifizierter Besucher,
