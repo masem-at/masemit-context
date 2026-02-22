@@ -738,10 +738,15 @@ staketrack-ai/
 ```
 QStash Cron (stündlich)
     ↓ POST /api/cron/fetch-validators
-    ↓ Fan-out: 3x parallel
-    ├── eth-adapter.fetchValidators() → NeonDB → Redis invalidate
-    ├── sol-adapter.fetchValidators() → NeonDB → Redis invalidate
-    └── atom-adapter.fetchValidators() → NeonDB → Redis invalidate
+    ↓ DB Query: bekannte Validators pro Chain laden
+    ↓ Fan-out: 3x parallel (nur bekannte Validators refreshen)
+    ├── eth-adapter.refreshValidators(knownIndices) → NeonDB → Redis invalidate
+    ├── sol-adapter.refreshValidators(knownIndices) → NeonDB → Redis invalidate
+    └── atom-adapter.refreshValidators(knownIndices) → NeonDB → Redis invalidate
+
+User Wallet-Connect (on-demand)
+    ↓ fetchStakingPositions(walletAddress) → Neue Validators entdecken
+    ↓ Validators + Positionen in NeonDB speichern
 
 QStash Cron (täglich)
     ↓ POST /api/cron/calculate-vrs
@@ -817,6 +822,41 @@ User Request (Dashboard)
 | Reliability (NFR22-27) | ✅ | Graceful Degradation Pattern, QStash Retry, Freshness Timestamps |
 | Integration (NFR28-31) | ✅ | Chain Adapter Isolation, Cache-Invalidierung, definierte Timeouts |
 | Compliance (NFR32-34) | ✅ | DSGVO via MMS Consents, Disclaimer, gekürzte Wallet-Adressen in Logs |
+
+### Architecture Decision Records (Post-Initial)
+
+#### ADR-001: User-Driven Validator Discovery statt Bulk-Fetch (2026-02-22)
+
+**Status:** Accepted
+**Kontext:** Story 2-1 Code Review deckte auf, dass `fetchValidators()` ALLE ~1M aktive Ethereum-Validators via Beacon API abruft. Dies ist in Serverless (Vercel 60s Timeout, Memory-Limits) nicht praktikabel und für den MVP-Use-Case (User-Portfolio-Tracking) unnötig.
+
+**Entscheidung:** Validator-Daten werden **User-Driven** statt per Bulk-Fetch geladen:
+
+1. **Validator Discovery (on-demand):** Wenn ein User eine Wallet verbindet, werden via `fetchStakingPositions(walletAddress)` die zugehörigen Validators entdeckt und in der DB gespeichert.
+2. **Validator Refresh (stündlicher Cron):** Der Cron-Job fragt die DB nach bereits bekannten Validators (`SELECT DISTINCT address FROM validators WHERE chain = ?`) und refresht nur diese via Batch-API (beaconcha.in, max 100 Indices pro Request).
+3. **Kein Raw Beacon API Bulk-Fetch:** Der Endpoint `/eth/v1/beacon/states/finalized/validators` wird NICHT verwendet. Stattdessen beaconcha.in Batch-API für bekannte Validators.
+
+**ChainAdapter Interface Änderung:**
+```typescript
+interface ChainAdapter {
+  readonly chain: Chain;
+  // Discovery: neue Validators über Wallet-Lookup entdecken
+  fetchStakingPositions(walletAddress: string): Promise<StakingPosition[]>;
+  // Refresh: bekannte Validators aktualisieren (Batch)
+  refreshValidators(knownAddresses: string[]): Promise<UnifiedValidator[]>;
+  fetchInflationRate(): Promise<number>;
+}
+```
+
+**Konsequenzen:**
+- `fetchValidators()` (parameterlos, Bulk) wird entfernt
+- `refreshValidators(knownAddresses)` ersetzt es (gezielt, Batch)
+- Cron-Handler muss DB-Query voranstellen
+- Skaliert mit Userbasis statt mit Blockchain-Größe
+- Passt ins beaconcha.in Free-Tier (~1K Requests/Monat)
+- Betrifft: Story 2-1 (ETH), 2-2 (SOL), 2-3 (ATOM)
+
+---
 
 ### Gap Analysis Results
 

@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for stake-track-ai.
 > Source: `masem-at/stake-track-ai`
-> Last sync: 2026-02-22 10:07:31 UTC | Commit: `e9e9a9c33c27683e8d037bf61f94db06b6053f16`
+> Last sync: 2026-02-22 16:25:03 UTC | Commit: `030cc101c3712ba3b0b08757bf849dd86643898f`
 
 ---
 
@@ -15,6 +15,8 @@
 - [`1-4-multi-chain-wallet-linking-sol-atom.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-4-multi-chain-wallet-linking-sol-atom.md)
 - [`1-5-wallet-verwaltung-einstellungen.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-5-wallet-verwaltung-einstellungen.md)
 - [`1-6-account-loeschung-dsgvo.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-6-account-loeschung-dsgvo.md)
+- [`2-1-chain-adapter-infrastructure-ethereum-adapter.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/2-1-chain-adapter-infrastructure-ethereum-adapter.md)
+- [`2-2-solana-chain-adapter.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/2-2-solana-chain-adapter.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts

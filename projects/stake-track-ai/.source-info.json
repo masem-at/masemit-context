@@ -2,7 +2,7 @@
   "source_repo": "masem-at/stake-track-ai",
   "project_name": "stake-track-ai",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-22T10:07:31Z",
-  "commit_sha": "e9e9a9c33c27683e8d037bf61f94db06b6053f16",
-  "commit_message": "feat: implement Story 1.6 — Account-Löschung (DSGVO)\n"
+  "synced_at": "2026-02-22T16:25:03Z",
+  "commit_sha": "030cc101c3712ba3b0b08757bf849dd86643898f",
+  "commit_message": "feat: add chain adapters (ETH/SOL), DB schema, fix /dashboard redirect\n"
 }
