@@ -1,7 +1,7 @@
 {
   "source_repo": "masem-at/chainsights",
   "source_folders": "docs",
-  "synced_at": "2026-02-20T12:33:53Z",
-  "commit_sha": "e60e6c461e268354e6e826fdca35f73154066dc8",
-  "commit_message": "feat: Story C — Last Proposal column, detail view, chart marker + code review fixes\n"
+  "synced_at": "2026-02-22T13:52:22Z",
+  "commit_sha": "2aae97b8c3537a787309ca65fd833c14c23d1b97",
+  "commit_message": "fix: Story B2 — preserve historical backfill scores from daily job downgrade\n"
 }
