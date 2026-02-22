@@ -46,7 +46,7 @@ development_status:
   1-3-email-authentifizierung-via-mms: done
   1-4-multi-chain-wallet-linking-sol-atom: done
   1-5-wallet-verwaltung-einstellungen: done
-  1-6-account-loeschung-dsgvo: backlog
+  1-6-account-loeschung-dsgvo: done
   epic-1-retrospective: optional
 
   epic-2: backlog

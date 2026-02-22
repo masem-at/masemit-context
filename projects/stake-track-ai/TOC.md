@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for stake-track-ai.
 > Source: `masem-at/stake-track-ai`
-> Last sync: 2026-02-21 20:03:03 UTC | Commit: `e26e6992901c52a3745f69cca2b9f1133b5baacb`
+> Last sync: 2026-02-22 10:07:31 UTC | Commit: `e9e9a9c33c27683e8d037bf61f94db06b6053f16`
 
 ---
 
@@ -14,6 +14,7 @@
 - [`1-3-email-authentifizierung-via-mms.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-3-email-authentifizierung-via-mms.md)
 - [`1-4-multi-chain-wallet-linking-sol-atom.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-4-multi-chain-wallet-linking-sol-atom.md)
 - [`1-5-wallet-verwaltung-einstellungen.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-5-wallet-verwaltung-einstellungen.md)
+- [`1-6-account-loeschung-dsgvo.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/1-6-account-loeschung-dsgvo.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts

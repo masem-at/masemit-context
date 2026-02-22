@@ -2,7 +2,7 @@
   "source_repo": "masem-at/stake-track-ai",
   "project_name": "stake-track-ai",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-21T20:03:03Z",
-  "commit_sha": "e26e6992901c52a3745f69cca2b9f1133b5baacb",
-  "commit_message": "feat: implement Story 1.5 — Wallet-Verwaltung & Einstellungen\n"
+  "synced_at": "2026-02-22T10:07:31Z",
+  "commit_sha": "e9e9a9c33c27683e8d037bf61f94db06b6053f16",
+  "commit_message": "feat: implement Story 1.6 — Account-Löschung (DSGVO)\n"
 }
