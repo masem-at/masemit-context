@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for stake-track-ai.
 > Source: `masem-at/stake-track-ai`
-> Last sync: 2026-02-22 20:46:53 UTC | Commit: `355287d3ef4c022410a0bbbf52c27e3314056c7e`
+> Last sync: 2026-02-22 21:28:32 UTC | Commit: `588badb9f710702a28606914bbc260fcdc930c0f`
 
 ---
 
@@ -19,6 +19,7 @@
 - [`2-2-solana-chain-adapter.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/2-2-solana-chain-adapter.md)
 - [`2-3-cosmos-chain-adapter.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/2-3-cosmos-chain-adapter.md)
 - [`2-4-upstash-redis-cache-layer-api-security.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/2-4-upstash-redis-cache-layer-api-security.md)
+- [`2-5-staking-dashboard-ui-portfolio-aggregation.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/2-5-staking-dashboard-ui-portfolio-aggregation.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
