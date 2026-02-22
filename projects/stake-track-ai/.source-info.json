@@ -2,7 +2,7 @@
   "source_repo": "masem-at/stake-track-ai",
   "project_name": "stake-track-ai",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-22T16:25:03Z",
-  "commit_sha": "030cc101c3712ba3b0b08757bf849dd86643898f",
-  "commit_message": "feat: add chain adapters (ETH/SOL), DB schema, fix /dashboard redirect\n"
+  "synced_at": "2026-02-22T17:12:39Z",
+  "commit_sha": "315ae8bd5f73a1d35201df0f4ac2a53dd016d739",
+  "commit_message": "feat: add ETH wallet linking for email-authenticated users\n"
 }

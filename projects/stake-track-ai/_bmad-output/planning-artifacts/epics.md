@@ -726,7 +726,49 @@ So that ich sofort verstehe, was mein Staking wirklich einbringt.
 
 **API:** `GET /api/yield?chainId={chain}` liefert Real-Yield-Daten pro Position
 
-### Story 3.3: Public Real-Yield-Rechner (/calculator)
+### Story 3.3a: Public Landing Page
+
+As a nicht-authentifizierter Besucher,
+I want eine Landing Page sehen die mir erklärt was StakeTrack AI ist und warum ich es nutzen sollte,
+So that ich den Mehrwert sofort verstehe und motiviert werde den Calculator auszuprobieren oder meine Wallet zu verbinden.
+
+**Acceptance Criteria:**
+
+**Given** ein nicht-authentifizierter Besucher öffnet `/` (Root-Route)
+**When** die Seite geladen wird
+**Then** sieht er eine SSR-optimierte Landing Page (Teil der `(public)` Route Group)
+**And** die Seite ist ohne Login oder Registrierung zugänglich
+
+**Given** die Landing Page wird angezeigt
+**When** der Besucher den Hero-Bereich sieht
+**Then** zeigt er: Headline "Was verdienst du WIRKLICH?" (oder vergleichbarer Schock-Hook), Subline die Real-Yield-Transparenz als USP kommuniziert, Primary CTA → `/calculator` ("Berechne deinen echten Ertrag"), Secondary CTA → Wallet-Connect ("Portfolio verbinden")
+
+**Given** die Landing Page wird angezeigt
+**When** der Besucher weiter scrollt
+**Then** sieht er 3 Key Feature-Sections: Real-Yield-Transparenz (Nominal vs. Real — der Schock-Moment erklärt), Validator Risk Score (Ampel-System: Grün/Gelb/Rot), Multi-Chain-Aggregation (ETH, SOL, ATOM — alles auf einem Dashboard)
+**And** jede Section ist visuell ansprechend mit Icons/Illustrationen im Dark-Mode-Design
+
+**Given** die Landing Page wird angezeigt
+**When** der Besucher den Footer-Bereich sieht
+**Then** ist ein Disclaimer sichtbar: "Keine Finanzberatung" (NFR33)
+**And** Links zu Privacy Policy und Impressum sind vorhanden
+
+**Given** ein bereits authentifizierter User öffnet `/`
+**When** die Auth-Session erkannt wird
+**Then** wird er zum Dashboard weitergeleitet (wie bisher)
+
+**Given** die `(public)` Route Group
+**When** sie erstellt wird
+**Then** enthält sie ein eigenes Layout ohne Sidebar/Bottom-Navigation (Marketing-Layout statt App-Layout)
+**And** der Calculator (`/calculator`) wird ebenfalls in diese Route Group eingegliedert
+
+**Routing-Änderung:** Root-Route `/` zeigt Landing Page für unauthentifizierte Besucher, Dashboard für authentifizierte User. Die bestehende Redirect-Logik wird entsprechend angepasst.
+
+**Komponenten:** HeroSection, FeatureSection, LandingCta, PublicLayout (Marketing-Layout ohne App-Shell)
+
+**SEO:** Meta-Tags (Title, Description), Open Graph Image, strukturierte Daten für Suchmaschinen
+
+### Story 3.3b: Public Real-Yield-Rechner (/calculator)
 
 As a nicht-authentifizierter Besucher,
 I want meinen Real Yield berechnen können ohne mich einloggen zu müssen,
@@ -740,6 +782,7 @@ So that ich sofort verstehe was mein Staking wirklich einbringt und motiviert we
 **And** er sieht: Headline "Was verdienst du WIRKLICH?", Chain-Selector (ETH/SOL/ATOM), Betrags-Input, optionaler Validator-Dropdown
 **And** ein dezenter Disclaimer ist sichtbar: "Keine Finanzberatung" (NFR33)
 **And** kein Login oder Registrierung ist erforderlich
+**And** die Seite nutzt das PublicLayout aus Story 3.3a (Marketing-Layout, `(public)` Route Group)
 
 **Given** ein Besucher wählt eine Chain und gibt einen Betrag ein
 **When** die Eingabe erfolgt
