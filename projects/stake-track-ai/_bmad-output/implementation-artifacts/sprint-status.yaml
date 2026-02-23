@@ -49,17 +49,17 @@ development_status:
   1-6-account-loeschung-dsgvo: done
   epic-1-retrospective: optional
 
-  epic-2: in-progress
+  epic-2: done
   2-1-chain-adapter-infrastructure-ethereum-adapter: done
   2-2-solana-chain-adapter: done
   2-3-cosmos-chain-adapter: done
   2-4-upstash-redis-cache-layer-api-security: done
   2-5-staking-dashboard-ui-portfolio-aggregation: done
-  2-6-daten-freshness-graceful-degradation-empty-states: backlog
+  2-6-daten-freshness-graceful-degradation-empty-states: done
   epic-2-retrospective: optional
 
-  epic-3: backlog
-  3-1-real-yield-calculator-domain-logik-taegliche-snapshots: backlog
+  epic-3: in-progress
+  3-1-real-yield-calculator-domain-logik-taegliche-snapshots: done
   3-2-dashboard-real-yield-integration: backlog
   3-3a-public-landing-page: backlog
   3-3b-public-real-yield-rechner-calculator: backlog

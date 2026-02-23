@@ -2,7 +2,7 @@
   "source_repo": "masem-at/stake-track-ai",
   "project_name": "stake-track-ai",
   "source_folders": "_bmad-output,docs",
-  "synced_at": "2026-02-22T21:28:32Z",
-  "commit_sha": "588badb9f710702a28606914bbc260fcdc930c0f",
-  "commit_message": "feat: add staking dashboard UI, portfolio aggregation, and code review fixes\n"
+  "synced_at": "2026-02-23T10:23:35Z",
+  "commit_sha": "f165c6e75512b3224d36451cd948797d4a29d37d",
+  "commit_message": "feat: add real-yield calculator domain logic, DB schema, and daily cron snapshots (Story 3-1)\n"
 }
