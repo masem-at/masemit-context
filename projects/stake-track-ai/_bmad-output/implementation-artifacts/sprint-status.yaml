@@ -60,7 +60,7 @@ development_status:
 
   epic-3: in-progress
   3-1-real-yield-calculator-domain-logik-taegliche-snapshots: done
-  3-2-dashboard-real-yield-integration: backlog
+  3-2-dashboard-real-yield-integration: done
   3-3a-public-landing-page: backlog
   3-3b-public-real-yield-rechner-calculator: backlog
   epic-3-retrospective: optional

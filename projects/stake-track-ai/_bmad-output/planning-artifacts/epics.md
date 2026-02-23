@@ -724,6 +724,8 @@ So that ich sofort verstehe, was mein Staking wirklich einbringt.
 **When** eine einzelne Chain ausgewählt ist
 **Then** zeigt er den Real Yield nur für diese Chain
 
+**Icons:** Alle Icons im Dashboard (KPI-Cards, Tabelle, Vergleichselemente) MÜSSEN aus einer dedizierten Icon-Library stammen (z.B. Lucide, Phosphor oder Heroicons) — keine generischen Browser-/Standard-Icons verwenden. Die gewählte Library soll projektübergreifend konsistent eingesetzt werden.
+
 **API:** `GET /api/yield?chainId={chain}` liefert Real-Yield-Daten pro Position
 
 ### Story 3.3a: Public Landing Page

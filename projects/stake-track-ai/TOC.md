@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for stake-track-ai.
 > Source: `masem-at/stake-track-ai`
-> Last sync: 2026-02-23 10:23:35 UTC | Commit: `f165c6e75512b3224d36451cd948797d4a29d37d`
+> Last sync: 2026-02-23 12:26:54 UTC | Commit: `908060dbb0ee8f466217cd128ae1e417f796a3e8`
 
 ---
 
@@ -22,6 +22,7 @@
 - [`2-5-staking-dashboard-ui-portfolio-aggregation.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/2-5-staking-dashboard-ui-portfolio-aggregation.md)
 - [`2-6-daten-freshness-graceful-degradation-empty-states.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/2-6-daten-freshness-graceful-degradation-empty-states.md)
 - [`3-1-real-yield-calculator-domain-logik-taegliche-snapshots.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/3-1-real-yield-calculator-domain-logik-taegliche-snapshots.md)
+- [`3-2-dashboard-real-yield-integration.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/3-2-dashboard-real-yield-integration.md)
 - [`sprint-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/_bmad-output/implementation-artifacts/sprint-status.yaml)
 
 ## _bmad-output/planning-artifacts
