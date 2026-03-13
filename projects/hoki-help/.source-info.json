@@ -2,7 +2,7 @@
   "source_repo": "masem-at/hoki-help",
   "project_name": "hoki-help",
   "source_folders": "docs",
-  "synced_at": "2026-02-02T14:46:59Z",
-  "commit_sha": "03cc4b59630f9b6fb77e20b306578b196bca65d7",
-  "commit_message": "feat: Migrate to Stripe Embedded Checkout with PayPal support\n"
+  "synced_at": "2026-03-13T15:50:11Z",
+  "commit_sha": "b173f3521c841f65a57a2bb791312ce2357fb804",
+  "commit_message": "fix: Update IBAN to AT97 3225 0082 0070 7760\n"
 }

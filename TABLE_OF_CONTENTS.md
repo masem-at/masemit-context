@@ -1,7 +1,7 @@
 # masemit-context - Table of Contents
 
 > Auto-generated index of all projects in this context repository.
-> Last updated: 2026-02-23 12:26:54 UTC
+> Last updated: 2026-03-13 15:50:11 UTC
 
 ## How to use
 
@@ -41,8 +41,8 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 ### hoki-help
 
 - Source: `masem-at/hoki-help`
-- Last sync: 2026-02-02T14:46:59Z
-- Files: 2
+- Last sync: 2026-03-13T15:50:11Z
+- Files: 3
 - **[📋 Project TOC](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/hoki-help/TOC.md)**
 
 ### hoki-help
@@ -83,7 +83,7 @@ https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/<pa
 
 - Source: `masem-at/stake-track-ai`
 - Last sync: 2026-02-23T12:26:54Z
-- Files: 27
+- Files: 26
 - **[📋 Project TOC](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/stake-track-ai/TOC.md)**
 
 ### telling-cube
