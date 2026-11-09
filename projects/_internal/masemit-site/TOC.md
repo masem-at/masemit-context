@@ -2,7 +2,7 @@
 
 > Auto-generated table of contents for masemit-site.
 > Source: `masem-at/masemit-site`
-> Last sync: 2026-02-01 15:45:29 UTC | Commit: `b0f96fea5593ffb3b2d026d3f3696de9292a47dd`
+> Last sync: 2026-11-09 19:06:56 UTC | Commit: `dc5a2d36396b71a2c2328a38fe446568f1ba3684`
 
 ---
 
@@ -14,6 +14,13 @@
 - [`company-info.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/masemit-site/docs/_masemIT/company-info.md)
 - [`hoki-help.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/masemit-site/docs/_masemIT/hoki-help.md)
 - [`masemIT_Branding_EN.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/masemit-site/docs/_masemIT/masemIT_Branding_EN.md)
+
+## docs/_masemIT/requirements
+
+- [`verantwortung-requirement.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/masemit-site/docs/_masemIT/requirements/verantwortung-requirement.md)
+
+## docs/_masemIT
+
 - [`session-backup.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/masemit-site/docs/_masemIT/session-backup.md)
 
 ## docs/analysis
@@ -23,6 +30,10 @@
 ## docs
 
 - [`bmm-workflow-status.yaml`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/masemit-site/docs/bmm-workflow-status.yaml)
+
+## docs/party-mode/memories/installed
+
+- [`.memlog.md`](https://raw.githubusercontent.com/masem-at/masemit-context/refs/heads/master/projects/_internal/masemit-site/docs/party-mode/memories/installed/.memlog.md)
 
 ## docs/sprint-artifacts
 
